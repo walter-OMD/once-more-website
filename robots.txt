@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Link to your sitemap
 Sitemap: https://oncemoredigital.com/sitemap.xml
