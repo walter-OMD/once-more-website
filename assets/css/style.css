@@ -215,6 +215,9 @@ p{color:var(--muted);font-weight:400}
   .footer-grid a{font-size:.98rem;color:var(--muted)}
 .footer-grid a:hover{color:var(--blue-light)}
 .footer-brand p{font-size:.92rem;max-width:34ch;margin-top:.75rem}
+.footer-address{font-style:normal;font-size:.9rem;color:var(--muted);line-height:1.6;margin-top:1rem;max-width:34ch}
+.footer-ssm{font-size:.82rem;color:var(--muted);margin-top:.6rem;opacity:.85}
+.office-address{font-style:normal;color:#aaa;line-height:1.7;margin-top:.35rem}
   .footer-bottom{font-size:13px;color:var(--muted);text-align:center;padding-top:1.75rem;border-top:1px solid var(--border)}
 
 /* ---------- mobile nav ---------- */
@@ -249,19 +252,22 @@ p{color:var(--muted);font-weight:400}
 
 /* ---------- client logos marquee ---------- */
 .clients-head{text-align:center;margin-bottom:.5rem}
-.logos{position:relative;overflow:hidden;margin-top:1.75rem;
+.logos{position:relative;overflow-x:auto;overflow-y:hidden;margin-top:1.75rem;cursor:grab;
+  scrollbar-width:none;-ms-overflow-style:none;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
           mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.logos-track{display:flex;align-items:center;gap:1.1rem;width:max-content;
-  animation:logos-scroll 48s linear infinite}
-.logos:hover .logos-track{animation-play-state:paused}
+.logos::-webkit-scrollbar{display:none}
+.logos.dragging{cursor:grabbing}
+.logos.dragging .logo-chip{pointer-events:none}
+.logos-track{display:flex;align-items:center;gap:1.1rem;width:max-content}
 .logo-chip{flex:0 0 auto;width:172px;height:90px;background:#fff;border-radius:9px;
   display:flex;align-items:center;justify-content:center;padding:16px 22px;
-  box-shadow:0 8px 22px rgba(0,0,0,0.25)}
-.logo-chip img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-@keyframes logos-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);opacity:.5;transition:opacity .25s;
+  user-select:none;-webkit-user-select:none}
+.logo-chip:hover{opacity:1}
+.logo-chip img{max-width:100%;max-height:100%;object-fit:contain;display:block;
+  pointer-events:none;-webkit-user-drag:none}
 @media(max-width:600px){.logo-chip{width:142px;height:78px;padding:12px 16px}}
-@media(prefers-reduced-motion:reduce){.logos-track{animation:none}}
 
 /* accessibility */
 :focus-visible{outline:2px solid var(--blue-light);outline-offset:2px}
