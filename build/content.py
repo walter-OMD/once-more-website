@@ -143,7 +143,7 @@ RESOURCES = [
         "body": [
             ("The short version",
              "<p>GEO is the practice of structuring your content and signals so that generative AI systems can find, trust and quote your business when they answer a question. Where <a href=\"/services/seo/\">SEO</a> aims to rank a page, GEO aims to be the source the AI names.</p>"),
-            ("Why answer engines changed the game",
+            ("How did Large Language Models (LLM) changed SEO?",
              "<p>Tools like Google AI Overviews, ChatGPT, Gemini and Perplexity increasingly give people a direct answer instead of ten links. They read the web, decide what is trustworthy, and cite a handful of sources. If you are not among them, you can be invisible even when your information is good. That is why GEO has become its own discipline. Google documents how these <a href=\"https://developers.google.com/search/docs/appearance/ai-features\" target=\"_blank\" rel=\"noopener\">AI features in Search</a> select and show sources.</p>"),
             ("How do you get cited?",
              "<p>By being clear, structured and trustworthy. That means direct answers near the top of a page, clean headings, FAQ and how-to formatting, and schema markup, all of which fall under <a href=\"/services/ai-optimisation/\">AI optimisation</a>. It also means publishing accurate, genuinely useful <a href=\"/services/content-writing/\">content</a> that an AI tool would be comfortable quoting.</p>"),
