@@ -4,8 +4,8 @@
   "description": "SEO, GEO, AI optimisation, content and Google Ads for businesses in Malaysia.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "background_color": "#222222",
+  "theme_color": "#222222",
   "icons": [
     { "src": "/assets/img/favicon.png", "sizes": "32x32", "type": "image/png" },
     { "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
