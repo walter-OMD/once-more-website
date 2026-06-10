@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oncemoredigital.com/sitemap.xml
+Sitemap: https://www.oncemoredigital.com/sitemap.xml
