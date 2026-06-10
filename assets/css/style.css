@@ -272,13 +272,41 @@ p{color:var(--muted);font-weight:400}
 /* ---------- long-form prose + link lists ---------- */
 .prose{max-width:70ch}
 .prose p{color:#b8b8b8;margin-bottom:1rem;font-weight:400}
-.prose h2{font-size:1.4rem;margin:2rem 0 .7rem}
+.prose h2{font-size:1.4rem;margin:2rem 0 .7rem;scroll-margin-top:104px}
 .prose a{color:var(--blue-light);text-decoration:underline;text-underline-offset:2px}
 .prose a:hover{color:var(--off-white)}
 .link-list{list-style:none;display:grid;gap:.75rem;max-width:62ch;margin-top:1rem}
 .link-list li{border-bottom:1px solid var(--border);padding-bottom:.75rem}
 .link-list a{color:var(--blue-light);font-size:1.05rem}
 .link-list a:hover{color:var(--off-white)}
+
+/* ---------- AEO guide components ---------- */
+.updated{font-size:.82rem;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;margin:.25rem 0 1.25rem}
+.answer-box{border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;
+  background:rgba(77,101,175,.07);padding:1.25rem 1.5rem;max-width:72ch;margin-bottom:1.75rem}
+.answer-label{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-light);margin-bottom:.4rem}
+.answer-box p{color:#d2d2d0;margin:0;font-size:1.05rem;line-height:1.7}
+.toc{border:1px solid var(--border);border-radius:6px;padding:1.1rem 1.4rem;max-width:46ch;margin-bottom:2rem;background:rgba(255,255,255,.02)}
+.toc-title{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-light);margin-bottom:.6rem}
+.toc ul{list-style:none;display:grid;gap:.45rem}
+.toc a{color:#b8b8b8;font-size:.95rem}
+.toc a:hover{color:var(--blue-light)}
+.guide-figure{margin:2rem 0 .5rem;text-align:center}
+.guide-illustration{display:block;width:100%;max-width:560px;height:auto;margin:0 auto}
+.tldr{border:1px solid var(--border);border-radius:6px;padding:1.4rem 1.6rem;max-width:72ch;margin:2.25rem 0 0;background:rgba(77,101,175,.05)}
+.tldr h2{font-size:1.1rem;margin-bottom:.75rem}
+.tldr ul{margin:0;padding-left:1.1rem;display:grid;gap:.45rem}
+.tldr li{color:#c4c4c4}
+.author-bio{display:flex;gap:1rem;align-items:flex-start;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);max-width:72ch}
+.author-bio p{color:#a9a9a9;font-size:.95rem;margin:0}
+.author-bio strong{color:var(--off-white);font-weight:700}
+.author-dot{flex:0 0 auto;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--blue);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--blue-light);letter-spacing:.04em}
+
+/* feature-list gets a check icon instead of a plain square */
+.feature-list li::before{content:'';position:absolute;left:0;top:.35em;width:15px;height:15px;background:none;border:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a90c7' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+  background-size:contain;background-repeat:no-repeat}
 
 /* accessibility */
 :focus-visible{outline:2px solid var(--blue-light);outline-offset:2px}
