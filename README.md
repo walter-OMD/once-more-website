@@ -31,17 +31,18 @@ Each page uses a folder + `index.html` so GitHub Pages serves clean URLs (for ex
 ## Preserved from the original
 
 - Google Tag Manager (`GTM-MJ5WCPR6`) in the head and the `noscript` body tag on every page
-- The `og:image` path `oncemoredigial-seo-marketing-logo.png` at the site root
+- The `og:image` now points at your existing `oncemoredigial-seo-marketing-logo.jpg` at the site root (the original markup pointed at a `.png` that did not exist, so this also fixes the broken share image)
 - The design system: blue `#4d65af`, dark `#0a0a0a`, Barlow, the radial-gradient background and the rise animation
 
 ## Replace before launch
 
-The logo, favicon, apple touch icon and the social image are placeholder brand marks (a blue "OM" monogram), since the originals were embedded inline and could not be carried over. Swap these files with your real artwork, keeping the same names and paths:
+The logo, favicon and apple touch icon are placeholder brand marks (a blue "OM" monogram), since the originals were embedded inline and could not be carried over. Swap these files with your real artwork, keeping the same names and paths:
 
 - `assets/img/logo.png` (header logo)
 - `assets/img/favicon.png` (32x32)
 - `assets/img/apple-touch-icon.png` (180x180)
-- `oncemoredigial-seo-marketing-logo.png` (1200x630 social share image)
+
+The social share image uses your existing `oncemoredigial-seo-marketing-logo.jpg` at the site root. For best results that file should be roughly 1200x630.
 
 The contact form has no backend yet. On submit it opens the visitor's email client addressed to `walter@oncemoredigital.com`, so nothing is lost. Connect a form service (Formspree, Netlify Forms, Google Forms) when ready.
 
