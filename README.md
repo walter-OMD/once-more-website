@@ -50,7 +50,7 @@ The contact form has no backend yet. On submit it opens the visitor's email clie
 
 1. Push this folder to a GitHub repository.
 2. In the repo, go to Settings, Pages, and set the source to the `main` branch, root.
-3. The `CNAME` file points the site at `www.oncemoredigital.com`. Add the matching DNS records at your domain provider, then enable HTTPS in the Pages settings.
+3. The `CNAME` file points the site at `oncemoredigital.com`. Add the matching DNS records at your domain provider, then enable HTTPS in the Pages settings.
 
 ## Editing
 
