@@ -405,7 +405,107 @@ GUIDE_ILLO = {
   '</svg>'),
 }
 
-# ---------------------------------------------------------------- home page
+# ---------------------------------------------------------------- service page illustrations
+# Same visual language as HERO_SVG / GUIDE_ILLO: a soft browser-style frame,
+# original line art, no external icons or stock imagery. Each one riffs on a
+# different motif (rankings, citations, structured data, tag pills, ad + cursor)
+# so the five service pages don't all reuse the same picture.
+def _frame(inner, label):
+    return ('<svg class="service-illustration" viewBox="0 0 560 340" fill="none" '
+            'xmlns="http://www.w3.org/2000/svg" role="img" aria-label="%s">'
+            '<rect x="14" y="14" width="532" height="312" rx="14" '
+            'fill="rgba(77,101,175,0.05)" stroke="rgba(122,144,199,0.4)" stroke-width="1.5"/>'
+            '<line x1="14" y1="52" x2="546" y2="52" stroke="rgba(122,144,199,0.28)" stroke-width="1.5"/>'
+            '<circle cx="38" cy="33" r="4" fill="#4d65af"/>'
+            '<circle cx="54" cy="33" r="4" fill="rgba(122,144,199,0.5)"/>'
+            '<circle cx="70" cy="33" r="4" fill="rgba(122,144,199,0.3)"/>'
+            '%s</svg>' % (label, inner))
+
+SERVICE_ILLO = {
+    # rising bars + magnifying glass badge = climbing rankings
+    "seo": _frame(
+        '<rect x="38" y="72" width="330" height="38" rx="19" fill="rgba(255,255,255,0.03)" stroke="rgba(122,144,199,0.55)" stroke-width="1.5"/>'
+        '<circle cx="60" cy="91" r="7" stroke="#7a90c7" stroke-width="2"/>'
+        '<line x1="65" y1="96" x2="73" y2="104" stroke="#7a90c7" stroke-width="2" stroke-linecap="round"/>'
+        '<rect x="88" y="86" width="120" height="6" rx="3" fill="rgba(122,144,199,0.5)"/>'
+        '<rect x="38" y="230" width="34" height="60" rx="4" fill="rgba(122,144,199,0.28)"/>'
+        '<rect x="86" y="205" width="34" height="85" rx="4" fill="rgba(122,144,199,0.4)"/>'
+        '<rect x="134" y="172" width="34" height="118" rx="4" fill="rgba(122,144,199,0.55)"/>'
+        '<rect x="182" y="136" width="34" height="154" rx="4" fill="#4d65af"/>'
+        '<path d="M38 205 L86 178 L134 148 L182 116" stroke="#7a90c7" stroke-width="2" stroke-dasharray="4 4" fill="none"/>'
+        '<rect x="330" y="150" width="176" height="70" rx="10" fill="rgba(77,101,175,0.16)" stroke="#4d65af" stroke-width="1.4"/>'
+        '<circle cx="360" cy="185" r="11" stroke="#f4f4f2" stroke-width="2"/>'
+        '<line x1="368" y1="193" x2="378" y2="203" stroke="#f4f4f2" stroke-width="2" stroke-linecap="round"/>'
+        '<text x="450" y="180" text-anchor="middle" fill="#f4f4f2" font-family="Satoshi,Arial" font-size="13" font-weight="700">Ranking up</text>'
+        '<text x="450" y="200" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">page one</text>',
+        "A search bar above a rising bar chart, representing climbing rankings"),
+    # question -> AI panel with a cited answer
+    "geo": _frame(
+        '<rect x="38" y="130" width="160" height="60" rx="12" fill="rgba(77,101,175,0.1)" stroke="rgba(77,101,175,0.5)" stroke-width="1.4"/>'
+        '<text x="118" y="166" text-anchor="middle" fill="#e6e8ef" font-family="Satoshi,Arial" font-size="13">"best ... in KL?"</text>'
+        '<path d="M198 160h30" stroke="rgba(77,101,175,0.6)" stroke-width="2" marker-end="url(#geoarrow)"/>'
+        '<defs><marker id="geoarrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0l6 3-6 3z" fill="rgba(77,101,175,0.8)"/></marker></defs>'
+        '<rect x="238" y="112" width="120" height="96" rx="14" fill="rgba(77,101,175,0.18)" stroke="#4d65af" stroke-width="1.4"/>'
+        '<path d="M270 160l9 9 16-18" stroke="#7a90c7" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+        '<text x="298" y="196" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">AI engine</text>'
+        '<path d="M368 160h30" stroke="rgba(77,101,175,0.6)" stroke-width="2" marker-end="url(#geoarrow)"/>'
+        '<rect x="408" y="128" width="120" height="34" rx="6" fill="rgba(77,101,175,0.14)" stroke="#4d65af" stroke-width="1.4"/>'
+        '<text x="468" y="150" text-anchor="middle" fill="#7a90c7" font-family="Satoshi,Arial" font-size="12" font-weight="700">Your business</text>'
+        '<rect x="408" y="172" width="120" height="20" rx="5" fill="rgba(154,163,184,0.1)" stroke="rgba(154,163,184,0.3)"/>'
+        '<text x="468" y="222" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">cited source</text>',
+        "A question travels through an AI engine and comes back citing your business"),
+    # structured content blocks with a schema bracket + checkmarks
+    "ai-optimisation": _frame(
+        '<text x="46" y="98" fill="#7a90c7" font-family="monospace" font-size="26" font-weight="700">{ }</text>'
+        '<rect x="100" y="78" width="220" height="8" rx="4" fill="rgba(122,144,199,0.5)"/>'
+        '<rect x="100" y="94" width="150" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
+        + "".join(
+            '<rect x="38" y="%d" width="300" height="46" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(122,144,199,0.35)" stroke-width="1.3"/>'
+            '<path d="M56 %d l6 6 10-11" stroke="#7a90c7" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+            '<rect x="86" y="%d" width="200" height="7" rx="3.5" fill="rgba(122,144,199,0.4)"/>'
+            % (y, y + 23, y + 20)
+            for y in (140, 196, 252))
+        + '<path d="M478 90l3.4 8.6 8.6 3.4-8.6 3.4L478 114l-3.4-8.6L466 102l8.6-3.4z" fill="#7a90c7"/>'
+          '<rect x="378" y="140" width="150" height="150" rx="12" fill="rgba(77,101,175,0.14)" stroke="#4d65af" stroke-width="1.4"/>'
+          '<text x="453" y="205" text-anchor="middle" fill="#f4f4f2" font-family="Satoshi,Arial" font-size="13" font-weight="700">Schema</text>'
+          '<text x="453" y="225" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">machine readable</text>',
+        "A page broken into clearly structured, checked blocks with schema markup"),
+    # document with pencil + tag pills (Content / Draft)
+    "content-writing": _frame(
+        '<rect x="38" y="70" width="230" height="220" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(122,144,199,0.4)" stroke-width="1.4"/>'
+        '<rect x="60" y="96" width="140" height="9" rx="4.5" fill="rgba(122,144,199,0.55)"/>'
+        '<rect x="60" y="118" width="186" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
+        '<rect x="60" y="134" width="170" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
+        '<rect x="60" y="150" width="186" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
+        '<rect x="60" y="166" width="120" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
+        '<path d="M60 210l90-4 3 20-92 8z" fill="rgba(77,101,175,0.18)" stroke="#4d65af" stroke-width="1.2"/>'
+        '<path d="M225 245l30-30 14 14-30 30-18 4z" fill="none" stroke="#7a90c7" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>'
+        '<rect x="300" y="96" width="108" height="34" rx="17" fill="rgba(230,178,60,0.16)" stroke="#e0b23c" stroke-width="1.3"/>'
+        '<text x="336" y="118" text-anchor="middle" fill="#e0b23c" font-family="Satoshi,Arial" font-size="13" font-weight="700">Content</text>'
+        '<path d="M382 105l10 10M392 105l-10 10" stroke="#e0b23c" stroke-width="1.6" stroke-linecap="round"/>'
+        '<rect x="300" y="140" width="88" height="34" rx="17" fill="rgba(122,144,199,0.14)" stroke="rgba(122,144,199,0.55)" stroke-width="1.3"/>'
+        '<text x="330" y="162" text-anchor="middle" fill="#cfd6e6" font-family="Satoshi,Arial" font-size="13">Draft</text>'
+        '<path d="M368 149l10 10M378 149l-10 10" stroke="#cfd6e6" stroke-width="1.6" stroke-linecap="round"/>'
+        '<rect x="300" y="184" width="130" height="34" rx="17" fill="rgba(77,101,175,0.18)" stroke="#4d65af" stroke-width="1.3"/>'
+        '<text x="345" y="206" text-anchor="middle" fill="#7a90c7" font-family="Satoshi,Arial" font-size="13" font-weight="700">Published</text>'
+        '<path d="M418 193l10 10M428 193l-10 10" stroke="#7a90c7" stroke-width="1.6" stroke-linecap="round"/>',
+        "A page of copy being drafted, with tags moving from draft to published"),
+    # browser mockup with an Ad label, headline, and a cursor click
+    "google-ads": _frame(
+        '<rect x="38" y="72" width="330" height="200" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(122,144,199,0.4)" stroke-width="1.4"/>'
+        '<rect x="58" y="94" width="44" height="20" rx="4" fill="rgba(122,144,199,0.5)"/>'
+        '<text x="80" y="109" text-anchor="middle" fill="#1a1f2e" font-family="Satoshi,Arial" font-size="11" font-weight="700">Ad</text>'
+        '<rect x="112" y="97" width="200" height="8" rx="4" fill="rgba(122,144,199,0.55)"/>'
+        '<rect x="58" y="126" width="270" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
+        '<rect x="58" y="140" width="230" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
+        '<rect x="58" y="176" width="290" height="6" rx="3" fill="rgba(122,144,199,0.18)"/>'
+        '<rect x="58" y="190" width="230" height="6" rx="3" fill="rgba(122,144,199,0.18)"/>'
+        '<path d="M300 230l34 26-15 4 8 18-10 4-8-18-13 10z" fill="#f4f4f2" stroke="#222" stroke-width="1"/>'
+        '<rect x="404" y="150" width="122" height="70" rx="10" fill="rgba(77,101,175,0.16)" stroke="#4d65af" stroke-width="1.4"/>'
+        '<text x="465" y="180" text-anchor="middle" fill="#f4f4f2" font-family="Satoshi,Arial" font-size="13" font-weight="700">Clicks</text>'
+        '<text x="465" y="200" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">that convert</text>',
+        "A browser window with an ad result and a cursor clicking through"),
+}
 
 CAPABILITY_TAGS = ["Insurance", "Automotive &amp; Travel", "Retail", "FMCG",
                    "Education", "Government &amp; Finance"]
@@ -640,23 +740,35 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
         '<li><a href="/resources/%s/">%s</a></li>' % (g["slug"], html.escape(g["title"]))
         for g in RESOURCES)
     body = f"""
-<section class="section"><div class="container">
+<section class="section service-hero"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {short}</nav>
-  <div class="svc-icon">{ICONS[slug]}</div>
-  <span class="eyebrow" style="margin-top:0">{html.escape(full_name)}</span>
-  <h1>{html.escape(short)}</h1>
-  <p class="lead">{html.escape(tagline)}</p>
+  <div class="service-hero-grid">
+    <div>
+      <div class="svc-icon">{ICONS[slug]}</div>
+      <span class="eyebrow" style="margin-top:0">{html.escape(full_name)}</span>
+      <h1>{html.escape(short)}</h1>
+      <p class="lead">{html.escape(tagline)}</p>
+      <div class="btn-row" style="justify-content:flex-start;margin-top:.5rem">
+        <a class="btn btn-primary" href="/contact/">Enquire about {html.escape(short)}</a>
+      </div>
+    </div>
+    <div class="hero-media" aria-hidden="true">{SERVICE_ILLO[slug]}</div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
   <div class="divider left" aria-hidden="true"></div>
   <div class="prose">
     <p>{html.escape(intro)}</p>
     {sections_html}
   </div>
   {process_html}
-  <h2 style="margin-top:2.5rem">What is included</h2>
+</div></section>
+
+<section class="section-sm panel-alt"><div class="container">
+  <span class="eyebrow">What's included</span>
+  <h2>Everything in this service</h2>
   <ul class="feature-list">{fl}</ul>
-  <div class="btn-row" style="justify-content:flex-start;margin-top:1.5rem">
-    <a class="btn btn-primary" href="/contact/">Enquire about {html.escape(short)}</a>
-  </div>
 </div></section>
 {faq_html}
 <section class="section-sm"><div class="container">
@@ -664,10 +776,17 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   <h2>Go deeper</h2>
   <ul class="link-list">{related_guides}</ul>
 </div></section>
-<section class="section-sm"><div class="container">
+<section class="section-sm panel-alt"><div class="container">
   <span class="eyebrow">More services</span>
   <h2>Explore the rest</h2>
   <div class="grid" style="margin-top:1.5rem">{others}</div>
+</div></section>
+<section class="section cta-final"><div class="container">
+  <div class="cta-band">
+    <h2>Ready to talk about {html.escape(short)}?</h2>
+    <p>Tell us about your business and we will map out where this fits.</p>
+    <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
+  </div>
 </div></section>
 """
     schema = [
