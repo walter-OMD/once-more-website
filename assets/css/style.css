@@ -311,8 +311,12 @@ p{color:var(--muted);font-weight:400}
 /* ---------- service page hero split ---------- */
 .service-hero{padding-bottom:3rem}
 .service-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;margin-top:1.75rem}
-.service-illustration{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;
-  filter:drop-shadow(0 14px 32px rgba(0,0,0,0.4))}
+.service-illustration{
+  display:block;width:100%;max-width:440px;height:auto;margin:0 auto;
+  border-radius:14px;border:1px solid rgba(122,144,199,0.35);
+  object-fit:cover;background:rgba(255,255,255,0.02);
+  filter:drop-shadow(0 14px 32px rgba(0,0,0,0.4));
+}
 @media(max-width:860px){
   .service-hero-grid{grid-template-columns:1fr;gap:2rem;text-align:center}
   .service-hero-grid .svc-icon{margin-left:auto;margin-right:auto}

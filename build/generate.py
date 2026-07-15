@@ -406,165 +406,16 @@ GUIDE_ILLO = {
 }
 
 # ---------------------------------------------------------------- service page illustrations
-# No <text> elements anywhere in here. SVG <text> measures with whatever font
-# actually loads in the browser, and if Satoshi hasn't loaded yet a fallback
-# font is wider than the pill/card it was sized for, so labels overflowed
-# their outlines. Everything that reads as "text" below is drawn as a glyph
-# icon plus a redacted bar, so there's nothing that can ever overflow.
-# Each service also gets its own composition (a tilted base card plus a
-# scattered cluster of tag pills, echoing the reference photo of tag chips
-# floating around a device) instead of all five sharing one frame.
-
-def _glyph(kind, x, y, color):
-    """A small ~14px icon centered at (x, y). No text glyphs, just paths."""
-    if kind == "search":
-        return (f'<circle cx="{x-3}" cy="{y-3}" r="5.4" fill="none" stroke="{color}" stroke-width="1.8"/>'
-                 f'<line x1="{x+1}" y1="{y+1}" x2="{x+6.2}" y2="{y+6.2}" stroke="{color}" stroke-width="1.8" stroke-linecap="round"/>')
-    if kind == "chat":
-        return (f'<path d="M{x-8} {y-6}h14a3.5 3.5 0 0 1 3.5 3.5v4.5a3.5 3.5 0 0 1-3.5 3.5h-8.5l-5 4v-4a3.5 3.5 0 0 1-3.5-3.5v-4.5a3.5 3.5 0 0 1 3.5-3.5z" '
-                 f'fill="none" stroke="{color}" stroke-width="1.5"/>')
-    if kind == "spark":
-        return f'<path d="M{x} {y-7.5}l1.9 5.6 5.6 1.9-5.6 1.9L{x} {y+7.5}l-1.9-5.6-5.6-1.9 5.6-1.9z" fill="{color}"/>'
-    if kind == "doc":
-        return (f'<line x1="{x-6}" y1="{y-4.5}" x2="{x+6}" y2="{y-4.5}" stroke="{color}" stroke-width="1.6" stroke-linecap="round"/>'
-                 f'<line x1="{x-6}" y1="{y}" x2="{x+3}" y2="{y}" stroke="{color}" stroke-width="1.6" stroke-linecap="round"/>'
-                 f'<line x1="{x-6}" y1="{y+4.5}" x2="{x+1}" y2="{y+4.5}" stroke="{color}" stroke-width="1.6" stroke-linecap="round"/>')
-    if kind == "cursor":
-        return f'<path d="M{x-5} {y-7.5}l11.5 9.8-5.2 1-.9 5.6-2-3.6-3 3-2-2 3-3-3.5-2.1z" fill="{color}"/>'
-    if kind == "check":
-        return f'<path d="M{x-6} {y}l4 4.2 8-8.2" fill="none" stroke="{color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
-    if kind == "tag":
-        return (f'<path d="M{x-7} {y-6}h6.5l7.5 6-7.5 6h-6.5z" fill="none" stroke="{color}" stroke-width="1.5" stroke-linejoin="round"/>'
-                 f'<circle cx="{x-3}" cy="{y}" r="1.5" fill="{color}"/>')
-    if kind == "bracket":
-        return (f'<path d="M{x+3} {y-9}c-3.5 0-4.5 1.8-4.5 4.5v2c0 2-1 3-2.8 3.5 1.8.5 2.8 1.5 2.8 3.5v2c0 2.7 1 4.5 4.5 4.5" '
-                 f'fill="none" stroke="{color}" stroke-width="1.6" stroke-linecap="round"/>')
-    if kind == "coin":
-        return (f'<circle cx="{x}" cy="{y}" r="7" fill="none" stroke="{color}" stroke-width="1.6"/>'
-                 f'<line x1="{x}" y1="{y-3.5}" x2="{x}" y2="{y+3.5}" stroke="{color}" stroke-width="1.6" stroke-linecap="round"/>')
-    return ""
-
-def _pill(cx, cy, rot, w, glyph_kind, accent, filled=False):
-    """A rotated tag-pill: icon glyph + a redacted bar + a close mark. No text."""
-    h = 32
-    if filled:
-        fill, ink = accent, "#1a1f2e"
-        stroke_attr = ""
-    else:
-        fill, ink = "rgba(255,255,255,0.04)", accent
-        stroke_attr = f'stroke="{accent}" stroke-width="1.4"'
-    bar_w = max(w - 66, 18)
-    return (f'<g transform="translate({cx} {cy}) rotate({rot})">'
-            f'<rect x="{-w/2:.1f}" y="{-h/2}" width="{w}" height="{h}" rx="{h/2}" fill="{fill}" {stroke_attr}/>'
-            + _glyph(glyph_kind, -w/2 + 17, 0, ink)
-            + f'<rect x="{-w/2+32:.1f}" y="-4" width="{bar_w}" height="8" rx="4" fill="{ink}" opacity="{"0.85" if filled else "0.5"}"/>'
-            + f'<path d="M{w/2-22:.1f} -6L{w/2-14:.1f} 6M{w/2-14:.1f} -6L{w/2-22:.1f} 6" stroke="{ink}" stroke-width="1.6" stroke-linecap="round" opacity="0.75"/>'
-            + '</g>')
-
-def _card(cx, cy, w, h, rot, inner):
-    return (f'<g transform="translate({cx} {cy}) rotate({rot})">'
-            f'<rect x="{-w/2}" y="{-h/2}" width="{w}" height="{h}" rx="16" '
-            'fill="rgba(77,101,175,0.06)" stroke="rgba(122,144,199,0.4)" stroke-width="1.5"/>'
-            + inner + '</g>')
-
-_GOLD = "#e0b23c"
-_BLUE = "#4d65af"
-_BLUE_L = "#7a90c7"
-_MUTE = "rgba(154,163,184,0.7)"
-
-def _illo(inner, label):
-    return ('<svg class="service-illustration" viewBox="0 0 560 380" fill="none" '
-            'xmlns="http://www.w3.org/2000/svg" role="img" aria-label="%s">%s</svg>'
-            % (label, inner))
-
-SERVICE_ILLO = {
-    # tilted search + rankings card, with a scattered cluster of keyword pills
-    "seo": _illo(
-        _card(200, 190, 300, 220, -4, (
-            '<rect x="-120" y="-78" width="220" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(122,144,199,0.55)" stroke-width="1.4"/>'
-            + _glyph("search", -98, -61, _BLUE_L)
-            + '<rect x="-74" y="-65" width="120" height="7" rx="3.5" fill="rgba(122,144,199,0.45)"/>'
-            + '<rect x="-120" y="6" width="34" height="58" rx="4" fill="rgba(122,144,199,0.28)"/>'
-            + '<rect x="-74" y="-18" width="34" height="82" rx="4" fill="rgba(122,144,199,0.42)"/>'
-            + '<rect x="-28" y="-46" width="34" height="110" rx="4" fill="rgba(122,144,199,0.58)"/>'
-            + '<rect x="18" y="-74" width="34" height="138" rx="4" fill="#4d65af"/>'
-            + '<path d="M-120 -12L-74 -40L-28 -68L18 -96" stroke="#7a90c7" stroke-width="2" stroke-dasharray="4 4" fill="none"/>'
-        ))
-        + _pill(392, 96, -8, 150, "search", _GOLD, filled=True)
-        + _pill(454, 158, 6, 128, "tag", _BLUE_L)
-        + _pill(388, 224, -5, 118, "check", _BLUE, filled=True)
-        + _pill(462, 280, 8, 110, "spark", _MUTE),
-        "A tilted search and rankings card surrounded by keyword tag pills"),
-
-    # chat bubble asking a question, arrow into an AI card, tag cluster of citations
-    "geo": _illo(
-        _card(168, 168, 260, 150, -3, (
-            _glyph("chat", -78, -20, _BLUE_L)
-            + '<rect x="-56" y="-26" width="120" height="7" rx="3.5" fill="rgba(122,144,199,0.5)"/>'
-            + '<rect x="-56" y="-8" width="86" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-            + '<path d="M-90 46h150" stroke="rgba(77,101,175,0.55)" stroke-width="2" stroke-dasharray="3 5"/>'
-            + '<circle cx="70" cy="46" r="4" fill="#7a90c7"/>'
-        ))
-        + _pill(410, 90, -7, 140, "chat", _BLUE, filled=True)
-        + _pill(456, 152, 9, 118, "check", _GOLD, filled=True)
-        + _pill(392, 214, -6, 128, "spark", _BLUE_L)
-        + _pill(468, 270, 5, 110, "tag", _MUTE),
-        "A question in a chat bubble leading to an AI card, surrounded by citation tags"),
-
-    # schema bracket + checklist rows, tag cluster for structured markup
-    "ai-optimisation": _illo(
-        _card(190, 190, 300, 230, 3, (
-            _glyph("bracket", -128, -84, _BLUE_L)
-            + '<rect x="-100" y="-90" width="150" height="8" rx="4" fill="rgba(122,144,199,0.5)"/>'
-            + '<rect x="-100" y="-74" width="100" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-            + "".join(
-                '<rect x="-128" y="%d" width="256" height="42" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(122,144,199,0.32)" stroke-width="1.3"/>'
-                % y
-                + _glyph("check", -108, y + 21, _BLUE_L)
-                + '<rect x="-84" y="%d" width="170" height="7" rx="3.5" fill="rgba(122,144,199,0.4)"/>'
-                % (y + 17.5)
-                for y in (-40, 8, 56))
-        ))
-        + _pill(420, 84, -6, 130, "spark", _GOLD, filled=True)
-        + _pill(468, 146, 8, 116, "bracket", _BLUE_L)
-        + _pill(398, 208, -8, 132, "check", _BLUE, filled=True)
-        + _pill(462, 264, 6, 108, "tag", _MUTE),
-        "A structured page with schema brackets and checked rows, tagged for machines"),
-
-    # document + pencil edit, scattered draft / published style tags
-    "content-writing": _illo(
-        _card(178, 190, 260, 230, -3, (
-            '<rect x="-100" y="-92" width="150" height="9" rx="4.5" fill="rgba(122,144,199,0.55)"/>'
-            + '<rect x="-100" y="-70" width="196" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-            + '<rect x="-100" y="-54" width="180" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-            + '<rect x="-100" y="-38" width="196" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-            + '<rect x="-100" y="-22" width="130" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-            + '<path d="M-100 24l96-4 3 20-98 8z" fill="rgba(77,101,175,0.18)" stroke="#4d65af" stroke-width="1.2"/>'
-            + '<path d="M68 60l30-30 14 14-30 30-18 4z" fill="none" stroke="#7a90c7" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>'
-        ))
-        + _pill(408, 92, -9, 128, "doc", _GOLD, filled=True)
-        + _pill(460, 152, 7, 104, "tag", _BLUE_L)
-        + _pill(392, 212, -6, 140, "check", _BLUE, filled=True)
-        + _pill(466, 268, 8, 116, "spark", _MUTE),
-        "A document being edited, with tags moving from draft to published"),
-
-    # browser result row + cursor click, tag cluster for spend and conversions
-    "google-ads": _illo(
-        _card(198, 176, 300, 190, 3, (
-            '<rect x="-118" y="-58" width="40" height="20" rx="10" fill="rgba(122,144,199,0.5)"/>'
-            + _glyph("coin", -98, -48, "#1a1f2e")
-            + '<rect x="-64" y="-54" width="176" height="8" rx="4" fill="rgba(122,144,199,0.55)"/>'
-            + '<rect x="-118" y="-26" width="230" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-            + '<rect x="-118" y="-12" width="190" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-            + '<rect x="-118" y="20" width="230" height="6" rx="3" fill="rgba(122,144,199,0.18)"/>'
-            + '<rect x="-118" y="34" width="190" height="6" rx="3" fill="rgba(122,144,199,0.18)"/>'
-            + _glyph("cursor", 108, 70, "#f4f4f2")
-        ))
-        + _pill(420, 78, -7, 120, "cursor", _BLUE, filled=True)
-        + _pill(466, 138, 8, 104, "coin", _GOLD, filled=True)
-        + _pill(396, 198, -6, 128, "check", _BLUE_L)
-        + _pill(464, 254, 6, 112, "tag", _MUTE),
-        "A browser ad result with a cursor clicking through, tagged for spend and clicks"),
+# Real photo/icon assets provided by Walter, recoloured into a duotone that
+# matches the site's dark/blue palette (see build/illustrations_source.md for
+# the originals and how each was processed). Not generated by this script;
+# the files live in assets/img/illustrations/.
+SERVICE_ILLO_IMG = {
+    "seo": ("seo.png", 1000, 643, "A search bar and keyword tags from a website search, in the site's blue tones"),
+    "geo": ("geo.png", 512, 512, "A browser window interface, recoloured in the site's blue tones"),
+    "ai-optimisation": ("ai-optimisation.png", 512, 512, "A structured dashboard layout, recoloured in the site's blue tones"),
+    "content-writing": ("content-writing.png", 1000, 742, "Keyword tags from a website search, recoloured in warm gold tones"),
+    "google-ads": ("google-ads.png", 512, 512, "A browser window with a cursor click, recoloured in warm gold tones"),
 }
 
 CAPABILITY_TAGS = ["Insurance", "Automotive &amp; Travel", "Retail", "FMCG",
@@ -799,6 +650,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
     related_guides = "".join(
         '<li><a href="/resources/%s/">%s</a></li>' % (g["slug"], html.escape(g["title"]))
         for g in RESOURCES)
+    illo_file, illo_w, illo_h, illo_alt = SERVICE_ILLO_IMG[slug]
     body = f"""
 <section class="section service-hero"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {short}</nav>
@@ -812,7 +664,9 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
         <a class="btn btn-primary" href="/contact/">Enquire about {html.escape(short)}</a>
       </div>
     </div>
-    <div class="hero-media" aria-hidden="true">{SERVICE_ILLO[slug]}</div>
+    <div class="hero-media">
+      <img class="service-illustration" src="/assets/img/illustrations/{illo_file}" alt="{html.escape(illo_alt)}" loading="lazy" width="{illo_w}" height="{illo_h}">
+    </div>
   </div>
 </div></section>
 
