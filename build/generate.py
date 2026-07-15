@@ -406,64 +406,97 @@ GUIDE_ILLO = {
 }
 
 # ---------------------------------------------------------------- service page illustrations
-# Same exact composition as HERO_SVG on the homepage (frame, dots, search bar,
-# two content rows, highlighted answer card) so every page in the site reads
-# as one family. Only the small badge icon inside the answer card changes,
-# to hint at what that particular service does.
-_ILLO_BASE_TOP = (
-    '<rect x="20" y="24" width="520" height="312" rx="14" fill="rgba(77,101,175,0.05)" stroke="rgba(122,144,199,0.45)" stroke-width="1.5"/>'
-    '<line x1="20" y1="62" x2="540" y2="62" stroke="rgba(122,144,199,0.3)" stroke-width="1.5"/>'
-    '<circle cx="44" cy="43" r="4" fill="#4d65af"/><circle cx="60" cy="43" r="4" fill="rgba(122,144,199,0.5)"/><circle cx="76" cy="43" r="4" fill="rgba(122,144,199,0.3)"/>'
-    '<rect x="60" y="86" width="440" height="44" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(122,144,199,0.6)" stroke-width="1.5"/>'
-    '<circle cx="92" cy="108" r="9" stroke="#7a90c7" stroke-width="2"/><line x1="99" y1="115" x2="108" y2="124" stroke="#7a90c7" stroke-width="2" stroke-linecap="round"/>'
-    '<rect x="122" y="104" width="150" height="7" rx="3.5" fill="rgba(122,144,199,0.5)"/>'
-    '<line x1="470" y1="98" x2="470" y2="118" stroke="#7a90c7" stroke-width="2" stroke-linecap="round"/>'
-    '<rect x="60" y="160" width="190" height="10" rx="5" fill="#4d65af"/>'
-    '<rect x="60" y="180" width="360" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-    '<rect x="60" y="194" width="300" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-    '<rect x="60" y="228" width="160" height="10" rx="5" fill="#4d65af"/>'
-    '<rect x="60" y="248" width="330" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-    '<rect x="60" y="262" width="270" height="6" rx="3" fill="rgba(122,144,199,0.28)"/>'
-    '<rect x="300" y="232" width="218" height="92" rx="14" fill="rgba(77,101,175,0.18)" stroke="rgba(122,144,199,0.7)" stroke-width="1.5"/>'
-)
-_ILLO_BASE_BOTTOM = (
-    '<rect x="346" y="258" width="150" height="8" rx="4" fill="rgba(244,244,242,0.85)"/>'
-    '<rect x="346" y="274" width="120" height="6" rx="3" fill="rgba(122,144,199,0.5)"/>'
-    '<rect x="318" y="298" width="180" height="6" rx="3" fill="rgba(122,144,199,0.32)"/>'
-    '<rect x="318" y="312" width="150" height="6" rx="3" fill="rgba(122,144,199,0.32)"/>'
-)
-
-# badge icons, all centered around (326, 268), same visual weight as the
-# homepage's sparkle so the swap doesn't unbalance the composition
-_BADGE_ICONS = {
-    # SEO: a rising trend line with an arrowhead
-    "seo": ('<path d="M312 282 L322 268 L330 275 L342 254" stroke="#7a90c7" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
-            '<path d="M334 254 H342 V262" stroke="#7a90c7" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'),
-    # GEO: the original sparkle (this one is inherently an AI-answer icon)
-    "geo": '<path d="M326 256l3.4 8.6 8.6 3.4-8.6 3.4L326 280l-3.4-8.6L314 268l8.6-3.4z" fill="#7a90c7"/>',
-    # AI Optimisation: a checkmark, for structured / verified content
-    "ai-optimisation": '<path d="M312 268l9 9 21-21" stroke="#7a90c7" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
-    # Content Writing: a pencil
-    "content-writing": '<path d="M311 283 L330 264 L338 272 L319 291 L309 293z" fill="#7a90c7"/>',
-    # Google Ads: a cursor click
-    "google-ads": '<path d="M312 254 L339 277 L327 280 L332 293 L325 296 L319 283 L309 289z" fill="#7a90c7"/>',
+# The approved concept icons (browser mockup + bespoke content per service),
+# kept pixel-for-pixel as designed. class="hero-illustration" + the
+# service-hero-grid/.hero-media CSS gives them the same placement and size
+# as the homepage hero illustration (big, beside the copy, no dead space).
+SERVICE_ILLO = {
+    "seo": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with a magnifying glass and ascending bars">
+<defs><clipPath id="c1"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+<g clip-path="url(#c1)">
+<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
+<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
+<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
+<circle cx="88" cy="152" r="34" stroke="#7a90c7" stroke-width="11" fill="none"/>
+<line x1="113" y1="177" x2="148" y2="212" stroke="#7a90c7" stroke-width="11" stroke-linecap="round"/>
+<rect x="176" y="230" width="24" height="40" rx="4" fill="#3a4e8f"/>
+<rect x="206" y="200" width="24" height="70" rx="4" fill="#4d65af"/>
+<rect x="236" y="165" width="24" height="105" rx="4" fill="#7a90c7"/>
+<rect x="266" y="130" width="24" height="140" rx="4" fill="#e0b23c"/>
+</g>
+<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+</svg>''',
+    "geo": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with a chat bubble, a spark badge, and a citation checkmark">
+<defs><clipPath id="c2"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+<g clip-path="url(#c2)">
+<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
+<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
+<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
+<rect x="26" y="96" width="140" height="88" rx="20" fill="#3a4e8f"/>
+<path d="M42 184 L42 206 L66 184 Z" fill="#3a4e8f"/>
+<path d="M196 82 L204 102 L224 110 L204 118 L196 138 L188 118 L168 110 L188 102 Z" fill="#e0b23c"/>
+<rect x="168" y="158" width="106" height="76" rx="14" fill="#1c2033" stroke="#4d65af" stroke-width="3"/>
+<path d="M190 196 L202 208 L228 178" stroke="#f4f4f2" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+</svg>''',
+    "ai-optimisation": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with a bracket and three checked rows">
+<defs><clipPath id="c3"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+<g clip-path="url(#c3)">
+<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
+<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
+<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
+<path d="M72 92 C52 92 47 102 47 117 V140 C47 150 42 155 32 158 C42 161 47 166 47 176 V199 C47 214 52 224 72 224" stroke="#7a90c7" stroke-width="9" fill="none" stroke-linecap="round"/>
+<rect x="104" y="98" width="172" height="36" rx="9" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
+<circle cx="122" cy="116" r="12" fill="#e0b23c"/><path d="M116 116l4 5 9-10" stroke="#1c2033" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="104" y="148" width="172" height="36" rx="9" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
+<circle cx="122" cy="166" r="12" fill="#4d65af"/><path d="M116 166l4 5 9-10" stroke="#f4f4f2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="104" y="198" width="172" height="36" rx="9" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
+<circle cx="122" cy="216" r="12" fill="#4d65af"/><path d="M116 216l4 5 9-10" stroke="#f4f4f2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+</svg>''',
+    "content-writing": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with a document, text lines, and a large pencil">
+<defs><clipPath id="c4"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+<g clip-path="url(#c4)">
+<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
+<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
+<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
+<rect x="46" y="92" width="132" height="172" rx="12" fill="#1c2033" stroke="#7a90c7" stroke-width="3"/>
+<path d="M154 92 L178 92 L178 116 Z" fill="#7a90c7"/>
+<rect x="62" y="120" width="100" height="11" rx="5" fill="#4d65af"/>
+<rect x="62" y="146" width="88" height="11" rx="5" fill="#3a4e8f"/>
+<rect x="62" y="172" width="100" height="11" rx="5" fill="#4d65af"/>
+<rect x="62" y="198" width="70" height="11" rx="5" fill="#3a4e8f"/>
+<g transform="translate(214,222) rotate(-45)">
+<rect x="-42" y="-11" width="70" height="22" rx="5" fill="#e0b23c"/>
+<path d="M28 -11 L46 0 L28 11 Z" fill="#e0b23c"/>
+</g>
+</g>
+<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+</svg>''',
+    "google-ads": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with an ad flag, result rows, and a large cursor click">
+<defs><clipPath id="c5"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+<g clip-path="url(#c5)">
+<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
+<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
+<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
+<path d="M40 92 H80 V126 L60 116 L40 126 Z" fill="#e0b23c"/>
+<rect x="40" y="150" width="180" height="12" rx="6" fill="#4d65af"/>
+<rect x="40" y="176" width="140" height="12" rx="6" fill="#3a4e8f"/>
+<rect x="40" y="202" width="160" height="12" rx="6" fill="#3a4e8f"/>
+<path d="M190 190 L246 236 L222 240 L232 266 L216 273 L206 247 L188 262 Z" fill="#f4f4f2" stroke="#1c2033" stroke-width="2"/>
+<line x1="252" y1="196" x2="266" y2="182" stroke="#e0b23c" stroke-width="5" stroke-linecap="round"/>
+<line x1="260" y1="212" x2="278" y2="208" stroke="#e0b23c" stroke-width="5" stroke-linecap="round"/>
+</g>
+<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+</svg>''',
 }
-
-SERVICE_ILLO_LABELS = {
-    "seo": "A search bar and content list next to a highlighted result trending upward",
-    "geo": "A search bar and content list next to a highlighted AI-generated answer",
-    "ai-optimisation": "A search bar and content list next to a highlighted, checked structured answer",
-    "content-writing": "A search bar and content list next to a highlighted answer being edited",
-    "google-ads": "A search bar and content list next to a highlighted result being clicked",
-}
-
-def _service_illo(slug):
-    inner = _ILLO_BASE_TOP + _BADGE_ICONS[slug] + _ILLO_BASE_BOTTOM
-    return ('<svg class="hero-illustration" viewBox="0 0 560 380" fill="none" '
-            'xmlns="http://www.w3.org/2000/svg" role="img" aria-label="%s">%s</svg>'
-            % (SERVICE_ILLO_LABELS[slug], inner))
-
-SERVICE_ILLO = {slug: _service_illo(slug) for slug in SERVICE_ILLO_LABELS}
 
 CAPABILITY_TAGS = ["Insurance", "Automotive &amp; Travel", "Retail", "FMCG",
                    "Education", "Government &amp; Finance"]
