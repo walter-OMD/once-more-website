@@ -20,6 +20,22 @@ SERVICE_CONTENT = {
             ("Will I have to keep paying forever?",
              "No. SEO builds an asset you own. Many clients reduce scope once rankings are established and shift to maintenance, though competitive markets reward staying active."),
         ],
+        "process": {
+            "heading": "How we build your strategy",
+            "intro": "No two businesses are fighting the same battle, so we do not hand out the same strategy twice. Here is the actual process we run with every client.",
+            "steps": [
+                ("Understand your business first",
+                 "Before we touch keywords, we sit down to understand what you actually need and the marketing problems you are facing right now. A clinic chasing patient bookings and an e-commerce brand chasing checkout conversions need completely different plans, so we build from your situation, not a template."),
+                ("Map keywords to your products",
+                 "We look at your core products and services and identify the keywords that genuinely connect to them. We do not chase high search volume terms alone. We also target the low hanging fruit, the realistic keywords that get you ranked and established on Google first, before competing for the harder ones."),
+                ("Audit before we act",
+                 "We run a full audit to find exactly where you are losing ground, whether that is technical issues, weak content, thin authority or gaps in your site structure. This tells us precisely what to prioritise instead of guessing."),
+                ("Execute the campaign",
+                 "Once the strategy and priorities are locked in, we move into the actual work. This covers everything from on-page fixes to content to the technical groundwork the audit flagged."),
+                ("Monthly call, every month",
+                 "Every month we get on a call to walk through what is working, what is not, and what needs to change. We are upfront about what we are lacking and where we can improve, not just a highlight reel. SEO is a back and forth process, and the people who see the best results are the ones who stay engaged with us along the way."),
+            ],
+        },
     },
     "geo": {
         "sections": [

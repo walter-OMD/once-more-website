@@ -289,10 +289,11 @@ ICONS = {
     "google-ads": _S + '<path d="M12 9l13 5.5-5.6 1.9-1.9 5.6z"/><path d="M8 8 6 6M7 13H4M13 7V4"/></svg>',
 }
 
-def card_html(slug, name, tagline):
-    return ('<a class="card" href="/services/%s/"><span class="icon">%s</span>'
+def card_html(slug, name, tagline, featured=False):
+    cls = "card featured" if featured else "card"
+    return ('<a class="%s" href="/services/%s/"><span class="icon">%s</span>'
             '<h3>%s</h3><p>%s</p><span class="more">Learn more &rarr;</span></a>'
-            % (slug, ICONS[slug], name, tagline))
+            % (cls, slug, ICONS[slug], name, tagline))
 
 # Stylized search + AI answer illustration (original artwork, no third-party logos)
 HERO_SVG = '''<svg class="hero-illustration" viewBox="0 0 560 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A search results page next to an AI answer panel">
@@ -405,6 +406,33 @@ GUIDE_ILLO = {
 }
 
 # ---------------------------------------------------------------- home page
+
+CAPABILITY_TAGS = ["Insurance", "Automotive &amp; Travel", "Retail", "FMCG",
+                   "Education", "Government &amp; Finance"]
+
+PROCESS_STEPS = [
+    ("Understand your business and your customers first",
+     "A clinic and an e-commerce brand are not fighting the same battle. We start with your situation."),
+    ("Map the searches and questions that matter",
+     "We find the keywords and questions genuinely connected to what you sell, not just what has volume."),
+    ("Fix the foundations before chasing growth",
+     "Technical issues, weak content and gaps in structure get sorted before we push for rankings."),
+    ("Measure honestly and adjust as we learn",
+     "Monthly reporting in plain terms, including what is not working yet and what we are changing."),
+]
+
+bento_cards = "".join(
+    card_html(s[0], s[1], s[3], featured=(s[0] == "seo")) for s in SERVICES
+)
+
+process_cards = "".join(
+    '<div class="process-step"><span class="dot">%02d</span><h3>%s</h3><p>%s</p></div>'
+    % (i + 1, html.escape(t), html.escape(b))
+    for i, (t, b) in enumerate(PROCESS_STEPS)
+)
+
+capability_pills = "".join('<span>%s</span>' % t for t in CAPABILITY_TAGS)
+
 home_body = """
 <section class="hero"><div class="container">
   <div class="hero-grid">
@@ -430,18 +458,44 @@ home_body = """
   </div>
 </div></section>
 
+<section class="section panel-alt capability-band"><div class="container">
+  <div class="capability-head">
+    <span class="eyebrow">Industries we've worked in</span>
+  </div>
+  <div class="capability-row" role="list" aria-label="Industries we have worked in">CAPABILITY_PILLS</div>
+</div></section>
+
 CLIENTS_MARQUEE
 
 <section class="section"><div class="container">
   <span class="eyebrow">What we do</span>
   <h2>Five ways we help you grow</h2>
-  <p>Each service stands on its own or works together as one organic growth plan.</p>
-  <div class="grid" style="margin-top:2rem">
-    %s
+  <p>Each service stands on its own or works together as one organic growth plan. SEO is where most engagements start.</p>
+  <div class="bento" style="margin-top:2rem">
+    BENTO_CARDS
   </div>
 </div></section>
 
-<section class="section-sm"><div class="container split">
+<section class="section panel-alt"><div class="container">
+  <span class="eyebrow">How we work</span>
+  <h2>The same process, every time.</h2>
+  <p>No two businesses get the same strategy, but every engagement runs through the same four steps.</p>
+  <div class="process-strip">PROCESS_CARDS</div>
+</div></section>
+
+<section class="section statement-panel"><div class="container">
+  <div class="statement-grid">
+    <div class="statement">
+      <p>Rankings are not luck. They are what happens when the <em>technical work</em>, the <em>content</em> and the <em>authority</em> all point the same direction.</p>
+    </div>
+    <div class="statement-note">
+      <span class="eyebrow">Our approach</span>
+      <p>We treat SEO, GEO and AI optimisation as one system, not three separate line items on an invoice.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section-sm panel-alt"><div class="container split">
   <div>
     <span class="eyebrow">Why OnceMore</span>
     <h2>Built for how search <em>works now.</em></h2>
@@ -454,16 +508,13 @@ CLIENTS_MARQUEE
     <li>Focused on Malaysian businesses and audiences</li>
   </ul>
 </div></section>
-
-<section class="section"><div class="container">
-  <div class="cta-band">
-    <h2>Ready to get found?</h2>
-    <p>Tell us what you are working on and we will be in touch.</p>
-    <div class="btn-row"><a class="btn btn-primary" href="/contact/">Start the conversation</a></div>
-  </div>
-</div></section>
-""".replace("HERO_SVG_PLACEHOLDER", HERO_SVG).replace("CLIENTS_MARQUEE", CLIENTS_HTML) % "".join(
-    card_html(s[0], s[1], s[3]) for s in SERVICES
+"""
+home_body = (home_body
+    .replace("HERO_SVG_PLACEHOLDER", HERO_SVG)
+    .replace("CLIENTS_MARQUEE", CLIENTS_HTML)
+    .replace("CAPABILITY_PILLS", capability_pills)
+    .replace("BENTO_CARDS", bento_cards)
+    .replace("PROCESS_CARDS", process_cards)
 )
 
 home_faq_items = [
@@ -476,6 +527,16 @@ home_faq_items = [
 ]
 home_faq_html, home_faq_schema = faq_block(home_faq_items)
 home_body += home_faq_html
+
+home_body += """
+<section class="section cta-final"><div class="container">
+  <div class="cta-band">
+    <h2>Ready to get found?</h2>
+    <p>Tell us what you are working on and we will be in touch.</p>
+    <div class="btn-row"><a class="btn btn-primary" href="/contact/">Start the conversation</a></div>
+  </div>
+</div></section>
+"""
 
 home_schema = [
     jsonld({
@@ -559,6 +620,20 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
     sections_html = "".join(
         '<h2 style="margin-top:2.25rem">%s</h2>%s' % (html.escape(h), b)
         for h, b in extra.get("sections", []))
+    process = extra.get("process")
+    if process:
+        proc_cards = "".join(
+            '<div class="card"><span class="num">%02d</span><h3>%s</h3><p>%s</p></div>'
+            % (i + 1, html.escape(step_title), step_body)
+            for i, (step_title, step_body) in enumerate(process["steps"]))
+        process_html = (
+            '<h2 style="margin-top:2.5rem">%s</h2>'
+            '<p class="lead" style="font-size:1.05rem;max-width:62ch;margin-bottom:1.75rem">%s</p>'
+            '<div class="grid">%s</div>'
+            % (html.escape(process["heading"]), html.escape(process["intro"]), proc_cards)
+        )
+    else:
+        process_html = ""
     all_faqs = list(faqs) + extra.get("faqs", [])
     faq_html, faq_schema = faq_block(all_faqs)
     related_guides = "".join(
@@ -576,6 +651,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
     <p>{html.escape(intro)}</p>
     {sections_html}
   </div>
+  {process_html}
   <h2 style="margin-top:2.5rem">What is included</h2>
   <ul class="feature-list">{fl}</ul>
   <div class="btn-row" style="justify-content:flex-start;margin-top:1.5rem">

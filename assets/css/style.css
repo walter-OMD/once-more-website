@@ -308,6 +308,76 @@ p{color:var(--muted);font-weight:400}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a90c7' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
   background-size:contain;background-repeat:no-repeat}
 
+/* ---------- panel alternation (homepage rhythm) ---------- */
+.panel-alt{background:var(--dark-2);position:relative}
+.panel-alt::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--border) 15%,var(--border) 85%,transparent)}
+.panel-alt::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--border) 15%,var(--border) 85%,transparent)}
+
+/* ---------- capability band ---------- */
+.capability-band{padding:2.5rem 0}
+.capability-head{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap;justify-content:center;text-align:center}
+.capability-head .eyebrow{margin-bottom:0}
+.capability-row{display:flex;flex-wrap:wrap;gap:.6rem .75rem;justify-content:center;margin-top:1.35rem}
+.capability-row span{
+  font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa3b8;
+  padding:.55rem 1.05rem;border:1px solid var(--border);border-radius:999px;
+  background:rgba(255,255,255,.02);
+}
+
+/* ---------- bento services grid ---------- */
+.bento{display:grid;gap:1rem;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr}
+.bento .card{display:flex;flex-direction:column}
+.bento .card.featured{grid-column:span 2;grid-row:span 2;padding:2.25rem;justify-content:center}
+.bento .card.featured h3{font-size:1.45rem}
+.bento .card.featured p{font-size:1rem;max-width:34ch}
+.bento .card.featured .icon{width:44px;height:44px;margin-bottom:1.4rem}
+@media(max-width:860px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .bento .card.featured{grid-column:span 2;grid-row:span 1}
+}
+@media(max-width:560px){
+  .bento{grid-template-columns:1fr}
+  .bento .card.featured{grid-column:span 1}
+}
+
+/* ---------- process strip (sequential, so numbered) ---------- */
+.process-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;margin-top:2.75rem}
+.process-strip::before{content:'';position:absolute;top:22px;left:calc(12.5% + 22px);right:calc(12.5% + 22px);height:1px;background:var(--border)}
+.process-step{position:relative;text-align:left}
+.process-step .dot{
+  width:44px;height:44px;border-radius:50%;border:1.5px solid var(--blue);background:var(--dark-2);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;
+  color:var(--blue-light);margin-bottom:1.1rem;position:relative;z-index:1;
+}
+.process-step h3{font-size:1.02rem}
+.process-step p{font-size:.92rem;max-width:32ch}
+@media(max-width:760px){
+  .process-strip{grid-template-columns:1fr;gap:1.75rem}
+  .process-strip::before{display:none}
+}
+
+/* ---------- statement panel (signature) ---------- */
+.statement-panel{padding:4.5rem 0}
+.statement-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:2.5rem;align-items:start}
+.statement{border-left:3px solid var(--blue);padding-left:1.75rem}
+.statement p{
+  font-size:clamp(1.3rem,3vw,1.85rem);color:var(--off-white);font-weight:400;
+  line-height:1.45;font-style:italic;
+}
+.statement p em{color:var(--blue-light);font-style:italic}
+.statement-note{padding-top:.4rem}
+.statement-note .eyebrow{margin-bottom:.85rem}
+.statement-note p{font-size:.95rem;max-width:30ch}
+@media(max-width:760px){
+  .statement-grid{grid-template-columns:1fr;gap:1.5rem}
+  .statement-note{padding-top:0}
+}
+
+/* ---------- final CTA band gets extra lift ---------- */
+.cta-final{background:linear-gradient(180deg,rgba(77,101,175,.09),rgba(77,101,175,.015));border-top:1px solid var(--border)}
+
 /* accessibility */
 :focus-visible{outline:2px solid var(--blue-light);outline-offset:2px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
