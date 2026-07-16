@@ -418,3 +418,40 @@ p{color:var(--muted);font-weight:400}
 .tool-card p{font-size:.92rem;margin-top:.65rem;color:#aaa}
 .tool-note{margin-top:1.5rem;font-size:.85rem;color:var(--muted);max-width:65ch}
 
+/* ---------- data table (used on GEO page) ---------- */
+.data-table{overflow-x:auto;margin:1.5rem 0;border:1px solid var(--border);border-radius:12px}
+.data-table table{width:100%;border-collapse:collapse;min-width:520px}
+.data-table th,.data-table td{
+  text-align:left;padding:.85rem 1.1rem;font-size:.88rem;line-height:1.5;
+  border-bottom:1px solid var(--border);vertical-align:top;
+}
+.data-table th{
+  color:var(--blue-light);font-size:.75rem;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;background:rgba(255,255,255,.02);
+}
+.data-table td{color:#ccc}
+.data-table tr:last-child td{border-bottom:none}
+
+/* ---------- stat bar chart (used on GEO page) ---------- */
+.stat-bars{margin:1.75rem 0 .75rem;display:grid;gap:1rem}
+.stat-bar-row{display:grid;grid-template-columns:200px 1fr 48px;align-items:center;gap:1rem}
+.stat-bar-label{font-size:.85rem;color:#ccc}
+.stat-bar-track{background:rgba(255,255,255,.06);border-radius:6px;height:14px;overflow:hidden}
+.stat-bar-fill{height:100%;background:var(--blue);border-radius:6px}
+.stat-bar-fill-muted{background:var(--blue-light);opacity:.55}
+.stat-bar-value{font-size:.85rem;font-weight:700;color:var(--off-white);text-align:right}
+.stat-bar-caption{font-size:.8rem;color:var(--muted);margin-top:.5rem}
+@media(max-width:600px){
+  .stat-bar-row{grid-template-columns:1fr;gap:.4rem}
+  .stat-bar-value{text-align:left}
+}
+
+/* ---------- sources block (used on GEO page) ---------- */
+.sources-block{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.sources-label{
+  display:block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--blue-light);margin-bottom:.6rem;
+}
+.sources-block .link-list{margin:0}
+
+

@@ -67,18 +67,44 @@ SERVICE_CONTENT = {
     },
     "geo": {
         "sections": [
-            ("What is generative engine optimisation?",
-             "<p>Generative engines are the AI systems that now sit on top of search: Google AI Overviews, ChatGPT, Gemini, Perplexity and others. Instead of a list of links, they read the web, summarise it, and cite a small number of sources. GEO is the work of making your business one of those cited sources, so when someone asks an AI tool a question in your space, your name comes up.</p>"),
-            ("Why does this matter now?",
-             "<p>A growing share of people skip the results page entirely and ask an assistant instead. If your competitors are quoted in those answers and you are not, you lose the customer before they ever reach a website. Getting cited depends on clear, well structured, trustworthy content, which is exactly what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and good <a href=\"/services/content-writing/\">content</a> provide. To understand the field, see our explainer on <a href=\"/resources/what-is-geo/\">what GEO is and why it matters</a>.</p>"),
-            ("How is GEO different from SEO?",
-             "<p>They share foundations but aim at different targets. <a href=\"/services/seo/\">SEO</a> works to rank your pages in the classic results list. GEO works to get your business named and quoted inside the AI generated answer that increasingly appears above that list. The healthiest approach runs both, because the same clarity that helps Google understand you also helps the answer engines.</p>"),
+            ("Is GEO really a separate discipline?",
+             "<p>Not really. GEO is best understood as an extension of <a href=\"/services/seo/\">SEO</a>, not a new field standing next to it. The AI systems now summarising search results, Google AI Overviews, AI Mode, ChatGPT, Copilot, did not build a brand new way of discovering the web. They sit on top of the search infrastructure that was already there. Google's own developer documentation is direct about this: there is no separate AI index, and the standard SEO fundamentals are what get a page eligible to appear in these features in the first place. GEO is the adapted playbook for a results page that now has an AI written summary at the top of it, not a replacement for the work underneath.</p>"),
+            ("Where does the information in an AI answer actually come from?",
+             "<p>AI tools do not quietly crawl the entire internet in real time to answer your question. Most of them lean on a search engine's existing index.</p>"
+             "<div class=\"data-table\"><table><thead><tr><th>AI surface</th><th>Index it reads from</th><th>Overlap with organic rankings</th></tr></thead><tbody>"
+             "<tr><td>Google AI Overviews / AI Mode</td><td>Google's own organic search index</td><td>Around 70 to 80% of citations come from pages already ranking in the top 10 organic results</td></tr>"
+             "<tr><td>ChatGPT (browsing) and Microsoft Copilot</td><td>Bing's search index</td><td>87% of citations match Bing's top organic results for the same query</td></tr>"
+             "<tr><td>Perplexity</td><td>Live retrieval blended with its own ranking</td><td>Still favours well linked, well structured pages, using signals close to standard rankings</td></tr>"
+             "</tbody></table></div>"
+             "<p>In every case, the AI is reading from an index that already exists, not building its own from scratch.</p>"),
+            ("Why you still need to rank well before you get cited",
+             "<p>This is the part that gets missed. A study by Seer Interactive checked over 500 ChatGPT citations against two different search engines, to see which one ChatGPT was actually pulling from.</p>"
+             "<div class=\"stat-bars\">"
+             "<div class=\"stat-bar-row\"><span class=\"stat-bar-label\">Matched Bing's top results</span>"
+             "<div class=\"stat-bar-track\"><div class=\"stat-bar-fill\" style=\"width:87%\"></div></div><span class=\"stat-bar-value\">87%</span></div>"
+             "<div class=\"stat-bar-row\"><span class=\"stat-bar-label\">Matched Google's top results</span>"
+             "<div class=\"stat-bar-track\"><div class=\"stat-bar-fill stat-bar-fill-muted\" style=\"width:56%\"></div></div><span class=\"stat-bar-value\">56%</span></div>"
+             "</div>"
+             "<p class=\"stat-bar-caption\">Share of ChatGPT citations matching each search engine's top organic results, from Seer Interactive's study of 500+ citations.</p>"
+             "<p>The gap tells the story. ChatGPT's citations track Bing's rankings far more closely than Google's, because Bing's index is what it actually reads from. If your page is not ranking there, it is not in the pool ChatGPT is choosing from, regardless of how it performs on Google. Google's own AI Overviews work the same way in principle, just against their own index: a page has to be indexed and eligible to appear in standard Search before it can ever show up as a supporting link. Ranking is the entry ticket. Being clear, well structured and easy to extract is what gets you picked once you are in the room.</p>"),
+            ("So what does GEO actually add?",
+             "<p>If the citation still depends on ranking, the honest answer is: GEO adds structure and clarity on top of solid <a href=\"/services/seo/\">SEO</a>, not instead of it. It means writing direct answers an AI can lift cleanly, structuring pages so a model can extract a fact without guessing, and keeping content accurate enough that a system built to avoid errors is comfortable quoting you. That structural work is what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and well written <a href=\"/services/content-writing/\">content</a> actually deliver. Skip the SEO groundwork underneath it and none of that matters, because the page was never in the running to begin with. For the broader picture on how the two work together, see our <a href=\"/resources/what-is-geo/\">guide to what GEO is and why it matters</a>.</p>"
+             "<div class=\"sources-block\"><span class=\"sources-label\">Sources</span><ul class=\"link-list\">"
+             "<li><a href=\"https://developers.google.com/search/docs/appearance/ai-features\" target=\"_blank\" rel=\"noopener\">Google Search Central, AI features and your website</a></li>"
+             "<li><a href=\"https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results\" target=\"_blank\" rel=\"noopener\">Seer Interactive, 87% of SearchGPT citations match Bing's top results</a></li>"
+             "</ul></div>"),
         ],
         "faqs": [
             ("Can you guarantee my business appears in AI answers?",
              "No one can, because the AI provider decides what to cite. What we can do is give those systems the clearest, most trustworthy version of your content to work from, which is what improves the odds."),
             ("Is GEO worth it for a small business?",
              "If your customers are starting to ask AI tools for recommendations, yes. Smaller, focused businesses often get cited precisely because their content answers a specific question well."),
+            ("Does GEO replace the need for SEO?",
+             "No, if anything it depends on it. AI tools still pull from an existing search index, Google's own for AI Overviews, Bing's for ChatGPT and Copilot, so your pages need to be crawled, indexed and ranking reasonably well before they are ever in the running for a citation. Good GEO work assumes solid SEO underneath it, not instead of it."),
+        ],
+        "sources": [
+            ("Google Search Central: AI features and your website", "https://developers.google.com/search/docs/appearance/ai-features"),
+            ("Seer Interactive: 87% of SearchGPT citations match Bing's top results", "https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results"),
         ],
     },
     "ai-optimisation": {

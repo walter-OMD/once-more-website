@@ -10,7 +10,7 @@ SITE = "/home/claude/site"
 URL = "https://oncemoredigital.com"
 EMAIL = "walter@oncemoredigital.com"
 GTM = "GTM-MJ5WCPR6"
-UPDATED = "June 2026"
+UPDATED = "July 2026"
 OG_IMAGE = URL + "/oncemoredigial-seo-marketing-logo.jpg"  # the user's real logo already in the repo
 ADDRESS = {
     "@type": "PostalAddress",
@@ -807,18 +807,25 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   </div>
 </div></section>
 """
+    service_schema_dict = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": full_name,
+        "serviceType": full_name,
+        "description": tagline,
+        "url": URL + "/services/%s/" % slug,
+        "areaServed": {"@type": "Country", "name": "Malaysia"},
+        "provider": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
+    }
+    sources = extra.get("sources")
+    if sources:
+        service_schema_dict["citation"] = [
+            {"@type": "CreativeWork", "name": name, "url": src_url}
+            for name, src_url in sources
+        ]
     schema = [
         breadcrumb([("Home", "/"), ("Services", "/services/"), (short, "/services/%s/" % slug)]),
-        jsonld({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": full_name,
-            "serviceType": full_name,
-            "description": tagline,
-            "url": URL + "/services/%s/" % slug,
-            "areaServed": {"@type": "Country", "name": "Malaysia"},
-            "provider": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
-        }),
+        jsonld(service_schema_dict),
         faq_schema,
     ]
     page("/services/%s/" % slug,
@@ -970,7 +977,7 @@ for g in RESOURCES:
             "headline": g["title"], "description": g["desc"],
             "url": URL + "/resources/%s/" % g["slug"],
             "inLanguage": "en-MY",
-            "datePublished": "2026-06-10", "dateModified": "2026-06-10",
+            "datePublished": "2026-06-10", "dateModified": "2026-07-16",
             "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
             "publisher": {"@type": "Organization", "name": "OnceMore Digital",
                           "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
