@@ -718,11 +718,17 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
             '<div class="card"><span class="num">%02d</span><h3>%s</h3><p>%s</p></div>'
             % (i + 1, html.escape(step_title), step_body)
             for i, (step_title, step_body) in enumerate(process["steps"]))
+        example = process.get("example")
+        example_html = (
+            '<div class="answer-box" style="margin-top:1.75rem">'
+            '<span class="answer-label">%s</span><p>%s</p></div>'
+            % (html.escape(example["label"]), html.escape(example["text"]))
+        ) if example else ""
         process_html = (
             '<h2 style="margin-top:2.5rem">%s</h2>'
             '<p class="lead" style="font-size:1.05rem;max-width:62ch;margin-bottom:1.75rem">%s</p>'
-            '<div class="grid">%s</div>'
-            % (html.escape(process["heading"]), html.escape(process["intro"]), proc_cards)
+            '<div class="grid">%s</div>%s'
+            % (html.escape(process["heading"]), html.escape(process["intro"]), proc_cards, example_html)
         )
     else:
         process_html = ""
@@ -969,19 +975,26 @@ for g in RESOURCES:
   <ul class="link-list">{related}</ul>
 </div></section>
 """
+    article_schema_dict = {
+        "@context": "https://schema.org", "@type": "Article",
+        "headline": g["title"], "description": g["desc"],
+        "url": URL + "/resources/%s/" % g["slug"],
+        "inLanguage": "en-MY",
+        "datePublished": "2026-06-10", "dateModified": "2026-07-16",
+        "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
+        "publisher": {"@type": "Organization", "name": "OnceMore Digital",
+                      "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
+    }
+    g_sources = g.get("sources")
+    if g_sources:
+        article_schema_dict["citation"] = [
+            {"@type": "CreativeWork", "name": name, "url": src_url}
+            for name, src_url in g_sources
+        ]
     gschema = [
         breadcrumb([("Home", "/"), ("Resources", "/resources/"),
                     (g["title"], "/resources/%s/" % g["slug"])]),
-        jsonld({
-            "@context": "https://schema.org", "@type": "Article",
-            "headline": g["title"], "description": g["desc"],
-            "url": URL + "/resources/%s/" % g["slug"],
-            "inLanguage": "en-MY",
-            "datePublished": "2026-06-10", "dateModified": "2026-07-16",
-            "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
-            "publisher": {"@type": "Organization", "name": "OnceMore Digital",
-                          "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
-        }),
+        jsonld(article_schema_dict),
         g_faq_schema,
     ]
     page("/resources/%s/" % g["slug"], "%s | OnceMore Digital" % g["title"], g["desc"],

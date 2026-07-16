@@ -67,45 +67,39 @@ SERVICE_CONTENT = {
     },
     "geo": {
         "sections": [
-            ("Is GEO really a separate discipline?",
-             "<p>Not really. GEO is best understood as an extension of <a href=\"/services/seo/\">SEO</a>, not a new field standing next to it. The AI systems now summarising search results, Google AI Overviews, AI Mode, ChatGPT, Copilot, did not build a brand new way of discovering the web. They sit on top of the search infrastructure that was already there. Google's own developer documentation is direct about this: there is no separate AI index, and the standard SEO fundamentals are what get a page eligible to appear in these features in the first place. GEO is the adapted playbook for a results page that now has an AI written summary at the top of it, not a replacement for the work underneath.</p>"),
-            ("Where does the information in an AI answer actually come from?",
-             "<p>AI tools do not quietly crawl the entire internet in real time to answer your question. Most of them lean on a search engine's existing index.</p>"
-             "<div class=\"data-table\"><table><thead><tr><th>AI surface</th><th>Index it reads from</th><th>Overlap with organic rankings</th></tr></thead><tbody>"
-             "<tr><td>Google AI Overviews / AI Mode</td><td>Google's own organic search index</td><td>Around 70 to 80% of citations come from pages already ranking in the top 10 organic results</td></tr>"
-             "<tr><td>ChatGPT (browsing) and Microsoft Copilot</td><td>Bing's search index</td><td>87% of citations match Bing's top organic results for the same query</td></tr>"
-             "<tr><td>Perplexity</td><td>Live retrieval blended with its own ranking</td><td>Still favours well linked, well structured pages, using signals close to standard rankings</td></tr>"
-             "</tbody></table></div>"
-             "<p>In every case, the AI is reading from an index that already exists, not building its own from scratch.</p>"),
-            ("Why you still need to rank well before you get cited",
-             "<p>This is the part that gets missed. A study by Seer Interactive checked over 500 ChatGPT citations against two different search engines, to see which one ChatGPT was actually pulling from.</p>"
-             "<div class=\"stat-bars\">"
-             "<div class=\"stat-bar-row\"><span class=\"stat-bar-label\">Matched Bing's top results</span>"
-             "<div class=\"stat-bar-track\"><div class=\"stat-bar-fill\" style=\"width:87%\"></div></div><span class=\"stat-bar-value\">87%</span></div>"
-             "<div class=\"stat-bar-row\"><span class=\"stat-bar-label\">Matched Google's top results</span>"
-             "<div class=\"stat-bar-track\"><div class=\"stat-bar-fill stat-bar-fill-muted\" style=\"width:56%\"></div></div><span class=\"stat-bar-value\">56%</span></div>"
-             "</div>"
-             "<p class=\"stat-bar-caption\">Share of ChatGPT citations matching each search engine's top organic results, from Seer Interactive's study of 500+ citations.</p>"
-             "<p>The gap tells the story. ChatGPT's citations track Bing's rankings far more closely than Google's, because Bing's index is what it actually reads from. If your page is not ranking there, it is not in the pool ChatGPT is choosing from, regardless of how it performs on Google. Google's own AI Overviews work the same way in principle, just against their own index: a page has to be indexed and eligible to appear in standard Search before it can ever show up as a supporting link. Ranking is the entry ticket. Being clear, well structured and easy to extract is what gets you picked once you are in the room.</p>"),
-            ("So what does GEO actually add?",
-             "<p>If the citation still depends on ranking, the honest answer is: GEO adds structure and clarity on top of solid <a href=\"/services/seo/\">SEO</a>, not instead of it. It means writing direct answers an AI can lift cleanly, structuring pages so a model can extract a fact without guessing, and keeping content accurate enough that a system built to avoid errors is comfortable quoting you. That structural work is what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and well written <a href=\"/services/content-writing/\">content</a> actually deliver. Skip the SEO groundwork underneath it and none of that matters, because the page was never in the running to begin with. For the broader picture on how the two work together, see our <a href=\"/resources/what-is-geo/\">guide to what GEO is and why it matters</a>.</p>"
-             "<div class=\"sources-block\"><span class=\"sources-label\">Sources</span><ul class=\"link-list\">"
-             "<li><a href=\"https://developers.google.com/search/docs/appearance/ai-features\" target=\"_blank\" rel=\"noopener\">Google Search Central, AI features and your website</a></li>"
-             "<li><a href=\"https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results\" target=\"_blank\" rel=\"noopener\">Seer Interactive, 87% of SearchGPT citations match Bing's top results</a></li>"
-             "</ul></div>"),
+            ("What is generative engine optimisation?",
+             "<p>Generative engines are the AI systems that now sit on top of search: Google AI Overviews, ChatGPT, Gemini, Perplexity and others. Instead of a list of links, they read the web, summarise it, and cite a small number of sources. GEO is the work of making your business one of those cited sources, so when someone asks an AI tool a question in your space, your name comes up. It builds on the same foundations as <a href=\"/services/seo/\">SEO</a> rather than replacing them; for the full picture on how AI answer engines actually pull and cite information, see our guide on <a href=\"/resources/what-is-geo/\">what GEO is and why it matters</a>.</p>"),
+            ("Why does this matter now?",
+             "<p>A growing share of people skip the results page entirely and ask an assistant instead. If your competitors are quoted in those answers and you are not, you lose the customer before they ever reach a website. Getting cited depends on clear, well structured, trustworthy content, which is exactly what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and good <a href=\"/services/content-writing/\">content</a> provide.</p>"),
         ],
         "faqs": [
             ("Can you guarantee my business appears in AI answers?",
              "No one can, because the AI provider decides what to cite. What we can do is give those systems the clearest, most trustworthy version of your content to work from, which is what improves the odds."),
             ("Is GEO worth it for a small business?",
              "If your customers are starting to ask AI tools for recommendations, yes. Smaller, focused businesses often get cited precisely because their content answers a specific question well."),
-            ("Does GEO replace the need for SEO?",
-             "No, if anything it depends on it. AI tools still pull from an existing search index, Google's own for AI Overviews, Bing's for ChatGPT and Copilot, so your pages need to be crawled, indexed and ranking reasonably well before they are ever in the running for a citation. Good GEO work assumes solid SEO underneath it, not instead of it."),
         ],
-        "sources": [
-            ("Google Search Central: AI features and your website", "https://developers.google.com/search/docs/appearance/ai-features"),
-            ("Seer Interactive: 87% of SearchGPT citations match Bing's top results", "https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results"),
-        ],
+        "process": {
+            "heading": "What our GEO work actually looks like",
+            "intro": "GEO is not a single trick, it is a handful of concrete habits applied to every page. Here is what we actually do.",
+            "steps": [
+                ("Writing for real search intent",
+                 "We write to the actual question and intent behind a search, not just the keyword sitting on top of it. An AI tool is trying to satisfy the person asking, so the page has to do that first."),
+                ("Structuring for query fan-out",
+                 "AI tools quietly break one question into several related sub-searches behind the scenes before they answer. We structure pages so each of those fanned-out variants has a clear answer somewhere on the page, not just the headline query."),
+                ("Conversational, question-style headers",
+                 "Headings are phrased the way people actually ask an assistant a question, not as generic keyword phrases. It matches how the model reads the page and how the person searching actually thinks."),
+                ("Direct answer boxes",
+                 "Every key page gets a plain, complete answer near the top, before the detail and nuance. That is what a model can lift cleanly without having to interpret a long paragraph first."),
+                ("FAQ and schema markup",
+                 "Question and answer content gets marked up properly, not just written well. Structured data tells a model exactly what a piece of content is, rather than leaving it to guess."),
+                ("Keeping content fresh",
+                 "Pages get revisited and updated on a schedule rather than published once and left. Freshness is a signal both classic search and AI answer systems weigh when deciding what to trust."),
+            ],
+            "example": {
+                "label": "Example of a direct answer box",
+                "text": "GEO is the work of structuring your content so AI tools such as Google AI Overviews, ChatGPT and Perplexity cite your business when they answer a question. This is the kind of plain, upfront answer we build into the top of a page.",
+            },
+        },
     },
     "ai-optimisation": {
         "sections": [
@@ -201,30 +195,58 @@ RESOURCES = [
         "desc": "A clear explainer on GEO: what generative engine optimisation is, how it differs from SEO, and why being cited in AI search results increasingly matters.",
         "eyebrow": "Guide",
         "h1": "What is GEO, and why does it matter?",
-        "intro": "Generative engine optimisation, or GEO, is about getting your business cited by AI tools when they answer questions. Here is what it means and why it is becoming hard to ignore.",
-        "answer": "GEO, or generative engine optimisation, is the work of structuring your content so AI tools such as Google AI Overviews, ChatGPT and Perplexity cite your business when they answer a question. Where SEO aims to rank a page in the results list, GEO aims to be the source the AI names in its answer.",
+        "intro": "Generative engine optimisation, or GEO, is about getting your business cited by AI tools when they answer questions. Here is what it means, where the information those tools use actually comes from, and why it is becoming hard to ignore.",
+        "answer": "GEO, or generative engine optimisation, is the work of structuring your content so AI tools such as Google AI Overviews, ChatGPT and Perplexity cite your business when they answer a question. It is best understood as an extension of SEO rather than a separate discipline, because most AI tools still pull their answers from an existing search index, so ranking well there comes first.",
         "tldr": [
             "GEO gets your business cited inside AI generated answers.",
-            "It matters because more people now ask AI instead of searching.",
-            "You earn citations with clear, structured, trustworthy content.",
-            "It sits alongside SEO rather than replacing it.",
-            "Start now if your market is already asking AI for recommendations.",
+            "It is an extension of SEO, not a separate discipline.",
+            "Most AI tools read from an existing search index, not the open web.",
+            "87% of ChatGPT citations match Bing's top results, versus 56% for Google.",
+            "Ranking well is the prerequisite; clear structure is what gets you picked.",
         ],
         "body": [
             ("The short version",
-             "<p>GEO is the practice of structuring your content and signals so that generative AI systems can find, trust and quote your business when they answer a question. Where <a href=\"/services/seo/\">SEO</a> aims to rank a page, GEO aims to be the source the AI names.</p>"),
+             "<p>GEO is the practice of structuring your content and signals so that generative AI systems can find, trust and quote your business when they answer a question. Where <a href=\"/services/seo/\">SEO</a> aims to rank a page, GEO aims to be the source the AI names. The two are not competing disciplines. GEO is best understood as an extension of SEO, adapted for a results page that now has an AI written summary sitting on top of it, not a replacement for the work underneath.</p>"),
             ("How did Large Language Models (LLM) changed SEO?",
-             "<p>Tools like Google AI Overviews, ChatGPT, Gemini and Perplexity increasingly give people a direct answer instead of ten links. They read the web, decide what is trustworthy, and cite a handful of sources. If you are not among them, you can be invisible even when your information is good. That is why GEO has become its own discipline. Google documents how these <a href=\"https://developers.google.com/search/docs/appearance/ai-features\" target=\"_blank\" rel=\"noopener\">AI features in Search</a> select and show sources.</p>"),
+             "<p>Tools like Google AI Overviews, ChatGPT, Gemini and Perplexity increasingly give people a direct answer instead of ten links. They read the web, decide what is trustworthy, and cite a handful of sources. If you are not among them, you can be invisible even when your information is good. Google documents how these <a href=\"https://developers.google.com/search/docs/appearance/ai-features\" target=\"_blank\" rel=\"noopener\">AI features in Search</a> select and show sources, and is explicit that there is no separate AI index behind them.</p>"),
+            ("Where does the information in an AI answer actually come from?",
+             "<p>AI tools do not quietly crawl the entire internet in real time to answer your question. Most of them lean on a search engine's existing index.</p>"
+             "<div class=\"data-table\"><table><thead><tr><th>AI surface</th><th>Index it reads from</th><th>Overlap with organic rankings</th></tr></thead><tbody>"
+             "<tr><td>Google AI Overviews / AI Mode</td><td>Google's own organic search index</td><td>Around 70 to 80% of citations come from pages already ranking in the top 10 organic results</td></tr>"
+             "<tr><td>ChatGPT (browsing) and Microsoft Copilot</td><td>Bing's search index</td><td>87% of citations match Bing's top organic results for the same query</td></tr>"
+             "<tr><td>Perplexity</td><td>Live retrieval blended with its own ranking</td><td>Still favours well linked, well structured pages, using signals close to standard rankings</td></tr>"
+             "</tbody></table></div>"
+             "<p>In every case, the AI is reading from an index that already exists, not building its own from scratch.</p>"),
+            ("Why you still need to rank well before you get cited",
+             "<p>This is the part that gets missed. A study by Seer Interactive checked over 500 ChatGPT citations against two different search engines, to see which one ChatGPT was actually pulling from.</p>"
+             "<div class=\"stat-bars\">"
+             "<div class=\"stat-bar-row\"><span class=\"stat-bar-label\">Matched Bing's top results</span>"
+             "<div class=\"stat-bar-track\"><div class=\"stat-bar-fill\" style=\"width:87%\"></div></div><span class=\"stat-bar-value\">87%</span></div>"
+             "<div class=\"stat-bar-row\"><span class=\"stat-bar-label\">Matched Google's top results</span>"
+             "<div class=\"stat-bar-track\"><div class=\"stat-bar-fill stat-bar-fill-muted\" style=\"width:56%\"></div></div><span class=\"stat-bar-value\">56%</span></div>"
+             "</div>"
+             "<p class=\"stat-bar-caption\">Share of ChatGPT citations matching each search engine's top organic results, from Seer Interactive's study of 500+ citations.</p>"
+             "<p>The gap tells the story. ChatGPT's citations track Bing's rankings far more closely than Google's, because Bing's index is what it actually reads from. If your page is not ranking there, it is not in the pool ChatGPT is choosing from, regardless of how it performs on Google. Ranking is the entry ticket. Being clear, well structured and easy to extract is what gets you picked once you are in the room.</p>"),
             ("How do you get cited?",
-             "<p>By being clear, structured and trustworthy. That means direct answers near the top of a page, clean headings, FAQ and how-to formatting, and schema markup, all of which fall under <a href=\"/services/ai-optimisation/\">AI optimisation</a>. It also means publishing accurate, genuinely useful <a href=\"/services/content-writing/\">content</a> that an AI tool would be comfortable quoting.</p>"),
+             "<p>By being clear, structured and trustworthy, on top of a page that already ranks reasonably well. That means direct answers near the top of a page, clean headings, FAQ and how-to formatting, and schema markup, all of which fall under <a href=\"/services/ai-optimisation/\">AI optimisation</a>. It also means publishing accurate, genuinely useful <a href=\"/services/content-writing/\">content</a> that an AI tool would be comfortable quoting. For a look at the concrete work this involves day to day, see our <a href=\"/services/geo/\">GEO service page</a>.</p>"
+             "<div class=\"sources-block\"><span class=\"sources-label\">Sources</span><ul class=\"link-list\">"
+             "<li><a href=\"https://developers.google.com/search/docs/appearance/ai-features\" target=\"_blank\" rel=\"noopener\">Google Search Central, AI features and your website</a></li>"
+             "<li><a href=\"https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results\" target=\"_blank\" rel=\"noopener\">Seer Interactive, 87% of SearchGPT citations match Bing's top results</a></li>"
+             "</ul></div>"),
             ("Should you act now?",
              "<p>If people in your market are starting to ask AI tools for recommendations, yes. The businesses building clear, quotable content today are the ones AI tools will lean on tomorrow. For the bigger picture on organic visibility, see our <a href=\"/resources/seo-guide-malaysia/\">guide to SEO for Malaysian businesses</a>, or <a href=\"/contact/\">talk to us</a>.</p>"),
         ],
         "faqs": [
             ("Is GEO replacing SEO?",
-             "No. It sits alongside it. Classic search is not going away, and the foundations that help GEO also help SEO, so they are best done together."),
+             "No. It sits alongside it, and depends on it. Most AI tools still pull their answers from an existing search index, Google's own for AI Overviews, Bing's for ChatGPT and Copilot, so the foundations that help GEO also help SEO. They are best done together."),
             ("How do I know if GEO is working?",
              "By tracking whether your business shows up in AI answers for the questions that matter, and watching the quality of traffic and enquiries that follow."),
+            ("Does AI search really not crawl the whole internet?",
+             "Correct, at least not for the citations you see. Google AI Overviews read from Google's own organic index, and ChatGPT and Microsoft Copilot lean on Bing's index. Being indexed and ranking reasonably well in that index comes before a citation is ever possible."),
+        ],
+        "sources": [
+            ("Google Search Central: AI features and your website", "https://developers.google.com/search/docs/appearance/ai-features"),
+            ("Seer Interactive: 87% of SearchGPT citations match Bing's top results", "https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results"),
         ],
     },
     {
