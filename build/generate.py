@@ -726,6 +726,29 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
         )
     else:
         process_html = ""
+    tools = extra.get("tools")
+    if tools:
+        tool_cards = "".join(
+            '<div class="tool-card">'
+            '<div class="tool-logo"><img src="%s" alt="%s logo" loading="lazy"></div>'
+            '<h3>%s</h3>'
+            '<span class="tool-task">%s</span>'
+            '<p>%s</p>'
+            '</div>'
+            % (logo, html.escape(name), html.escape(name), html.escape(task), html.escape(desc))
+            for name, logo, task, desc in tools["items"])
+        tools_html = (
+            '<section class="section-sm"><div class="container">'
+            '<span class="eyebrow">Tools</span>'
+            '<h2>%s</h2>'
+            '<p class="lead" style="font-size:1.05rem;max-width:62ch;margin-bottom:1.75rem">%s</p>'
+            '<div class="tool-grid">%s</div>'
+            '<p class="tool-note">%s</p>'
+            '</div></section>'
+            % (html.escape(tools["heading"]), html.escape(tools["intro"]), tool_cards, html.escape(tools["note"]))
+        )
+    else:
+        tools_html = ""
     all_faqs = list(faqs) + extra.get("faqs", [])
     faq_html, faq_schema = faq_block(all_faqs)
     related_guides = "".join(
@@ -764,6 +787,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   <h2>Everything in this service</h2>
   <ul class="feature-list">{fl}</ul>
 </div></section>
+{tools_html}
 {faq_html}
 <section class="section-sm"><div class="container">
   <span class="eyebrow">Related reading</span>
