@@ -91,6 +91,7 @@ FOOTER = """<footer class="site-footer"><div class="container">
       <ul>
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
+        <li><a href="/sitemap/">Sitemap</a></li>
         <li><a href="mailto:%s">Email us</a></li>
       </ul>
     </div>
@@ -984,6 +985,54 @@ res_hub_schema = [
 page("/resources/", "Resources | SEO, GEO &amp; AI Search Guides | OnceMore Digital",
      "Straight-talking guides on SEO, GEO and AI search for Malaysian businesses, from OnceMore Digital.",
      res_hub_body, active="resources", schema_blocks=res_hub_schema)
+
+# ---------------------------------------------------------------- html sitemap
+sitemap_groups = [
+    ("Main", [("Home", "/")]),
+    ("Services", [("Services overview", "/services/")] +
+     [(s[1] + " (" + s[2] + ")", "/services/%s/" % s[0]) for s in SERVICES]),
+    ("Resources", [("Resources overview", "/resources/")] +
+     [(g["title"], "/resources/%s/" % g["slug"]) for g in RESOURCES]),
+    ("Company", [("About", "/about/"), ("Contact", "/contact/")]),
+]
+
+sitemap_sections_html = "".join(
+    '<div><h3>%s</h3><ul class="link-list">%s</ul></div>' % (
+        html.escape(group_name),
+        "".join('<li><a href="%s">%s</a></li>' % (href, html.escape(name)) for name, href in links)
+    )
+    for group_name, links in sitemap_groups
+)
+
+sitemap_body = """
+<section class="section"><div class="container">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Sitemap</nav>
+  <span class="eyebrow" style="margin-top:1.5rem">Sitemap</span>
+  <h1>Every page on <em>this site.</em></h1>
+  <p class="lead">A quick, human-readable map of the whole site. Looking for the XML version for search engines? It lives at <a href="/sitemap.xml">/sitemap.xml</a>.</p>
+  <div class="divider left" aria-hidden="true"></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:1rem">
+    %s
+  </div>
+</div></section>
+""" % sitemap_sections_html
+
+sitemap_schema = [
+    breadcrumb([("Home", "/"), ("Sitemap", "/sitemap/")]),
+    jsonld({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Sitemap",
+        "url": URL + "/sitemap/",
+        "hasPart": [
+            {"@type": "WebPage", "name": name, "url": URL + href}
+            for _, links in sitemap_groups for name, href in links
+        ],
+    }),
+]
+page("/sitemap/", "Sitemap | OnceMore Digital",
+     "A full, human-readable sitemap of every page on the OnceMore Digital website.",
+     sitemap_body, schema_blocks=sitemap_schema)
 
 # ---------------------------------------------------------------- 404
 nf_body = """
