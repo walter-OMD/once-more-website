@@ -499,9 +499,6 @@ SERVICE_ILLO = {
 </svg>''',
 }
 
-CAPABILITY_TAGS = ["Insurance", "Automotive &amp; Travel", "Retail", "FMCG",
-                   "Education", "Government &amp; Finance"]
-
 PROCESS_STEPS = [
     ("Understand your business and your customers first",
      "A clinic and an e-commerce brand are not fighting the same battle. We start with your situation."),
@@ -522,8 +519,6 @@ process_cards = "".join(
     % (i + 1, html.escape(t), html.escape(b))
     for i, (t, b) in enumerate(PROCESS_STEPS)
 )
-
-capability_pills = "".join('<span>%s</span>' % t for t in CAPABILITY_TAGS)
 
 home_body = """
 <section class="hero"><div class="container">
@@ -550,14 +545,22 @@ home_body = """
   </div>
 </div></section>
 
-<section class="section panel-alt capability-band"><div class="container">
-  <div class="capability-head">
-    <span class="eyebrow">Industries we've worked in</span>
+<section class="section panel-alt"><div class="container split">
+  <div>
+    <span class="eyebrow">Why OnceMore</span>
+    <h2>Built for how search <em>works now.</em></h2>
+    <p>Search is splitting between Google's results and AI answer engines. We work across both, so your business stays visible no matter where your customers look.</p>
+    <p>Most agencies still treat SEO as the only channel that matters. We built OnceMore around the assumption that it will not stay that way, so every project blends SEO, GEO and AI optimisation from the start, not bolted on later as an afterthought.</p>
   </div>
-  <div class="capability-row" role="list" aria-label="Industries we have worked in">CAPABILITY_PILLS</div>
+  <ul class="feature-list">
+    <li>Clear reporting you can read, not jargon</li>
+    <li>Work grounded in real data, not guesswork</li>
+    <li>One team across SEO, content and paid</li>
+    <li>Focused on Malaysian businesses and audiences</li>
+    <li>Straight answers about what is and is not working</li>
+    <li>Strategy adjusted monthly, not locked in for a year</li>
+  </ul>
 </div></section>
-
-CLIENTS_MARQUEE
 
 <section class="section"><div class="container">
   <span class="eyebrow">What we do</span>
@@ -587,24 +590,11 @@ CLIENTS_MARQUEE
   </div>
 </div></section>
 
-<section class="section-sm panel-alt"><div class="container split">
-  <div>
-    <span class="eyebrow">Why OnceMore</span>
-    <h2>Built for how search <em>works now.</em></h2>
-    <p>Search is splitting between Google's results and AI answer engines. We work across both, so your business stays visible no matter where your customers look.</p>
-  </div>
-  <ul class="feature-list">
-    <li>Clear reporting you can read, not jargon</li>
-    <li>Work grounded in real data, not guesswork</li>
-    <li>One team across SEO, content and paid</li>
-    <li>Focused on Malaysian businesses and audiences</li>
-  </ul>
-</div></section>
+CLIENTS_MARQUEE
 """
 home_body = (home_body
     .replace("HERO_SVG_PLACEHOLDER", HERO_SVG)
     .replace("CLIENTS_MARQUEE", CLIENTS_HTML)
-    .replace("CAPABILITY_PILLS", capability_pills)
     .replace("BENTO_CARDS", bento_cards)
     .replace("PROCESS_CARDS", process_cards)
 )

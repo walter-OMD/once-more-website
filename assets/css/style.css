@@ -328,17 +328,6 @@ p{color:var(--muted);font-weight:400}
 .panel-alt::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,var(--border) 15%,var(--border) 85%,transparent)}
 
-/* ---------- capability band ---------- */
-.capability-band{padding:2.5rem 0}
-.capability-head{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap;justify-content:center;text-align:center}
-.capability-head .eyebrow{margin-bottom:0}
-.capability-row{display:flex;flex-wrap:wrap;gap:.6rem .75rem;justify-content:center;margin-top:1.35rem}
-.capability-row span{
-  font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa3b8;
-  padding:.55rem 1.05rem;border:1px solid var(--border);border-radius:999px;
-  background:rgba(255,255,255,.02);
-}
-
 /* ---------- bento services grid ---------- */
 .bento{display:grid;gap:1rem;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr}
 .bento .card{display:flex;flex-direction:column}
