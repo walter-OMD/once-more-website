@@ -830,27 +830,85 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
          body, active="services", schema_blocks=schema)
 
 # ---------------------------------------------------------------- about
+ABOUT_VALUES = [
+    ("Direct access",
+     "You talk to the people actually doing the SEO, content or ads work, not an account manager relaying messages from someone you have never met."),
+    ("Malaysia-first thinking",
+     "Bilingual search behaviour, local intent and Malaysian buying habits shape the strategy from day one, not a global template with your logo dropped in."),
+    ("Honest reporting",
+     "Monthly updates say what is and is not working. A quiet dip gets flagged early, not buried until it turns into a bigger problem."),
+    ("One team, every channel",
+     "SEO, GEO, content and ads sit under the same roof, so nothing gets lost in a handoff between departments or agencies."),
+]
+about_values_cards = "".join(
+    '<div class="card"><h3>%s</h3><p>%s</p></div>' % (html.escape(t), html.escape(b))
+    for t, b in ABOUT_VALUES
+)
+
 about_body = """
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / About</nav>
   <span class="eyebrow" style="margin-top:1.5rem">About</span>
-  <h1>A search partner built for <em>what comes next.</em></h1>
-  <p class="lead">OnceMore Digital helps businesses in Malaysia grow through search, whether that search happens on Google or inside an AI answer engine.</p>
+  <h1>Who Are We Here at <em>OnceMore Digital</em></h1>
+  <p class="lead">OnceMore Digital is a small SEO and digital marketing team based in Kuala Lumpur. No rotating account managers, no quietly outsourced work. The people planning your strategy are the same people running it.</p>
   <div class="divider left" aria-hidden="true"></div>
   <p style="max-width:65ch">The way people find businesses is changing. Some still type into Google. More are starting to ask AI tools for a recommendation. We work across both, combining solid SEO fundamentals with newer GEO and AI optimisation work, so your visibility holds up as habits shift.</p>
-  <p style="max-width:65ch;margin-top:1rem">We keep things straight. Recommendations are grounded in real data, reporting is written to be understood, and we tell you what is worth doing rather than selling work for its own sake.</p>
-  <h2 style="margin-top:2.5rem">How we work</h2>
-  <ul class="feature-list">
-    <li>Understand your business and your customers first</li>
-    <li>Map the searches and questions that matter</li>
-    <li>Fix the foundations before chasing growth</li>
-    <li>Measure honestly and adjust as we learn</li>
-  </ul>
-  <div class="btn-row" style="justify-content:flex-start;margin-top:1.5rem">
-    <a class="btn btn-primary" href="/contact/">Work with us</a>
+  <p style="max-width:65ch;margin-top:1rem">We keep things straight. Recommendations are grounded in real data, reporting is written so you can actually understand it, and we tell you what is worth doing rather than selling work for its own sake.</p>
+</div></section>
+
+<section class="section panel-alt"><div class="container">
+  <div class="split story-split">
+    <div class="photo-frame">
+      <img src="/assets/img/about/team-meeting.jpg" alt="OnceMore Digital team walking a client through a strategy session" loading="lazy" decoding="async">
+    </div>
+    <div>
+      <span class="eyebrow">How we work</span>
+      <h2>Less deck, more actual conversation.</h2>
+      <p>A lot of agencies show you a slide deck once a quarter and go quiet until renewal. We would rather be in the room walking through the numbers with you, which is what most of our client meetings actually look like.</p>
+      <p style="margin-top:1rem">Every account gets a monthly call with the people doing the actual work on it, not a summary read back by someone who was not in the room. If something is not working, you hear that directly, along with what we are changing about it.</p>
+      <p class="photo-caption">Walking a client through their traffic numbers during a strategy session.</p>
+    </div>
   </div>
 </div></section>
-""" + CLIENTS_HTML
+
+<section class="section"><div class="container">
+  <span class="eyebrow">Behind the scenes</span>
+  <h2>A small team, not a factory.</h2>
+  <p style="max-width:65ch">OnceMore Digital is run by a small team, and that is deliberate. We would rather stay small enough that everyone on an account actually knows the business, than grow past the point where your project becomes a ticket in a queue.</p>
+  <div class="team-gallery">
+    <figure>
+      <div class="photo-frame">
+        <img src="/assets/img/about/team-office.jpg" alt="The OnceMore Digital team at the office between meetings" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="photo-caption">Between meetings, at the office.</figcaption>
+    </figure>
+    <figure>
+      <div class="photo-frame">
+        <img src="/assets/img/about/team-outing.jpg" alt="The OnceMore Digital team celebrating together outside the office" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="photo-caption">Marking a project wrap the way we like to, together.</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="section panel-alt"><div class="container">
+  <span class="eyebrow">What matters to us</span>
+  <h2>The stuff we will not compromise on.</h2>
+  <p style="max-width:65ch">None of this is a mission statement for the wall. It is just what we have found actually matters once you are the one paying for the work.</p>
+  <div class="grid" style="margin-top:2rem">%s</div>
+</div></section>
+
+CLIENTS_MARQUEE
+
+<section class="section-sm"><div class="container">
+  <div class="cta-band">
+    <h2>Want to meet the team properly?</h2>
+    <p>Tell us about your business and we will set up a call.</p>
+    <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
+  </div>
+</div></section>
+""".replace("CLIENTS_MARQUEE", CLIENTS_HTML) % about_values_cards
+
 about_schema = [
     breadcrumb([("Home", "/"), ("About", "/about/")]),
     jsonld({
@@ -862,7 +920,7 @@ about_schema = [
     }),
 ]
 page("/about/", "About | OnceMore Digital",
-     "OnceMore Digital is a search partner for Malaysian businesses, working across SEO, GEO and AI optimisation to keep you visible as search habits change.",
+     "OnceMore Digital is a small SEO and digital marketing team in Kuala Lumpur, working directly with clients across SEO, GEO and AI optimisation.",
      about_body, active="about", schema_blocks=about_schema)
 
 # ---------------------------------------------------------------- contact
