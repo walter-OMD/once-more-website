@@ -5,6 +5,8 @@
 
 SERVICE_CONTENT = {
     "seo": {
+        "title": "SEO Services & Search Engine Optimisation | OnceMore Digital",
+        "meta_description": "Search Engine Optimisation (SEO) services for Malaysian businesses. OnceMore Digital is an SEO agency helping you rank higher on Google for the searches your customers actually make.",
         "sections": [
             ("What does SEO actually involve?",
              "<p>Search engine optimisation is the ongoing work of making your website the clearest, most trustworthy answer to what your customers are searching for. In practice it comes down to three things working together: a technically healthy site that Google can crawl and understand, pages built around the terms people actually type, and enough authority that Google trusts you ahead of competitors. We treat these as one system rather than chasing any single trick, because that is what holds up over time.</p>"),
@@ -13,12 +15,28 @@ SERVICE_CONTENT = {
              "<p>Strong rankings also depend on the words on the page. That is where <a href=\"/services/content-writing/\">content writing</a> comes in, and increasingly on whether AI tools can read and quote you, which is the job of <a href=\"/services/geo/\">GEO</a>.</p>"),
             ("How long until SEO pays off?",
              "<p>SEO is a compounding investment, not a switch. Most sites see early movement within three to six months, with the larger gains arriving as content and authority build. Newer domains and competitive terms take longer to move. For a fuller picture, our <a href=\"/resources/seo-guide-malaysia/\">guide to SEO for Malaysian businesses</a> walks through what to expect.</p>"),
+            ("Why invest in professional Search Engine Optimisation?",
+             "<p>Search Engine Optimisation is not a one-off fix, it is ongoing work that compounds. A business that treats SEO as a real discipline, rather than a checklist run once and forgotten, ends up with rankings that hold even when competitors spend more elsewhere. That is the case for SEO over a short-term traffic spike: it takes longer to show up, but it does not disappear the moment spending stops. For Malaysian businesses specifically, SEO also has to account for bilingual search behaviour and local intent, which is where a lot of generic Search Engine Optimisation advice falls short.</p>"),
+            ("What types of SEO do we handle?",
+             "<p>Search Engine Optimisation is not one activity, it is several working together. <strong>Technical SEO</strong> makes sure Google can crawl, render and index your site properly. <strong>On-page SEO</strong> covers the content, headings and structure of each page itself. <strong>Off-page SEO</strong> is the authority you earn through links and mentions elsewhere. <strong>Local SEO</strong> is the work that gets you found for searches tied to a specific city or area, which matters for almost every Malaysian business with a physical presence. Most SEO engagements need some mix of all four, not just one.</p>"),
+            ("Signs your business needs SEO",
+             "<p>SEO is worth prioritising if any of this sounds familiar:</p>"
+             "<ul class=\"feature-list\">"
+             "<li>You do not rank on the first page even for your own brand name</li>"
+             "<li>Competitors consistently outrank you for terms you should own</li>"
+             "<li>Almost all your traffic depends on ads, and stops the moment spending does</li>"
+             "<li>Your website gets visitors but very few enquiries or sales</li>"
+             "</ul>"),
         ],
         "faqs": [
             ("How much does SEO cost in Malaysia?",
              "Pricing depends on your market, your starting point and how competitive your terms are. We explain the ranges and what drives them in our guide on how much SEO costs in Malaysia, and we scope each engagement to the work that will actually move the needle."),
             ("Will I have to keep paying forever?",
              "No. SEO builds an asset you own. Many clients reduce scope once rankings are established and shift to maintenance, though competitive markets reward staying active."),
+            ("What is the difference between SEO and Search Engine Optimisation?",
+             "Nothing, they are the same thing. SEO is simply the shortened form of Search Engine Optimisation, the practice of making a website rank higher in organic search results."),
+            ("Can SEO work alongside a website redesign?",
+             "Yes, and it should. A redesign is the easiest time to fix technical SEO issues and put a proper site structure in place before it goes live, rather than untangling problems afterward."),
         ],
         "process": {
             "heading": "How we build your strategy",

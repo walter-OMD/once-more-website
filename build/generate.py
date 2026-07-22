@@ -211,12 +211,12 @@ def page(path, title, desc, body, extra_head="", active="", schema_blocks=None):
 SERVICES = [
     ("seo", "SEO", "Search Engine Optimisation",
      "Rank higher on Google for the searches your customers actually make.",
-     "We map the keywords that bring qualified traffic, fix the technical issues holding your site back, and build content and links that earn rankings over time. The focus is steady organic growth, not quick wins that fade.",
+     "Our SEO services map the keywords that bring qualified traffic, fix the technical SEO issues holding your site back, and build content and links that earn organic rankings over time. Search Engine Optimisation is a compounding investment, and the focus is steady organic growth, not quick wins that fade.",
      ["Keyword research and content mapping",
-      "Technical audits and site health fixes",
-      "On-page optimisation for target pages",
+      "Technical SEO audits and site health fixes",
+      "On-page SEO optimisation for target pages",
       "Local SEO and Google Business Profile",
-      "Monthly reporting you can actually read"],
+      "Monthly SEO reporting you can actually read"],
      [("How long does SEO take to show results?",
        "Most sites see early movement within three to six months. Competitive terms and newer domains take longer. We report progress monthly so you always know where things stand."),
       ("Do you guarantee a number one ranking?",
@@ -492,9 +492,9 @@ home_body = """
 <section class="hero"><div class="container">
   <div class="hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">SEO &amp; AI Optimisation</span>
+      <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
       <h1>Helping businesses<br>get found <em>online.</em></h1>
-      <p class="lead">We help businesses across Malaysia rank on Google, show up in AI search results, and grow organically through smart SEO, content and strategy.</p>
+      <p class="lead">OnceMore Digital is a Kuala Lumpur based digital marketing agency and SEO agency helping businesses across Malaysia rank on Google, show up in AI search results, and grow organically through smart SEO, content and strategy.</p>
       <div class="services-tags" role="list" aria-label="Our services">
         <span class="service-tag" role="listitem">SEO</span>
         <span class="service-tag" role="listitem">GEO</span>
@@ -512,12 +512,19 @@ home_body = """
   </div>
 </div></section>
 
+<section class="section"><div class="container">
+  <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
+  <h2>What a digital marketing agency should <em>actually do.</em></h2>
+  <p>A lot of businesses end up hiring three or four different freelancers, one for ads, one for the website, one for social media, and get work that pulls in different directions. A proper digital marketing agency does the opposite: one team, one strategy, and every channel built to support the same goal instead of competing for credit.</p>
+  <p style="margin-top:1rem">OnceMore Digital started as an SEO agency, and SEO is still the foundation of most engagements we run. As search itself has changed, we have grown into a full digital marketing agency covering SEO, GEO, AI optimisation and content, all handled by the same team rather than handed off between different vendors.</p>
+</div></section>
+
 <section class="section panel-alt"><div class="container split">
   <div>
     <span class="eyebrow">Why OnceMore</span>
     <h2>Built for how search <em>works now.</em></h2>
     <p>Search is splitting between Google's results and AI answer engines. We work across both, so your business stays visible no matter where your customers look.</p>
-    <p>Most agencies still treat SEO as the only channel that matters. We built OnceMore around the assumption that it will not stay that way, so every project blends SEO, GEO and AI optimisation from the start, not bolted on later as an afterthought.</p>
+    <p>Most SEO agencies still treat search as the only channel that matters. We built OnceMore, a digital marketing agency that blends SEO, GEO and AI optimisation from the start, not bolted on later as an afterthought.</p>
   </div>
   <ul class="feature-list">
     <li>Clear reporting you can read, not jargon</li>
@@ -535,6 +542,18 @@ home_body = """
   <p>Each service stands on its own or works together as one organic growth plan. SEO is where most engagements start.</p>
   <div class="bento" style="margin-top:2rem">
     BENTO_CARDS
+  </div>
+</div></section>
+
+<section class="section panel-alt"><div class="container">
+  <span class="eyebrow">Who we help</span>
+  <h2>Malaysian businesses across <em>every industry we touch.</em></h2>
+  <p>As a digital marketing agency, we adapt strategy to how each industry's customers actually search, not a one size fits all template.</p>
+  <div class="grid" style="margin-top:2rem">
+    <div class="card"><h3>Retail &amp; FMCG</h3><p>Product and category pages built to rank for what shoppers search before they buy, not just brand terms.</p></div>
+    <div class="card"><h3>Education</h3><p>Programme and enrolment pages that answer the questions parents and students actually type into Google.</p></div>
+    <div class="card"><h3>Financial &amp; public sector</h3><p>Content and technical SEO built to the standard that regulated, high-trust organisations need.</p></div>
+    <div class="card"><h3>Hospitality &amp; travel</h3><p>Local and national visibility for businesses competing for customers actively comparing options.</p></div>
   </div>
 </div></section>
 
@@ -573,6 +592,12 @@ home_faq_items = [
      "We work with businesses across Malaysia and can support clients remotely."),
     ("How do I get started?",
      "Email walter@oncemoredigital.com or use the contact page, and we will set up a short call to understand your goals."),
+    ("How do I choose an SEO agency in Malaysia?",
+     "Look for one that explains its work in plain terms, shows you real reporting, and treats SEO as ongoing strategy rather than a fixed package. A good SEO agency should be able to tell you what is not working, not just what is."),
+    ("What is the difference between an SEO agency and a digital marketing agency?",
+     "An SEO agency focuses specifically on organic search rankings. A digital marketing agency covers a wider range of channels, from SEO to content to AI optimisation. OnceMore started as an SEO agency and has grown into a full digital marketing agency, though SEO remains the foundation of most of our work."),
+    ("Do you work with small businesses or only large companies?",
+     "Both. Our client base has included large brands and independent local businesses, and the same fundamentals apply to each. What changes is the scope of work, not the standard we hold it to."),
 ]
 home_faq_html, home_faq_schema = faq_block(home_faq_items)
 home_body += home_faq_html
@@ -595,7 +620,7 @@ home_schema = [
         "url": URL,
         "email": EMAIL,
         "logo": URL + "/oncemoredigial-seo-marketing-logo.jpg",
-        "description": "SEO, GEO, AI optimisation and content writing for businesses in Malaysia.",
+        "description": "Digital marketing agency and SEO agency helping businesses in Malaysia with SEO, GEO, AI optimisation and content writing.",
         "areaServed": {"@type": "Country", "name": "Malaysia"},
         "address": ADDRESS,
         "identifier": "LLP0046284-LGN",
@@ -610,7 +635,7 @@ home_schema = [
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "OnceMore Digital",
-        "description": "SEO, GEO, AI Optimisation and Content Writing for Malaysian businesses",
+        "description": "Digital marketing agency and SEO agency in Malaysia covering SEO, GEO, AI Optimisation and Content Writing",
         "url": URL,
         "email": EMAIL,
         "image": OG_IMAGE,
@@ -622,8 +647,8 @@ home_schema = [
     home_faq_schema,
 ]
 
-page("/", "OnceMore Digital | SEO, GEO &amp; AI Optimisation in Malaysia",
-     "OnceMore Digital helps Malaysian businesses rank higher on Google, get found in AI search, and grow organically. SEO, GEO, AI optimisation and content writing.",
+page("/", "OnceMore Digital | Digital Marketing Agency &amp; SEO Agency in Malaysia",
+     "OnceMore Digital is a digital marketing agency and SEO agency in Malaysia, helping businesses rank higher on Google, get found in AI search, and grow organically through SEO, GEO, AI optimisation and content writing.",
      home_body, active="home", schema_blocks=home_schema)
 
 # ---------------------------------------------------------------- services hub
@@ -792,8 +817,8 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
         faq_schema,
     ]
     page("/services/%s/" % slug,
-         f"{short} Services in Malaysia | OnceMore Digital",
-         f"{tagline} {full_name} for Malaysian businesses from OnceMore Digital.",
+         extra.get("title") or f"{short} Services in Malaysia | OnceMore Digital",
+         extra.get("meta_description") or f"{tagline} {full_name} for Malaysian businesses from OnceMore Digital.",
          body, active="services", schema_blocks=schema)
 
 # ---------------------------------------------------------------- about
