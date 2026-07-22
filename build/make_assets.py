@@ -61,7 +61,7 @@ og.paste(mark, (110, 225), mark)
 f1 = font(64)
 f2 = font(30)
 d.text((330, 250), "OnceMore Digital", font=f1, fill=OFF_WHITE)
-d.text((332, 330), "SEO  .  GEO  .  AI Optimisation  .  Content  .  Google Ads",
+d.text((332, 330), "SEO  .  GEO  .  AI Optimisation  .  Content",
        font=f2, fill=BLUE_LIGHT)
 # keep the exact filename/destination from the existing markup
 og.save(os.path.join(SITE, "oncemoredigial-seo-marketing-logo.png"))

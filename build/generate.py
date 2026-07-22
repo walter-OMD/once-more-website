@@ -49,7 +49,6 @@ NAV = """<header class="site-header"><div class="container"><nav class="nav" ari
         <li><a href="/services/geo/">GEO</a></li>
         <li><a href="/services/ai-optimisation/">AI Optimisation</a></li>
         <li><a href="/services/content-writing/">Content Writing</a></li>
-        <li><a href="/services/google-ads/">Google Ads</a></li>
       </ul>
     </li>
     <li><a href="/resources/"{resources}>Resources</a></li>
@@ -63,7 +62,7 @@ FOOTER = """<footer class="site-footer"><div class="container">
   <div class="footer-grid">
     <div class="footer-brand">
       <a class="brand" href="/"><img src="/assets/img/logo-wordmark.png" alt="OnceMore Digital" class="brand-logo footer-logo"></a>
-      <p>SEO, GEO, AI optimisation, content and Google Ads for businesses in Malaysia.</p>
+      <p>SEO, GEO, AI optimisation and content for businesses in Malaysia.</p>
       <address class="footer-address">BO1-A-9, Menara 2, KL Eco City,<br>3, Jln Bangsar, 59200 Kuala Lumpur, Malaysia</address>
       <p class="footer-ssm">SSM: 202604001053 (LLP0046284-LGN)</p>
     </div>
@@ -74,7 +73,6 @@ FOOTER = """<footer class="site-footer"><div class="container">
         <li><a href="/services/geo/">GEO</a></li>
         <li><a href="/services/ai-optimisation/">AI Optimisation</a></li>
         <li><a href="/services/content-writing/">Content Writing</a></li>
-        <li><a href="/services/google-ads/">Google Ads</a></li>
       </ul>
     </div>
     <div>
@@ -259,18 +257,6 @@ SERVICES = [
        "Yes. Everything is written for your brand and your audience, then checked for accuracy and clarity before it reaches you."),
       ("Can you match our tone of voice?",
        "We work from your existing material and a short brief, so new content sounds like you rather than a generic template.")]),
-    ("google-ads", "Google Ads", "Google Ads",
-     "Reach customers the moment they are searching, with budget under control.",
-     "Paid search gives you visibility while your organic work builds. We set up and manage campaigns around clear goals, tight targeting and honest reporting, so you can see what every ringgit is doing.",
-     ["Search and performance campaign setup",
-      "Keyword and audience targeting",
-      "Conversion tracking and clean attribution",
-      "Budget management and bid strategy",
-      "Reporting tied to real outcomes"],
-     [("How much should I budget for Google Ads?",
-       "It depends on your market and goals. We start with a sensible test budget, measure what converts, then scale what works rather than guessing up front."),
-      ("Do ads help my SEO?",
-       "Ads do not directly improve organic rankings, but they bring fast traffic and useful data that can sharpen your SEO and content decisions.")]),
 ]
 
 SERVICE_BY_SLUG = {s[0]: s for s in SERVICES}
@@ -287,7 +273,6 @@ ICONS = {
                             '<path d="M24 18l1.1 3L28 22l-2.9 1.1L24 26l-1.1-2.9L20 22l2.9-1.1z"/></svg>',
     "content-writing": _S + '<line x1="6" y1="10" x2="20" y2="10"/><line x1="6" y1="16" x2="16" y2="16"/>'
                             '<line x1="6" y1="22" x2="13" y2="22"/><path d="M20 24l6-6 3 3-6 6-4 1z"/></svg>',
-    "google-ads": _S + '<path d="M12 9l13 5.5-5.6 1.9-1.9 5.6z"/><path d="M8 8 6 6M7 13H4M13 7V4"/></svg>',
 }
 
 def card_html(slug, name, tagline, featured=False):
@@ -480,23 +465,6 @@ SERVICE_ILLO = {
 </g>
 <rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
 </svg>''',
-    "google-ads": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with an ad flag, result rows, and a large cursor click">
-<defs><clipPath id="c5"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
-<g clip-path="url(#c5)">
-<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
-<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
-<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
-<path d="M40 92 H80 V126 L60 116 L40 126 Z" fill="#e0b23c"/>
-<rect x="40" y="150" width="180" height="12" rx="6" fill="#4d65af"/>
-<rect x="40" y="176" width="140" height="12" rx="6" fill="#3a4e8f"/>
-<rect x="40" y="202" width="160" height="12" rx="6" fill="#3a4e8f"/>
-<path d="M190 190 L246 236 L222 240 L232 266 L216 273 L206 247 L188 262 Z" fill="#f4f4f2" stroke="#1c2033" stroke-width="2"/>
-<line x1="252" y1="196" x2="266" y2="182" stroke="#e0b23c" stroke-width="5" stroke-linecap="round"/>
-<line x1="260" y1="212" x2="278" y2="208" stroke="#e0b23c" stroke-width="5" stroke-linecap="round"/>
-</g>
-<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
-</svg>''',
 }
 
 PROCESS_STEPS = [
@@ -526,13 +494,12 @@ home_body = """
     <div class="hero-copy">
       <span class="eyebrow">SEO &amp; AI Optimisation</span>
       <h1>Helping businesses<br>get found <em>online.</em></h1>
-      <p class="lead">We help businesses across Malaysia rank on Google, show up in AI search results, and grow organically through smart SEO, content and paid strategy.</p>
+      <p class="lead">We help businesses across Malaysia rank on Google, show up in AI search results, and grow organically through smart SEO, content and strategy.</p>
       <div class="services-tags" role="list" aria-label="Our services">
         <span class="service-tag" role="listitem">SEO</span>
         <span class="service-tag" role="listitem">GEO</span>
         <span class="service-tag" role="listitem">AI Optimisation</span>
         <span class="service-tag" role="listitem">Content Writing</span>
-        <span class="service-tag" role="listitem">Google Ads</span>
       </div>
       <div class="btn-row">
         <a class="btn btn-primary" href="/contact/">Get in Touch</a>
@@ -601,7 +568,7 @@ home_body = (home_body
 
 home_faq_items = [
     ("What does OnceMore Digital do?",
-     "We help businesses in Malaysia grow online through SEO, GEO, AI optimisation, content writing and Google Ads."),
+     "We help businesses in Malaysia grow online through SEO, GEO, AI optimisation and content writing."),
     ("Where are you based?",
      "We work with businesses across Malaysia and can support clients remotely."),
     ("How do I get started?",
@@ -628,7 +595,7 @@ home_schema = [
         "url": URL,
         "email": EMAIL,
         "logo": URL + "/oncemoredigial-seo-marketing-logo.jpg",
-        "description": "SEO, GEO, AI optimisation, content writing and Google Ads for businesses in Malaysia.",
+        "description": "SEO, GEO, AI optimisation and content writing for businesses in Malaysia.",
         "areaServed": {"@type": "Country", "name": "Malaysia"},
         "address": ADDRESS,
         "identifier": "LLP0046284-LGN",
@@ -643,20 +610,20 @@ home_schema = [
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "OnceMore Digital",
-        "description": "SEO, GEO, AI Optimisation, Content Writing and Google Ads for Malaysian businesses",
+        "description": "SEO, GEO, AI Optimisation and Content Writing for Malaysian businesses",
         "url": URL,
         "email": EMAIL,
         "image": OG_IMAGE,
         "areaServed": {"@type": "Country", "name": "Malaysia"},
         "knowsAbout": ["SEO", "Search Engine Optimisation", "GEO",
                        "Generative Engine Optimisation", "AI Optimisation",
-                       "Content Writing", "Google Ads", "Digital Marketing"],
+                       "Content Writing", "Digital Marketing"],
     }),
     home_faq_schema,
 ]
 
 page("/", "OnceMore Digital | SEO, GEO &amp; AI Optimisation in Malaysia",
-     "OnceMore Digital helps Malaysian businesses rank higher on Google, get found in AI search, and grow organically. SEO, GEO, AI optimisation, content writing and Google Ads.",
+     "OnceMore Digital helps Malaysian businesses rank higher on Google, get found in AI search, and grow organically. SEO, GEO, AI optimisation and content writing.",
      home_body, active="home", schema_blocks=home_schema)
 
 # ---------------------------------------------------------------- services hub
@@ -690,8 +657,8 @@ hub_schema = [
         ],
     }),
 ]
-page("/services/", "Services | SEO, GEO, AI Optimisation, Content &amp; Google Ads",
-     "Our digital marketing services for Malaysian businesses: SEO, GEO, AI optimisation, content writing and Google Ads. One team across organic and paid growth.",
+page("/services/", "Services | SEO, GEO, AI Optimisation &amp; Content",
+     "Our digital marketing services for Malaysian businesses: SEO, GEO, AI optimisation and content writing. One team across organic growth.",
      hub_body, active="services", schema_blocks=hub_schema)
 
 # ---------------------------------------------------------------- service pages
@@ -1007,7 +974,7 @@ for g in RESOURCES:
     <ul>{tldr}</ul>
   </div>
   <div class="author-bio">
-    <p><strong>Written by the OnceMore Digital team.</strong> We work on SEO, GEO, AI optimisation, content and Google Ads for brands across Malaysia.</p>
+    <p><strong>Written by the OnceMore Digital team.</strong> We work on SEO, GEO, AI optimisation and content for brands across Malaysia.</p>
   </div>
   <div class="btn-row" style="justify-content:flex-start;margin-top:1.75rem">
     <a class="btn btn-primary" href="/contact/">Talk to us about this</a>

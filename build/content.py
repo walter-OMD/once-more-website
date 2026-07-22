@@ -12,7 +12,7 @@ SERVICE_CONTENT = {
              "<p>Search here is rarely tidy. People mix English and Malay in the same query, and intent shifts from one city to the next. Someone in Petaling Jaya looking for a service expects local, relevant results, so we map keywords by language and location, then build pages that match each one. For businesses that serve a specific area, a well kept Google Business Profile and local signals often bring the fastest, most qualified enquiries.</p>"
              "<p>Strong rankings also depend on the words on the page. That is where <a href=\"/services/content-writing/\">content writing</a> comes in, and increasingly on whether AI tools can read and quote you, which is the job of <a href=\"/services/geo/\">GEO</a>.</p>"),
             ("How long until SEO pays off?",
-             "<p>SEO is a compounding investment, not a switch. Most sites see early movement within three to six months, with the larger gains arriving as content and authority build. Newer domains and competitive terms take longer. If you need visibility while the organic work matures, pairing it with <a href=\"/services/google-ads/\">Google Ads</a> covers the gap. For a fuller picture, our <a href=\"/resources/seo-guide-malaysia/\">guide to SEO for Malaysian businesses</a> walks through what to expect.</p>"),
+             "<p>SEO is a compounding investment, not a switch. Most sites see early movement within three to six months, with the larger gains arriving as content and authority build. Newer domains and competitive terms take longer to move. For a fuller picture, our <a href=\"/resources/seo-guide-malaysia/\">guide to SEO for Malaysian businesses</a> walks through what to expect.</p>"),
         ],
         "faqs": [
             ("How much does SEO cost in Malaysia?",
@@ -131,22 +131,6 @@ SERVICE_CONTENT = {
              "We use tools to research and speed up drafting, but every piece is shaped, fact checked and edited by a person so it is accurate and sounds like your brand, not a template."),
             ("How often should we publish?",
              "Consistency beats volume. A steady cadence of strong, intent matched pieces outperforms a burst of thin posts that then stops."),
-        ],
-    },
-    "google-ads": {
-        "sections": [
-            ("When does paid search make sense?",
-             "<p>Paid search puts you in front of customers at the exact moment they are searching, which makes it the fastest way to test demand and win visibility while your <a href=\"/services/seo/\">organic rankings</a> build. It suits launches, competitive terms you do not yet rank for, and offers that are time sensitive. The trade off is that the traffic stops when the budget does, so we treat ads as a lever alongside organic, not a replacement for it.</p>"),
-            ("How do we keep the budget under control?",
-             "<p>Every campaign is built around clear goals and tight targeting, with conversion tracking in place from day one so you can see what each ringgit returns. We start with a sensible test budget, measure what actually converts, then scale what works and cut what does not. No vanity metrics, no guessing.</p>"),
-            ("What about the data ads produce?",
-             "<p>Ads reveal which terms and messages convert quickly, and that insight sharpens your <a href=\"/services/seo/\">SEO</a> and <a href=\"/services/content-writing/\">content</a> decisions. Used together, paid and organic make each other stronger.</p>"),
-        ],
-        "faqs": [
-            ("What budget do I need to start?",
-             "Enough to gather meaningful data in your market, which varies by industry and competition. We begin with a test budget, prove what converts, then scale deliberately rather than committing large spend up front."),
-            ("Do ads improve my Google rankings?",
-             "Not directly. Ads and organic rankings are separate systems. What ads do is bring fast traffic and useful conversion data that can inform your organic strategy."),
         ],
     },
 }
@@ -272,7 +256,7 @@ RESOURCES = [
             ("How to judge whether it is worth it",
              "<p>Compare the investment to the value of a customer. If a single new client is worth a meaningful sum to you, even modest ranking gains can pay for the work many times over. Look for providers who ask about your goals before your budget, and who report in clear terms so you can actually see what is happening. Google's own note on <a href=\"https://developers.google.com/search/docs/fundamentals/do-i-need-seo\" target=\"_blank\" rel=\"noopener\">whether you need an SEO</a> is a sensible starting point.</p>"),
             ("A sensible way to start",
-             "<p>Begin with a clear assessment of where your site stands, then scope the work to what will actually help. If ads would bring visibility sooner, <a href=\"/services/google-ads/\">Google Ads</a> can run in parallel. When you are ready for a straight answer about your own site, <a href=\"/contact/\">get in touch</a>.</p>"),
+             "<p>Begin with a clear assessment of where your site stands, then scope the work to what will actually help. When you are ready for a straight answer about your own site, <a href=\"/contact/\">get in touch</a>.</p>"),
         ],
         "faqs": [
             ("Is cheap SEO ever worth it?",
