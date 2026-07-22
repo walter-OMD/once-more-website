@@ -335,7 +335,7 @@ CLIENT_LOGOS = [
 
 def clients_marquee():
     chips = "".join(
-        '<div class="logo-chip"><img src="/assets/img/clients/%s" alt="%s" decoding="async"></div>'
+        '<div class="logo-chip"><img src="/assets/img/clients/%s" alt="%s logo" decoding="async"></div>'
         % (f, a) for f, a in CLIENT_LOGOS)
     track = chips + chips  # duplicated for a seamless loop
     return ('<section class="section-sm clients"><div class="container">'
@@ -859,14 +859,13 @@ about_body = """
 <section class="section panel-alt"><div class="container">
   <div class="split story-split">
     <div class="photo-frame">
-      <img src="/assets/img/about/team-meeting.jpg" alt="OnceMore Digital team walking a client through a strategy session" loading="lazy" decoding="async">
+      <img src="/assets/img/about/team-meeting.jpg" alt="OnceMore Digital team presenting website traffic data to a client during a strategy session in a Kuala Lumpur meeting room" loading="lazy" decoding="async">
     </div>
     <div>
       <span class="eyebrow">How we work</span>
       <h2>Less deck, more actual conversation.</h2>
       <p>A lot of agencies show you a slide deck once a quarter and go quiet until renewal. We would rather be in the room walking through the numbers with you, which is what most of our client meetings actually look like.</p>
       <p style="margin-top:1rem">Every account gets a monthly call with the people doing the actual work on it, not a summary read back by someone who was not in the room. If something is not working, you hear that directly, along with what we are changing about it.</p>
-      <p class="photo-caption">Walking a client through their traffic numbers during a strategy session.</p>
     </div>
   </div>
 </div></section>
@@ -878,15 +877,13 @@ about_body = """
   <div class="team-gallery">
     <figure>
       <div class="photo-frame">
-        <img src="/assets/img/about/team-office.jpg" alt="The OnceMore Digital team at the office between meetings" loading="lazy" decoding="async">
+        <img src="/assets/img/about/team-office.jpg" alt="OnceMore Digital team members together at the office between client meetings" loading="lazy" decoding="async">
       </div>
-      <figcaption class="photo-caption">Between meetings, at the office.</figcaption>
     </figure>
     <figure>
       <div class="photo-frame">
-        <img src="/assets/img/about/team-outing.jpg" alt="The OnceMore Digital team celebrating together outside the office" loading="lazy" decoding="async">
+        <img src="/assets/img/about/team-outing.jpg" alt="OnceMore Digital team celebrating a completed project together outside the office" loading="lazy" decoding="async">
       </div>
-      <figcaption class="photo-caption">Marking a project wrap the way we like to, together.</figcaption>
     </figure>
   </div>
 </div></section>
