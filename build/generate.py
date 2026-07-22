@@ -479,7 +479,7 @@ PROCESS_STEPS = [
 ]
 
 bento_cards = "".join(
-    card_html(s[0], s[1], s[3], featured=(s[0] == "seo")) for s in SERVICES
+    card_html(s[0], s[1], s[3]) for s in SERVICES
 )
 
 process_cards = "".join(
@@ -540,7 +540,7 @@ home_body = """
   <span class="eyebrow">What we do</span>
   <h2>Five ways we help you grow</h2>
   <p>Each service stands on its own or works together as one organic growth plan. SEO is where most engagements start.</p>
-  <div class="bento" style="margin-top:2rem">
+  <div class="grid" style="margin-top:2rem">
     BENTO_CARDS
   </div>
 </div></section>
