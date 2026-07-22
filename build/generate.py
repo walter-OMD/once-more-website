@@ -545,7 +545,7 @@ home_body = """
   </div>
 </div></section>
 
-<section class="section panel-alt"><div class="container">
+<section class="section"><div class="container">
   <span class="eyebrow">Who we help</span>
   <h2>Malaysian businesses across <em>every industry we touch.</em></h2>
   <p>As a digital marketing agency, we adapt strategy to how each industry's customers actually search, not a one size fits all template.</p>
