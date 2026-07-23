@@ -454,7 +454,8 @@ p{color:var(--muted);font-weight:400}
 .stat-card{background:rgba(77,101,175,0.08);border:1px solid var(--border);border-radius:10px;padding:2rem 1.5rem;text-align:center}
 .stat-num{display:block;font-size:2.75rem;font-weight:700;color:var(--blue-light);line-height:1.1;margin-bottom:.5rem;font-family:inherit}
 .stat-label{color:var(--muted);font-size:.9rem;line-height:1.4}
-.case-chart{margin:2rem 0;border-radius:10px;border:1px solid var(--border);background:var(--dark-2);padding:1.5rem}
+.case-chart{margin:2rem 0;border-radius:10px;border:1px solid var(--border);background:#ffffff;padding:1rem}
+.case-chart img{width:100%;height:auto;display:block;border-radius:6px}
 .case-chart-caption{text-align:center;margin-top:.75rem;font-size:.85rem;color:var(--muted)}
 .case-card{display:block;border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color .15s ease}
 .case-card:hover{border-color:var(--blue-light)}

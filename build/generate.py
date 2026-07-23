@@ -341,39 +341,10 @@ def clients_marquee():
 
 CLIENTS_HTML = clients_marquee()
 
-# Growth chart illustration for case studies, modelled on the client's own
-# Google Search Console performance view: dual clicks/impressions lines,
-# labelled axes, legend and real date range, not an abstract shape.
-CASE_CHART_SVG = '''<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Google Search Console performance chart over a 16 month window, showing total clicks and total impressions both flat before the domain migration, then rising sharply and holding at a much higher level afterward">
-<title>Google Search Console performance: clicks and impressions, 16 month view</title>
-<rect x="18" y="70" width="14" height="14" fill="#7a90c7"/>
-<text x="38" y="81" fill="#cfd6e6" font-family="Satoshi,Arial" font-size="14">Clicks</text>
-<rect x="118" y="70" width="14" height="14" fill="#4d65af"/>
-<text x="138" y="81" fill="#cfd6e6" font-family="Satoshi,Arial" font-size="14">Impressions</text>
-<line x1="70" y1="50" x2="860" y2="50" stroke="rgba(122,144,199,0.15)"/>
-<line x1="70" y1="133" x2="860" y2="133" stroke="rgba(122,144,199,0.15)"/>
-<line x1="70" y1="217" x2="860" y2="217" stroke="rgba(122,144,199,0.15)"/>
-<line x1="70" y1="300" x2="860" y2="300" stroke="rgba(122,144,199,0.35)"/>
-<text x="60" y="54" text-anchor="end" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">240</text>
-<text x="60" y="137" text-anchor="end" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">160</text>
-<text x="60" y="221" text-anchor="end" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">80</text>
-<text x="60" y="304" text-anchor="end" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">0</text>
-<text x="870" y="54" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">6K</text>
-<text x="870" y="137" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">4K</text>
-<text x="870" y="221" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">2K</text>
-<text x="870" y="304" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">0</text>
-<line x1="289" y1="50" x2="289" y2="300" stroke="rgba(224,178,60,0.6)" stroke-dasharray="4 4"/>
-<text x="289" y="38" text-anchor="middle" fill="#e0b23c" font-family="Satoshi,Arial" font-size="12">Domain migration</text>
-<polyline points="70.0,287.5 113.9,289.6 157.8,283.3 201.7,288.3 245.6,285.4 289.4,225.0 333.3,166.7 377.2,137.5 421.1,150.0 465.0,133.3 508.9,154.2 552.8,145.8 596.7,162.5 640.6,150.0 684.4,170.8 728.3,158.3 772.2,166.7 816.1,154.2 860.0,175.0" fill="none" stroke="#4d65af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<polyline points="70.0,289.6 113.9,291.7 157.8,285.4 201.7,290.6 245.6,287.5 289.4,227.1 333.3,143.8 377.2,96.9 421.1,122.9 465.0,81.2 508.9,107.3 552.8,91.7 596.7,117.7 640.6,96.9 684.4,128.1 728.3,107.3 772.2,122.9 816.1,96.9 860.0,133.3" fill="none" stroke="#7a90c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<line x1="70" y1="300" x2="860" y2="300" stroke="rgba(122,144,199,0.35)"/>
-<text x="70" y="322" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">17/03/2024</text>
-<text x="267" y="322" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">12/05/2024</text>
-<text x="465" y="322" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">21/07/2024</text>
-<text x="662" y="322" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">29/09/2024</text>
-<text x="860" y="322" text-anchor="end" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">22/12/2024</text>
-</svg>'''
-CASE_CHART_CAPTION = "Google Search Console, 16 month view: 39K total clicks, 829K total impressions, 4.7% average CTR, 21.4 average position."
+# Real Google Search Console screenshot supplied by the client for this case
+# study (cropped to remove the toolbar), used as-is rather than recreated.
+CASE_CHART_IMG = '<img src="/assets/img/case-studies/car-rental-seo-growth-gsc.png" alt="Google Search Console performance report showing total clicks and total impressions over a 16 month period, flat before the domain migration and rising sharply afterward" loading="lazy" decoding="async">'
+CASE_CHART_CAPTION = "Actual Google Search Console data, 16 month view: 39K total clicks, 829K total impressions, 4.7% average CTR, 21.4 average position."
 
 # ---------------------------------------------------------------- guide visuals
 # a small ringgit-tag icon for the cost guide card
@@ -1158,7 +1129,7 @@ for c in CASE_STUDIES:
     <p class="lead" style="font-size:1.05rem;max-width:62ch;margin-bottom:1.75rem">{html.escape(c["approach_intro"])}</p>
     <div class="grid">{approach_cards}</div>
     <h2 id="{_case_sid(c["results_heading"])}" style="margin-top:2.5rem">{html.escape(c["results_heading"])}</h2>
-    <div class="case-chart">{CASE_CHART_SVG}</div>
+    <div class="case-chart">{CASE_CHART_IMG}</div>
     <p class="case-chart-caption">{CASE_CHART_CAPTION}</p>
     <div class="stat-grid">{stat_cards}</div>
     <div class="prose" style="margin-top:1.5rem">{results_html}</div>
