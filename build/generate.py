@@ -154,7 +154,7 @@ def faq_block(items):
     return block, schema
 
 
-def page(path, title, desc, body, extra_head="", active="", schema_blocks=None):
+def page(path, title, desc, body, active="", schema_blocks=None):
     canonical = URL + path
     head_schema = "\n".join(schema_blocks or [])
     doc = f"""<!DOCTYPE html>
@@ -268,8 +268,6 @@ SERVICES = [
        "We work from your existing material and a short brief, so new content sounds like you rather than a generic template.")]),
 ]
 
-SERVICE_BY_SLUG = {s[0]: s for s in SERVICES}
-
 # ---------------------------------------------------------------- inline icons
 _S = ('<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" '
       'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">')
@@ -284,11 +282,10 @@ ICONS = {
                             '<line x1="6" y1="22" x2="13" y2="22"/><path d="M20 24l6-6 3 3-6 6-4 1z"/></svg>',
 }
 
-def card_html(slug, name, tagline, featured=False):
-    cls = "card featured" if featured else "card"
-    return ('<a class="%s" href="/services/%s/"><span class="icon">%s</span>'
+def card_html(slug, name, tagline):
+    return ('<a class="card" href="/services/%s/"><span class="icon">%s</span>'
             '<h3>%s</h3><p>%s</p><span class="more">Learn more &rarr;</span></a>'
-            % (cls, slug, ICONS[slug], name, tagline))
+            % (slug, ICONS[slug], name, tagline))
 
 # Stylized search + AI answer illustration (original artwork, no third-party logos)
 HERO_SVG = '''<svg class="hero-illustration" viewBox="0 0 560 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A search results page next to an AI answer panel">
@@ -341,6 +338,13 @@ def clients_marquee():
 
 CLIENTS_HTML = clients_marquee()
 
+# Sparse decorative shape fields (2 motifs each) for page hero/intro sections
+# site-wide. Kept deliberately light, alternated for variety across templates.
+SHAPE_SPARSE_1 = '<div class="shape-field" aria-hidden="true"><div class="motif motif-sq" style="top:12%;right:8%"></div><div class="motif motif-diamond outline" style="bottom:18%;right:20%"></div></div>'
+SHAPE_SPARSE_2 = '<div class="shape-field" aria-hidden="true"><div class="motif motif-grid" style="top:15%;right:6%"><span></span><span></span><span></span><span></span></div><div class="motif motif-mini" style="bottom:20%;right:26%"></div></div>'
+SHAPE_SPARSE_3 = '<div class="shape-field" aria-hidden="true"><div class="motif motif-diamond" style="top:10%;right:10%"></div><div class="motif motif-sq alt" style="bottom:16%;right:24%"></div></div>'
+SHAPE_SPARSE_4 = '<div class="shape-field" aria-hidden="true"><div class="motif motif-sq outline" style="top:14%;right:9%"></div><div class="motif motif-mini" style="bottom:22%;right:22%"></div></div>'
+
 # Chart images now live per case study in CASE_STUDIES[i]["charts"]
 # as (image_path, alt_text, caption) tuples, since different case studies
 # have different numbers of supporting screenshots.
@@ -354,54 +358,6 @@ GUIDE_ICONS = {
     "seo-guide-malaysia": ICONS["seo"],
     "what-is-geo": ICONS["geo"],
     "seo-cost-malaysia": _TAG,
-}
-
-_C_INK = '#7a90c7'
-GUIDE_ILLO = {
- # three pillars of SEO
- "seo-guide-malaysia": (
-  '<svg class="guide-illustration" viewBox="0 0 560 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The three pillars of SEO: technical health, content and authority, supporting rankings">'
-  '<title>The three pillars of SEO</title>'
-  '<rect x="40" y="40" width="480" height="40" rx="6" fill="rgba(77,101,175,0.18)" stroke="#4d65af"/>'
-  '<text x="280" y="65" text-anchor="middle" fill="#f4f4f2" font-family="Satoshi,Arial" font-size="17" font-weight="700">Rankings &amp; visibility</text>'
-  + "".join(
-     f'<rect x="{x}" y="120" width="150" height="140" rx="8" fill="rgba(77,101,175,0.08)" stroke="rgba(77,101,175,0.45)"/>'
-     f'<text x="{x+75}" y="180" text-anchor="middle" fill="{_C_INK}" font-family="Satoshi,Arial" font-size="14" font-weight="700">{t}</text>'
-     f'<text x="{x+75}" y="205" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">{s}</text>'
-     for x, t, s in [(40, "Technical", "crawlable, fast"), (205, "Content", "intent matched"), (370, "Authority", "trusted links")])
-  + '<path d="M115 120v-40M280 120v-40M445 120v-40" stroke="rgba(77,101,175,0.5)" stroke-width="1.5" stroke-dasharray="4 4"/>'
-  '</svg>'),
- # question -> AI -> cited sources
- "what-is-geo": (
-  '<svg class="guide-illustration" viewBox="0 0 560 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A question goes to an AI engine, which cites your business among its sources">'
-  '<title>How AI answer engines cite sources</title>'
-  '<rect x="30" y="120" width="150" height="60" rx="10" fill="rgba(77,101,175,0.10)" stroke="rgba(77,101,175,0.5)"/>'
-  '<text x="105" y="155" text-anchor="middle" fill="#f4f4f2" font-family="Satoshi,Arial" font-size="13">"best ... in KL?"</text>'
-  '<rect x="220" y="110" width="120" height="80" rx="12" fill="rgba(77,101,175,0.18)" stroke="#4d65af"/>'
-  '<path d="M252 150l7 7 12-14" stroke="#7a90c7" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
-  '<text x="280" y="178" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">AI engine</text>'
-  '<rect x="400" y="95" width="150" height="34" rx="6" fill="rgba(77,101,175,0.12)" stroke="#4d65af"/>'
-  '<text x="475" y="117" text-anchor="middle" fill="#7a90c7" font-family="Satoshi,Arial" font-size="12" font-weight="700">Your business</text>'
-  '<rect x="400" y="140" width="150" height="22" rx="5" fill="rgba(154,163,184,0.10)" stroke="rgba(154,163,184,0.3)"/>'
-  '<rect x="400" y="170" width="150" height="22" rx="5" fill="rgba(154,163,184,0.10)" stroke="rgba(154,163,184,0.3)"/>'
-  '<path d="M180 150h35M340 150h55" stroke="rgba(77,101,175,0.6)" stroke-width="2" marker-end="url(#ar)"/>'
-  '<defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0l6 3-6 3z" fill="rgba(77,101,175,0.8)"/></marker></defs>'
-  '<text x="475" y="210" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="11">cited sources</text>'
-  '</svg>'),
- # cost factors -> scope -> value
- "seo-cost-malaysia": (
-  '<svg class="guide-illustration" viewBox="0 0 560 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cost depends on market, starting point and competition, which set the scope and the value returned">'
-  '<title>What drives the cost of SEO</title>'
-  + "".join(
-     f'<rect x="40" y="{y}" width="180" height="44" rx="8" fill="rgba(77,101,175,0.08)" stroke="rgba(77,101,175,0.4)"/>'
-     f'<text x="130" y="{y+28}" text-anchor="middle" fill="#cfd6e6" font-family="Satoshi,Arial" font-size="13">{t}</text>'
-     for y, t in [(60, "Your market"), (128, "Starting point"), (196, "Competition")])
-  + '<rect x="300" y="110" width="110" height="80" rx="10" fill="rgba(77,101,175,0.18)" stroke="#4d65af"/>'
-  '<text x="355" y="155" text-anchor="middle" fill="#f4f4f2" font-family="Satoshi,Arial" font-size="14" font-weight="700">Scope</text>'
-  '<rect x="450" y="120" width="80" height="60" rx="10" fill="rgba(77,101,175,0.12)" stroke="#4d65af"/>'
-  '<text x="490" y="156" text-anchor="middle" fill="#7a90c7" font-family="Satoshi,Arial" font-size="13" font-weight="700">Value</text>'
-  '<path d="M220 82h80v40M220 150h80M220 218h80v-40M410 150h40" stroke="rgba(77,101,175,0.55)" stroke-width="1.6" fill="none"/>'
-  '</svg>'),
 }
 
 # ---------------------------------------------------------------- service page illustrations
@@ -504,10 +460,7 @@ process_cards = "".join(
 home_body = """
 <section class="hero"><div class="shape-field" aria-hidden="true">
   <div class="motif motif-sq" style="top:10%;right:8%"></div>
-  <div class="motif motif-diamond outline" style="top:58%;right:20%"></div>
-  <div class="motif motif-grid" style="bottom:12%;right:6%"><span></span><span></span><span></span><span></span></div>
-  <div class="motif motif-mini" style="top:32%;right:32%"></div>
-  <div class="motif motif-sq alt" style="bottom:22%;left:3%"></div>
+  <div class="motif motif-diamond outline" style="bottom:16%;right:22%"></div>
 </div><div class="container">
   <div class="hero-grid">
     <div class="hero-copy">
@@ -533,9 +486,7 @@ home_body = """
 
 <section class="section"><div class="shape-field" aria-hidden="true">
   <div class="motif motif-diamond" style="top:14%;right:10%"></div>
-  <div class="motif motif-sq outline" style="top:48%;right:22%"></div>
   <div class="motif motif-grid" style="bottom:14%;right:8%"><span></span><span></span><span></span><span></span></div>
-  <div class="motif motif-mini" style="top:35%;right:4%"></div>
 </div><div class="container">
   <span class="eyebrow">Who we are</span>
   <h2>A Malaysian-led digital marketing agency, built on direct access.</h2>
@@ -639,8 +590,6 @@ home_body += """
 <section class="section cta-final"><div class="shape-field" aria-hidden="true">
   <div class="motif motif-sq alt" style="top:18%;left:8%"></div>
   <div class="motif motif-diamond outline" style="bottom:15%;right:10%"></div>
-  <div class="motif motif-mini" style="top:55%;left:22%"></div>
-  <div class="motif motif-grid" style="top:20%;right:14%"><span></span><span></span><span></span><span></span></div>
 </div><div class="container">
   <div class="cta-band">
     <h2>Ready to get found?</h2>
@@ -693,7 +642,7 @@ page("/", "OnceMore Digital | Digital Marketing Agency &amp; SEO Agency in Malay
 # ---------------------------------------------------------------- services hub
 hub_cards = "".join(card_html(s[0], s[1], s[3]) for s in SERVICES)
 hub_body = """
-<section class="section"><div class="container">
+<section class="section">SHAPE_1<div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Services</nav>
   <span class="eyebrow" style="margin-top:1.5rem">Digital Marketing Services in Malaysia</span>
   <h1>Everything you need to <em>get found.</em></h1>
@@ -704,7 +653,7 @@ hub_body = """
   <div class="grid" style="margin-top:2.5rem">%s</div>
 </div></section>
 
-<section class="section panel-alt"><div class="container">
+<section class="section panel-alt">SHAPE_3<div class="container">
   <span class="eyebrow">How it fits together</span>
   <h2>How each service helps improve your <em>website traffic.</em></h2>
   <p style="max-width:65ch">Digital marketing works best when every channel is pulling toward the same goal. Here is what each one is actually doing for your traffic.</p>
@@ -715,7 +664,7 @@ hub_body = """
     <li><strong>Content Writing</strong> fuels both SEO and GEO with the pages and answers that traffic actually needs to find in the first place.</li>
   </ul>
 </div></section>
-<section class="section-sm"><div class="container">
+<section class="section-sm">SHAPE_2<div class="container">
   <div class="cta-band">
     <h2>Not sure where to start?</h2>
     <p>Tell us about your business and we will point you to the right place.</p>
@@ -723,6 +672,7 @@ hub_body = """
   </div>
 </div></section>
 """ % hub_cards
+hub_body = hub_body.replace("SHAPE_1", SHAPE_SPARSE_1).replace("SHAPE_2", SHAPE_SPARSE_2).replace("SHAPE_3", SHAPE_SPARSE_3)
 
 hub_faq_items = [
     ("What is digital marketing?",
@@ -819,7 +769,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
         '<li><a href="/resources/%s/">%s</a></li>' % (g["slug"], html.escape(g["title"]))
         for g in RESOURCES)
     body = f"""
-<section class="section service-hero"><div class="container">
+<section class="section service-hero">{SHAPE_SPARSE_2}<div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {short}</nav>
   <div class="service-hero-grid">
     <div>
@@ -846,7 +796,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   {process_html}
 </div></section>
 
-<section class="section-sm panel-alt"><div class="container">
+<section class="section-sm panel-alt">{SHAPE_SPARSE_1}<div class="container">
   <span class="eyebrow">What's included</span>
   <h2>Everything in this service</h2>
   <ul class="feature-list">{fl}</ul>
@@ -858,7 +808,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   <h2>Go deeper</h2>
   <ul class="link-list">{related_guides}</ul>
 </div></section>
-<section class="section-sm panel-alt"><div class="container">
+<section class="section-sm panel-alt">{SHAPE_SPARSE_3}<div class="container">
   <span class="eyebrow">More services</span>
   <h2>Explore the rest</h2>
   <div class="grid" style="margin-top:1.5rem">{others}</div>
@@ -914,7 +864,7 @@ about_values_cards = "".join(
 )
 
 about_body = """
-<section class="section"><div class="container">
+<section class="section">SHAPE_2<div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / About</nav>
   <span class="eyebrow" style="margin-top:1.5rem">About</span>
   <h1>Who Are We Here at <em>OnceMore Digital</em></h1>
@@ -956,7 +906,7 @@ about_body = """
   </div>
 </div></section>
 
-<section class="section panel-alt"><div class="container">
+<section class="section panel-alt">SHAPE_4<div class="container">
   <span class="eyebrow">What matters to us</span>
   <h2>The stuff we will not compromise on.</h2>
   <p style="max-width:65ch">None of this is a mission statement for the wall. It is just what we have found actually matters once you are the one paying for the work.</p>
@@ -965,7 +915,7 @@ about_body = """
 
 CLIENTS_MARQUEE
 
-<section class="section-sm"><div class="container">
+<section class="section-sm">SHAPE_1<div class="container">
   <div class="cta-band">
     <h2>Want to meet the team properly?</h2>
     <p>Tell us about your business and we will set up a call.</p>
@@ -973,6 +923,9 @@ CLIENTS_MARQUEE
   </div>
 </div></section>
 """.replace("CLIENTS_MARQUEE", CLIENTS_HTML) % about_values_cards
+about_body = (about_body.replace("SHAPE_2", SHAPE_SPARSE_2)
+              .replace("SHAPE_4", SHAPE_SPARSE_4)
+              .replace("SHAPE_1", SHAPE_SPARSE_1))
 
 about_schema = [
     breadcrumb([("Home", "/"), ("About", "/about/")]),
@@ -990,7 +943,7 @@ page("/about/", "About | OnceMore Digital",
 
 # ---------------------------------------------------------------- contact
 contact_body = """
-<section class="section"><div class="container">
+<section class="section">SHAPE_4<div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Contact</nav>
   <span class="eyebrow" style="margin-top:1.5rem">Contact</span>
   <h1>Let's get you <em>found.</em></h1>
@@ -1016,9 +969,11 @@ contact_body = """
       <div class="social-icons">SOCIAL_ICONS_PLACEHOLDER</div>
     </div>
   </div>
+  SHAPE_2
 </div></section>
 """ % (EMAIL, EMAIL)
 contact_body = contact_body.replace("SOCIAL_ICONS_PLACEHOLDER", SOCIAL_ICONS_HTML)
+contact_body = contact_body.replace("SHAPE_4", SHAPE_SPARSE_4).replace("SHAPE_2", SHAPE_SPARSE_2)
 contact_schema = [
     breadcrumb([("Home", "/"), ("Contact", "/contact/")]),
     jsonld({
@@ -1058,7 +1013,7 @@ for g in RESOURCES:
         '<li><a href="/resources/%s/">%s</a></li>' % (o["slug"], html.escape(o["title"]))
         for o in RESOURCES if o["slug"] != g["slug"])
     gbody = f"""
-<section class="section"><div class="container">
+<section class="section">{SHAPE_SPARSE_3}<div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/resources/">Resources</a> / {html.escape(g["title"])}</nav>
   <span class="eyebrow" style="margin-top:1.25rem">{html.escape(g["eyebrow"])}</span>
   <h1>{html.escape(g["h1"])}</h1>
@@ -1086,7 +1041,7 @@ for g in RESOURCES:
   </div>
 </div></section>
 {g_faq_html}
-<section class="section-sm"><div class="container">
+<section class="section-sm">{SHAPE_SPARSE_2}<div class="container">
   <span class="eyebrow">Keep reading</span>
   <h2>More guides</h2>
   <ul class="link-list">{related}</ul>
@@ -1123,19 +1078,20 @@ res_cards = "".join(
     % (g["slug"], GUIDE_ICONS.get(g["slug"], ICONS["content-writing"]),
        html.escape(g["title"]), html.escape(g["desc"])) for g in RESOURCES)
 res_hub_body = """
-<section class="section"><div class="container">
+<section class="section">SHAPE_1<div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Resources</nav>
   <span class="eyebrow" style="margin-top:1.5rem">Resources</span>
   <h1>Guides on <em>search, AI and growth.</em></h1>
   <p class="lead">Straight-talking guides on getting found in Malaysia, across both classic search and the AI answer engines that increasingly sit on top of it.</p>
   <div class="grid" style="margin-top:2.5rem">%s</div>
 </div></section>
-<section class="section-sm"><div class="container"><div class="cta-band">
+<section class="section-sm">SHAPE_4<div class="container"><div class="cta-band">
   <h2>Want this applied to your site?</h2>
   <p>We turn the thinking in these guides into work that moves your rankings and visibility.</p>
   <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
 </div></div></section>
 """ % res_cards
+res_hub_body = res_hub_body.replace("SHAPE_1", SHAPE_SPARSE_1).replace("SHAPE_4", SHAPE_SPARSE_4)
 res_hub_schema = [
     breadcrumb([("Home", "/"), ("Resources", "/resources/")]),
     jsonld({"@context": "https://schema.org", "@type": "CollectionPage",
@@ -1187,7 +1143,7 @@ for c in CASE_STUDIES:
         '<li><a href="/case-studies/%s/">%s</a></li>' % (o["slug"], html.escape(o["title"]))
         for o in CASE_STUDIES if o["slug"] != c["slug"])
     cbody = f"""
-<section class="section"><div class="container">
+<section class="section">{SHAPE_SPARSE_4}<div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/case-studies/">Case Studies</a> / {html.escape(c["title"])}</nav>
   <span class="case-tag" style="margin-top:1.25rem">{html.escape(c["industry"])}</span>
   <h1>{html.escape(c["h1"])}</h1>
@@ -1210,7 +1166,7 @@ for c in CASE_STUDIES:
     {takeaway_html}
   </article>
 </div></section>
-<section class="section-sm panel-alt"><div class="container">
+<section class="section-sm panel-alt">{SHAPE_SPARSE_2}<div class="container">
   <div class="cta-band">
     <h2>Want results like this for your business?</h2>
     <p>Tell us where your SEO is stuck and we will tell you honestly whether we can fix it.</p>
@@ -1263,19 +1219,20 @@ case_cards = "".join(
     <span class="more">Read case study &rarr;</span>
     </a>''' for c in CASE_STUDIES)
 case_hub_body = """
-<section class="section"><div class="container">
+<section class="section">SHAPE_3<div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Case Studies</nav>
   <span class="eyebrow" style="margin-top:1.5rem">Case Studies</span>
   <h1>Real results for <em>real businesses.</em></h1>
   <p class="lead">No vanity metrics. Here is what actually changed for businesses we have worked with, and how we did it.</p>
   <div class="case-grid" style="margin-top:2.5rem">%s</div>
 </div></section>
-<section class="section-sm"><div class="container"><div class="cta-band">
+<section class="section-sm">SHAPE_1<div class="container"><div class="cta-band">
   <h2>Want to be the next one?</h2>
   <p>Tell us what is not working and we will tell you honestly what it will take to fix it.</p>
   <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
 </div></div></section>
 """ % case_cards
+case_hub_body = case_hub_body.replace("SHAPE_3", SHAPE_SPARSE_3).replace("SHAPE_1", SHAPE_SPARSE_1)
 case_hub_schema = [
     breadcrumb([("Home", "/"), ("Case Studies", "/case-studies/")]),
     jsonld({"@context": "https://schema.org", "@type": "CollectionPage",
