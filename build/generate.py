@@ -44,8 +44,7 @@ NAV = """<header class="site-header"><div class="container"><nav class="nav" ari
     <li><a href="/"{home}>Home</a></li>
     <li class="nav-item has-dropdown">
       <a href="/services/"{services}>Services</a>
-      <button class="dropdown-toggle" aria-expanded="false" aria-controls="services-dropdown" aria-label="Toggle Services submenu"></button>
-      <ul class="dropdown" id="services-dropdown">
+      <ul class="dropdown">
         <li><a href="/services/seo/">SEO</a></li>
         <li><a href="/services/geo/">GEO</a></li>
         <li><a href="/services/ai-optimisation/">AI Optimisation</a></li>
@@ -164,16 +163,16 @@ def faq_block(items):
 # do not all move in lockstep.
 _RISE_SHAPES = [
     # (classes, side, offset, duration_s, delay_s)
-    ("motif motif-sq motif-rise",              "left",  "5%",  32, -5),
-    ("motif motif-grid motif-rise",             "left",  "13%", 38, -25),
-    ("motif motif-diamond motif-rise is-diamond","left", "22%", 44, -9),
-    ("motif motif-mini motif-rise",             "left",  "33%", 29, -14),
-    ("motif motif-sq alt motif-rise",           "left",  "42%", 37, -19),
-    ("motif motif-diamond outline motif-rise is-diamond","right","8%", 42, -16),
-    ("motif motif-mini motif-rise",             "right", "18%", 26, -3),
-    ("motif motif-sq outline motif-rise",       "right", "28%", 40, -30),
-    ("motif motif-grid motif-rise",             "right", "38%", 34, -2),
-    ("motif motif-diamond motif-rise is-diamond","right", "46%", 43, -22),
+    ("motif motif-sq motif-rise",              "left",  "5%",  42, -7),
+    ("motif motif-grid motif-rise",             "left",  "13%", 50, -33),
+    ("motif motif-diamond motif-rise is-diamond","left", "22%", 58, -12),
+    ("motif motif-mini motif-rise",             "left",  "33%", 38, -18),
+    ("motif motif-sq alt motif-rise",           "left",  "42%", 48, -25),
+    ("motif motif-diamond outline motif-rise is-diamond","right","8%", 55, -21),
+    ("motif motif-mini motif-rise",             "right", "18%", 34, -4),
+    ("motif motif-sq outline motif-rise",       "right", "28%", 52, -39),
+    ("motif motif-grid motif-rise",             "right", "38%", 44, -3),
+    ("motif motif-diamond motif-rise is-diamond","right", "46%", 56, -29),
 ]
 
 def _rise_shape_html(classes, side, offset, duration, delay):

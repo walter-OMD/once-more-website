@@ -10,18 +10,6 @@
     });
   }
 
-  // Mobile Services submenu: collapsed by default, toggled by its own button
-  // so the "Services" link itself still navigates to the hub page
-  var dropToggle = document.querySelector('.dropdown-toggle');
-  if (dropToggle) {
-    dropToggle.addEventListener('click', function () {
-      var li = dropToggle.closest('.has-dropdown');
-      if (!li) return;
-      var open = li.classList.toggle('open');
-      dropToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-
   // Contact form: no backend yet, fall back to a mailto so nothing is lost
   var form = document.getElementById('contact-form');
   if (form) {
