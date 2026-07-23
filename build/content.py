@@ -354,6 +354,10 @@ CASE_STUDIES = [
         ],
         "takeaway_heading": "What this means if your business is in the same position",
         "takeaway_body": "<p>If your website lives under a parent company's, a franchise group's, or a platform's shared domain, and you have never had a proper SEO audit done specifically on your section of it, there is a reasonable chance the same structural ceiling is capping your visibility right now, quietly, in a way that no amount of on-page tweaking will fix. The fix is not always a full migration. Sometimes it is a subfolder restructure, sometimes better hreflang implementation is enough. But the first step is always the same: find out whether you are actually competing against your own parent company for the same rankings.</p>",
+        "related_links": [
+            ("Our SEO services", "/services/seo/"),
+            ("How SEO works for a business in Malaysia", "/resources/seo-guide-malaysia/"),
+        ],
     },
     {
         "slug": "sri-kdu-schools-seo-growth",
@@ -410,5 +414,10 @@ CASE_STUDIES = [
         ],
         "takeaway_heading": "What this means if you are marketing a school, or any high-consideration local service",
         "takeaway_body": "<p>Education, healthcare, legal and other high-consideration local services all share the same pattern: the customer researches extensively before they ever search your name, so if you only rank for your own brand, you are invisible for the entire window where the decision actually gets made. The fix is not just more content, it is content and local SEO structured around the actual research journey, built to be found by both classic search and the AI answers increasingly sitting on top of it.</p>",
+        "related_links": [
+            ("Our SEO services", "/services/seo/"),
+            ("Our GEO services", "/services/geo/"),
+            ("What is GEO, and why does it matter?", "/resources/what-is-geo/"),
+        ],
     },
 ]

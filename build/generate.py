@@ -59,6 +59,17 @@ NAV = """<header class="site-header"><div class="container"><nav class="nav" ari
   </ul>
 </nav></div></header>""" % EMAIL
 
+SOCIAL_LINKS = [
+    ("Instagram", "https://www.instagram.com/oncemoredigital/",
+     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/></svg>'),
+    ("LinkedIn", "https://www.linkedin.com/company/oncemore-digital-services/",
+     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="7.5" cy="7" r="0.9" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><path d="M11.5 17v-4.3c0-1.4 1-2.4 2.2-2.4s2.1 1 2.1 2.4V17"/><line x1="11.5" y1="10.5" x2="11.5" y2="17"/></svg>'),
+]
+SOCIAL_ICONS_HTML = "".join(
+    '<a href="%s" aria-label="%s" target="_blank" rel="noopener">%s</a>' % (url, name, svg)
+    for name, url, svg in SOCIAL_LINKS
+)
+
 FOOTER = """<footer class="site-footer"><div class="container">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -66,9 +77,10 @@ FOOTER = """<footer class="site-footer"><div class="container">
       <p>SEO, GEO, AI optimisation and content for businesses in Malaysia.</p>
       <address class="footer-address">BO1-A-9, Menara 2, KL Eco City,<br>3, Jln Bangsar, 59200 Kuala Lumpur, Malaysia</address>
       <p class="footer-ssm">SSM: 202604001053 (LLP0046284-LGN)</p>
+      <div class="social-icons">SOCIAL_ICONS_PLACEHOLDER</div>
     </div>
     <div>
-      <h4>Services</h4>
+      <h4><a href="/services/">Services</a></h4>
       <ul>
         <li><a href="/services/seo/">SEO</a></li>
         <li><a href="/services/geo/">GEO</a></li>
@@ -77,16 +89,10 @@ FOOTER = """<footer class="site-footer"><div class="container">
       </ul>
     </div>
     <div>
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="/resources/">All guides</a></li>
-      </ul>
+      <h4><a href="/resources/">Resources</a></h4>
     </div>
     <div>
-      <h4>Case Studies</h4>
-      <ul>
-        <li><a href="/case-studies/">All case studies</a></li>
-      </ul>
+      <h4><a href="/case-studies/">Case Studies</a></h4>
     </div>
     <div>
       <h4>Company</h4>
@@ -100,6 +106,7 @@ FOOTER = """<footer class="site-footer"><div class="container">
   </div>
   <div class="footer-bottom">&copy; 2026 OnceMore Digital Services. All rights reserved.</div>
 </div></footer>""" % EMAIL
+FOOTER = FOOTER.replace("SOCIAL_ICONS_PLACEHOLDER", SOCIAL_ICONS_HTML)
 
 
 def nav_for(active):
@@ -633,6 +640,7 @@ home_schema = [
         "areaServed": {"@type": "Country", "name": "Malaysia"},
         "address": ADDRESS,
         "identifier": "LLP0046284-LGN",
+        "sameAs": [url for _, url, _ in SOCIAL_LINKS],
     }),
     jsonld({
         "@context": "https://schema.org",
@@ -945,10 +953,13 @@ contact_body = """
       <h3 style="margin-top:2rem">Where we work</h3>
       <p>We work with businesses across Malaysia. Our office:</p>
       <address class="office-address">BO1-A-9, Menara 2, KL Eco City,<br>3, Jln Bangsar, 59200 Kuala Lumpur, Malaysia</address>
+      <h3 style="margin-top:2rem">Follow us</h3>
+      <div class="social-icons">SOCIAL_ICONS_PLACEHOLDER</div>
     </div>
   </div>
 </div></section>
 """ % (EMAIL, EMAIL)
+contact_body = contact_body.replace("SOCIAL_ICONS_PLACEHOLDER", SOCIAL_ICONS_HTML)
 contact_schema = [
     breadcrumb([("Home", "/"), ("Contact", "/contact/")]),
     jsonld({
@@ -967,6 +978,7 @@ contact_schema = [
                          "contactType": "customer service", "areaServed": "MY"},
         "address": ADDRESS,
         "identifier": "LLP0046284-LGN",
+        "sameAs": [url for _, url, _ in SOCIAL_LINKS],
     }),
 ]
 page("/contact/", "Contact | OnceMore Digital",
@@ -1109,6 +1121,9 @@ for c in CASE_STUDIES:
     if c.get("takeaway_heading"):
         takeaway_html = '<h2 id="%s" style="margin-top:2.5rem">%s</h2><div class="prose">%s</div>' % (
             _case_sid(c["takeaway_heading"]), html.escape(c["takeaway_heading"]), c["takeaway_body"])
+    related_links_html = "".join(
+        '<li><a href="%s">%s</a></li>' % (url, html.escape(label))
+        for label, url in c.get("related_links", []))
     other_cases = "".join(
         '<li><a href="/case-studies/%s/">%s</a></li>' % (o["slug"], html.escape(o["title"]))
         for o in CASE_STUDIES if o["slug"] != c["slug"])
@@ -1134,6 +1149,9 @@ for c in CASE_STUDIES:
     <div class="prose" style="margin-top:1.5rem">{results_html}</div>
     {takeaway_html}
   </article>
+  <div class="author-bio">
+    <p><strong>Written by Walter Yow, founder of OnceMore Digital.</strong> We work on SEO, GEO, AI optimisation and content for brands across Malaysia.</p>
+  </div>
 </div></section>
 <section class="section-sm panel-alt"><div class="container">
   <div class="cta-band">
@@ -1141,6 +1159,14 @@ for c in CASE_STUDIES:
     <p>Tell us where your SEO is stuck and we will tell you honestly whether we can fix it.</p>
     <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
   </div>
+</div></section>
+"""
+    if related_links_html:
+        cbody += f"""
+<section class="section-sm"><div class="container">
+  <span class="eyebrow">Go deeper</span>
+  <h2>Related services and guides</h2>
+  <ul class="link-list">{related_links_html}</ul>
 </div></section>
 """
     if other_cases:
@@ -1161,7 +1187,7 @@ for c in CASE_STUDIES:
             "inLanguage": "en-MY",
             "about": c["industry"],
             "datePublished": "2026-07-22", "dateModified": "2026-07-23",
-            "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
+            "author": {"@type": "Person", "name": "Walter Yow", "url": URL + "/about/"},
             "publisher": {"@type": "Organization", "name": "OnceMore Digital",
 
                           "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
