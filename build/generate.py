@@ -80,16 +80,12 @@ FOOTER = """<footer class="site-footer"><div class="container">
       <h4>Resources</h4>
       <ul>
         <li><a href="/resources/">All guides</a></li>
-        <li><a href="/resources/seo-guide-malaysia/">SEO guide for Malaysia</a></li>
-        <li><a href="/resources/what-is-geo/">What is GEO?</a></li>
-        <li><a href="/resources/seo-cost-malaysia/">SEO cost in Malaysia</a></li>
       </ul>
     </div>
     <div>
       <h4>Case Studies</h4>
       <ul>
         <li><a href="/case-studies/">All case studies</a></li>
-        CASE_STUDY_FOOTER_LINKS
       </ul>
     </div>
     <div>
@@ -104,11 +100,6 @@ FOOTER = """<footer class="site-footer"><div class="container">
   </div>
   <div class="footer-bottom">&copy; 2026 OnceMore Digital Services. All rights reserved.</div>
 </div></footer>""" % EMAIL
-FOOTER = FOOTER.replace(
-    "CASE_STUDY_FOOTER_LINKS",
-    "".join('<li><a href="/case-studies/%s/">%s</a></li>' % (c["slug"], html.escape(c["industry"] + " SEO growth"))
-            for c in CASE_STUDIES)
-)
 
 
 def nav_for(active):

@@ -208,7 +208,8 @@ p{color:var(--muted);font-weight:400}
 
 /* ---------- footer ---------- */
 .site-footer{border-top:1px solid var(--border);margin-top:4rem;padding:3rem 0 2.5rem;position:relative;z-index:1}
-.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr 1fr}.footer-brand{grid-column:1/-1}}
 @media(max-width:680px){.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
 .footer-grid h4{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-light);margin-bottom:1rem;font-weight:700}
 .footer-grid ul{list-style:none;display:grid;gap:.6rem}
