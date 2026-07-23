@@ -154,6 +154,37 @@ def faq_block(items):
     return block, schema
 
 
+# ---------------------------------------------------------------- floating shapes
+# A single fixed-position layer of square-motif shapes (derived from the logo
+# mark) that drifts continuously from the bottom of the viewport to the top,
+# independent of scroll or which section is in view. Added once per page via
+# the shared page() template below, so every page gets the same treatment.
+# Balanced left/right, varied shapes, durations and negative delays so they
+# do not all move in lockstep.
+_RISE_SHAPES = [
+    # (classes, side, offset, duration_s, delay_s)
+    ("motif motif-sq motif-rise",              "left",  "5%",  20, -3),
+    ("motif motif-grid motif-rise",             "left",  "13%", 24, -16),
+    ("motif motif-diamond motif-rise is-diamond","left", "22%", 28, -6),
+    ("motif motif-mini motif-rise",             "left",  "33%", 18, -9),
+    ("motif motif-sq alt motif-rise",           "left",  "42%", 23, -12),
+    ("motif motif-diamond outline motif-rise is-diamond","right","8%", 26, -10),
+    ("motif motif-mini motif-rise",             "right", "18%", 16, -2),
+    ("motif motif-sq outline motif-rise",       "right", "28%", 25, -19),
+    ("motif motif-grid motif-rise",             "right", "38%", 21, -1),
+    ("motif motif-diamond motif-rise is-diamond","right", "46%", 27, -14),
+]
+
+def _rise_shape_html(classes, side, offset, duration, delay):
+    grid_inner = "<span></span><span></span><span></span><span></span>" if "motif-grid" in classes else ""
+    return ('<div class="%s" style="%s:%s;animation-duration:%ss;animation-delay:%ss">%s</div>'
+            % (classes, side, offset, duration, delay, grid_inner))
+
+SHAPE_LAYER_HTML = ('<div class="shape-layer" aria-hidden="true">'
+                     + "".join(_rise_shape_html(*s) for s in _RISE_SHAPES)
+                     + '</div>')
+
+
 def page(path, title, desc, body, active="", schema_blocks=None):
     canonical = URL + path
     head_schema = "\n".join(schema_blocks or [])
@@ -198,6 +229,7 @@ def page(path, title, desc, body, active="", schema_blocks=None):
 </head>
 <body>
 {GTM_BODY}
+{SHAPE_LAYER_HTML}
 <div class="wrap">
 {nav_for(active)}
 <main id="main">
@@ -340,10 +372,6 @@ CLIENTS_HTML = clients_marquee()
 
 # Sparse decorative shape fields (2 motifs each) for page hero/intro sections
 # site-wide. Kept deliberately light, alternated for variety across templates.
-SHAPE_SPARSE_1 = '<div class="shape-field" aria-hidden="true"><div class="motif motif-sq" style="top:12%;right:8%"></div><div class="motif motif-diamond outline" style="bottom:18%;right:20%"></div></div>'
-SHAPE_SPARSE_2 = '<div class="shape-field" aria-hidden="true"><div class="motif motif-grid" style="top:15%;right:6%"><span></span><span></span><span></span><span></span></div><div class="motif motif-mini" style="bottom:20%;right:26%"></div></div>'
-SHAPE_SPARSE_3 = '<div class="shape-field" aria-hidden="true"><div class="motif motif-diamond" style="top:10%;right:10%"></div><div class="motif motif-sq alt" style="bottom:16%;right:24%"></div></div>'
-SHAPE_SPARSE_4 = '<div class="shape-field" aria-hidden="true"><div class="motif motif-sq outline" style="top:14%;right:9%"></div><div class="motif motif-mini" style="bottom:22%;right:22%"></div></div>'
 
 # Chart images now live per case study in CASE_STUDIES[i]["charts"]
 # as (image_path, alt_text, caption) tuples, since different case studies
@@ -458,10 +486,7 @@ process_cards = "".join(
 )
 
 home_body = """
-<section class="hero"><div class="shape-field" aria-hidden="true">
-  <div class="motif motif-sq" style="top:10%;right:8%"></div>
-  <div class="motif motif-diamond outline" style="bottom:16%;right:22%"></div>
-</div><div class="container">
+<section class="hero"><div class="container">
   <div class="hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
@@ -484,10 +509,7 @@ home_body = """
   </div>
 </div></section>
 
-<section class="section"><div class="shape-field" aria-hidden="true">
-  <div class="motif motif-diamond" style="top:14%;right:10%"></div>
-  <div class="motif motif-grid" style="bottom:14%;right:8%"><span></span><span></span><span></span><span></span></div>
-</div><div class="container">
+<section class="section"><div class="container">
   <span class="eyebrow">Who we are</span>
   <h2>A Malaysian-led digital marketing agency, built on direct access.</h2>
   <p style="max-width:65ch">OnceMore Digital is a Malaysian-led digital marketing agency, with a team bringing a combined 10+ years of hands-on experience across SEO, GEO, AI optimisation and content. That experience covers everything from independent local businesses to established international brands, and the same standard applies to each.</p>
@@ -587,10 +609,7 @@ home_faq_html, home_faq_schema = faq_block(home_faq_items)
 home_body += home_faq_html
 
 home_body += """
-<section class="section cta-final"><div class="shape-field" aria-hidden="true">
-  <div class="motif motif-sq alt" style="top:18%;left:8%"></div>
-  <div class="motif motif-diamond outline" style="bottom:15%;right:10%"></div>
-</div><div class="container">
+<section class="section cta-final"><div class="container">
   <div class="cta-band">
     <h2>Ready to get found?</h2>
     <p>Tell us what you are working on and we will be in touch.</p>
@@ -642,7 +661,7 @@ page("/", "OnceMore Digital | Digital Marketing Agency &amp; SEO Agency in Malay
 # ---------------------------------------------------------------- services hub
 hub_cards = "".join(card_html(s[0], s[1], s[3]) for s in SERVICES)
 hub_body = """
-<section class="section">SHAPE_1<div class="container">
+<section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Services</nav>
   <span class="eyebrow" style="margin-top:1.5rem">Digital Marketing Services in Malaysia</span>
   <h1>Everything you need to <em>get found.</em></h1>
@@ -653,7 +672,7 @@ hub_body = """
   <div class="grid" style="margin-top:2.5rem">%s</div>
 </div></section>
 
-<section class="section panel-alt">SHAPE_3<div class="container">
+<section class="section panel-alt"><div class="container">
   <span class="eyebrow">How it fits together</span>
   <h2>How each service helps improve your <em>website traffic.</em></h2>
   <p style="max-width:65ch">Digital marketing works best when every channel is pulling toward the same goal. Here is what each one is actually doing for your traffic.</p>
@@ -664,7 +683,7 @@ hub_body = """
     <li><strong>Content Writing</strong> fuels both SEO and GEO with the pages and answers that traffic actually needs to find in the first place.</li>
   </ul>
 </div></section>
-<section class="section-sm">SHAPE_2<div class="container">
+<section class="section-sm"><div class="container">
   <div class="cta-band">
     <h2>Not sure where to start?</h2>
     <p>Tell us about your business and we will point you to the right place.</p>
@@ -672,7 +691,6 @@ hub_body = """
   </div>
 </div></section>
 """ % hub_cards
-hub_body = hub_body.replace("SHAPE_1", SHAPE_SPARSE_1).replace("SHAPE_2", SHAPE_SPARSE_2).replace("SHAPE_3", SHAPE_SPARSE_3)
 
 hub_faq_items = [
     ("What is digital marketing?",
@@ -769,7 +787,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
         '<li><a href="/resources/%s/">%s</a></li>' % (g["slug"], html.escape(g["title"]))
         for g in RESOURCES)
     body = f"""
-<section class="section service-hero">{SHAPE_SPARSE_2}<div class="container">
+<section class="section service-hero"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {short}</nav>
   <div class="service-hero-grid">
     <div>
@@ -796,7 +814,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   {process_html}
 </div></section>
 
-<section class="section-sm panel-alt">{SHAPE_SPARSE_1}<div class="container">
+<section class="section-sm panel-alt"><div class="container">
   <span class="eyebrow">What's included</span>
   <h2>Everything in this service</h2>
   <ul class="feature-list">{fl}</ul>
@@ -808,7 +826,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   <h2>Go deeper</h2>
   <ul class="link-list">{related_guides}</ul>
 </div></section>
-<section class="section-sm panel-alt">{SHAPE_SPARSE_3}<div class="container">
+<section class="section-sm panel-alt"><div class="container">
   <span class="eyebrow">More services</span>
   <h2>Explore the rest</h2>
   <div class="grid" style="margin-top:1.5rem">{others}</div>
@@ -864,7 +882,7 @@ about_values_cards = "".join(
 )
 
 about_body = """
-<section class="section">SHAPE_2<div class="container">
+<section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / About</nav>
   <span class="eyebrow" style="margin-top:1.5rem">About</span>
   <h1>Who Are We Here at <em>OnceMore Digital</em></h1>
@@ -906,7 +924,7 @@ about_body = """
   </div>
 </div></section>
 
-<section class="section panel-alt">SHAPE_4<div class="container">
+<section class="section panel-alt"><div class="container">
   <span class="eyebrow">What matters to us</span>
   <h2>The stuff we will not compromise on.</h2>
   <p style="max-width:65ch">None of this is a mission statement for the wall. It is just what we have found actually matters once you are the one paying for the work.</p>
@@ -915,7 +933,7 @@ about_body = """
 
 CLIENTS_MARQUEE
 
-<section class="section-sm">SHAPE_1<div class="container">
+<section class="section-sm"><div class="container">
   <div class="cta-band">
     <h2>Want to meet the team properly?</h2>
     <p>Tell us about your business and we will set up a call.</p>
@@ -923,9 +941,6 @@ CLIENTS_MARQUEE
   </div>
 </div></section>
 """.replace("CLIENTS_MARQUEE", CLIENTS_HTML) % about_values_cards
-about_body = (about_body.replace("SHAPE_2", SHAPE_SPARSE_2)
-              .replace("SHAPE_4", SHAPE_SPARSE_4)
-              .replace("SHAPE_1", SHAPE_SPARSE_1))
 
 about_schema = [
     breadcrumb([("Home", "/"), ("About", "/about/")]),
@@ -943,7 +958,7 @@ page("/about/", "About | OnceMore Digital",
 
 # ---------------------------------------------------------------- contact
 contact_body = """
-<section class="section">SHAPE_4<div class="container">
+<section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Contact</nav>
   <span class="eyebrow" style="margin-top:1.5rem">Contact</span>
   <h1>Let's get you <em>found.</em></h1>
@@ -969,11 +984,9 @@ contact_body = """
       <div class="social-icons">SOCIAL_ICONS_PLACEHOLDER</div>
     </div>
   </div>
-  SHAPE_2
 </div></section>
 """ % (EMAIL, EMAIL)
 contact_body = contact_body.replace("SOCIAL_ICONS_PLACEHOLDER", SOCIAL_ICONS_HTML)
-contact_body = contact_body.replace("SHAPE_4", SHAPE_SPARSE_4).replace("SHAPE_2", SHAPE_SPARSE_2)
 contact_schema = [
     breadcrumb([("Home", "/"), ("Contact", "/contact/")]),
     jsonld({
@@ -1013,7 +1026,7 @@ for g in RESOURCES:
         '<li><a href="/resources/%s/">%s</a></li>' % (o["slug"], html.escape(o["title"]))
         for o in RESOURCES if o["slug"] != g["slug"])
     gbody = f"""
-<section class="section">{SHAPE_SPARSE_3}<div class="container">
+<section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/resources/">Resources</a> / {html.escape(g["title"])}</nav>
   <span class="eyebrow" style="margin-top:1.25rem">{html.escape(g["eyebrow"])}</span>
   <h1>{html.escape(g["h1"])}</h1>
@@ -1041,7 +1054,7 @@ for g in RESOURCES:
   </div>
 </div></section>
 {g_faq_html}
-<section class="section-sm">{SHAPE_SPARSE_2}<div class="container">
+<section class="section-sm"><div class="container">
   <span class="eyebrow">Keep reading</span>
   <h2>More guides</h2>
   <ul class="link-list">{related}</ul>
@@ -1078,20 +1091,19 @@ res_cards = "".join(
     % (g["slug"], GUIDE_ICONS.get(g["slug"], ICONS["content-writing"]),
        html.escape(g["title"]), html.escape(g["desc"])) for g in RESOURCES)
 res_hub_body = """
-<section class="section">SHAPE_1<div class="container">
+<section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Resources</nav>
   <span class="eyebrow" style="margin-top:1.5rem">Resources</span>
   <h1>Guides on <em>search, AI and growth.</em></h1>
   <p class="lead">Straight-talking guides on getting found in Malaysia, across both classic search and the AI answer engines that increasingly sit on top of it.</p>
   <div class="grid" style="margin-top:2.5rem">%s</div>
 </div></section>
-<section class="section-sm">SHAPE_4<div class="container"><div class="cta-band">
+<section class="section-sm"><div class="container"><div class="cta-band">
   <h2>Want this applied to your site?</h2>
   <p>We turn the thinking in these guides into work that moves your rankings and visibility.</p>
   <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
 </div></div></section>
 """ % res_cards
-res_hub_body = res_hub_body.replace("SHAPE_1", SHAPE_SPARSE_1).replace("SHAPE_4", SHAPE_SPARSE_4)
 res_hub_schema = [
     breadcrumb([("Home", "/"), ("Resources", "/resources/")]),
     jsonld({"@context": "https://schema.org", "@type": "CollectionPage",
@@ -1143,7 +1155,7 @@ for c in CASE_STUDIES:
         '<li><a href="/case-studies/%s/">%s</a></li>' % (o["slug"], html.escape(o["title"]))
         for o in CASE_STUDIES if o["slug"] != c["slug"])
     cbody = f"""
-<section class="section">{SHAPE_SPARSE_4}<div class="container">
+<section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/case-studies/">Case Studies</a> / {html.escape(c["title"])}</nav>
   <span class="case-tag" style="margin-top:1.25rem">{html.escape(c["industry"])}</span>
   <h1>{html.escape(c["h1"])}</h1>
@@ -1166,7 +1178,7 @@ for c in CASE_STUDIES:
     {takeaway_html}
   </article>
 </div></section>
-<section class="section-sm panel-alt">{SHAPE_SPARSE_2}<div class="container">
+<section class="section-sm panel-alt"><div class="container">
   <div class="cta-band">
     <h2>Want results like this for your business?</h2>
     <p>Tell us where your SEO is stuck and we will tell you honestly whether we can fix it.</p>
@@ -1219,20 +1231,19 @@ case_cards = "".join(
     <span class="more">Read case study &rarr;</span>
     </a>''' for c in CASE_STUDIES)
 case_hub_body = """
-<section class="section">SHAPE_3<div class="container">
+<section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Case Studies</nav>
   <span class="eyebrow" style="margin-top:1.5rem">Case Studies</span>
   <h1>Real results for <em>real businesses.</em></h1>
   <p class="lead">No vanity metrics. Here is what actually changed for businesses we have worked with, and how we did it.</p>
   <div class="case-grid" style="margin-top:2.5rem">%s</div>
 </div></section>
-<section class="section-sm">SHAPE_1<div class="container"><div class="cta-band">
+<section class="section-sm"><div class="container"><div class="cta-band">
   <h2>Want to be the next one?</h2>
   <p>Tell us what is not working and we will tell you honestly what it will take to fix it.</p>
   <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
 </div></div></section>
 """ % case_cards
-case_hub_body = case_hub_body.replace("SHAPE_3", SHAPE_SPARSE_3).replace("SHAPE_1", SHAPE_SPARSE_1)
 case_hub_schema = [
     breadcrumb([("Home", "/"), ("Case Studies", "/case-studies/")]),
     jsonld({"@context": "https://schema.org", "@type": "CollectionPage",
