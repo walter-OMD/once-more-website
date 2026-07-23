@@ -12,7 +12,7 @@
   --off-white:#f4f4f2;
   --muted:#888;
   --border:rgba(77,101,175,0.2);
-  --maxw:1100px;
+  --maxw:1280px;
 }
 
 html{height:100%;scroll-behavior:smooth;font-size:112.5%}
