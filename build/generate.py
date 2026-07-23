@@ -527,9 +527,10 @@ home_body = """
 
 <section class="section"><div class="container">
   <span class="eyebrow">Who we are</span>
-  <h2>Run by the people doing the work, not a call centre with a logo.</h2>
-  <p style="max-width:65ch">OnceMore Digital is a small, founder-led digital marketing agency based in Kuala Lumpur. Walter Yow and a small team handle SEO, GEO, AI optimisation and content directly, rather than routing your account through layers of project managers before anyone touches the actual work.</p>
-  <p style="max-width:65ch;margin-top:1rem">We are Malaysian, we work with Malaysian businesses, and that shapes the strategy from keyword research to content voice. It is not a detail we bolt on for local flavour, it is the starting point.</p>
+  <h2>A Malaysian-led digital marketing agency, built on direct access.</h2>
+  <p style="max-width:65ch">OnceMore Digital is a Malaysian-led digital marketing agency, with a team bringing a combined 10+ years of hands-on experience across SEO, GEO, AI optimisation and content. That experience covers everything from independent local businesses to established international brands, and the same standard applies to each.</p>
+  <p style="max-width:65ch;margin-top:1rem">Being Malaysian-led means Malaysian search behaviour, language and local intent are the starting point, not an afterthought layered on top of a global template. Our focus has always been on helping local businesses compete and win visibility in their own market, though the same expertise applies just as well to international brands entering it.</p>
+  <p style="max-width:65ch;margin-top:1rem">Our biggest strength is simple: the person you talk to about your strategy is the person actually doing the work. No hand-offs, no account managers relaying messages from someone else.</p>
   <div class="btn-row" style="justify-content:flex-start;margin-top:1.5rem">
     <a class="btn btn-ghost" href="/about/">Read more about us</a>
   </div>
@@ -538,8 +539,8 @@ home_body = """
 <section class="section"><div class="container">
   <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
   <h2>What a digital marketing agency should <em>actually do.</em></h2>
-  <p>A lot of businesses end up hiring three or four different freelancers, one for ads, one for the website, one for social media, and get work that pulls in different directions. A proper digital marketing agency does the opposite: one team, one strategy, and every channel built to support the same goal instead of competing for credit.</p>
-  <p style="margin-top:1rem">OnceMore Digital started as an SEO agency, and SEO is still the foundation of most engagements we run. As search itself has changed, we have grown into a full digital marketing agency covering SEO, GEO, AI optimisation and content, all handled by the same team rather than handed off between different vendors.</p>
+  <p>A good digital marketing agency brings SEO, GEO, AI optimisation and content together under one strategy, so every channel works toward the same goal instead of being managed in isolation.</p>
+  <p style="margin-top:1rem">OnceMore Digital started as an SEO agency, and SEO is still the foundation of most engagements we run. As search itself has changed, we have grown into a full digital marketing agency covering SEO, GEO, AI optimisation and content, all handled by the same team.</p>
 </div></section>
 
 <section class="section panel-alt"><div class="container split">
