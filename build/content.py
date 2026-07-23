@@ -344,10 +344,71 @@ CASE_STUDIES = [
             ("1,560%", "Increase in non-branded search impressions"),
             ("1,118%", "Increase in branded search impressions"),
         ],
+        "charts": [
+            ("/assets/img/case-studies/car-rental-seo-growth-gsc.png",
+             "Google Search Console performance report showing total clicks and total impressions over a 16 month period, flat before the domain migration and rising sharply afterward",
+             "Actual Google Search Console data, 16 month view: 39K total clicks, 829K total impressions, 4.7% average CTR, 21.4 average position."),
+        ],
         "results_body": [
             "The growth held. It was not a short-term spike that faded once the migration novelty wore off, it was a sustained climb that kept compounding as the new domain built its own independent authority. Demand grew fast enough that the client faced supply shortages more than once, a rare problem that is actually a very good sign.",
         ],
         "takeaway_heading": "What this means if your business is in the same position",
         "takeaway_body": "<p>If your website lives under a parent company's, a franchise group's, or a platform's shared domain, and you have never had a proper SEO audit done specifically on your section of it, there is a reasonable chance the same structural ceiling is capping your visibility right now, quietly, in a way that no amount of on-page tweaking will fix. The fix is not always a full migration. Sometimes it is a subfolder restructure, sometimes better hreflang implementation is enough. But the first step is always the same: find out whether you are actually competing against your own parent company for the same rankings.</p>",
+    },
+    {
+        "slug": "sri-kdu-schools-seo-growth",
+        "title": "SEO Case Study: How Sri KDU Schools Grew Organic Visibility 375% and Won AI Overview Placements",
+        "desc": "How we helped Sri KDU Schools fix a fragmented content structure, build local SEO across three campuses, and grow Top 10 keyword rankings by 375% while winning placements in Google's AI Overviews.",
+        "eyebrow": "Case Study",
+        "industry": "Education",
+        "h1": "From invisible on non-branded search to dominating AI Overviews",
+        "intro": "Sri KDU Schools operates campuses in Kota Damansara, Subang Jaya and Klang, competing for Malaysian parents who are researching international and private school options long before they ever search the school's name directly. Despite strong brand recognition among people who already knew them, they were close to invisible for the actual searches prospective parents were typing, and were leaning on paid search to cover the gap.",
+        "sections": [
+            ("The problem: strong brand, weak non-branded visibility",
+             "<p>Malaysian parents researching international or private schools rarely start by searching a school's name. They search things like \"international school Kota Damansara\" or \"best private school for my child near me,\" comparing several options before a brand ever enters the picture. Sri KDU had the reputation to win that comparison. What they did not have was the visibility to be part of it.</p>"
+             "<p>The audit surfaced three specific issues:</p>"
+             "<ul class=\"feature-list\">"
+             "<li><strong>Low visibility for non-branded keywords.</strong> The site ranked reasonably well for its own name, which does nothing for a parent who has never heard of it yet.</li>"
+             "<li><strong>Fragmented content structure.</strong> Information about programmes, campuses and admissions was spread thin across the site with no clear structure tying it together, which makes it hard for both parents and Google to find the page that actually answers a given question.</li>"
+             "<li><strong>Limited local SEO presence.</strong> With three separate campuses, a single generic sitewide identity was not enough. Each location needed to be found by parents searching specifically near it.</li>"
+             "</ul>"
+             "<p>Left as is, this meant Sri KDU kept losing new-to-brand families to whichever competitor showed up first for the generic searches, while spending more on paid search every year just to stay visible for the exact terms organic search should have been winning for free.</p>"),
+            ("Why this mattered more than usual: search is splitting into AI answers",
+             "<p>Education is a research-heavy category. Parents do not make one search and decide, they ask a string of comparison and follow-up questions over days or weeks, which is exactly the kind of query behaviour Google's AI Overviews and People Also Ask panels are built around. A school that is not structured to answer those questions directly does not just rank lower, it can be skipped entirely while an AI-generated summary answers the parent's question using a competitor's content instead.</p>"
+             "<p>That made this campaign a genuine test of working across classic SEO and <a href=\"/services/geo/\">GEO</a> at the same time, not as two separate projects but as one strategy aimed at the same parents at every stage of their research.</p>"),
+        ],
+        "approach_heading": "What we did",
+        "approach_intro": "The strategy had to solve three different problems for three different campuses at once, so the work broke down into three parts.",
+        "approach_items": [
+            ("Targeted visibility for non-branded search",
+             "We built out content and technical signals specifically aimed at the high-intent, non-branded searches parents actually use, and structured key pages so they could be pulled directly into AI Overviews and People Also Ask panels, not just the classic results list."),
+            ("Local SEO for every campus, not just the brand",
+             "Kota Damansara, Subang Jaya and Klang each got their own local SEO treatment, since a parent searching near one campus needs to find that campus specifically, not a generic page about the school group as a whole."),
+            ("Content restructure and conversion-focused pages",
+             "We consolidated the fragmented content into a clear structure mapped to how parents actually research a school, and optimised the site to turn that traffic into scheduled campus tours and enrolment enquiries rather than just passive visits."),
+        ],
+        "results_heading": "The results",
+        "stats": [
+            ("+66%", "Increase in organic impressions"),
+            ("+375%", "Increase in Top 10 keyword rankings"),
+            ("+20%", "Increase in organic sessions"),
+            ("+174%", "Increase in brand visibility"),
+        ],
+        "charts": [
+            ("/assets/img/case-studies/sri-kdu-gsc-performance.png",
+             "Google Search Console performance report for Sri KDU Schools showing 151 thousand total clicks and 3.24 million total impressions",
+             "Actual Google Search Console data: 151K total clicks, 3.24M total impressions, 4.7% average CTR, 10.6 average position."),
+            ("/assets/img/case-studies/sri-kdu-visibility-score.png",
+             "Visibility score chart for realschools.edu.my showing a flat baseline that jumps sharply and holds at a much higher level",
+             "Visibility score climbing from a flat baseline of under 1,000 to a sustained 3.6K, up 2.9K over the campaign."),
+            ("/assets/img/case-studies/sri-kdu-top10-rankings.png",
+             "Chart showing the number of keywords ranking in the top 10 search results for realschools.edu.my rising sharply and holding",
+             "Keywords ranking in Google's top 10 results climbing from roughly 10-40 to a sustained 111, up 94 over the campaign."),
+        ],
+        "results_body": [
+            "The pattern across all three metrics is the same: a long flat period followed by a sharp, sustained step up, not a temporary spike. Once the content structure and local SEO foundations were in place, both classic rankings and AI-surface visibility moved together and held their new level.",
+        ],
+        "takeaway_heading": "What this means if you are marketing a school, or any high-consideration local service",
+        "takeaway_body": "<p>Education, healthcare, legal and other high-consideration local services all share the same pattern: the customer researches extensively before they ever search your name, so if you only rank for your own brand, you are invisible for the entire window where the decision actually gets made. The fix is not just more content, it is content and local SEO structured around the actual research journey, built to be found by both classic search and the AI answers increasingly sitting on top of it.</p>",
     },
 ]

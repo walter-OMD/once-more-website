@@ -89,7 +89,7 @@ FOOTER = """<footer class="site-footer"><div class="container">
       <h4>Case Studies</h4>
       <ul>
         <li><a href="/case-studies/">All case studies</a></li>
-        <li><a href="/case-studies/car-rental-seo-growth/">Car rental SEO growth</a></li>
+        CASE_STUDY_FOOTER_LINKS
       </ul>
     </div>
     <div>
@@ -104,6 +104,11 @@ FOOTER = """<footer class="site-footer"><div class="container">
   </div>
   <div class="footer-bottom">&copy; 2026 OnceMore Digital Services. All rights reserved.</div>
 </div></footer>""" % EMAIL
+FOOTER = FOOTER.replace(
+    "CASE_STUDY_FOOTER_LINKS",
+    "".join('<li><a href="/case-studies/%s/">%s</a></li>' % (c["slug"], html.escape(c["industry"] + " SEO growth"))
+            for c in CASE_STUDIES)
+)
 
 
 def nav_for(active):
@@ -341,10 +346,9 @@ def clients_marquee():
 
 CLIENTS_HTML = clients_marquee()
 
-# Real Google Search Console screenshot supplied by the client for this case
-# study (cropped to remove the toolbar), used as-is rather than recreated.
-CASE_CHART_IMG = '<img src="/assets/img/case-studies/car-rental-seo-growth-gsc.png" alt="Google Search Console performance report showing total clicks and total impressions over a 16 month period, flat before the domain migration and rising sharply afterward" loading="lazy" decoding="async">'
-CASE_CHART_CAPTION = "Actual Google Search Console data, 16 month view: 39K total clicks, 829K total impressions, 4.7% average CTR, 21.4 average position."
+# Chart images now live per case study in CASE_STUDIES[i]["charts"]
+# as (image_path, alt_text, caption) tuples, since different case studies
+# have different numbers of supporting screenshots.
 
 # ---------------------------------------------------------------- guide visuals
 # a small ringgit-tag icon for the cost guide card
@@ -1105,6 +1109,11 @@ for c in CASE_STUDIES:
         '<div class="stat-card"><span class="stat-num">%s</span><span class="stat-label">%s</span></div>'
         % (html.escape(n), html.escape(l)) for n, l in c["stats"])
     results_html = "".join("<p>%s</p>" % p for p in c["results_body"])
+    charts_html = "".join(
+        '<div class="case-chart"><img src="%s" alt="%s" loading="lazy" decoding="async"></div>'
+        '<p class="case-chart-caption">%s</p>'
+        % (src, html.escape(alt), html.escape(cap))
+        for src, alt, cap in c.get("charts", []))
     takeaway_html = ""
     if c.get("takeaway_heading"):
         takeaway_html = '<h2 id="%s" style="margin-top:2.5rem">%s</h2><div class="prose">%s</div>' % (
@@ -1129,9 +1138,8 @@ for c in CASE_STUDIES:
     <p class="lead" style="font-size:1.05rem;max-width:62ch;margin-bottom:1.75rem">{html.escape(c["approach_intro"])}</p>
     <div class="grid">{approach_cards}</div>
     <h2 id="{_case_sid(c["results_heading"])}" style="margin-top:2.5rem">{html.escape(c["results_heading"])}</h2>
-    <div class="case-chart">{CASE_CHART_IMG}</div>
-    <p class="case-chart-caption">{CASE_CHART_CAPTION}</p>
     <div class="stat-grid">{stat_cards}</div>
+    {charts_html}
     <div class="prose" style="margin-top:1.5rem">{results_html}</div>
     {takeaway_html}
   </article>
