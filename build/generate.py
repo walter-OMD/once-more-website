@@ -88,24 +88,21 @@ FOOTER = """<footer class="site-footer"><div class="container">
         <li><a href="/services/content-writing/">Content Writing</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-stack">
       <h4><a href="/resources/">Resources</a></h4>
-    </div>
-    <div>
       <h4><a href="/case-studies/">Case Studies</a></h4>
     </div>
     <div>
       <h4>Company</h4>
       <ul>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
         <li><a href="/sitemap/">Sitemap</a></li>
-        <li><a href="mailto:%s">Email us</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">&copy; 2026 OnceMore Digital Services. All rights reserved.</div>
-</div></footer>""" % EMAIL
+</div></footer>"""
 FOOTER = FOOTER.replace("SOCIAL_ICONS_PLACEHOLDER", SOCIAL_ICONS_HTML)
 
 
@@ -1132,6 +1129,7 @@ for c in CASE_STUDIES:
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/case-studies/">Case Studies</a> / {html.escape(c["title"])}</nav>
   <span class="case-tag" style="margin-top:1.25rem">{html.escape(c["industry"])}</span>
   <h1>{html.escape(c["h1"])}</h1>
+  <p class="case-byline"><span>Written by Walter Yow, co-founder of OnceMore Digital</span><span class="case-byline-date">Published {html.escape(c.get("published", ""))}</span></p>
   <p class="lead">{html.escape(c["intro"])}</p>
   <div class="divider left" aria-hidden="true"></div>
   <nav class="toc" aria-label="On this page">
@@ -1149,9 +1147,6 @@ for c in CASE_STUDIES:
     <div class="prose" style="margin-top:1.5rem">{results_html}</div>
     {takeaway_html}
   </article>
-  <div class="author-bio">
-    <p><strong>Written by Walter Yow, founder of OnceMore Digital.</strong> We work on SEO, GEO, AI optimisation and content for brands across Malaysia.</p>
-  </div>
 </div></section>
 <section class="section-sm panel-alt"><div class="container">
   <div class="cta-band">

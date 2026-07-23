@@ -304,6 +304,7 @@ CASE_STUDIES = [
         "desc": "A full breakdown of how we diagnosed a keyword cannibalisation problem caused by a shared parent domain, migrated a car rental brand to its own domain, and grew organic traffic 248% within a year.",
         "eyebrow": "Case Study",
         "industry": "Car Rental",
+        "published": "July 2026",
         "h1": "From a shared subdomain to record organic growth",
         "intro": "Our client is one of the bigger players in the car rental industry, operating as the local arm of a larger international group. Like a lot of businesses in that position, their website lived under their parent company's global domain rather than on its own domain. It looks efficient on paper, one platform, one design system, one team maintaining the infrastructure, but for a business trying to rank in a specific market, it is one of the most common and least understood SEO problems we see.",
         "sections": [
@@ -365,6 +366,7 @@ CASE_STUDIES = [
         "desc": "How we helped Sri KDU Schools fix a fragmented content structure, build local SEO across three campuses, and grow Top 10 keyword rankings by 375% while winning placements in Google's AI Overviews.",
         "eyebrow": "Case Study",
         "industry": "Education",
+        "published": "July 2026",
         "h1": "From invisible on non-branded search to dominating AI Overviews",
         "intro": "Sri KDU Schools operates campuses in Kota Damansara, Subang Jaya and Klang, competing for Malaysian parents who are researching international and private school options long before they ever search the school's name directly. Despite strong brand recognition among people who already knew them, they were close to invisible for the actual searches prospective parents were typing, and were leaning on paid search to cover the gap.",
         "sections": [
