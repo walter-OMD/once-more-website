@@ -706,6 +706,16 @@ hub_faq_items = [
      "Look for one that explains its work in plain terms, ties recommendations to your actual goals rather than a fixed package, and can show you real reporting. The best digital marketing agency for your business is the one that treats your traffic and revenue goals as the point, not the channel mix."),
     ("Which service should I start with to improve website traffic fastest?",
      "For most businesses, SEO is the foundation, since it compounds over time and does not stop the moment you stop paying for it. If you need visibility sooner, pairing it with GEO and AI optimisation from day one prevents having to retrofit that work later."),
+    ("How much does digital marketing cost in Malaysia?",
+     "It depends entirely on which services you need and how competitive your market is. There is no single price for digital marketing, the same way there is no single price for construction work. We scope every engagement to your goals rather than selling a fixed package, and our guide on SEO costs in Malaysia breaks down what actually drives the number."),
+    ("How long does digital marketing take to show results?",
+     "Paid channels can bring traffic within days. Organic channels like SEO, GEO and content marketing take longer to build, usually three to six months for early movement, but the results compound and keep working long after you stop paying for the work itself."),
+    ("Do I need SEO, or do I need all four services?",
+     "SEO is the right place to start for almost every business, since it is the foundation the other services build on. GEO, AI optimisation and content become worth adding once you want to compete for AI-generated answers and not just the classic results list, or once you need more content than your current SEO work is producing."),
+    ("Do you offer digital marketing packages for small businesses?",
+     "We scope every engagement to the business in front of us rather than selling fixed packages. A small business with one location needs a very different plan from a group with ten, and pricing follows the actual work required, not a tier on a pricing page."),
+    ("What makes OnceMore Digital different from other digital marketing agencies in Malaysia?",
+     "You work directly with the people doing the SEO, content and AI optimisation work, not an account manager relaying messages from someone else. Reporting says what is and is not working, and Malaysian search behaviour, bilingual queries and local intent, shapes the strategy from day one rather than being an afterthought."),
 ]
 hub_faq_html, hub_faq_schema = faq_block(hub_faq_items)
 hub_body += hub_faq_html
