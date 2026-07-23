@@ -32,12 +32,26 @@ body{
 body::before{
   content:'';
   position:fixed;
-  inset:0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 0%,rgba(77,101,175,0.12) 0%,transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 90%,rgba(77,101,175,0.06) 0%,transparent 50%);
+  inset:-15%;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(77,101,175,0.28) 0%, transparent 42%),
+    radial-gradient(circle at 85% 8%, rgba(122,144,199,0.20) 0%, transparent 38%),
+    radial-gradient(circle at 75% 85%, rgba(77,101,175,0.22) 0%, transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(122,144,199,0.14) 0%, transparent 40%),
+    radial-gradient(rgba(122,144,199,0.07) 1px, transparent 1px);
+  background-size:100% 100%,100% 100%,100% 100%,100% 100%,26px 26px;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,repeat;
+  animation:bgDrift 28s ease-in-out infinite;
   pointer-events:none;
   z-index:0;
+}
+@keyframes bgDrift{
+  0%{transform:translate3d(0,0,0) scale(1);}
+  50%{transform:translate3d(-1.5%,2%,0) scale(1.04);}
+  100%{transform:translate3d(0,0,0) scale(1);}
+}
+@media (prefers-reduced-motion: reduce){
+  body::before{animation:none}
 }
 
 .wrap{position:relative;z-index:1}
@@ -95,7 +109,8 @@ a:hover{color:var(--off-white)}
 .dropdown a:hover{background:rgba(77,101,175,.16);color:var(--blue-light);border-color:transparent}
 
 /* ---------- generic section ---------- */
-.section{padding:5rem 0}
+.section{padding:5rem 0;position:relative}
+.section > .container{position:relative;z-index:1}
 .section-sm{padding:3.5rem 0}
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;
@@ -112,7 +127,8 @@ p{color:var(--muted);font-weight:400}
 .section > .container > p{max-width:65ch}
 
 /* ---------- hero ---------- */
-.hero{padding:4.5rem 0 4.5rem;text-align:left;animation:rise .9s cubic-bezier(.22,1,.36,1) both}
+.hero{padding:4.5rem 0 4.5rem;text-align:left;animation:rise .9s cubic-bezier(.22,1,.36,1) both;position:relative}
+.hero > .container{position:relative;z-index:1}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
 .hero-copy .lead{margin:0 0 1.75rem}
 .hero-copy .services-tags{justify-content:flex-start;margin-bottom:1.75rem}
@@ -487,5 +503,36 @@ p{color:var(--muted);font-weight:400}
   color:var(--blue-light);margin-bottom:.6rem;
 }
 .sources-block .link-list{margin:0}
+
+/* ---------- square motif system (derived from the logo mark) ---------- */
+/* Decorative shapes for otherwise-empty section space: single squares,
+   a diamond (square rotated 45deg), a 2x2 grid cluster, and mini squares.
+   Placed inside a .shape-field wrapper, absolutely positioned behind content. */
+.shape-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.motif{position:absolute;opacity:.55}
+.motif-sq{width:52px;height:52px;background:rgba(77,101,175,.32);border-radius:8px;animation:motifFloatA 10s ease-in-out infinite}
+.motif-sq.alt{background:rgba(122,144,199,.24);border-radius:6px}
+.motif-sq.outline{background:transparent;border:1.5px solid rgba(122,144,199,.35)}
+.motif-diamond{width:60px;height:60px;background:rgba(122,144,199,.20);border-radius:10px;transform:rotate(45deg);animation:motifFloatB 12s ease-in-out infinite}
+.motif-diamond.outline{background:transparent;border:1.5px solid rgba(77,101,175,.4)}
+.motif-grid{display:grid;grid-template-columns:repeat(2,20px);grid-template-rows:repeat(2,20px);gap:6px;animation:motifFloatA 13s ease-in-out infinite}
+.motif-grid span{background:rgba(77,101,175,.3);border-radius:4px}
+.motif-mini{width:13px;height:13px;background:rgba(122,144,199,.45);border-radius:3px;animation:motifFloatB 8s ease-in-out infinite}
+@keyframes motifFloatA{
+  0%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-16px) rotate(8deg);}
+  100%{transform:translateY(0) rotate(0deg);}
+}
+@keyframes motifFloatB{
+  0%{transform:translateY(0) rotate(45deg);}
+  50%{transform:translateY(14px) rotate(52deg);}
+  100%{transform:translateY(0) rotate(45deg);}
+}
+@media (prefers-reduced-motion: reduce){
+  .motif,.motif-sq,.motif-diamond,.motif-grid,.motif-mini{animation:none}
+}
+@media(max-width:760px){
+  .shape-field{display:none}
+}
 
 

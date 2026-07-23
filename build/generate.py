@@ -502,7 +502,13 @@ process_cards = "".join(
 )
 
 home_body = """
-<section class="hero"><div class="container">
+<section class="hero"><div class="shape-field" aria-hidden="true">
+  <div class="motif motif-sq" style="top:10%;right:8%"></div>
+  <div class="motif motif-diamond outline" style="top:58%;right:20%"></div>
+  <div class="motif motif-grid" style="bottom:12%;right:6%"><span></span><span></span><span></span><span></span></div>
+  <div class="motif motif-mini" style="top:32%;right:32%"></div>
+  <div class="motif motif-sq alt" style="bottom:22%;left:3%"></div>
+</div><div class="container">
   <div class="hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
@@ -525,7 +531,12 @@ home_body = """
   </div>
 </div></section>
 
-<section class="section"><div class="container">
+<section class="section"><div class="shape-field" aria-hidden="true">
+  <div class="motif motif-diamond" style="top:14%;right:10%"></div>
+  <div class="motif motif-sq outline" style="top:48%;right:22%"></div>
+  <div class="motif motif-grid" style="bottom:14%;right:8%"><span></span><span></span><span></span><span></span></div>
+  <div class="motif motif-mini" style="top:35%;right:4%"></div>
+</div><div class="container">
   <span class="eyebrow">Who we are</span>
   <h2>A Malaysian-led digital marketing agency, built on direct access.</h2>
   <p style="max-width:65ch">OnceMore Digital is a Malaysian-led digital marketing agency, with a team bringing a combined 10+ years of hands-on experience across SEO, GEO, AI optimisation and content. That experience covers everything from independent local businesses to established international brands, and the same standard applies to each.</p>
@@ -625,7 +636,12 @@ home_faq_html, home_faq_schema = faq_block(home_faq_items)
 home_body += home_faq_html
 
 home_body += """
-<section class="section cta-final"><div class="container">
+<section class="section cta-final"><div class="shape-field" aria-hidden="true">
+  <div class="motif motif-sq alt" style="top:18%;left:8%"></div>
+  <div class="motif motif-diamond outline" style="bottom:15%;right:10%"></div>
+  <div class="motif motif-mini" style="top:55%;left:22%"></div>
+  <div class="motif motif-grid" style="top:20%;right:14%"><span></span><span></span><span></span><span></span></div>
+</div><div class="container">
   <div class="cta-band">
     <h2>Ready to get found?</h2>
     <p>Tell us what you are working on and we will be in touch.</p>
