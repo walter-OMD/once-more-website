@@ -599,14 +599,12 @@ home_body = (home_body
 )
 
 home_faq_items = [
-    ("What does OnceMore Digital do?",
-     "We help businesses in Malaysia grow online through SEO, GEO, AI optimisation and content writing."),
     ("Where are you based?",
      "We work with businesses across Malaysia and can support clients remotely."),
     ("How do I get started?",
      "Email walter@oncemoredigital.com or use the contact page, and we will set up a short call to understand your goals."),
     ("How do I choose an SEO agency in Malaysia?",
-     "Look for one that explains its work in plain terms, shows you real reporting, and treats SEO as ongoing strategy rather than a fixed package. A good SEO agency should be able to tell you what is not working, not just what is."),
+     "Look for one that explains its work in plain terms, shows you real reporting, and treats SEO as an ongoing strategy rather than a one-off fix. A good SEO agency should be able to tell you what is not working, not just what is."),
     ("What is the difference between an SEO agency and a digital marketing agency?",
      "An SEO agency focuses specifically on organic search rankings. A digital marketing agency covers a wider range of channels, from SEO to content to AI optimisation. OnceMore started as an SEO agency and has grown into a full digital marketing agency, though SEO remains the foundation of most of our work."),
     ("Do you work with small businesses or only large companies?",
@@ -703,17 +701,17 @@ hub_faq_items = [
     ("What is digital marketing?",
      "Digital marketing is the umbrella term for any way a business gets found and grows online, from search engines to social media to paid ads. We focus specifically on the channels proven to improve website traffic and turn it into real enquiries: SEO, GEO, AI optimisation and content."),
     ("How do I find the best digital marketing agency for my business?",
-     "Look for one that explains its work in plain terms, ties recommendations to your actual goals rather than a fixed package, and can show you real reporting. The best digital marketing agency for your business is the one that treats your traffic and revenue goals as the point, not the channel mix."),
+     "Look for one that explains its work in plain terms, is upfront about pricing, and can show you real reporting. The best digital marketing agency for your business is the one that treats your traffic and revenue goals as the point, not the channel mix."),
     ("Which service should I start with to improve website traffic fastest?",
      "For most businesses, SEO is the foundation, since it compounds over time and does not stop the moment you stop paying for it. If you need visibility sooner, pairing it with GEO and AI optimisation from day one prevents having to retrofit that work later."),
     ("How much does digital marketing cost in Malaysia?",
-     "It depends entirely on which services you need and how competitive your market is. There is no single price for digital marketing, the same way there is no single price for construction work. We scope every engagement to your goals rather than selling a fixed package, and our guide on SEO costs in Malaysia breaks down what actually drives the number."),
+     "It depends on which services you need and how competitive your market is. A proper answer needs a look at your actual goals rather than a generic number, so get in touch and we can give you a clear picture. Our guide on SEO costs in Malaysia breaks down what actually drives the number."),
     ("How long does digital marketing take to show results?",
      "Paid channels can bring traffic within days. Organic channels like SEO, GEO and content marketing take longer to build, usually three to six months for early movement, but the results compound and keep working long after you stop paying for the work itself."),
     ("Do I need SEO, or do I need all four services?",
      "SEO is the right place to start for almost every business, since it is the foundation the other services build on. GEO, AI optimisation and content become worth adding once you want to compete for AI-generated answers and not just the classic results list, or once you need more content than your current SEO work is producing."),
     ("Do you offer digital marketing packages for small businesses?",
-     "We scope every engagement to the business in front of us rather than selling fixed packages. A small business with one location needs a very different plan from a group with ten, and pricing follows the actual work required, not a tier on a pricing page."),
+     "Yes. We work with businesses of every size, and pricing is matched to your budget and goals rather than a one-size-fits-all number."),
     ("What makes OnceMore Digital different from other digital marketing agencies in Malaysia?",
      "You work directly with the people doing the SEO, content and AI optimisation work, not an account manager relaying messages from someone else. Reporting says what is and is not working, and Malaysian search behaviour, bilingual queries and local intent, shapes the strategy from day one rather than being an afterthought."),
 ]
@@ -900,6 +898,14 @@ about_body = """
 </div></section>
 
 <section class="section panel-alt"><div class="container">
+  <span class="eyebrow">What we do</span>
+  <h2>SEO first, then everything search is becoming.</h2>
+  <p style="max-width:65ch">At the core, OnceMore Digital is a digital marketing agency built around search, in every form it now takes. We started doing SEO for Malaysian businesses, and SEO is still the foundation of most of the work we do today.</p>
+  <p style="max-width:65ch;margin-top:1rem">As search has split into classic results, AI Overviews and answer engines, we have grown alongside it. GEO makes sure your business gets cited when someone asks an AI tool a question instead of typing it into Google. AI optimisation is the structural work underneath that, clean pages, clear answers, proper markup, that both Google and AI tools reward. Content writing feeds all of it, since none of this works without pages worth ranking and quoting in the first place.</p>
+  <p style="max-width:65ch;margin-top:1rem">Four services, one team, aimed at the same outcome: more of the right people finding your business, however they happen to be searching.</p>
+</div></section>
+
+<section class="section"><div class="container">
   <div class="split story-split">
     <div class="photo-frame">
       <img src="/assets/img/about/team-meeting.jpg" alt="OnceMore Digital team presenting website traffic data to a client during a strategy session in a Kuala Lumpur meeting room" loading="lazy" decoding="async">
