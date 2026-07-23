@@ -670,10 +670,25 @@ hub_cards = "".join(card_html(s[0], s[1], s[3]) for s in SERVICES)
 hub_body = """
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Services</nav>
-  <span class="eyebrow" style="margin-top:1.5rem">Services</span>
+  <span class="eyebrow" style="margin-top:1.5rem">Digital Marketing Services in Malaysia</span>
   <h1>Everything you need to <em>get found.</em></h1>
-  <p class="lead">From classic search rankings to AI answer engines, here is how we help your business grow.</p>
+  <p class="lead">From classic search rankings to AI answer engines, here is how our digital marketing services help improve your website traffic and grow your business online.</p>
+  <div class="divider left" aria-hidden="true"></div>
+  <p style="max-width:65ch">Digital marketing covers a lot of ground: ads, social media, email, SEO, and not all of it moves the needle for every business. We focus on the channels that reliably improve website traffic and turn it into enquiries, not vanity numbers that look good in a report and do nothing for revenue.</p>
+  <p style="max-width:65ch;margin-top:1rem">Each service below can run on its own, but most businesses see the best results when they work together as one strategy, rather than as four separate vendors pulling in different directions.</p>
   <div class="grid" style="margin-top:2.5rem">%s</div>
+</div></section>
+
+<section class="section panel-alt"><div class="container">
+  <span class="eyebrow">How it fits together</span>
+  <h2>How each service helps improve your <em>website traffic.</em></h2>
+  <p style="max-width:65ch">Digital marketing works best when every channel is pulling toward the same goal. Here is what each one is actually doing for your traffic.</p>
+  <ul class="feature-list" style="margin-top:1.75rem;max-width:70ch">
+    <li><strong>SEO</strong> brings in visitors who are already searching for what you offer, the highest-intent traffic there is.</li>
+    <li><strong>GEO</strong> captures the growing share of people who ask AI tools a question instead of searching, before they ever reach a results page.</li>
+    <li><strong>AI Optimisation</strong> makes sure the traffic you already get lands on pages structured to convert, not just pages that happen to rank.</li>
+    <li><strong>Content Writing</strong> fuels both SEO and GEO with the pages and answers that traffic actually needs to find in the first place.</li>
+  </ul>
 </div></section>
 <section class="section-sm"><div class="container">
   <div class="cta-band">
@@ -683,6 +698,17 @@ hub_body = """
   </div>
 </div></section>
 """ % hub_cards
+
+hub_faq_items = [
+    ("What is digital marketing?",
+     "Digital marketing is the umbrella term for any way a business gets found and grows online, from search engines to social media to paid ads. We focus specifically on the channels proven to improve website traffic and turn it into real enquiries: SEO, GEO, AI optimisation and content."),
+    ("How do I find the best digital marketing agency for my business?",
+     "Look for one that explains its work in plain terms, ties recommendations to your actual goals rather than a fixed package, and can show you real reporting. The best digital marketing agency for your business is the one that treats your traffic and revenue goals as the point, not the channel mix."),
+    ("Which service should I start with to improve website traffic fastest?",
+     "For most businesses, SEO is the foundation, since it compounds over time and does not stop the moment you stop paying for it. If you need visibility sooner, pairing it with GEO and AI optimisation from day one prevents having to retrofit that work later."),
+]
+hub_faq_html, hub_faq_schema = faq_block(hub_faq_items)
+hub_body += hub_faq_html
 
 hub_schema = [
     breadcrumb([("Home", "/"), ("Services", "/services/")]),
@@ -695,9 +721,10 @@ hub_schema = [
             for i, s in enumerate(SERVICES)
         ],
     }),
+    hub_faq_schema,
 ]
-page("/services/", "Services | SEO, GEO, AI Optimisation &amp; Content",
-     "Our digital marketing services for Malaysian businesses: SEO, GEO, AI optimisation and content writing. One team across organic growth.",
+page("/services/", "Digital Marketing Services in Malaysia | OnceMore Digital",
+     "Digital marketing services built to improve website traffic for Malaysian businesses: SEO, GEO, AI optimisation and content writing, all from one team.",
      hub_body, active="services", schema_blocks=hub_schema)
 
 # ---------------------------------------------------------------- service pages
