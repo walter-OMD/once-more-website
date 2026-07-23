@@ -526,6 +526,16 @@ home_body = """
 </div></section>
 
 <section class="section"><div class="container">
+  <span class="eyebrow">Who we are</span>
+  <h2>Run by the people doing the work, not a call centre with a logo.</h2>
+  <p style="max-width:65ch">OnceMore Digital is a small, founder-led digital marketing agency based in Kuala Lumpur. Walter Yow and a small team handle SEO, GEO, AI optimisation and content directly, rather than routing your account through layers of project managers before anyone touches the actual work.</p>
+  <p style="max-width:65ch;margin-top:1rem">We are Malaysian, we work with Malaysian businesses, and that shapes the strategy from keyword research to content voice. It is not a detail we bolt on for local flavour, it is the starting point.</p>
+  <div class="btn-row" style="justify-content:flex-start;margin-top:1.5rem">
+    <a class="btn btn-ghost" href="/about/">Read more about us</a>
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
   <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
   <h2>What a digital marketing agency should <em>actually do.</em></h2>
   <p>A lot of businesses end up hiring three or four different freelancers, one for ads, one for the website, one for social media, and get work that pulls in different directions. A proper digital marketing agency does the opposite: one team, one strategy, and every channel built to support the same goal instead of competing for credit.</p>
@@ -898,14 +908,6 @@ about_body = """
 </div></section>
 
 <section class="section panel-alt"><div class="container">
-  <span class="eyebrow">What we do</span>
-  <h2>SEO first, then everything search is becoming.</h2>
-  <p style="max-width:65ch">At the core, OnceMore Digital is a digital marketing agency built around search, in every form it now takes. We started doing SEO for Malaysian businesses, and SEO is still the foundation of most of the work we do today.</p>
-  <p style="max-width:65ch;margin-top:1rem">As search has split into classic results, AI Overviews and answer engines, we have grown alongside it. GEO makes sure your business gets cited when someone asks an AI tool a question instead of typing it into Google. AI optimisation is the structural work underneath that, clean pages, clear answers, proper markup, that both Google and AI tools reward. Content writing feeds all of it, since none of this works without pages worth ranking and quoting in the first place.</p>
-  <p style="max-width:65ch;margin-top:1rem">Four services, one team, aimed at the same outcome: more of the right people finding your business, however they happen to be searching.</p>
-</div></section>
-
-<section class="section"><div class="container">
   <div class="split story-split">
     <div class="photo-frame">
       <img src="/assets/img/about/team-meeting.jpg" alt="OnceMore Digital team presenting website traffic data to a client during a strategy session in a Kuala Lumpur meeting room" loading="lazy" decoding="async">
