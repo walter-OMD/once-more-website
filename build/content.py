@@ -291,39 +291,63 @@ RESOURCES = [
 # problem_heading, problem_body[html paragraphs],
 # approach_heading, approach_intro, approach_items[(title, body)],
 # results_heading, stats[(number, label)], results_body[html paragraphs])
+# ---------------------------------------------------------------- case studies
+# Each case study: dict(slug, title, desc, eyebrow, industry, h1, intro,
+# sections[(heading, html_body)] for deep-dive narrative sections,
+# approach_heading, approach_intro, approach_items[(title, body)],
+# results_heading, stats[(number, label)], results_body[html paragraphs],
+# takeaway_heading, takeaway_body[html])
 CASE_STUDIES = [
     {
         "slug": "car-rental-seo-growth",
-        "title": "How One of the Bigger Car Rental Brands Grew Organic Traffic by 248%",
-        "desc": "How we helped one of the bigger car rental industry players escape a shared parent domain and grow monthly organic traffic by 248% in under a year.",
+        "title": "SEO Case Study: How We Helped a Car Rental Brand Escape a Shared Domain and Grow Organic Traffic by 248%",
+        "desc": "A full breakdown of how we diagnosed a keyword cannibalisation problem caused by a shared parent domain, migrated a car rental brand to its own domain, and grew organic traffic 248% within a year.",
         "eyebrow": "Case Study",
         "industry": "Car Rental",
         "h1": "From a shared subdomain to record organic growth",
-        "intro": "One of the bigger car rental industry players came to us stuck under their parent company's global domain, a setup quietly working against every local SEO effort they made. Here is what we changed, and what happened after.",
-        "problem_heading": "The problem",
-        "problem_body": [
-            "This car rental brand's website was hosted under their parent company's global domain, a common setup for businesses that operate as the local arm of a bigger international group. It seems convenient on the surface, but for local SEO it is close to a worst case scenario. Local pages end up competing directly against the global domain for the exact same search terms, a problem known as keyword cannibalisation, and Google is left to guess which version deserves to rank for a search happening in this market specifically.",
-            "Left unresolved, this kind of setup tends to get worse over time, not better. As the global domain keeps publishing content and earning links across every market it operates in, it accumulates more authority than any single local business under it ever could. Meanwhile the local pages stay invisible for the searches that actually drive local bookings, and the business ends up depending more and more on paid channels just to stay visible in its own market.",
+        "intro": "Our client is one of the bigger players in the car rental industry, operating as the local arm of a larger international group. Like a lot of businesses in that position, their website lived under their parent company's global domain rather than on its own domain. It looks efficient on paper, one platform, one design system, one team maintaining the infrastructure, but for a business trying to rank in a specific market, it is one of the most common and least understood SEO problems we see.",
+        "sections": [
+            ("Why a shared global domain breaks local SEO",
+             "<p>This is worth explaining properly, because most business owners in this exact situation have no idea it is happening to them. When a local subsidiary's pages sit under a parent company's global domain, several things happen at once, and none of them help the local business.</p>"
+             "<ul class=\"feature-list\">"
+             "<li><strong>Keyword cannibalisation.</strong> If the global domain has pages targeting the same or similar terms across multiple country versions, Google has to decide which page to show for a search happening in this specific market. Rather than picking the best one, it often ends up splitting authority and relevance signals across all of them, which can suppress every version's ranking, including the one that should actually win for that market.</li>"
+             "<li><strong>Diluted crawl budget.</strong> Google allocates a limited amount of attention to crawling any given domain. A large global domain with pages across every market it operates in means the local country's pages are competing for crawl attention against every other country's pages too. Freshly updated local content can sit uncrawled for longer than it should.</li>"
+             "<li><strong>Authority pointing the wrong way.</strong> Backlinks, mentions and citations earned by local PR or partnerships tend to point to the domain people know, usually the global one, or get attributed to a generic global page instead of the specific local page that deserves the credit. Over time the global domain gets stronger while the part of the site that matters to this market stays exactly where it started.</li>"
+             "<li><strong>No room for local content ownership.</strong> Global domains are usually built to a corporate template that has to work across every market at once, which makes it very difficult to publish genuinely local content without going through layers of approval from a global team with different priorities.</li>"
+             "</ul>"
+             "<p>Left alone, none of this fixes itself. It gets slowly worse as the global domain keeps growing and the local business keeps depending more heavily on paid channels just to stay visible in its own market.</p>"),
+            ("How we diagnosed it",
+             "<p>Before recommending anything as disruptive as a domain migration, we ran a full audit to confirm the problem was actually structural, not something smaller. That meant:</p>"
+             "<ul class=\"feature-list\">"
+             "<li>Checking indexation and crawl behaviour for the client's specific market pages versus the rest of the global domain</li>"
+             "<li>Reviewing Search Console data to see whether the client's pages and the parent domain's pages were both showing impressions for the same queries, a direct sign of cannibalisation</li>"
+             "<li>Auditing the backlink profile to see where earned authority was actually landing</li>"
+             "<li>Mapping every existing URL on the client's section of the site, since a migration is only as clean as the map behind it</li>"
+             "</ul>"
+             "<p>This confirmed what we suspected: the client's local pages were structurally boxed in, and no amount of on-page optimisation was going to fix a problem that lived at the domain level.</p>"),
+            ("Why migration, not a smaller fix",
+             "<p>Domain migration is not a decision to make lightly. It is disruptive, it carries real risk if handled badly, and it is a genuinely difficult internal conversation for any business operating inside a larger group. We considered smaller interventions first, like restructuring the existing setup with better hreflang signals or pushing for a dedicated subfolder instead of a full domain. In this case, neither was realistic given how the parent company's platform was built, which meant a full migration to an independently owned domain was the only option that actually solved the underlying problem rather than working around it.</p>"),
         ],
         "approach_heading": "What we did",
-        "approach_intro": "Migrating an established domain is a long process, and understandably a difficult decision for any business to commit to. Once the client agreed, the work came down to three things.",
+        "approach_intro": "Once the client committed, the work broke down into three phases.",
         "approach_items": [
-            ("Full domain migration",
-             "We moved the site onto its own dedicated domain and set up 301 redirects on every single page, so existing rankings and link equity carried over instead of resetting back to zero."),
+            ("Migration and redirect mapping",
+             "We moved the site onto its own dedicated domain and built a full 301 redirect map covering every existing URL, so search engines were pointed cleanly from the old address to the new one instead of hitting dead ends. This is the step most likely to go wrong in a migration, since a single missed redirect can mean losing the ranking equity that page had built up."),
             ("Technical and tracking continuity",
-             "Every tracking script, piece of structured data and technical configuration was rebuilt and verified on the new domain before and after launch, so nothing broke mid-transition."),
-            ("New content built to establish authority",
-             "We built out informational blog content the business could never fully own while it lived under someone else's domain, giving Google real reasons to trust the new domain on its own merits."),
+             "Structured data, canonical tags, the XML sitemap, robots.txt rules and every tracking and analytics property were rebuilt and verified on the new domain, tested before launch and monitored closely afterward. In the weeks following a migration we watch Search Console daily for crawl errors, unexpected drops in indexed pages, or redirect chains that need cleaning up. Most of the ranking damage that happens in migrations happens because nobody was watching closely enough in this window."),
+            ("Independent content strategy",
+             "With the business finally free of the global template's constraints, we built out informational blog content specific to this market, the kind of content that simply was not possible to publish while every page had to be approved against a global corporate standard. This gave the new domain its own reasons to earn authority and rank for the searches that actually matter locally, rather than borrowing whatever authority trickled down from the parent domain."),
         ],
-        "results_heading": "The outcome",
+        "results_heading": "The results",
         "stats": [
             ("248%", "Increase in monthly organic traffic within a year"),
             ("1,560%", "Increase in non-branded search impressions"),
             ("1,118%", "Increase in branded search impressions"),
         ],
         "results_body": [
-            "Growth held up, it did not just spike and fade. Within a year of the migration, demand grew fast enough that the client faced supply shortages more than once, a rare problem that is actually a good sign.",
-            "It also confirmed the point of the whole exercise: once local SEO was no longer fighting its own parent company for the same rankings, it was free to actually work.",
+            "The growth held. It was not a short-term spike that faded once the migration novelty wore off, it was a sustained climb that kept compounding as the new domain built its own independent authority. Demand grew fast enough that the client faced supply shortages more than once, a rare problem that is actually a very good sign.",
         ],
+        "takeaway_heading": "What this means if your business is in the same position",
+        "takeaway_body": "<p>If your website lives under a parent company's, a franchise group's, or a platform's shared domain, and you have never had a proper SEO audit done specifically on your section of it, there is a reasonable chance the same structural ceiling is capping your visibility right now, quietly, in a way that no amount of on-page tweaking will fix. The fix is not always a full migration. Sometimes it is a subfolder restructure, sometimes better hreflang implementation is enough. But the first step is always the same: find out whether you are actually competing against your own parent company for the same rankings.</p>",
     },
 ]

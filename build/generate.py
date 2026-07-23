@@ -1091,8 +1091,22 @@ page("/resources/", "Resources | SEO, GEO &amp; AI Search Guides | OnceMore Digi
      res_hub_body, active="resources", schema_blocks=res_hub_schema)
 
 # ---------------------------------------------------------------- case studies
+def _case_sid(h):
+    return re.sub(r'[^a-z0-9]+', '-', h.lower()).strip('-')
+
 for c in CASE_STUDIES:
-    problem_html = "".join("<p>%s</p>" % p for p in c["problem_body"])
+    deep_sections = c.get("sections", [])
+    toc_items = [(h, _case_sid(h)) for h, _ in deep_sections]
+    toc_items.append((c["approach_heading"], _case_sid(c["approach_heading"])))
+    toc_items.append((c["results_heading"], _case_sid(c["results_heading"])))
+    if c.get("takeaway_heading"):
+        toc_items.append((c["takeaway_heading"], _case_sid(c["takeaway_heading"])))
+    toc_html = "".join('<li><a href="#%s">%s</a></li>' % (sid, html.escape(h)) for h, sid in toc_items)
+
+    sections_html = "".join(
+        '<h2 id="%s">%s</h2><div class="prose">%s</div>' % (_case_sid(h), html.escape(h), body)
+        for h, body in deep_sections)
+
     approach_cards = "".join(
         '<div class="card"><h3>%s</h3><p>%s</p></div>' % (html.escape(t), b)
         for t, b in c["approach_items"])
@@ -1100,6 +1114,10 @@ for c in CASE_STUDIES:
         '<div class="stat-card"><span class="stat-num">%s</span><span class="stat-label">%s</span></div>'
         % (html.escape(n), html.escape(l)) for n, l in c["stats"])
     results_html = "".join("<p>%s</p>" % p for p in c["results_body"])
+    takeaway_html = ""
+    if c.get("takeaway_heading"):
+        takeaway_html = '<h2 id="%s" style="margin-top:2.5rem">%s</h2><div class="prose">%s</div>' % (
+            _case_sid(c["takeaway_heading"]), html.escape(c["takeaway_heading"]), c["takeaway_body"])
     other_cases = "".join(
         '<li><a href="/case-studies/%s/">%s</a></li>' % (o["slug"], html.escape(o["title"]))
         for o in CASE_STUDIES if o["slug"] != c["slug"])
@@ -1110,15 +1128,21 @@ for c in CASE_STUDIES:
   <h1>{html.escape(c["h1"])}</h1>
   <p class="lead">{html.escape(c["intro"])}</p>
   <div class="divider left" aria-hidden="true"></div>
-  <h2>{html.escape(c["problem_heading"])}</h2>
-  <div class="prose">{problem_html}</div>
-  <h2 style="margin-top:2.5rem">{html.escape(c["approach_heading"])}</h2>
-  <p class="lead" style="font-size:1.05rem;max-width:62ch;margin-bottom:1.75rem">{html.escape(c["approach_intro"])}</p>
-  <div class="grid">{approach_cards}</div>
-  <h2 style="margin-top:2.5rem">{html.escape(c["results_heading"])}</h2>
-  <div class="case-chart">{CASE_CHART_SVG}</div>
-  <div class="stat-grid">{stat_cards}</div>
-  <div class="prose" style="margin-top:1.5rem">{results_html}</div>
+  <nav class="toc" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    <ul>{toc_html}</ul>
+  </nav>
+  <article>
+    {sections_html}
+    <h2 id="{_case_sid(c["approach_heading"])}" style="margin-top:2.5rem">{html.escape(c["approach_heading"])}</h2>
+    <p class="lead" style="font-size:1.05rem;max-width:62ch;margin-bottom:1.75rem">{html.escape(c["approach_intro"])}</p>
+    <div class="grid">{approach_cards}</div>
+    <h2 id="{_case_sid(c["results_heading"])}" style="margin-top:2.5rem">{html.escape(c["results_heading"])}</h2>
+    <div class="case-chart">{CASE_CHART_SVG}</div>
+    <div class="stat-grid">{stat_cards}</div>
+    <div class="prose" style="margin-top:1.5rem">{results_html}</div>
+    {takeaway_html}
+  </article>
 </div></section>
 <section class="section-sm panel-alt"><div class="container">
   <div class="cta-band">
@@ -1145,9 +1169,10 @@ for c in CASE_STUDIES:
             "url": URL + "/case-studies/%s/" % c["slug"],
             "inLanguage": "en-MY",
             "about": c["industry"],
-            "datePublished": "2026-07-22", "dateModified": "2026-07-22",
+            "datePublished": "2026-07-22", "dateModified": "2026-07-23",
             "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
             "publisher": {"@type": "Organization", "name": "OnceMore Digital",
+
                           "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
         }),
     ]
