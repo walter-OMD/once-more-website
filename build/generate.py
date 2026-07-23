@@ -4,7 +4,7 @@ Twitter card and JSON-LD schema. GTM and the og:image path are preserved
 exactly from the original markup. Output is plain static HTML for GitHub Pages.
 """
 import os, json, html, re
-from content import SERVICE_CONTENT, RESOURCES
+from content import SERVICE_CONTENT, RESOURCES, CASE_STUDIES
 
 SITE = "/home/claude/site"
 URL = "https://oncemoredigital.com"
@@ -52,6 +52,7 @@ NAV = """<header class="site-header"><div class="container"><nav class="nav" ari
       </ul>
     </li>
     <li><a href="/resources/"{resources}>Resources</a></li>
+    <li><a href="/case-studies/"{case_studies}>Case Studies</a></li>
     <li><a href="/about/"{about}>About</a></li>
     <li><a href="/contact/"{contact}>Contact</a></li>
     <li><a class="nav-cta" href="mailto:%s">Get in Touch</a></li>
@@ -85,6 +86,13 @@ FOOTER = """<footer class="site-footer"><div class="container">
       </ul>
     </div>
     <div>
+      <h4>Case Studies</h4>
+      <ul>
+        <li><a href="/case-studies/">All case studies</a></li>
+        <li><a href="/case-studies/car-rental-seo-growth/">Car rental SEO growth</a></li>
+      </ul>
+    </div>
+    <div>
       <h4>Company</h4>
       <ul>
         <li><a href="/about/">About</a></li>
@@ -104,6 +112,7 @@ def nav_for(active):
         home=cur if active == "home" else "",
         services=cur if active == "services" else "",
         resources=cur if active == "resources" else "",
+        case_studies=cur if active == "case-studies" else "",
         about=cur if active == "about" else "",
         contact=cur if active == "contact" else "",
     )
@@ -331,6 +340,20 @@ def clients_marquee():
             '</div></section>') % track
 
 CLIENTS_HTML = clients_marquee()
+
+# Growth chart illustration for case studies: flat before, steep rise and
+# sustained plateau after a fix (domain migration, technical work, etc.)
+CASE_CHART_SVG = '''<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line chart showing organic traffic flat before a domain migration, then rising sharply and holding at a much higher level afterward">
+<title>Organic traffic growth before and after the domain migration</title>
+<line x1="40" y1="40" x2="40" y2="220" stroke="rgba(122,144,199,0.3)"/>
+<line x1="40" y1="220" x2="660" y2="220" stroke="rgba(122,144,199,0.3)"/>
+<line x1="230" y1="40" x2="230" y2="220" stroke="rgba(224,178,60,0.6)" stroke-dasharray="4 4"/>
+<text x="230" y="28" text-anchor="middle" fill="#e0b23c" font-family="Satoshi,Arial" font-size="12">Domain migration</text>
+<path d="M40 205 L90 208 L140 202 L190 206 L230 204 L260 175 L290 140 L320 110 L350 95 L380 80 L410 88 L440 75 L470 82 L500 70 L530 78 L560 68 L590 74 L620 65 L650 72 L650 220 L40 220 Z" fill="rgba(77,101,175,0.15)"/>
+<path d="M40 205 L90 208 L140 202 L190 206 L230 204 L260 175 L290 140 L320 110 L350 95 L380 80 L410 88 L440 75 L470 82 L500 70 L530 78 L560 68 L590 74 L620 65 L650 72" fill="none" stroke="#7a90c7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="120" y="240" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">Before</text>
+<text x="440" y="240" text-anchor="middle" fill="#9aa3b8" font-family="Satoshi,Arial" font-size="12">After migration</text>
+</svg>'''
 
 # ---------------------------------------------------------------- guide visuals
 # a small ringgit-tag icon for the cost guide card
@@ -1067,6 +1090,104 @@ page("/resources/", "Resources | SEO, GEO &amp; AI Search Guides | OnceMore Digi
      "Straight-talking guides on SEO, GEO and AI search for Malaysian businesses, from OnceMore Digital.",
      res_hub_body, active="resources", schema_blocks=res_hub_schema)
 
+# ---------------------------------------------------------------- case studies
+for c in CASE_STUDIES:
+    problem_html = "".join("<p>%s</p>" % p for p in c["problem_body"])
+    approach_cards = "".join(
+        '<div class="card"><h3>%s</h3><p>%s</p></div>' % (html.escape(t), b)
+        for t, b in c["approach_items"])
+    stat_cards = "".join(
+        '<div class="stat-card"><span class="stat-num">%s</span><span class="stat-label">%s</span></div>'
+        % (html.escape(n), html.escape(l)) for n, l in c["stats"])
+    results_html = "".join("<p>%s</p>" % p for p in c["results_body"])
+    other_cases = "".join(
+        '<li><a href="/case-studies/%s/">%s</a></li>' % (o["slug"], html.escape(o["title"]))
+        for o in CASE_STUDIES if o["slug"] != c["slug"])
+    cbody = f"""
+<section class="section"><div class="container">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/case-studies/">Case Studies</a> / {html.escape(c["title"])}</nav>
+  <span class="case-tag" style="margin-top:1.25rem">{html.escape(c["industry"])}</span>
+  <h1>{html.escape(c["h1"])}</h1>
+  <p class="lead">{html.escape(c["intro"])}</p>
+  <div class="divider left" aria-hidden="true"></div>
+  <h2>{html.escape(c["problem_heading"])}</h2>
+  <div class="prose">{problem_html}</div>
+  <h2 style="margin-top:2.5rem">{html.escape(c["approach_heading"])}</h2>
+  <p class="lead" style="font-size:1.05rem;max-width:62ch;margin-bottom:1.75rem">{html.escape(c["approach_intro"])}</p>
+  <div class="grid">{approach_cards}</div>
+  <h2 style="margin-top:2.5rem">{html.escape(c["results_heading"])}</h2>
+  <div class="case-chart">{CASE_CHART_SVG}</div>
+  <div class="stat-grid">{stat_cards}</div>
+  <div class="prose" style="margin-top:1.5rem">{results_html}</div>
+</div></section>
+<section class="section-sm panel-alt"><div class="container">
+  <div class="cta-band">
+    <h2>Want results like this for your business?</h2>
+    <p>Tell us where your SEO is stuck and we will tell you honestly whether we can fix it.</p>
+    <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
+  </div>
+</div></section>
+"""
+    if other_cases:
+        cbody += f"""
+<section class="section-sm"><div class="container">
+  <span class="eyebrow">Keep reading</span>
+  <h2>More case studies</h2>
+  <ul class="link-list">{other_cases}</ul>
+</div></section>
+"""
+    cschema = [
+        breadcrumb([("Home", "/"), ("Case Studies", "/case-studies/"),
+                    (c["title"], "/case-studies/%s/" % c["slug"])]),
+        jsonld({
+            "@context": "https://schema.org", "@type": "Article",
+            "headline": c["title"], "description": c["desc"],
+            "url": URL + "/case-studies/%s/" % c["slug"],
+            "inLanguage": "en-MY",
+            "about": c["industry"],
+            "datePublished": "2026-07-22", "dateModified": "2026-07-22",
+            "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
+            "publisher": {"@type": "Organization", "name": "OnceMore Digital",
+                          "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
+        }),
+    ]
+    page("/case-studies/%s/" % c["slug"], "%s | OnceMore Digital" % c["title"], c["desc"],
+         cbody, active="case-studies", schema_blocks=cschema)
+
+# case studies hub
+case_cards = "".join(
+    f'''<a class="case-card" href="/case-studies/{c["slug"]}/">
+    <span class="case-tag">{html.escape(c["industry"])}</span>
+    <h3>{html.escape(c["title"])}</h3>
+    <p>{html.escape(c["desc"])}</p>
+    <div class="stat-row">{"".join('<div><strong>%s</strong><span>%s</span></div>' % (html.escape(n), html.escape(l)) for n, l in c["stats"][:3])}</div>
+    <span class="more">Read case study &rarr;</span>
+    </a>''' for c in CASE_STUDIES)
+case_hub_body = """
+<section class="section"><div class="container">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Case Studies</nav>
+  <span class="eyebrow" style="margin-top:1.5rem">Case Studies</span>
+  <h1>Real results for <em>real businesses.</em></h1>
+  <p class="lead">No vanity metrics. Here is what actually changed for businesses we have worked with, and how we did it.</p>
+  <div class="grid" style="margin-top:2.5rem">%s</div>
+</div></section>
+<section class="section-sm"><div class="container"><div class="cta-band">
+  <h2>Want to be the next one?</h2>
+  <p>Tell us what is not working and we will tell you honestly what it will take to fix it.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="/contact/">Get in Touch</a></div>
+</div></div></section>
+""" % case_cards
+case_hub_schema = [
+    breadcrumb([("Home", "/"), ("Case Studies", "/case-studies/")]),
+    jsonld({"@context": "https://schema.org", "@type": "CollectionPage",
+            "name": "Case Studies", "url": URL + "/case-studies/",
+            "hasPart": [{"@type": "Article", "headline": c["title"],
+                         "url": URL + "/case-studies/%s/" % c["slug"]} for c in CASE_STUDIES]}),
+]
+page("/case-studies/", "Case Studies | Real SEO Results | OnceMore Digital",
+     "Real case studies from OnceMore Digital: what we did, why it mattered, and the results Malaysian and regional businesses achieved.",
+     case_hub_body, active="case-studies", schema_blocks=case_hub_schema)
+
 # ---------------------------------------------------------------- html sitemap
 sitemap_groups = [
     ("Main", [("Home", "/")]),
@@ -1074,6 +1195,8 @@ sitemap_groups = [
      [(s[1] + " (" + s[2] + ")", "/services/%s/" % s[0]) for s in SERVICES]),
     ("Resources", [("Resources overview", "/resources/")] +
      [(g["title"], "/resources/%s/" % g["slug"]) for g in RESOURCES]),
+    ("Case Studies", [("Case studies overview", "/case-studies/")] +
+     [(c["title"], "/case-studies/%s/" % c["slug"]) for c in CASE_STUDIES]),
     ("Company", [("About", "/about/"), ("Contact", "/contact/")]),
 ]
 

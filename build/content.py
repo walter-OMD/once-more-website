@@ -284,3 +284,46 @@ RESOURCES = [
         ],
     },
 ]
+
+
+# ---------------------------------------------------------------- case studies
+# Each case study: dict(slug, title, desc, eyebrow, industry, h1, intro,
+# problem_heading, problem_body[html paragraphs],
+# approach_heading, approach_intro, approach_items[(title, body)],
+# results_heading, stats[(number, label)], results_body[html paragraphs])
+CASE_STUDIES = [
+    {
+        "slug": "car-rental-seo-growth",
+        "title": "How One of the Bigger Car Rental Brands Grew Organic Traffic by 248%",
+        "desc": "How we helped one of the bigger car rental industry players escape a shared parent domain and grow monthly organic traffic by 248% in under a year.",
+        "eyebrow": "Case Study",
+        "industry": "Car Rental",
+        "h1": "From a shared subdomain to record organic growth",
+        "intro": "One of the bigger car rental industry players came to us stuck under their parent company's global domain, a setup quietly working against every local SEO effort they made. Here is what we changed, and what happened after.",
+        "problem_heading": "The problem",
+        "problem_body": [
+            "This car rental brand's website was hosted under their parent company's global domain, a common setup for businesses that operate as the local arm of a bigger international group. It seems convenient on the surface, but for local SEO it is close to a worst case scenario. Local pages end up competing directly against the global domain for the exact same search terms, a problem known as keyword cannibalisation, and Google is left to guess which version deserves to rank for a search happening in this market specifically.",
+            "Left unresolved, this kind of setup tends to get worse over time, not better. As the global domain keeps publishing content and earning links across every market it operates in, it accumulates more authority than any single local business under it ever could. Meanwhile the local pages stay invisible for the searches that actually drive local bookings, and the business ends up depending more and more on paid channels just to stay visible in its own market.",
+        ],
+        "approach_heading": "What we did",
+        "approach_intro": "Migrating an established domain is a long process, and understandably a difficult decision for any business to commit to. Once the client agreed, the work came down to three things.",
+        "approach_items": [
+            ("Full domain migration",
+             "We moved the site onto its own dedicated domain and set up 301 redirects on every single page, so existing rankings and link equity carried over instead of resetting back to zero."),
+            ("Technical and tracking continuity",
+             "Every tracking script, piece of structured data and technical configuration was rebuilt and verified on the new domain before and after launch, so nothing broke mid-transition."),
+            ("New content built to establish authority",
+             "We built out informational blog content the business could never fully own while it lived under someone else's domain, giving Google real reasons to trust the new domain on its own merits."),
+        ],
+        "results_heading": "The outcome",
+        "stats": [
+            ("248%", "Increase in monthly organic traffic within a year"),
+            ("1,560%", "Increase in non-branded search impressions"),
+            ("1,118%", "Increase in branded search impressions"),
+        ],
+        "results_body": [
+            "Growth held up, it did not just spike and fade. Within a year of the migration, demand grew fast enough that the client faced supply shortages more than once, a rare problem that is actually a good sign.",
+            "It also confirmed the point of the whole exercise: once local SEO was no longer fighting its own parent company for the same rankings, it was free to actually work.",
+        ],
+    },
+]
