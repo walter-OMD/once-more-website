@@ -1065,7 +1065,7 @@ for g in RESOURCES:
         "headline": g["title"], "description": g["desc"],
         "url": URL + "/resources/%s/" % g["slug"],
         "inLanguage": "en-MY",
-        "datePublished": "2026-06-10", "dateModified": "2026-07-16",
+        "datePublished": "2026-06-10", "dateModified": "2026-07-23",
         "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
         "publisher": {"@type": "Organization", "name": "OnceMore Digital",
                       "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
