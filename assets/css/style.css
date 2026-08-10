@@ -335,14 +335,14 @@ p{color:var(--muted);font-weight:400}
 /* ---------- service page hero split ---------- */
 .service-hero{padding-bottom:3rem}
 .service-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center;margin-top:1.75rem}
-.service-hero-grid .hero-media .hero-illustration{margin:0;max-width:420px}
+.service-hero-grid .hero-media .hero-illustration{margin:0;max-height:270px;width:auto;max-width:100%;display:block}
 @media(max-width:860px){
   .service-hero-grid{grid-template-columns:1fr;gap:2.5rem;text-align:center}
   .service-hero-grid .svc-icon{margin-left:auto;margin-right:auto}
   .service-hero-grid .btn-row{justify-content:center}
   .service-hero-grid .lead{margin-left:auto;margin-right:auto}
   .service-hero-grid .hero-media{order:2}
-  .service-hero-grid .hero-media .hero-illustration{margin:0 auto;max-width:460px}
+  .service-hero-grid .hero-media .hero-illustration{margin:0 auto;max-height:220px;width:auto;max-width:100%}
 }
 
 /* ---------- panel alternation (homepage rhythm) ---------- */
@@ -528,3 +528,4 @@ p{color:var(--muted);font-weight:400}
 /* Simple illustration frame: contains, no cropping (unlike .photo-frame) */
 .illustration-frame{display:flex;align-items:center;justify-content:center;padding:.5rem}
 .illustration-frame img{width:100%;max-width:520px;height:auto;display:block;margin:0 auto}
+.illustration-frame.spot img{width:auto;max-width:260px;max-height:260px}

@@ -42,10 +42,11 @@ SERVICE_CONTENT = {
                 "Search is no longer just a results page. Google's AI Overviews, ChatGPT, Perplexity and Gemini now answer questions directly, often before anyone clicks a single link. People are starting to ask AI tools the way they used to type into Google, and the businesses these tools mention are the ones that get chosen.",
                 "This shift has given rise to two disciplines that sit alongside SEO: GEO (Generative Engine Optimisation), which gets your business cited in AI generated answers, and AEO (Answer Engine Optimisation), the practice of structuring content so it can be pulled into a direct answer. The fundamentals overlap with SEO, but the target is different. It is about being the source an AI names, not just the link Google ranks.",
             ],
-            "image": "/assets/img/illustrations/seo-ai-evolution.svg",
-            "image_alt": "Illustration of a search interface evolving into an AI generated answer",
+            "image": "/assets/img/illustrations/spot/icon-11.svg",
+            "image_alt": "Illustration of a person with an AI processor chip, representing AI powered search",
             "link_text": "Learn more about GEO",
             "link_href": "/services/geo/",
+            "compact": True,
         },
         "layout": [
             {"type": "prose", "headings": ["What does SEO actually involve?"], "alt": False},
@@ -122,8 +123,10 @@ SERVICE_CONTENT = {
             "paragraphs": [
                 "A growing share of people skip the results page entirely and ask an assistant instead. If your competitors are quoted in those answers and you are not, you lose the customer before they ever reach a website. Getting cited depends on clear, well structured, trustworthy content, which is exactly what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and good <a href=\"/services/content-writing/\">content</a> provide.",
             ],
-            "image": "/assets/img/illustrations/geo-team-review.svg",
-            "image_alt": "Illustration of a team reviewing search and AI results together",
+            "image": "/assets/img/illustrations/spot/icon-4.svg",
+            "image_alt": "Illustration of a person thinking, with question marks representing a search query",
+            "compact": True,
+            "image_side": "left",
         },
         "faqs": [
             ("Can you guarantee my business appears in AI answers?",
@@ -160,9 +163,16 @@ SERVICE_CONTENT = {
              "<p>AI optimisation is the hands-on layer beneath <a href=\"/services/geo/\">GEO</a>. It is the structural work that makes your pages easy for machines to read: clean headings, direct answers near the top of the page, FAQ and how-to formatting, and schema markup that tells tools exactly what each piece of content is. When a page is built this way, an assistant can lift a clear, correct answer from it instead of guessing or skipping you.</p>"),
             ("Which AI tools does this help with?",
              "<p>The fundamentals travel well across ChatGPT, Gemini, Perplexity, Copilot and Google AI Overviews. None of them reward keyword stuffing or thin pages. They reward content that is accurate, well organised and genuinely useful, which is also what readers and Google want. Done properly, AI optimisation strengthens your <a href=\"/services/seo/\">SEO</a> at the same time.</p>"),
-            ("Where do we start?",
-             "<p>We start with the pages that matter most to your business and audit how AI tools currently read them. From there we tighten structure, add the right markup, and make sure your key answers are stated plainly. Our <a href=\"/resources/what-is-geo/\">guide to GEO</a> gives useful background on why this work is becoming essential.</p>"),
         ],
+        "feature_split": {
+            "heading": "Where do we start?",
+            "paragraphs": [
+                "We start with the pages that matter most to your business and audit how AI tools currently read them. From there we tighten structure, add the right markup, and make sure your key answers are stated plainly. Our <a href=\"/resources/what-is-geo/\">guide to GEO</a> gives useful background on why this work is becoming essential.",
+            ],
+            "image": "/assets/img/illustrations/spot/icon-10.svg",
+            "image_alt": "Illustration of a person auditing a laptop with a verified checkmark",
+            "compact": True,
+        },
         "faqs": [
             ("Is this just SEO with a new name?",
              "There is real overlap, since clean structure helps both. The difference is the goal. AI optimisation is specifically about being readable and quotable by AI systems, not only ranking in the results list."),
@@ -176,9 +186,17 @@ SERVICE_CONTENT = {
              "<p>Useful content does a job. It answers a real question, matches what the searcher intended, and points the reader toward a sensible next step. We start from keyword and intent research so every piece targets something people are genuinely looking for, then write it to read naturally for a person first and a search engine second. That balance is what earns rankings and still turns readers into enquiries.</p>"),
             ("How does content support SEO and GEO?",
              "<p>Content is the raw material both depend on. <a href=\"/services/seo/\">SEO</a> needs pages worth ranking, and <a href=\"/services/geo/\">GEO</a> needs clear, quotable answers for AI tools to cite. Well written, well structured content feeds both at once. For Malaysian audiences we also handle tone, local context and language mix so the writing sounds right to the people reading it.</p>"),
-            ("What do we write?",
-             "<p>From cornerstone guides and blog articles mapped to the buyer journey, to landing and service page copy that has to convert. Each brief is built from research rather than guesswork. If you want to see the kind of depth we mean, our <a href=\"/resources/\">resources</a> are written the same way we would write for you.</p>"),
         ],
+        "feature_split": {
+            "heading": "What do we write?",
+            "paragraphs": [
+                "From cornerstone guides and blog articles mapped to the buyer journey, to landing and service page copy that has to convert. Each brief is built from research rather than guesswork. If you want to see the kind of depth we mean, our <a href=\"/resources/\">resources</a> are written the same way we would write for you.",
+            ],
+            "image": "/assets/img/illustrations/spot/icon-8.svg",
+            "image_alt": "Illustration of a person holding up a five star rating banner",
+            "compact": True,
+            "image_side": "left",
+        },
         "faqs": [
             ("Do you use AI to write?",
              "We use tools to research and speed up drafting, but every piece is shaped, fact checked and edited by a person so it is accurate and sounds like your brand, not a template."),

@@ -399,74 +399,10 @@ GUIDE_ICONS = {
 # service-hero-grid/.hero-media CSS gives them the same placement and size
 # as the homepage hero illustration (big, beside the copy, no dead space).
 SERVICE_ILLO = {
-    "seo": '''<svg class="hero-illustration" viewBox="0 0 300 210" role="img" aria-label="Browser mockup with a magnifying glass and ascending bars">
-<defs><clipPath id="c1"><rect x="0" y="0" width="300" height="210" rx="20"/></clipPath></defs>
-<g clip-path="url(#c1)">
-<rect x="0" y="0" width="300" height="210" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="45" fill="#1c2033"/>
-<circle cx="28" cy="22" r="6" fill="#e0b23c"/><circle cx="48" cy="22" r="6" fill="#7a90c7"/><circle cx="68" cy="22" r="6" fill="#4d65af"/>
-<rect x="90" y="14" width="180" height="17" rx="8" fill="rgba(255,255,255,0.08)"/>
-<circle cx="88" cy="106" r="24" stroke="#7a90c7" stroke-width="8" fill="none"/>
-<line x1="113" y1="124" x2="148" y2="148" stroke="#7a90c7" stroke-width="8" stroke-linecap="round"/>
-<rect x="176" y="161" width="24" height="28" rx="4" fill="#3a4e8f"/>
-<rect x="206" y="140" width="24" height="49" rx="4" fill="#4d65af"/>
-<rect x="236" y="116" width="24" height="74" rx="4" fill="#7a90c7"/>
-<rect x="266" y="91" width="24" height="98" rx="4" fill="#e0b23c"/>
-</g>
-<rect x="1" y="1" width="298" height="208" rx="19" fill="none" stroke="rgba(122,144,199,0.35)"/>
-</svg>''',
-    "geo": '''<svg class="hero-illustration" viewBox="0 0 300 210" role="img" aria-label="Browser mockup with a chat bubble, a spark badge, and a citation checkmark">
-<defs><clipPath id="c2"><rect x="0" y="0" width="300" height="210" rx="20"/></clipPath></defs>
-<g clip-path="url(#c2)">
-<rect x="0" y="0" width="300" height="210" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="45" fill="#1c2033"/>
-<circle cx="28" cy="22" r="6" fill="#e0b23c"/><circle cx="48" cy="22" r="6" fill="#7a90c7"/><circle cx="68" cy="22" r="6" fill="#4d65af"/>
-<rect x="90" y="14" width="180" height="17" rx="8" fill="rgba(255,255,255,0.08)"/>
-<rect x="26" y="67" width="140" height="62" rx="18" fill="#3a4e8f"/>
-<path d="M42 129 L42 144 L66 129 Z" fill="#3a4e8f"/>
-<path d="M196 57 L204 71 L224 77 L204 83 L196 97 L188 83 L168 77 L188 71 Z" fill="#e0b23c"/>
-<rect x="168" y="111" width="106" height="53" rx="12" fill="#1c2033" stroke="#4d65af" stroke-width="3"/>
-<path d="M190 137 L202 146 L228 125" stroke="#f4f4f2" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<rect x="1" y="1" width="298" height="208" rx="19" fill="none" stroke="rgba(122,144,199,0.35)"/>
-</svg>''',
-    "ai-optimisation": '''<svg class="hero-illustration" viewBox="0 0 300 210" role="img" aria-label="Browser mockup with a bracket and three checked rows">
-<defs><clipPath id="c3"><rect x="0" y="0" width="300" height="210" rx="20"/></clipPath></defs>
-<g clip-path="url(#c3)">
-<rect x="0" y="0" width="300" height="210" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="45" fill="#1c2033"/>
-<circle cx="28" cy="22" r="6" fill="#e0b23c"/><circle cx="48" cy="22" r="6" fill="#7a90c7"/><circle cx="68" cy="22" r="6" fill="#4d65af"/>
-<rect x="90" y="14" width="180" height="17" rx="8" fill="rgba(255,255,255,0.08)"/>
-<path d="M72 64 C52 64 47 71 47 82 V98 C47 105 42 109 32 111 C42 113 47 116 47 123 V139 C47 150 52 157 72 157" stroke="#7a90c7" stroke-width="6" fill="none" stroke-linecap="round"/>
-<rect x="104" y="69" width="172" height="25" rx="8" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
-<circle cx="122" cy="81" r="9" fill="#e0b23c"/><path d="M116 81l4 5 9-10" stroke="#1c2033" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="104" y="104" width="172" height="25" rx="8" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
-<circle cx="122" cy="116" r="9" fill="#4d65af"/><path d="M116 116l4 5 9-10" stroke="#f4f4f2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="104" y="139" width="172" height="25" rx="8" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
-<circle cx="122" cy="151" r="9" fill="#4d65af"/><path d="M116 151l4 5 9-10" stroke="#f4f4f2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<rect x="1" y="1" width="298" height="208" rx="19" fill="none" stroke="rgba(122,144,199,0.35)"/>
-</svg>''',
-    "content-writing": '''<svg class="hero-illustration" viewBox="0 0 300 210" role="img" aria-label="Browser mockup with a document, text lines, and a large pencil">
-<defs><clipPath id="c4"><rect x="0" y="0" width="300" height="210" rx="20"/></clipPath></defs>
-<g clip-path="url(#c4)">
-<rect x="0" y="0" width="300" height="210" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="45" fill="#1c2033"/>
-<circle cx="28" cy="22" r="6" fill="#e0b23c"/><circle cx="48" cy="22" r="6" fill="#7a90c7"/><circle cx="68" cy="22" r="6" fill="#4d65af"/>
-<rect x="90" y="14" width="180" height="17" rx="8" fill="rgba(255,255,255,0.08)"/>
-<rect x="46" y="64" width="132" height="120" rx="10" fill="#1c2033" stroke="#7a90c7" stroke-width="3"/>
-<path d="M154 64 L178 64 L178 81 Z" fill="#7a90c7"/>
-<rect x="62" y="84" width="100" height="8" rx="4" fill="#4d65af"/>
-<rect x="62" y="102" width="88" height="8" rx="4" fill="#3a4e8f"/>
-<rect x="62" y="120" width="100" height="8" rx="4" fill="#4d65af"/>
-<rect x="62" y="139" width="70" height="8" rx="4" fill="#3a4e8f"/>
-<g transform="translate(214,155) rotate(-45)">
-<rect x="-42" y="-11" width="70" height="22" rx="5" fill="#e0b23c"/>
-<path d="M28 -11 L46 0 L28 11 Z" fill="#e0b23c"/>
-</g>
-</g>
-<rect x="1" y="1" width="298" height="208" rx="19" fill="none" stroke="rgba(122,144,199,0.35)"/>
-</svg>''',
+    "seo": '<img class="hero-illustration" src="/assets/img/illustrations/financial-planning.svg" alt="Illustration of an analytics dashboard with rising bar charts, a report screen and a magnifying glass" loading="lazy" decoding="async">',
+    "geo": '<img class="hero-illustration" src="/assets/img/illustrations/team-analytics.svg" alt="Illustration of a team reviewing search and AI analytics together at their desks" loading="lazy" decoding="async">',
+    "ai-optimisation": '<img class="hero-illustration" src="/assets/img/illustrations/spot/icon-2.svg" alt="Illustration of a person giving a thumbs up next to a validated idea checkmark" loading="lazy" decoding="async">',
+    "content-writing": '<img class="hero-illustration" src="/assets/img/illustrations/spot/icon-7.svg" alt="Illustration of a person presenting a webpage with an image and text block" loading="lazy" decoding="async">',
 }
 
 PROCESS_STEPS = [
@@ -681,15 +617,20 @@ hub_body = """
 </div></section>
 
 <section class="section panel-alt"><div class="container">
-  <span class="eyebrow">How it fits together</span>
-  <h2>How each service helps improve your <em>website traffic.</em></h2>
-  <p style="max-width:65ch">Digital marketing works best when every channel is pulling toward the same goal. Here is what each one is actually doing for your traffic.</p>
-  <ul class="feature-list" style="margin-top:1.75rem;max-width:70ch">
-    <li><strong>SEO</strong> brings in visitors who are already searching for what you offer, the highest-intent traffic there is.</li>
-    <li><strong>GEO</strong> captures the growing share of people who ask AI tools a question instead of searching, before they ever reach a results page.</li>
-    <li><strong>AI Optimisation</strong> makes sure the traffic you already get lands on pages structured to convert, not just pages that happen to rank.</li>
-    <li><strong>Content Writing</strong> fuels both SEO and GEO with the pages and answers that traffic actually needs to find in the first place.</li>
-  </ul>
+  <div class="split">
+    <div>
+      <span class="eyebrow">How it fits together</span>
+      <h2>How each service helps improve your <em>website traffic.</em></h2>
+      <p style="max-width:65ch">Digital marketing works best when every channel is pulling toward the same goal. Here is what each one is actually doing for your traffic.</p>
+      <ul class="feature-list" style="margin-top:1.75rem;max-width:70ch">
+        <li><strong>SEO</strong> brings in visitors who are already searching for what you offer, the highest-intent traffic there is.</li>
+        <li><strong>GEO</strong> captures the growing share of people who ask AI tools a question instead of searching, before they ever reach a results page.</li>
+        <li><strong>AI Optimisation</strong> makes sure the traffic you already get lands on pages structured to convert, not just pages that happen to rank.</li>
+        <li><strong>Content Writing</strong> fuels both SEO and GEO with the pages and answers that traffic actually needs to find in the first place.</li>
+      </ul>
+    </div>
+    <div class="illustration-frame spot"><img src="/assets/img/illustrations/spot/icon-9.svg" alt="Illustration of a person celebrating in front of a screen with gears, representing channels working together" loading="lazy" decoding="async"></div>
+  </div>
 </div></section>
 <section class="section-sm"><div class="container">
   <div class="cta-band">
@@ -814,13 +755,14 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
                 for i, p in enumerate(paragraphs)
             )
             heading_html = ('<h2 style="margin-top:0">%s</h2>' % html.escape(heading)) if heading else ""
+            text_block = '<div>%s%s%s</div>' % (heading_html, text_html, link_html)
+            frame_class = "illustration-frame spot" if feature_split.get("compact") else "illustration-frame"
+            img_block = '<div class="%s">%s</div>' % (frame_class, img_tag)
+            pair = (img_block, text_block) if feature_split.get("image_side") == "left" else (text_block, img_block)
             feature_split_html = (
                 '<section class="section-sm"><div class="container">'
-                '<div class="split">'
-                '<div>%s%s%s</div>'
-                '<div class="illustration-frame">%s</div>'
-                '</div></div></section>'
-                % (heading_html, text_html, link_html, img_tag)
+                '<div class="split">%s%s</div></div></section>'
+                % pair
             )
         else:
             # No accompanying text: show the image alone, modestly sized, not stretched full width.
