@@ -476,6 +476,10 @@ p{color:var(--muted);font-weight:400}
 }
 
 /* ---------- sources block (used on GEO page) ---------- */
+.prose h3{margin-top:1.5rem}
+.guide-figure{max-width:320px;margin:1.75rem auto;text-align:center}
+.guide-figure svg{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 28px rgba(0,0,0,0.4))}
+.guide-figure-caption{font-size:.85rem;color:var(--muted);margin-top:.85rem;line-height:1.5}
 .sources-block{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .sources-label{
   display:block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;

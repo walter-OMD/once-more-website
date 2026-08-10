@@ -382,10 +382,15 @@ CLIENTS_HTML = clients_marquee()
 _TAG = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
         'stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"/>'
         '<circle cx="7.5" cy="7.5" r="1.4"/></svg>')
+_PIN = ('<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" '
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        '<path d="M16 4c-4.4 0-8 3.4-8 8 0 6 8 16 8 16s8-10 8-16c0-4.6-3.6-8-8-8z"/>'
+        '<circle cx="16" cy="12" r="3"/></svg>')
 GUIDE_ICONS = {
     "seo-guide-malaysia": ICONS["seo"],
     "what-is-geo": ICONS["geo"],
     "seo-cost-malaysia": _TAG,
+    "local-seo-malaysia": _PIN,
 }
 
 # ---------------------------------------------------------------- service page illustrations
