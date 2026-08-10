@@ -295,7 +295,7 @@ p{color:var(--muted);font-weight:400}
 @media(max-width:600px){.logo-chip{width:142px;height:78px;padding:12px 16px}}
 
 /* ---------- long-form prose + link lists ---------- */
-.prose{max-width:70ch}
+.prose>p,.prose>ul.feature-list,.prose>ul.link-list{max-width:70ch}
 .prose p{color:#b8b8b8;margin-bottom:1rem;font-weight:400}
 .prose h2{font-size:1.4rem;margin:2rem 0 .7rem;scroll-margin-top:104px}
 .prose a{color:var(--blue-light);text-decoration:underline;text-underline-offset:2px}

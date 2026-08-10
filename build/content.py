@@ -110,12 +110,12 @@ SERVICE_CONTENT = {
         "sections": [
             ("What is generative engine optimisation?",
              "<p>Generative engines are the AI systems that now sit on top of search: Google AI Overviews, ChatGPT, Gemini, Perplexity and others. Instead of a list of links, they read the web, summarise it, and cite a small number of sources. GEO is the work of making your business one of those cited sources, so when someone asks an AI tool a question in your space, your name comes up. It builds on the same foundations as <a href=\"/services/seo/\">SEO</a> rather than replacing them; for the full picture on how AI answer engines actually pull and cite information, see our guide on <a href=\"/resources/what-is-geo/\">what GEO is and why it matters</a>.</p>"),
-            ("Why does this matter now?",
-             "<p>A growing share of people skip the results page entirely and ask an assistant instead. If your competitors are quoted in those answers and you are not, you lose the customer before they ever reach a website. Getting cited depends on clear, well structured, trustworthy content, which is exactly what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and good <a href=\"/services/content-writing/\">content</a> provide.</p>"),
         ],
         "feature_split": {
-            "heading": "",
-            "paragraphs": [],
+            "heading": "Why does this matter now?",
+            "paragraphs": [
+                "A growing share of people skip the results page entirely and ask an assistant instead. If your competitors are quoted in those answers and you are not, you lose the customer before they ever reach a website. Getting cited depends on clear, well structured, trustworthy content, which is exactly what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and good <a href=\"/services/content-writing/\">content</a> provide.",
+            ],
             "image": "/assets/img/illustrations/geo-team-review.svg",
             "image_alt": "Illustration of a team reviewing search and AI results together",
         },
