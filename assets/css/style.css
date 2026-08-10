@@ -12,7 +12,7 @@
   --off-white:#f4f4f2;
   --muted:#a0a0a0;
   --border:rgba(77,101,175,0.2);
-  --maxw:1280px;
+  --maxw:1400px;
 }
 
 html{height:100%;scroll-behavior:smooth;font-size:112.5%}
@@ -169,7 +169,7 @@ p{color:var(--muted);font-weight:400}
 }
 
 /* ---------- cards grid ---------- */
-.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .card{
   border:1px solid var(--border);border-radius:3px;padding:1.75rem;
   background:rgba(77,101,175,.04);transition:border-color .2s,transform .2s;display:block;
@@ -335,7 +335,7 @@ p{color:var(--muted);font-weight:400}
 /* ---------- service page hero split ---------- */
 .service-hero{padding-bottom:3rem}
 .service-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center;margin-top:1.75rem}
-.service-hero-grid .hero-media .hero-illustration{margin:0;max-width:100%}
+.service-hero-grid .hero-media .hero-illustration{margin:0;max-width:420px}
 @media(max-width:860px){
   .service-hero-grid{grid-template-columns:1fr;gap:2.5rem;text-align:center}
   .service-hero-grid .svc-icon{margin-left:auto;margin-right:auto}
@@ -354,7 +354,7 @@ p{color:var(--muted);font-weight:400}
 
 /* ---------- process strip (sequential, so numbered) ---------- */
 .process-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;margin-top:2.75rem}
-.process-strip::before{content:'';position:absolute;top:22px;left:calc(12.5% + 22px);right:calc(12.5% + 22px);height:1px;background:var(--border)}
+.process-strip::before{content:'';position:absolute;top:22px;left:22px;right:calc(25% - 46px);height:1px;background:var(--border)}
 .process-step{position:relative;text-align:left}
 .process-step .dot{
   width:44px;height:44px;border-radius:50%;border:1.5px solid var(--blue);background:var(--dark-2);

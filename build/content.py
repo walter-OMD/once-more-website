@@ -21,12 +21,8 @@ SERVICE_CONTENT = {
             ("How does SEO work for a business in Malaysia?",
              "<p>Search here is rarely tidy. People mix English and Malay in the same query, and intent shifts from one city to the next. Someone in Petaling Jaya looking for a service expects local, relevant results, so we map keywords by language and location, then build pages that match each one. For businesses that serve a specific area, a well kept Google Business Profile and local signals often bring the fastest, most qualified enquiries.</p>"
              "<p>Strong rankings also depend on the words on the page. That is where <a href=\"/services/content-writing/\">content writing</a> comes in, and increasingly on whether AI tools can read and quote you, which is the job of <a href=\"/services/geo/\">GEO</a>.</p>"),
-            ("How long until SEO pays off?",
-             "<p>SEO is a compounding investment, not a switch. Most sites see early movement within three to six months, with the larger gains arriving as content and authority build. Newer domains and competitive terms take longer to move. For a fuller picture, our <a href=\"/resources/seo-guide-malaysia/\">guide to SEO for Malaysian businesses</a> walks through what to expect.</p>"),
             ("Why invest in professional Search Engine Optimisation?",
              "<p>Search Engine Optimisation is not a one-off fix, it is ongoing work that compounds. A business that treats SEO as a real discipline, rather than a checklist run once and forgotten, ends up with rankings that hold even when competitors spend more elsewhere. That is the case for SEO over a short-term traffic spike: it takes longer to show up, but it does not disappear the moment spending stops. For Malaysian businesses specifically, SEO also has to account for bilingual search behaviour and local intent, which is where a lot of generic Search Engine Optimisation advice falls short.</p>"),
-            ("What types of SEO do we handle?",
-             "<p>Search Engine Optimisation is not one activity, it is several working together. <strong>Technical SEO</strong> makes sure Google can crawl, render and index your site properly. <strong>On-page SEO</strong> covers the content, headings and structure of each page itself. <strong>Off-page SEO</strong> is the authority you earn through links and mentions elsewhere. <strong>Local SEO</strong> is the work that gets you found for searches tied to a specific city or area, which matters for almost every Malaysian business with a physical presence. Most SEO engagements need some mix of all four, not just one.</p>"),
             ("Signs your business needs SEO",
              "<p>SEO is worth prioritising if any of this sounds familiar:</p>"
              "<div class=\"grid\">"
@@ -51,6 +47,16 @@ SERVICE_CONTENT = {
             "link_text": "Learn more about GEO",
             "link_href": "/services/geo/",
         },
+        "layout": [
+            {"type": "prose", "headings": ["What does SEO actually involve?"], "alt": False},
+            {"type": "prose", "headings": ["What Does Our SEO Services Include"], "alt": True},
+            {"type": "process", "alt": False},
+            {"type": "prose", "headings": ["How does SEO work for a business in Malaysia?", "Why invest in professional Search Engine Optimisation?"], "alt": False},
+            {"type": "feature_split", "alt": True},
+            {"type": "prose", "headings": ["Signs your business needs SEO"], "alt": False},
+            {"type": "tools", "alt": True},
+            {"type": "faq", "alt": False},
+        ],
         "faqs": [
             ("How much does SEO cost in Malaysia?",
              "Pricing depends on your market, your starting point and how competitive your terms are. Get in touch for a clear answer on your specific site, and our guide on how much SEO costs in Malaysia explains what actually drives the number."),

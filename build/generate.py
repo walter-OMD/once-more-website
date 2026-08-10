@@ -399,73 +399,73 @@ GUIDE_ICONS = {
 # service-hero-grid/.hero-media CSS gives them the same placement and size
 # as the homepage hero illustration (big, beside the copy, no dead space).
 SERVICE_ILLO = {
-    "seo": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with a magnifying glass and ascending bars">
-<defs><clipPath id="c1"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+    "seo": '''<svg class="hero-illustration" viewBox="0 0 300 210" role="img" aria-label="Browser mockup with a magnifying glass and ascending bars">
+<defs><clipPath id="c1"><rect x="0" y="0" width="300" height="210" rx="20"/></clipPath></defs>
 <g clip-path="url(#c1)">
-<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
-<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
-<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
-<circle cx="88" cy="152" r="34" stroke="#7a90c7" stroke-width="11" fill="none"/>
-<line x1="113" y1="177" x2="148" y2="212" stroke="#7a90c7" stroke-width="11" stroke-linecap="round"/>
-<rect x="176" y="230" width="24" height="40" rx="4" fill="#3a4e8f"/>
-<rect x="206" y="200" width="24" height="70" rx="4" fill="#4d65af"/>
-<rect x="236" y="165" width="24" height="105" rx="4" fill="#7a90c7"/>
-<rect x="266" y="130" width="24" height="140" rx="4" fill="#e0b23c"/>
+<rect x="0" y="0" width="300" height="210" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="45" fill="#1c2033"/>
+<circle cx="28" cy="22" r="6" fill="#e0b23c"/><circle cx="48" cy="22" r="6" fill="#7a90c7"/><circle cx="68" cy="22" r="6" fill="#4d65af"/>
+<rect x="90" y="14" width="180" height="17" rx="8" fill="rgba(255,255,255,0.08)"/>
+<circle cx="88" cy="106" r="24" stroke="#7a90c7" stroke-width="8" fill="none"/>
+<line x1="113" y1="124" x2="148" y2="148" stroke="#7a90c7" stroke-width="8" stroke-linecap="round"/>
+<rect x="176" y="161" width="24" height="28" rx="4" fill="#3a4e8f"/>
+<rect x="206" y="140" width="24" height="49" rx="4" fill="#4d65af"/>
+<rect x="236" y="116" width="24" height="74" rx="4" fill="#7a90c7"/>
+<rect x="266" y="91" width="24" height="98" rx="4" fill="#e0b23c"/>
 </g>
-<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+<rect x="1" y="1" width="298" height="208" rx="19" fill="none" stroke="rgba(122,144,199,0.35)"/>
 </svg>''',
-    "geo": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with a chat bubble, a spark badge, and a citation checkmark">
-<defs><clipPath id="c2"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+    "geo": '''<svg class="hero-illustration" viewBox="0 0 300 210" role="img" aria-label="Browser mockup with a chat bubble, a spark badge, and a citation checkmark">
+<defs><clipPath id="c2"><rect x="0" y="0" width="300" height="210" rx="20"/></clipPath></defs>
 <g clip-path="url(#c2)">
-<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
-<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
-<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
-<rect x="26" y="96" width="140" height="88" rx="20" fill="#3a4e8f"/>
-<path d="M42 184 L42 206 L66 184 Z" fill="#3a4e8f"/>
-<path d="M196 82 L204 102 L224 110 L204 118 L196 138 L188 118 L168 110 L188 102 Z" fill="#e0b23c"/>
-<rect x="168" y="158" width="106" height="76" rx="14" fill="#1c2033" stroke="#4d65af" stroke-width="3"/>
-<path d="M190 196 L202 208 L228 178" stroke="#f4f4f2" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0" y="0" width="300" height="210" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="45" fill="#1c2033"/>
+<circle cx="28" cy="22" r="6" fill="#e0b23c"/><circle cx="48" cy="22" r="6" fill="#7a90c7"/><circle cx="68" cy="22" r="6" fill="#4d65af"/>
+<rect x="90" y="14" width="180" height="17" rx="8" fill="rgba(255,255,255,0.08)"/>
+<rect x="26" y="67" width="140" height="62" rx="18" fill="#3a4e8f"/>
+<path d="M42 129 L42 144 L66 129 Z" fill="#3a4e8f"/>
+<path d="M196 57 L204 71 L224 77 L204 83 L196 97 L188 83 L168 77 L188 71 Z" fill="#e0b23c"/>
+<rect x="168" y="111" width="106" height="53" rx="12" fill="#1c2033" stroke="#4d65af" stroke-width="3"/>
+<path d="M190 137 L202 146 L228 125" stroke="#f4f4f2" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+<rect x="1" y="1" width="298" height="208" rx="19" fill="none" stroke="rgba(122,144,199,0.35)"/>
 </svg>''',
-    "ai-optimisation": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with a bracket and three checked rows">
-<defs><clipPath id="c3"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+    "ai-optimisation": '''<svg class="hero-illustration" viewBox="0 0 300 210" role="img" aria-label="Browser mockup with a bracket and three checked rows">
+<defs><clipPath id="c3"><rect x="0" y="0" width="300" height="210" rx="20"/></clipPath></defs>
 <g clip-path="url(#c3)">
-<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
-<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
-<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
-<path d="M72 92 C52 92 47 102 47 117 V140 C47 150 42 155 32 158 C42 161 47 166 47 176 V199 C47 214 52 224 72 224" stroke="#7a90c7" stroke-width="9" fill="none" stroke-linecap="round"/>
-<rect x="104" y="98" width="172" height="36" rx="9" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
-<circle cx="122" cy="116" r="12" fill="#e0b23c"/><path d="M116 116l4 5 9-10" stroke="#1c2033" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="104" y="148" width="172" height="36" rx="9" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
-<circle cx="122" cy="166" r="12" fill="#4d65af"/><path d="M116 166l4 5 9-10" stroke="#f4f4f2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="104" y="198" width="172" height="36" rx="9" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
-<circle cx="122" cy="216" r="12" fill="#4d65af"/><path d="M116 216l4 5 9-10" stroke="#f4f4f2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="0" y="0" width="300" height="210" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="45" fill="#1c2033"/>
+<circle cx="28" cy="22" r="6" fill="#e0b23c"/><circle cx="48" cy="22" r="6" fill="#7a90c7"/><circle cx="68" cy="22" r="6" fill="#4d65af"/>
+<rect x="90" y="14" width="180" height="17" rx="8" fill="rgba(255,255,255,0.08)"/>
+<path d="M72 64 C52 64 47 71 47 82 V98 C47 105 42 109 32 111 C42 113 47 116 47 123 V139 C47 150 52 157 72 157" stroke="#7a90c7" stroke-width="6" fill="none" stroke-linecap="round"/>
+<rect x="104" y="69" width="172" height="25" rx="8" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
+<circle cx="122" cy="81" r="9" fill="#e0b23c"/><path d="M116 81l4 5 9-10" stroke="#1c2033" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="104" y="104" width="172" height="25" rx="8" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
+<circle cx="122" cy="116" r="9" fill="#4d65af"/><path d="M116 116l4 5 9-10" stroke="#f4f4f2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="104" y="139" width="172" height="25" rx="8" fill="#1c2033" stroke="rgba(122,144,199,0.5)" stroke-width="2"/>
+<circle cx="122" cy="151" r="9" fill="#4d65af"/><path d="M116 151l4 5 9-10" stroke="#f4f4f2" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+<rect x="1" y="1" width="298" height="208" rx="19" fill="none" stroke="rgba(122,144,199,0.35)"/>
 </svg>''',
-    "content-writing": '''<svg class="hero-illustration" viewBox="0 0 300 300" role="img" aria-label="Browser mockup with a document, text lines, and a large pencil">
-<defs><clipPath id="c4"><rect x="0" y="0" width="300" height="300" rx="28"/></clipPath></defs>
+    "content-writing": '''<svg class="hero-illustration" viewBox="0 0 300 210" role="img" aria-label="Browser mockup with a document, text lines, and a large pencil">
+<defs><clipPath id="c4"><rect x="0" y="0" width="300" height="210" rx="20"/></clipPath></defs>
 <g clip-path="url(#c4)">
-<rect x="0" y="0" width="300" height="300" fill="#262b40"/>
-<rect x="0" y="0" width="300" height="64" fill="#1c2033"/>
-<circle cx="28" cy="32" r="6" fill="#e0b23c"/><circle cx="48" cy="32" r="6" fill="#7a90c7"/><circle cx="68" cy="32" r="6" fill="#4d65af"/>
-<rect x="90" y="20" width="180" height="24" rx="12" fill="rgba(255,255,255,0.08)"/>
-<rect x="46" y="92" width="132" height="172" rx="12" fill="#1c2033" stroke="#7a90c7" stroke-width="3"/>
-<path d="M154 92 L178 92 L178 116 Z" fill="#7a90c7"/>
-<rect x="62" y="120" width="100" height="11" rx="5" fill="#4d65af"/>
-<rect x="62" y="146" width="88" height="11" rx="5" fill="#3a4e8f"/>
-<rect x="62" y="172" width="100" height="11" rx="5" fill="#4d65af"/>
-<rect x="62" y="198" width="70" height="11" rx="5" fill="#3a4e8f"/>
-<g transform="translate(214,222) rotate(-45)">
+<rect x="0" y="0" width="300" height="210" fill="#262b40"/>
+<rect x="0" y="0" width="300" height="45" fill="#1c2033"/>
+<circle cx="28" cy="22" r="6" fill="#e0b23c"/><circle cx="48" cy="22" r="6" fill="#7a90c7"/><circle cx="68" cy="22" r="6" fill="#4d65af"/>
+<rect x="90" y="14" width="180" height="17" rx="8" fill="rgba(255,255,255,0.08)"/>
+<rect x="46" y="64" width="132" height="120" rx="10" fill="#1c2033" stroke="#7a90c7" stroke-width="3"/>
+<path d="M154 64 L178 64 L178 81 Z" fill="#7a90c7"/>
+<rect x="62" y="84" width="100" height="8" rx="4" fill="#4d65af"/>
+<rect x="62" y="102" width="88" height="8" rx="4" fill="#3a4e8f"/>
+<rect x="62" y="120" width="100" height="8" rx="4" fill="#4d65af"/>
+<rect x="62" y="139" width="70" height="8" rx="4" fill="#3a4e8f"/>
+<g transform="translate(214,155) rotate(-45)">
 <rect x="-42" y="-11" width="70" height="22" rx="5" fill="#e0b23c"/>
 <path d="M28 -11 L46 0 L28 11 Z" fill="#e0b23c"/>
 </g>
 </g>
-<rect x="1" y="1" width="298" height="298" rx="27" fill="none" stroke="rgba(122,144,199,0.35)"/>
+<rect x="1" y="1" width="298" height="208" rx="19" fill="none" stroke="rgba(122,144,199,0.35)"/>
 </svg>''',
 }
 
@@ -743,6 +743,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
     others = "".join(card_html(s[0], s[1], s[3]) for s in SERVICES if s[0] != slug)
     fl = "".join("<li>%s</li>" % f for f in features)
     extra = SERVICE_CONTENT.get(slug, {})
+    h1_text = f"{full_name} ({short})" if short.isupper() and short not in full_name else short
     sections_html = "".join(
         '<h2 style="margin-top:2.25rem">%s</h2>%s' % (html.escape(h), b)
         for h, b in extra.get("sections", []))
@@ -836,26 +837,41 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
     related_guides = "".join(
         '<li><a href="/resources/%s/">%s</a></li>' % (g["slug"], html.escape(g["title"]))
         for g in RESOURCES)
-    body = f"""
-<section class="section service-hero"><div class="container">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {short}</nav>
-  <div class="service-hero-grid">
-    <div>
-      <div class="svc-icon">{ICONS[slug]}</div>
-      <span class="eyebrow" style="margin-top:0">{html.escape(full_name)}</span>
-      <h1>{html.escape(short)}</h1>
-      <p class="lead">{html.escape(tagline)}</p>
-      <div class="btn-row" style="justify-content:flex-start;margin-top:.5rem">
-        <a class="btn btn-primary" href="/contact/">Enquire about {html.escape(short)}</a>
-      </div>
-    </div>
-    <div class="hero-media" aria-hidden="true">
-      {SERVICE_ILLO[slug]}
-    </div>
-  </div>
-</div></section>
 
-<section class="section"><div class="container">
+    def _alt(section_html, alt):
+        """Insert panel-alt into a block's outer <section> tag when alt=True."""
+        if not alt or not section_html:
+            return section_html
+        return section_html.replace('<section class="section-sm">', '<section class="section-sm panel-alt">', 1) \
+                            .replace('<section class="section">', '<section class="section panel-alt">', 1)
+
+    layout = extra.get("layout")
+    if layout:
+        sections_by_heading = {h: (h, b) for h, b in extra.get("sections", [])}
+        blocks = []
+        for i, item in enumerate(layout):
+            t = item["type"]
+            alt = item.get("alt", False)
+            divider = '<div class="divider left" aria-hidden="true"></div>' if i == 0 else ""
+            if t == "prose":
+                group_html = "".join(
+                    '<h2 style="margin-top:2.25rem">%s</h2>%s' % (html.escape(h), b)
+                    for h, b in (sections_by_heading[hd] for hd in item["headings"] if hd in sections_by_heading)
+                )
+                blocks.append(_alt(
+                    '<section class="section"><div class="container">%s<div class="prose">%s</div></div></section>'
+                    % (divider, group_html), alt))
+            elif t == "process":
+                blocks.append(_alt(process_section_html, alt))
+            elif t == "feature_split":
+                blocks.append(_alt(feature_split_html, alt))
+            elif t == "tools":
+                blocks.append(_alt(tools_html, alt))
+            elif t == "faq":
+                blocks.append(_alt(faq_html, alt))
+        middle_html = "\n".join(blocks)
+    else:
+        middle_html = f"""<section class="section"><div class="container">
   <div class="divider left" aria-hidden="true"></div>
   <div class="prose">
     <p>{html.escape(intro)}</p>
@@ -873,7 +889,29 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   <ul class="feature-list">{fl}</ul>
 </div></section>
 {tools_html}
-{faq_html}
+{faq_html}"""
+
+    body = f"""
+<section class="section service-hero"><div class="container">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {short}</nav>
+  <div class="service-hero-grid">
+    <div>
+      <div class="svc-icon">{ICONS[slug]}</div>
+      <span class="eyebrow" style="margin-top:0">{html.escape(full_name)}</span>
+      <h1>{html.escape(h1_text)}</h1>
+      <p class="lead">{html.escape(tagline)}</p>
+      <div class="btn-row" style="justify-content:flex-start;margin-top:.5rem">
+        <a class="btn btn-primary" href="/contact/">Enquire about {html.escape(short)}</a>
+      </div>
+    </div>
+    <div class="hero-media" aria-hidden="true">
+      {SERVICE_ILLO[slug]}
+    </div>
+  </div>
+</div></section>
+
+{middle_html}
+
 <section class="section-sm"><div class="container">
   <span class="eyebrow">Related reading</span>
   <h2>Go deeper</h2>
