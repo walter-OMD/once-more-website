@@ -766,6 +766,9 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
         )
     else:
         process_html = ""
+    process_section_html = (
+        '<section class="section"><div class="container">%s</div></section>' % process_html
+    ) if process_html else ""
     tools = extra.get("tools")
     if tools:
         tool_cards = "".join(
@@ -789,6 +792,45 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
         )
     else:
         tools_html = ""
+    feature_split = extra.get("feature_split")
+    if feature_split:
+        heading = feature_split.get("heading", "")
+        paragraphs = feature_split.get("paragraphs", [])
+        img_tag = (
+            '<img src="%s" alt="%s" loading="lazy" decoding="async">'
+            % (feature_split["image"], html.escape(feature_split.get("image_alt", "")))
+        )
+        if heading or paragraphs:
+            link_html = ""
+            if feature_split.get("link_href"):
+                link_html = (
+                    '<div class="btn-row" style="justify-content:flex-start;margin-top:1.25rem">'
+                    '<a class="btn btn-ghost" href="%s">%s</a></div>'
+                    % (feature_split["link_href"], html.escape(feature_split.get("link_text", "Learn more")))
+                )
+            text_html = "".join(
+                '<p style="margin-top:1rem">%s</p>' % p if i > 0 else '<p>%s</p>' % p
+                for i, p in enumerate(paragraphs)
+            )
+            heading_html = ('<h2 style="margin-top:0">%s</h2>' % html.escape(heading)) if heading else ""
+            feature_split_html = (
+                '<section class="section-sm"><div class="container">'
+                '<div class="split">'
+                '<div>%s%s%s</div>'
+                '<div class="illustration-frame">%s</div>'
+                '</div></div></section>'
+                % (heading_html, text_html, link_html, img_tag)
+            )
+        else:
+            # No accompanying text: show the image alone, modestly sized, not stretched full width.
+            feature_split_html = (
+                '<section class="section-sm"><div class="container">'
+                '<div class="illustration-frame" style="max-width:480px;margin:0 auto">%s</div>'
+                '</div></section>'
+                % img_tag
+            )
+    else:
+        feature_split_html = ""
     all_faqs = list(faqs) + extra.get("faqs", [])
     faq_html, faq_schema = faq_block(all_faqs)
     related_guides = "".join(
@@ -819,8 +861,11 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
     <p>{html.escape(intro)}</p>
     {sections_html}
   </div>
-  {process_html}
 </div></section>
+
+{feature_split_html}
+
+{process_section_html}
 
 <section class="section-sm panel-alt"><div class="container">
   <span class="eyebrow">What's included</span>

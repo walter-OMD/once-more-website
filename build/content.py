@@ -10,28 +10,13 @@ SERVICE_CONTENT = {
         "sections": [
             ("What does SEO actually involve?",
              "<p>Search engine optimisation is the ongoing work of making your website the clearest, most trustworthy answer to what your customers are searching for. In practice it comes down to three things working together: a technically healthy site that Google can crawl and understand, pages built around the terms people actually type, and enough authority that Google trusts you ahead of competitors. We treat these as one system rather than chasing any single trick, because that is what holds up over time.</p>"),
-            ("What Does Our SEO Services Include To Boost Your Business Online Presence",
-             "<div class=\"includes-panel\" data-includes>"
-             "<div class=\"includes-row\">"
-             "<button class=\"includes-item is-active\" type=\"button\" role=\"tab\" aria-selected=\"true\" aria-controls=\"incl-panel-0\" id=\"incl-tab-0\" data-index=\"0\"><span class=\"num\">01</span><span>Keyword research and content mapping</span></button>"
-             "<div class=\"includes-detail-item is-active\" role=\"tabpanel\" id=\"incl-panel-0\" aria-labelledby=\"incl-tab-0\" data-index=\"0\"><h3>Keyword research and content mapping</h3><p>We identify the exact terms your customers type into Google, and increasingly ask AI tools like ChatGPT or Gemini, then map each one to a page on your site, existing or new. That way every page is built to chase a keyword actually worth ranking for, not a guess.</p></div>"
-             "</div>"
-             "<div class=\"includes-row\">"
-             "<button class=\"includes-item\" type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"incl-panel-1\" id=\"incl-tab-1\" data-index=\"1\"><span class=\"num\">02</span><span>Technical SEO audits and site health fixes</span></button>"
-             "<div class=\"includes-detail-item\" role=\"tabpanel\" id=\"incl-panel-1\" aria-labelledby=\"incl-tab-1\" data-index=\"1\"><h3>Technical SEO audits and site health fixes</h3><p>We run a full technical audit to catch what is holding your site back: slow load times, crawl errors, broken links and indexing issues. Once found, we fix them so both Google and AI crawlers can access and understand your site properly.</p></div>"
-             "</div>"
-             "<div class=\"includes-row\">"
-             "<button class=\"includes-item\" type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"incl-panel-2\" id=\"incl-tab-2\" data-index=\"2\"><span class=\"num\">03</span><span>On-page SEO optimisation for target pages</span></button>"
-             "<div class=\"includes-detail-item\" role=\"tabpanel\" id=\"incl-panel-2\" aria-labelledby=\"incl-tab-2\" data-index=\"2\"><h3>On-page SEO optimisation for target pages</h3><p>Each target page gets its titles, headings, meta descriptions and content structure aligned to the keyword it is meant to rank for, and structured clearly enough that AI tools can lift a correct answer from it and cite you.</p></div>"
-             "</div>"
-             "<div class=\"includes-row\">"
-             "<button class=\"includes-item\" type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"incl-panel-3\" id=\"incl-tab-3\" data-index=\"3\"><span class=\"num\">04</span><span>Local SEO and Google Business Profile</span></button>"
-             "<div class=\"includes-detail-item\" role=\"tabpanel\" id=\"incl-panel-3\" aria-labelledby=\"incl-tab-3\" data-index=\"3\"><h3>Local SEO and Google Business Profile</h3><p>For businesses that serve a specific area, we optimise your Google Business Profile and local signals so you show up for near me searches and Google Maps results, the same information AI tools often draw on when recommending a local business.</p></div>"
-             "</div>"
-             "<div class=\"includes-row\">"
-             "<button class=\"includes-item\" type=\"button\" role=\"tab\" aria-selected=\"false\" aria-controls=\"incl-panel-4\" id=\"incl-tab-4\" data-index=\"4\"><span class=\"num\">05</span><span>Monthly SEO reporting you can actually read</span></button>"
-             "<div class=\"includes-detail-item\" role=\"tabpanel\" id=\"incl-panel-4\" aria-labelledby=\"incl-tab-4\" data-index=\"4\"><h3>Monthly SEO reporting you can actually read</h3><p>Every month you get a report showing what changed, what worked and what did not, including whether your business is starting to appear in AI answers alongside your Google rankings.</p></div>"
-             "</div>"
+            ("What Does Our SEO Services Include",
+             "<div class=\"grid\">"
+             "<div class=\"card\"><span class=\"num\">01</span><h3>Keyword research and content mapping</h3><p>We identify the exact terms your customers type into Google, and increasingly ask AI tools like ChatGPT or Gemini, then map each one to a page on your site, existing or new. That way every page is built to chase a keyword actually worth ranking for, not a guess.</p></div>"
+             "<div class=\"card\"><span class=\"num\">02</span><h3>Technical SEO audits and site health fixes</h3><p>We run a full technical audit to catch what is holding your site back: slow load times, crawl errors, broken links and indexing issues. Once found, we fix them so both Google and AI crawlers can access and understand your site properly.</p></div>"
+             "<div class=\"card\"><span class=\"num\">03</span><h3>On-page SEO optimisation for target pages</h3><p>Each target page gets its titles, headings, meta descriptions and content structure aligned to the keyword it is meant to rank for, and structured clearly enough that AI tools can lift a correct answer from it and cite you.</p></div>"
+             "<div class=\"card\"><span class=\"num\">04</span><h3>Local SEO and Google Business Profile</h3><p>For businesses that serve a specific area, we optimise your Google Business Profile and local signals so you show up for near me searches and Google Maps results, the same information AI tools often draw on when recommending a local business.</p></div>"
+             "<div class=\"card\"><span class=\"num\">05</span><h3>Monthly SEO reporting you can actually read</h3><p>Every month you get a report showing what changed, what worked and what did not, including whether your business is starting to appear in AI answers alongside your Google rankings.</p></div>"
              "</div>"),
             ("How does SEO work for a business in Malaysia?",
              "<p>Search here is rarely tidy. People mix English and Malay in the same query, and intent shifts from one city to the next. Someone in Petaling Jaya looking for a service expects local, relevant results, so we map keywords by language and location, then build pages that match each one. For businesses that serve a specific area, a well kept Google Business Profile and local signals often bring the fastest, most qualified enquiries.</p>"
@@ -54,16 +39,18 @@ SERVICE_CONTENT = {
              "<div class=\"card\"><span class=\"icon\"><svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 6h20l-7 10v9l-6 3v-12z\"/></svg></span>"
              "<h3>Traffic without conversions</h3><p>Your website gets visitors but very few enquiries or sales</p></div>"
              "</div>"),
-            ("How SEO Has Evolved With AI Search",
-             "<div class=\"split\">"
-             "<div>"
-             "<p>Search is no longer just a results page. Google's AI Overviews, ChatGPT, Perplexity and Gemini now answer questions directly, often before anyone clicks a single link. People are starting to ask AI tools the way they used to type into Google, and the businesses these tools mention are the ones that get chosen.</p>"
-             "<p style=\"margin-top:1rem\">This shift has given rise to two disciplines that sit alongside SEO: GEO (Generative Engine Optimisation), which gets your business cited in AI generated answers, and AEO (Answer Engine Optimisation), the practice of structuring content so it can be pulled into a direct answer. The fundamentals overlap with SEO, but the target is different. It is about being the source an AI names, not just the link Google ranks.</p>"
-             "<div class=\"btn-row\" style=\"justify-content:flex-start;margin-top:1.25rem\"><a class=\"btn btn-ghost\" href=\"/services/geo/\">Learn more about GEO</a></div>"
-             "</div>"
-             "<div class=\"illustration-frame\"><img src=\"/assets/img/illustrations/seo-ai-evolution.svg\" alt=\"Illustration of a search interface evolving into an AI generated answer\" loading=\"lazy\" decoding=\"async\"></div>"
-             "</div>"),
         ],
+        "feature_split": {
+            "heading": "How SEO Has Evolved With AI Search",
+            "paragraphs": [
+                "Search is no longer just a results page. Google's AI Overviews, ChatGPT, Perplexity and Gemini now answer questions directly, often before anyone clicks a single link. People are starting to ask AI tools the way they used to type into Google, and the businesses these tools mention are the ones that get chosen.",
+                "This shift has given rise to two disciplines that sit alongside SEO: GEO (Generative Engine Optimisation), which gets your business cited in AI generated answers, and AEO (Answer Engine Optimisation), the practice of structuring content so it can be pulled into a direct answer. The fundamentals overlap with SEO, but the target is different. It is about being the source an AI names, not just the link Google ranks.",
+            ],
+            "image": "/assets/img/illustrations/seo-ai-evolution.svg",
+            "image_alt": "Illustration of a search interface evolving into an AI generated answer",
+            "link_text": "Learn more about GEO",
+            "link_href": "/services/geo/",
+        },
         "faqs": [
             ("How much does SEO cost in Malaysia?",
              "Pricing depends on your market, your starting point and how competitive your terms are. Get in touch for a clear answer on your specific site, and our guide on how much SEO costs in Malaysia explains what actually drives the number."),
@@ -124,9 +111,14 @@ SERVICE_CONTENT = {
             ("What is generative engine optimisation?",
              "<p>Generative engines are the AI systems that now sit on top of search: Google AI Overviews, ChatGPT, Gemini, Perplexity and others. Instead of a list of links, they read the web, summarise it, and cite a small number of sources. GEO is the work of making your business one of those cited sources, so when someone asks an AI tool a question in your space, your name comes up. It builds on the same foundations as <a href=\"/services/seo/\">SEO</a> rather than replacing them; for the full picture on how AI answer engines actually pull and cite information, see our guide on <a href=\"/resources/what-is-geo/\">what GEO is and why it matters</a>.</p>"),
             ("Why does this matter now?",
-             "<p>A growing share of people skip the results page entirely and ask an assistant instead. If your competitors are quoted in those answers and you are not, you lose the customer before they ever reach a website. Getting cited depends on clear, well structured, trustworthy content, which is exactly what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and good <a href=\"/services/content-writing/\">content</a> provide.</p>"
-             "<div class=\"illustration-frame\" style=\"max-width:640px;margin:2rem auto 0\"><img src=\"/assets/img/illustrations/geo-team-review.svg\" alt=\"Illustration of a team reviewing search and AI results together\" loading=\"lazy\" decoding=\"async\"></div>"),
+             "<p>A growing share of people skip the results page entirely and ask an assistant instead. If your competitors are quoted in those answers and you are not, you lose the customer before they ever reach a website. Getting cited depends on clear, well structured, trustworthy content, which is exactly what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and good <a href=\"/services/content-writing/\">content</a> provide.</p>"),
         ],
+        "feature_split": {
+            "heading": "",
+            "paragraphs": [],
+            "image": "/assets/img/illustrations/geo-team-review.svg",
+            "image_alt": "Illustration of a team reviewing search and AI results together",
+        },
         "faqs": [
             ("Can you guarantee my business appears in AI answers?",
              "No one can, because the AI provider decides what to cite. What we can do is give those systems the clearest, most trustworthy version of your content to work from, which is what improves the odds."),
