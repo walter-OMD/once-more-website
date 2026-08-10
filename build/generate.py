@@ -452,10 +452,10 @@ home_body = """
 
 <section class="section"><div class="container">
   <span class="eyebrow">Who we are</span>
-  <h2>A Malaysian-led digital marketing agency, built on direct access.</h2>
-  <p style="max-width:65ch">OnceMore Digital is a Malaysian-led digital marketing agency, with a team bringing a combined 10+ years of hands-on experience across SEO, GEO, AI optimisation and content. That experience covers everything from independent local businesses to established international brands, and the same standard applies to each.</p>
-  <p style="max-width:65ch;margin-top:1rem">Being Malaysian-led means Malaysian search behaviour, language and local intent are the starting point, not an afterthought layered on top of a global template. Our focus has always been on helping local businesses compete and win visibility in their own market, though the same expertise applies just as well to international brands entering it.</p>
-  <p style="max-width:65ch;margin-top:1rem">Our biggest strength is simple: the person you talk to about your strategy is the person actually doing the work. No hand-offs, no account managers relaying messages from someone else.</p>
+  <h2>A Malaysian-led digital marketing agency, <em>built on direct access.</em></h2>
+  <p>OnceMore Digital is a Malaysian-led digital marketing agency, with a team bringing a combined 10+ years of hands-on experience across SEO, GEO, AI optimisation and content. That experience covers everything from independent local businesses to established international brands, and the same standard applies to each.</p>
+  <p style="margin-top:1rem">Being Malaysian-led means Malaysian search behaviour, language and local intent are the starting point, not an afterthought layered on top of a global template. Our focus has always been on helping local businesses compete and win visibility in their own market, though the same expertise applies just as well to international brands entering it.</p>
+  <p style="margin-top:1rem">Our biggest strength is simple: the person you talk to about your strategy is the person actually doing the work. No hand-offs, no account managers relaying messages from someone else.</p>
   <div class="btn-row" style="justify-content:flex-start;margin-top:1.5rem">
     <a class="btn btn-ghost" href="/about/">Read more about us</a>
   </div>
@@ -490,7 +490,7 @@ home_body = """
 
 <section class="section"><div class="container">
   <span class="eyebrow">What we do</span>
-  <h2>Five ways we help you grow</h2>
+  <h2>Five ways we <em>help you grow</em></h2>
   <p>Each service stands on its own or works together as one organic growth plan. SEO is where most engagements start.</p>
   <div class="grid" style="margin-top:2rem">
     BENTO_CARDS
@@ -511,7 +511,7 @@ home_body = """
 
 <section class="section panel-alt"><div class="container">
   <span class="eyebrow">How we work</span>
-  <h2>The same process, every time.</h2>
+  <h2>The same process, <em>every time.</em></h2>
   <p>No two businesses get the same strategy, but every engagement runs through the same four steps.</p>
   <div class="process-strip">PROCESS_CARDS</div>
 </div></section>
@@ -611,8 +611,8 @@ hub_body = """
   <h1>Everything you need to <em>get found.</em></h1>
   <p class="lead">From classic search rankings to AI answer engines, here is how our digital marketing services help improve your website traffic and grow your business online.</p>
   <div class="divider left" aria-hidden="true"></div>
-  <p style="max-width:65ch">Digital marketing covers a lot of ground: ads, social media, email, SEO, and not all of it moves the needle for every business. We focus on the channels that reliably improve website traffic and turn it into enquiries, not vanity numbers that look good in a report and do nothing for revenue.</p>
-  <p style="max-width:65ch;margin-top:1rem">Each service below can run on its own, but most businesses see the best results when they work together as one strategy, rather than as four separate vendors pulling in different directions.</p>
+  <p>Digital marketing covers a lot of ground: ads, social media, email, SEO, and not all of it moves the needle for every business. We focus on the channels that reliably improve website traffic and turn it into enquiries, not vanity numbers that look good in a report and do nothing for revenue.</p>
+  <p style="margin-top:1rem">Each service below can run on its own, but most businesses see the best results when they work together as one strategy, rather than as four separate vendors pulling in different directions.</p>
   <div class="grid" style="margin-top:2.5rem">%s</div>
 </div></section>
 
@@ -621,8 +621,8 @@ hub_body = """
     <div>
       <span class="eyebrow">How it fits together</span>
       <h2>How each service helps improve your <em>website traffic.</em></h2>
-      <p style="max-width:65ch">Digital marketing works best when every channel is pulling toward the same goal. Here is what each one is actually doing for your traffic.</p>
-      <ul class="feature-list" style="margin-top:1.75rem;max-width:70ch">
+      <p>Digital marketing works best when every channel is pulling toward the same goal. Here is what each one is actually doing for your traffic.</p>
+      <ul class="feature-list" style="margin-top:1.75rem">
         <li><strong>SEO</strong> brings in visitors who are already searching for what you offer, the highest-intent traffic there is.</li>
         <li><strong>GEO</strong> captures the growing share of people who ask AI tools a question instead of searching, before they ever reach a results page.</li>
         <li><strong>AI Optimisation</strong> makes sure the traffic you already get lands on pages structured to convert, not just pages that happen to rank.</li>
@@ -684,7 +684,11 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
     others = "".join(card_html(s[0], s[1], s[3]) for s in SERVICES if s[0] != slug)
     fl = "".join("<li>%s</li>" % f for f in features)
     extra = SERVICE_CONTENT.get(slug, {})
-    h1_text = f"{full_name} ({short})" if short.isupper() and short not in full_name else short
+    if short.isupper() and short not in full_name:
+        h1_html = f"{html.escape(full_name)} <em>({short})</em>"
+    else:
+        words = short.rsplit(" ", 1)
+        h1_html = f"<em>{html.escape(short)}</em>" if len(words) == 1 else f"{html.escape(words[0])} <em>{html.escape(words[1])}</em>"
     sections_html = "".join(
         '<h2 style="margin-top:2.25rem">%s</h2>%s' % (html.escape(h), b)
         for h, b in extra.get("sections", []))
@@ -840,7 +844,7 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
     <div>
       <div class="svc-icon">{ICONS[slug]}</div>
       <span class="eyebrow" style="margin-top:0">{html.escape(full_name)}</span>
-      <h1>{html.escape(h1_text)}</h1>
+      <h1>{h1_html}</h1>
       <p class="lead">{html.escape(tagline)}</p>
       <div class="btn-row" style="justify-content:flex-start;margin-top:.5rem">
         <a class="btn btn-primary" href="/contact/">Enquire about {html.escape(short)}</a>
@@ -921,8 +925,8 @@ about_body = """
   <h1>Who Are We Here at <em>OnceMore Digital</em></h1>
   <p class="lead">OnceMore Digital is a small SEO and digital marketing team based in Kuala Lumpur. No rotating account managers, no quietly outsourced work. The people planning your strategy are the same people running it.</p>
   <div class="divider left" aria-hidden="true"></div>
-  <p style="max-width:65ch">The way people find businesses is changing. Some still type into Google. More are starting to ask AI tools for a recommendation. We work across both, combining solid SEO fundamentals with newer GEO and AI optimisation work, so your visibility holds up as habits shift.</p>
-  <p style="max-width:65ch;margin-top:1rem">We keep things straight. Recommendations are grounded in real data, reporting is written so you can actually understand it, and we tell you what is worth doing rather than selling work for its own sake.</p>
+  <p>The way people find businesses is changing. Some still type into Google. More are starting to ask AI tools for a recommendation. We work across both, combining solid SEO fundamentals with newer GEO and AI optimisation work, so your visibility holds up as habits shift.</p>
+  <p style="margin-top:1rem">We keep things straight. Recommendations are grounded in real data, reporting is written so you can actually understand it, and we tell you what is worth doing rather than selling work for its own sake.</p>
 </div></section>
 
 <section class="section panel-alt"><div class="container">
@@ -932,7 +936,7 @@ about_body = """
     </div>
     <div>
       <span class="eyebrow">How we work</span>
-      <h2>Less deck, more actual conversation.</h2>
+      <h2>Less deck, <em>more actual conversation.</em></h2>
       <p>A lot of agencies show you a slide deck once a quarter and go quiet until renewal. We would rather be in the room walking through the numbers with you, which is what most of our client meetings actually look like.</p>
       <p style="margin-top:1rem">Every account gets a monthly call with the people doing the actual work on it, not a summary read back by someone who was not in the room. If something is not working, you hear that directly, along with what we are changing about it.</p>
     </div>
@@ -941,8 +945,8 @@ about_body = """
 
 <section class="section"><div class="container">
   <span class="eyebrow">Behind the scenes</span>
-  <h2>A small team, not a factory.</h2>
-  <p style="max-width:65ch">OnceMore Digital is run by a small team, and that is deliberate. We would rather stay small enough that everyone on an account actually knows the business, than grow past the point where your project becomes a ticket in a queue.</p>
+  <h2>A small team, <em>not a factory.</em></h2>
+  <p>OnceMore Digital is run by a small team, and that is deliberate. We would rather stay small enough that everyone on an account actually knows the business, than grow past the point where your project becomes a ticket in a queue.</p>
   <div class="team-gallery">
     <figure>
       <div class="photo-frame">
@@ -959,8 +963,8 @@ about_body = """
 
 <section class="section panel-alt"><div class="container">
   <span class="eyebrow">What matters to us</span>
-  <h2>The stuff we will not compromise on.</h2>
-  <p style="max-width:65ch">None of this is a mission statement for the wall. It is just what we have found actually matters once you are the one paying for the work.</p>
+  <h2>The stuff we <em>will not compromise on.</em></h2>
+  <p>None of this is a mission statement for the wall. It is just what we have found actually matters once you are the one paying for the work.</p>
   <div class="grid" style="margin-top:2rem">%s</div>
 </div></section>
 

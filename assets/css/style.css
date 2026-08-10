@@ -124,7 +124,6 @@ h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1rem}
 h3{font-size:1.2rem;margin-bottom:.5rem}
 p{color:var(--muted);font-weight:400}
 .lead{font-size:clamp(1rem,2.2vw,1.15rem);max-width:60ch;color:#aaa}
-.section > .container > p{max-width:65ch}
 
 /* ---------- hero ---------- */
 .hero{padding:4.5rem 0 4.5rem;text-align:left;animation:rise .9s cubic-bezier(.22,1,.36,1) both;position:relative}
@@ -295,9 +294,10 @@ p{color:var(--muted);font-weight:400}
 @media(max-width:600px){.logo-chip{width:142px;height:78px;padding:12px 16px}}
 
 /* ---------- long-form prose + link lists ---------- */
-.prose>p,.prose>ul.feature-list,.prose>ul.link-list{max-width:70ch}
+article.prose>p,article.prose>ul.feature-list,article.prose>ul.link-list{max-width:70ch}
 .prose p{color:#b8b8b8;margin-bottom:1rem;font-weight:400}
-.prose h2{font-size:1.4rem;margin:2rem 0 .7rem;scroll-margin-top:104px}
+article.prose h2{font-size:1.4rem;margin:2rem 0 .7rem;scroll-margin-top:104px}
+.prose h2{margin:2rem 0 .7rem;scroll-margin-top:104px}
 .prose a{color:var(--blue-light);text-decoration:underline;text-underline-offset:2px}
 .prose a:hover{color:var(--off-white)}
 .link-list{list-style:none;display:grid;gap:.75rem;max-width:62ch;margin-top:1rem}
