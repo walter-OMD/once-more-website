@@ -297,6 +297,124 @@ RESOURCES = [
              "Both can work. Ongoing engagements suit a monthly arrangement; a defined fix or build can be a project. What matters is that it matches the goal."),
         ],
     },
+    {
+        "slug": "local-seo-malaysia",
+        "title": "What Is Local SEO? How to Get Your Business Ranked in Malaysia",
+        "desc": "What is local SEO, and how do you get your business ranked in Malaysia? A detailed guide to Google Business Profile, NAP, reviews, city-by-city intent and how to find local keywords.",
+        "eyebrow": "Guide",
+        "h1": "What Is Local SEO? How to Get Your Business Ranked in Malaysia",
+        "intro": "If you have a shop, clinic, office or service area anywhere in Malaysia, this guide is about the searches that happen right before someone walks through your door or picks up the phone. Here is what local SEO actually means, how it differs from ranking for the whole country, and the concrete steps that move you into Google's local results.",
+        "answer": "Local SEO is the work of getting your business found when people nearby search for what you offer, including Google's local pack, the map and three-listing block shown above the normal results. It runs on different signals than national SEO, mainly your Google Business Profile, how consistent your business details are everywhere online, and your reviews, and in Malaysia those signals also shift from city to city.",
+        "tldr": [
+            "Local SEO gets you found in Google's map pack and location-based search results, not just general rankings.",
+            "It runs on proximity, Google Business Profile activity, NAP consistency and reviews, not just content and backlinks.",
+            "Search intent shifts city to city in Malaysia, so one generic page rarely serves every branch well.",
+            "Google Business Profile Insights and Google Search Console are the two free tools to check if it is working.",
+            "Real local keywords come from Google Keyword Planner, Google's autocomplete, and the People Also Ask box.",
+        ],
+        "body": [
+            ("What is local SEO, and why does it matter for your business?",
+             "<p>Picture someone standing in central KL on a Tuesday afternoon with a toothache. They pull out their phone and type \"dental clinic in KL.\" Within a second, Google shows a map with a handful of pins, and directly underneath it, three business listings with a star rating, opening hours, and a Directions button. That block is called the <strong>local pack</strong>, and it sits above almost every normal blue link. Whichever three clinics appear there get the call in the next five minutes, the three Google decided were the closest and most trustworthy match for that exact search.</p>"
+             "<p>That is local SEO in one scene. It is the practice of making sure your business is one of those three, or at minimum visible in the local-flavoured organic results just beneath the pack. It is a different job from ranking a blog post for a broad national term, it is about winning a specific, time-sensitive moment for someone close enough to actually walk through your door.</p>"
+             "<figure class=\"guide-figure\">"
+             "<svg viewBox=\"0 0 300 300\" role=\"img\" aria-label=\"A map with three pinned businesses and a ranked listing card, representing a business appearing in Google's local pack\">"
+             "<defs><clipPath id=\"lpClip\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"300\" rx=\"28\"/></clipPath></defs>"
+             "<g clip-path=\"url(#lpClip)\">"
+             "<rect x=\"0\" y=\"0\" width=\"300\" height=\"300\" fill=\"#262b40\"/>"
+             "<rect x=\"0\" y=\"0\" width=\"300\" height=\"64\" fill=\"#1c2033\"/>"
+             "<circle cx=\"28\" cy=\"32\" r=\"6\" fill=\"#e0b23c\"/><circle cx=\"48\" cy=\"32\" r=\"6\" fill=\"#7a90c7\"/><circle cx=\"68\" cy=\"32\" r=\"6\" fill=\"#4d65af\"/>"
+             "<rect x=\"90\" y=\"20\" width=\"180\" height=\"24\" rx=\"12\" fill=\"rgba(255,255,255,0.08)\"/>"
+             "<rect x=\"20\" y=\"78\" width=\"260\" height=\"128\" rx=\"14\" fill=\"#1b2035\" stroke=\"rgba(122,144,199,0.35)\" stroke-width=\"2\"/>"
+             "<path d=\"M20 128h260M112 78v128M198 78v128\" stroke=\"rgba(122,144,199,0.18)\" stroke-width=\"2\"/>"
+             "<circle cx=\"68\" cy=\"112\" r=\"7\" fill=\"none\" stroke=\"#7a90c7\" stroke-width=\"2.4\"/>"
+             "<path d=\"M61.5 118 L68 131 L74.5 118 Z\" fill=\"none\" stroke=\"#7a90c7\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/>"
+             "<circle cx=\"233\" cy=\"162\" r=\"7\" fill=\"none\" stroke=\"#7a90c7\" stroke-width=\"2.4\"/>"
+             "<path d=\"M226.5 168 L233 181 L239.5 168 Z\" fill=\"none\" stroke=\"#7a90c7\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/>"
+             "<circle cx=\"160\" cy=\"132\" r=\"22\" fill=\"none\" stroke=\"#e0b23c\" stroke-width=\"2\" opacity=\"0.35\"/>"
+             "<circle cx=\"160\" cy=\"132\" r=\"12\" fill=\"#e0b23c\"/>"
+             "<path d=\"M149 141 L160 163 L171 141 Z\" fill=\"#e0b23c\"/>"
+             "<path d=\"M154 132l4 4 8-9\" stroke=\"#1c2033\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"
+             "<rect x=\"34\" y=\"222\" width=\"232\" height=\"58\" rx=\"12\" fill=\"#1c2033\" stroke=\"#4d65af\" stroke-width=\"2.5\"/>"
+             "<rect x=\"50\" y=\"238\" width=\"26\" height=\"26\" rx=\"8\" fill=\"#e0b23c\"/>"
+             "<rect x=\"88\" y=\"238\" width=\"120\" height=\"10\" rx=\"5\" fill=\"#f4f4f2\"/>"
+             "<g transform=\"translate(88,256) scale(0.8)\"><path d=\"M0 -6l1.8 4.2L6 0l-4.2 1.8L0 6l-1.8-4.2L-6 0l4.2-1.8z\" fill=\"#e0b23c\"/></g>"
+             "<g transform=\"translate(102,256) scale(0.8)\"><path d=\"M0 -6l1.8 4.2L6 0l-4.2 1.8L0 6l-1.8-4.2L-6 0l4.2-1.8z\" fill=\"#e0b23c\"/></g>"
+             "<g transform=\"translate(116,256) scale(0.8)\"><path d=\"M0 -6l1.8 4.2L6 0l-4.2 1.8L0 6l-1.8-4.2L-6 0l4.2-1.8z\" fill=\"#e0b23c\"/></g>"
+             "<g transform=\"translate(130,256) scale(0.8)\"><path d=\"M0 -6l1.8 4.2L6 0l-4.2 1.8L0 6l-1.8-4.2L-6 0l4.2-1.8z\" fill=\"#e0b23c\"/></g>"
+             "<g transform=\"translate(144,256) scale(0.8)\"><path d=\"M0 -6l1.8 4.2L6 0l-4.2 1.8L0 6l-1.8-4.2L-6 0l4.2-1.8z\" fill=\"#e0b23c\"/></g>"
+             "<rect x=\"88\" y=\"264\" width=\"80\" height=\"7\" rx=\"3.5\" fill=\"rgba(244,244,242,0.4)\"/>"
+             "</g>"
+             "<rect x=\"1\" y=\"1\" width=\"298\" height=\"298\" rx=\"27\" fill=\"none\" stroke=\"rgba(122,144,199,0.35)\"/>"
+             "</svg>"
+             "<figcaption class=\"guide-figure-caption\">What it looks like when your business ranks in Google's local pack, the map and three-listing block shown above the regular results.</figcaption>"
+             "</figure>"
+             "<p>This matters more than most business owners assume, because local searches carry a different kind of intent than general browsing. Someone searching \"dental clinic in KL\" has usually already decided they need a dentist, and wants somewhere reachable, open and reputable today, not a shortlist to compare next month. If your business is invisible in that local pack, you are not losing a browsing visitor who might return later, you are losing a customer who is about to become someone else's, often within minutes. That is the commercial weight behind \"local SEO,\" and why we treat it as its own discipline rather than a footnote inside broader <a href=\"/services/seo/\">SEO services</a>.</p>"),
+            ("How is local SEO different from national or international SEO?",
+             "<p>To understand local SEO properly, it helps to see where it splits from general SEO, since the two solve genuinely different problems despite sharing much of the same mechanics.</p>"
+             "<p>General SEO, the kind of work covered under our own <a href=\"/services/seo/\">SEO services</a>, tries to answer one question: out of everything published online, which page is the most relevant, most authoritative answer to this search, for anyone, anywhere. Search \"SEO Malaysia\" from Bangsar or from a hotel room in London, and you will see largely the same results, because Google is solving one problem, relevance and authority, at a national or global scale.</p>"
+             "<p>Now hold that against two almost identical phrases: \"SEO company near me\" and \"SEO services near me.\" Run either from Petaling Jaya, then from Johor Bahru, and the results will be almost entirely different, even though the words barely changed. Google has recognised these as location-based searches, and is now solving a second problem on top of relevance: which business is actually close enough, and locally reputable enough, to serve this person right now. That second layer, proximity plus local trust, is what local SEO is built around, and why a business can rank brilliantly nationally and still be invisible for the \"near me\" version of the same search.</p>"
+             "<div class=\"data-table\"><table><thead><tr><th>What Google weighs</th><th>National / general SEO</th><th>Local SEO</th></tr></thead><tbody>"
+             "<tr><td>Main ranking factor</td><td>Content relevance and topical authority</td><td>Relevance, plus proximity to the person searching</td></tr>"
+             "<tr><td>Google Business Profile</td><td>Not a factor</td><td>One of the strongest signals</td></tr>"
+             "<tr><td>Business details (NAP)</td><td>Rarely matters</td><td>Consistency across the web is a trust signal</td></tr>"
+             "<tr><td>Reviews</td><td>Indirect at best</td><td>A direct, heavily weighted ranking signal</td></tr>"
+             "<tr><td>Where you can appear</td><td>The main organic results list</td><td>The map pack and the organic list, at the same time</td></tr>"
+             "</tbody></table></div>"
+             "<p>That last row is worth sitting with, because it is the part most business owners do not realise works in their favour. The map pack and the organic results underneath it are controlled by related but separate ranking processes, so a business done properly can rank well in both at once, for the same search, effectively doubling visibility for the same work. This is exactly why we approach local SEO and general SEO as one coordinated strategy rather than two disconnected projects: the technical health and content quality your <a href=\"/services/seo/\">SEO services</a> work builds still matters here, layered underneath proximity and trust signals general SEO never touches.</p>"),
+            ("Why search intent is different from city to city in Malaysia",
+             "<p>A generic \"our locations\" page, listing three or four addresses at the bottom of an About page, rarely performs the way business owners expect, because local intent in Malaysia does not behave uniformly from one city to the next, and Google detects that variation far better than most websites respond to it.</p>"
+             "<p>Two things shift between cities. The first is language. Someone in Klang might search \"klinik pergigian dekat sini,\" while someone in KL searches \"dental clinic near KLCC\" for the same need. If your content only exists in one language, you are structurally invisible to a real share of that demand, not because your business is unsuitable, but because your pages never had a chance to surface. This is a genuinely Malaysia-specific problem generic, imported SEO advice tends to miss.</p>"
+             "<p>The second shift is geography, the landmarks and neighbourhood names people actually use. A KL search leans on Bangsar, Mont Kiara or KLCC. A Penang search leans on Gurney Drive or George Town. A Johor Bahru search leans on Taman Molek or near KSL City. Someone in Ipoh, Kuching or Kota Kinabalu draws on an entirely different mental map again. Google reads these mentions as genuine location signals, and a page that only ever says \"Kuala Lumpur\" gives Google far less to work with than a competitor whose content actually speaks the way locals search.</p>"
+             "<p>The practical fix is straightforward to describe and easy to skip: a business with more than one branch needs a dedicated Google Business Profile and a genuinely unique page for each location, not one shared page with addresses pasted underneath it. Each page should describe the actual neighbourhood it serves, in the language and landmarks locals use, not generic copy that could apply to any branch. A single-location business should apply the same idea at a smaller scale, described the way people in your own neighbourhood actually search, not in abstract, city-wide language.</p>"),
+            ("The tools that tell you whether your local SEO is actually working",
+             "<p>Two free tools, both directly from Google, cover almost everything you need to track here, and reading them together tells a more complete story than either one does alone.</p>"
+             "<div class=\"data-table\"><table><thead><tr><th>Tool</th><th>What it actually shows you</th><th>What to check first</th></tr></thead><tbody>"
+             "<tr><td>Google Business Profile (Performance)</td><td>How people found your listing: direct searches for your name versus discovery searches for a category or service, plus calls, direction requests, website clicks and photo views</td><td>Discovery search growth. That is a new customer finding you without knowing your name yet, which is exactly what local SEO is meant to produce</td></tr>"
+             "<tr><td>Google Search Console</td><td>The exact queries bringing impressions and clicks to your site, including location and \"near me\" style searches, and whether your location pages are properly indexed</td><td>Filter the Queries report for your city or area name and see whether, and where, you show up</td></tr>"
+             "</tbody></table></div>"
+             "<p>Here is how that plays out in practice. Say your Google Business Profile shows steady direct searches, people typing your business name because they already know you, but flat or declining discovery searches, people finding you for the first time through a category or service. That pattern usually means existing customers can find you fine, but your local SEO is not bringing in people who have never heard of you. That is a signal to look harder at your profile completeness, review volume, and local citations, covered next, rather than assuming your marketing overall is failing.</p>"
+             "<p>Search Console tells the other half of the story. If Google Business Profile looks healthy but Search Console shows almost no impressions for queries containing your city or area name, that usually points to a content gap on your website itself, not a profile problem: your site is not built to answer those location-based searches even if your listing is strong. Used together, these two tools consistently point you toward the specific fix that will move the needle next.</p>"),
+            ("The practical ways to actually improve your local SEO",
+             "<p>Once you know what to track, the actual improvement work comes down to a small number of habits, done properly and maintained consistently over time, rather than any single trick.</p>"
+             "<h3>Fill out your Google Business Profile completely, and keep it active</h3>"
+             "<p>A half-finished profile is one of the most common, and most fixable, reasons a genuinely good business stays invisible. Set the correct primary category and any relevant secondary categories, since an incorrect or overly broad category can quietly disqualify you from showing up for the searches that matter most. Write a real, specific description of what you actually do, not a generic tagline that could describe any business in your industry. Upload current, real photos, keep opening hours accurate including public holidays, since Google actively flags stale hours, and post updates every so often rather than setting it up once and forgetting it. An active profile signals that the business behind it is real and being actively managed.</p>"
+             "<h3>Keep your NAP identical everywhere</h3>"
+             "<p>NAP stands for Name, Address and Phone number, and it needs to match exactly, character for character, everywhere it appears: your website, your Google Business Profile, your Facebook page, and any directory you are listed on. \"012-345 6789\" and \"+6012-3456789\" look identical to a person but read as two conflicting details to Google. Small mismatches like this quietly undermine how much Google trusts your business information, which shows up as weaker rankings with no obvious cause, which is exactly why so many owners never connect the dots. Worth doing once a year: search your own business name, click through every listing that comes up, and check each one actually matches.</p>"
+             "<h3>Build a genuine review strategy</h3>"
+             "<p>Reviews do two jobs at once, and most businesses only think about one. They are a direct local ranking signal, Google weighs quantity, quality, recency and your response rate, and they are also what convinces a stranger in the local pack to choose you over the listing next to yours. Ask for a review right after a genuinely good interaction, while it is still fresh, and make it easy with a direct link rather than expecting someone to search for you unprompted. Respond to every review, good and bad, since a calm, professional reply to a negative one often does more for trust than the review did damage. Do not buy reviews or incentivise fake ones. Google actively looks for that pattern, and getting caught tends to cost you the entire listing.</p>"
+             "<h3>Earn local citations and local links</h3>"
+             "<p>A citation is any online mention of your business that includes your NAP, whether a business directory, an industry association listing, or coverage from a local news site or blog. Getting listed properly on relevant Malaysian directories, and earning a genuine mention or link from a local publication rather than a low-quality, mass-submitted directory, is real evidence to Google that your business is an established, verifiable part of that area.</p>"
+             "<p>We saw this play out directly with <a href=\"/case-studies/sri-kdu-schools-seo-growth/\">Sri KDU Schools</a>, a client running three campuses across Kota Damansara, Subang Jaya and Klang. Before we started, the school group had strong brand recognition among people who already knew them, but was close to invisible for the non-branded searches prospective parents were typing, with each campus competing under one shared, generic identity. Building a dedicated local SEO presence for each campus individually, its own profile, its own location-specific content, its own citations, was a meaningful part of a 375% increase in Top 10 keyword rankings across the group, a real-world example of the multi-location principle described above.</p>"
+             "<div class=\"sources-block\"><span class=\"sources-label\">Sources</span><ul class=\"link-list\">"
+             "<li><a href=\"https://www.searchenginejournal.com/local-seo/\" target=\"_blank\" rel=\"noopener\">Search Engine Journal, A Guide to Local SEO</a></li>"
+             "<li><a href=\"https://mailchimp.com/resources/what-is-local-seo/\" target=\"_blank\" rel=\"noopener\">Mailchimp, How Local SEO Works</a></li>"
+             "</ul></div>"),
+            ("How to find the local keywords people are actually searching for",
+             "<p>Good local SEO depends on targeting the words real people actually type, not the words you assume they type, and the gap between the two is often larger than expected. Three methods cover almost everything, and none of them cost anything to start with.</p>"
+             "<p><strong>01. Google Keyword Planner.</strong> Free inside a Google Ads account, and you do not need to be running any ads to use it. Set the location to Malaysia, or narrow it to a specific state or city, and it shows search volume for any term along with related suggestions you likely had not thought of. Look specifically for variants that include a city, an area name, or \"near me.\"</p>"
+             "<p><strong>02. Google's own autocomplete.</strong> Open a private or incognito window, type your core service into the search bar, and read what Google suggests before you finish typing. Add a city name partway through and watch the suggestions change. This is free, takes minutes, and shows exactly how real people phrase the search, since Google only surfaces suggestions people actually type often enough to matter.</p>"
+             "<p><strong>03. The People Also Ask box.</strong> Search your main service and look at the \"People Also Ask\" questions inside the results. These are genuine follow-up questions real searchers ask, often local in nature, pricing in a specific city, or whether somewhere is open now. Turn the strongest ones into FAQ content on your own site, the way this guide's own FAQ section does.</p>"
+             "<p>None of this is one setting to switch on and forget. Local SEO is a handful of habits, kept up consistently: an active Google Business Profile, consistent NAP everywhere, a genuine review strategy, location-specific content for every branch, and keywords pulled from what people actually search rather than what you assume they search. Get those right, and a business with a genuinely good product or service finally shows up in the moment that matters most, right when someone nearby is deciding who to call.</p>"),
+        ],
+        "faqs": [
+            ("What is local SEO in simple terms?",
+             "Local SEO is the set of steps that help your business show up when someone nearby searches for what you sell, including Google's map pack and location-based search results, rather than trying to rank for the whole country."),
+            ("Is a Google Business Profile enough on its own?",
+             "No. It is the single biggest piece, but Google also weighs your website, your NAP consistency across other listings, and your reviews. A strong profile sitting on top of a weak or inconsistent presence elsewhere still underperforms."),
+            ("How long does local SEO take to show results?",
+             "Often faster than national SEO. Google Business Profile changes can move within a few weeks, though building genuine review volume and consistent citations is an ongoing effort rather than a one-time fix."),
+            ("Do I still need a website if I already have a Google Business Profile?",
+             "Yes. A profile alone caps how much information and trust you can build, and tools like Search Console can only show you data once you actually have a website to measure."),
+            ("Does local SEO work if my business has no physical shop front?",
+             "It shifts rather than disappears. Google Business Profile lets you set a service area instead of a storefront address, and the same principles, consistency, reviews and location-specific content, still apply within that area."),
+            ("Should I hire local SEO services or do it myself?",
+             "Many small, single-location businesses can reasonably handle the basics themselves, starting with Google Business Profile and a review request habit. It tends to be worth hiring local SEO services once you are managing more than one location, competing in a crowded category, or simply do not have the time to stay on top of it consistently."),
+        ],
+        "sources": [
+            ("Search Engine Journal: A Guide to Local SEO", "https://www.searchenginejournal.com/local-seo/"),
+            ("Mailchimp: How Local SEO Works", "https://mailchimp.com/resources/what-is-local-seo/"),
+        ],
+    },
 ]
 
 
