@@ -84,3 +84,26 @@
   viewport.addEventListener('pointercancel', endDrag);
   viewport.addEventListener('mouseleave', endDrag);
 })();
+
+// Click-to-expand inclusions panel (not hover-triggered), works for both
+// the desktop side-panel layout and the mobile accordion layout via CSS.
+(function () {
+  var roots = document.querySelectorAll('[data-includes]');
+  roots.forEach(function (root) {
+    var buttons = root.querySelectorAll('.includes-item');
+    var details = root.querySelectorAll('.includes-detail-item');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = btn.getAttribute('data-index');
+        buttons.forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        details.forEach(function (d) {
+          d.classList.toggle('is-active', d.getAttribute('data-index') === idx);
+        });
+      });
+    });
+  });
+})();

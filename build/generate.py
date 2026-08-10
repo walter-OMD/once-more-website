@@ -532,14 +532,17 @@ home_body = """
   <p style="margin-top:1rem">OnceMore Digital started as an SEO agency, and SEO is still the foundation of most engagements we run. As search itself has changed, we have grown into a full digital marketing agency covering SEO, GEO, AI optimisation and content, all handled by the same team.</p>
 </div></section>
 
-<section class="section panel-alt"><div class="container split">
-  <div>
-    <span class="eyebrow">Why OnceMore</span>
-    <h2>Built for how search <em>works now.</em></h2>
-    <p>Search is splitting between Google's results and AI answer engines. We work across both, so your business stays visible no matter where your customers look.</p>
-    <p>Most SEO agencies still treat search as the only channel that matters. We built OnceMore, a digital marketing agency that blends SEO, GEO and AI optimisation from the start, not bolted on later as an afterthought.</p>
+<section class="section panel-alt"><div class="container">
+  <div class="split">
+    <div>
+      <span class="eyebrow">Why OnceMore</span>
+      <h2>Built for how search <em>works now.</em></h2>
+      <p>Search is splitting between Google's results and AI answer engines. We work across both, so your business stays visible no matter where your customers look.</p>
+      <p>Most SEO agencies still treat search as the only channel that matters. We built OnceMore, a digital marketing agency that blends SEO, GEO and AI optimisation from the start, not bolted on later as an afterthought.</p>
+    </div>
+    <div class="illustration-frame"><img src="/assets/img/illustrations/social-search-behaviour.svg" alt="Illustration of a person browsing search results and social profiles" loading="lazy" decoding="async"></div>
   </div>
-  <ul class="feature-list">
+  <ul class="feature-list" style="margin-top:2rem">
     <li>Clear reporting you can read, not jargon</li>
     <li>Work grounded in real data, not guesswork</li>
     <li>One team across SEO, content and paid</li>

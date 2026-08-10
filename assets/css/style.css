@@ -524,3 +524,24 @@ p{color:var(--muted);font-weight:400}
 }
 
 
+
+/* Click-to-expand inclusions panel (SEO page "What's included") */
+.includes-panel{display:grid;grid-template-columns:340px 1fr;column-gap:2rem;row-gap:.75rem;margin-top:2rem;align-items:start}
+.includes-row{display:contents}
+.includes-item{display:flex;align-items:center;gap:1rem;width:100%;text-align:left;padding:1rem 1.25rem;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;color:var(--off-white);cursor:pointer;font:inherit;font-size:.98rem;transition:border-color .2s,background .2s}
+.includes-item .num{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--blue-light);flex-shrink:0}
+.includes-item:hover{border-color:rgba(77,101,175,0.4)}
+.includes-item.is-active{border-color:var(--blue);background:rgba(77,101,175,0.14)}
+.includes-item:focus-visible{outline:2px solid var(--blue-light);outline-offset:2px}
+.includes-detail-item{display:none;padding:1.75rem;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:12px}
+.includes-detail-item.is-active{display:block;grid-column:2;grid-row:1/-1;align-self:start}
+.includes-detail-item h3{margin-bottom:.6rem;color:var(--off-white)}
+.includes-detail-item p{margin:0;color:var(--muted)}
+@media(max-width:760px){
+  .includes-panel{grid-template-columns:1fr}
+  .includes-detail-item.is-active{grid-column:1;grid-row:auto;margin-top:.75rem}
+}
+
+/* Simple illustration frame: contains, no cropping (unlike .photo-frame) */
+.illustration-frame{display:flex;align-items:center;justify-content:center;padding:.5rem}
+.illustration-frame img{width:100%;height:auto;display:block}
