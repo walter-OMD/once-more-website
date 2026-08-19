@@ -171,13 +171,49 @@ p{color:var(--muted);font-weight:400}
 .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .card{
   border:1px solid var(--border);border-radius:3px;padding:1.75rem;
-  background:rgba(77,101,175,.04);transition:border-color .2s,transform .2s;display:block;
+  background:rgba(77,101,175,.04);transition:border-color .25s,transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;display:block;
 }
-.card:hover{border-color:rgba(77,101,175,.5);transform:translateY(-3px)}
+.card:hover{border-color:rgba(122,144,199,.7);transform:translateY(-8px) scale(1.02);
+  box-shadow:0 20px 34px rgba(0,0,0,.35),0 0 0 1px rgba(122,144,199,.25)}
 .card .num{font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--blue);display:block;margin-bottom:.75rem}
 .card h3{color:var(--off-white)}
 .card p{font-size:.95rem;margin-top:.4rem}
 .card .more{display:inline-block;margin-top:1rem;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-light)}
+
+/* ---------- scroll-reveal pop-in ---------- */
+/* ---------- scroll-reveal pop-in (progressive enhancement: only when
+   the 'js' class is present on <html>, added by an inline script in
+   <head>, so content is never hidden if JavaScript fails to run) ---------- */
+html.js .card,html.js .case-card,html.js .stat-card,html.js .roadmap-step{
+  opacity:0;transform:translateY(22px) scale(.96);
+  transition:opacity .6s ease,transform .6s cubic-bezier(.22,1.4,.36,1)}
+html.js .card.in-view,html.js .case-card.in-view,html.js .stat-card.in-view,html.js .roadmap-step.in-view{
+  opacity:1;transform:translateY(0) scale(1)}
+.grid .card:nth-child(2),.case-grid .case-card:nth-child(2),.stat-grid .stat-card:nth-child(2){transition-delay:.08s}
+.grid .card:nth-child(3),.case-grid .case-card:nth-child(3),.stat-grid .stat-card:nth-child(3){transition-delay:.16s}
+.grid .card:nth-child(4),.case-grid .case-card:nth-child(4),.stat-grid .stat-card:nth-child(4){transition-delay:.24s}
+.grid .card:nth-child(5){transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){
+  html.js .card,html.js .case-card,html.js .stat-card,html.js .roadmap-step{opacity:1;transform:none;transition:none}
+}
+
+/* ---------- roadmap (connected numbered steps) ---------- */
+.roadmap{position:relative;margin:2rem 0;padding-left:2.75rem}
+.roadmap::before{content:'';position:absolute;left:19px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--blue),var(--blue-light),var(--border))}
+.roadmap-step{position:relative;padding-bottom:2.25rem}
+.roadmap-step:last-child{padding-bottom:0}
+.roadmap-dot{position:absolute;left:-2.75rem;top:0;width:40px;height:40px;border-radius:50%;
+  background:var(--dark-2);border:2px solid var(--blue-light);color:var(--blue-light);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s,color .3s;z-index:1}
+.roadmap-step:hover .roadmap-dot{transform:scale(1.15);background:var(--blue);color:var(--off-white)}
+.roadmap-step h3{color:var(--off-white);margin-bottom:.4rem}
+.roadmap-step p{font-size:.95rem;color:#ccc;max-width:62ch}
+@media(max-width:640px){
+  .roadmap{padding-left:2.25rem}
+  .roadmap-dot{width:34px;height:34px;left:-2.25rem;font-size:.85rem}
+}
 
 /* ---------- feature list ---------- */
 .feature-list{list-style:none;display:grid;gap:.9rem;margin:1.5rem 0;max-width:60ch}
@@ -458,10 +494,22 @@ article.prose h2{font-size:1.4rem;margin:2rem 0 .7rem;scroll-margin-top:104px}
 .case-tag{display:inline-block;padding:.3rem .8rem;border-radius:20px;background:rgba(77,101,175,0.15);border:1px solid var(--border);color:var(--blue-light);font-size:.8rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:1rem}
 .case-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fill,minmax(300px,360px))}
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:2rem}
-.stat-card{background:rgba(77,101,175,0.08);border:1px solid var(--border);border-radius:10px;padding:2rem 1.5rem;text-align:center}
-.stat-num{display:block;font-size:2.75rem;font-weight:700;color:var(--blue-light);line-height:1.1;margin-bottom:.5rem;font-family:inherit}
-.stat-label{color:var(--muted);font-size:.9rem;line-height:1.4}
-.case-chart{margin:2rem 0;border-radius:10px;border:1px solid var(--border);background:#ffffff;padding:1rem}
+.stat-card{background:rgba(77,101,175,0.08);border:1px solid var(--border);border-radius:10px;
+  padding:1.75rem 1.5rem;text-align:center;position:relative;overflow:hidden;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s}
+.stat-card:hover{transform:translateY(-6px) scale(1.03);border-color:var(--blue-light);
+  box-shadow:0 16px 30px rgba(0,0,0,.35)}
+.stat-ring{width:76px;height:76px;border-radius:50%;margin:0 auto .9rem;display:flex;
+  align-items:center;justify-content:center;position:relative;
+  background:conic-gradient(var(--blue-light) 0deg,var(--blue) var(--ring-deg,260deg),rgba(255,255,255,.08) var(--ring-deg,260deg));
+  animation:ring-in .8s cubic-bezier(.22,1.4,.36,1) both}
+.stat-ring::before{content:'';position:absolute;inset:6px;border-radius:50%;background:var(--dark)}
+@keyframes ring-in{from{opacity:0;transform:scale(.6) rotate(-70deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.stat-num{position:relative;display:block;font-size:1.5rem;font-weight:700;color:var(--blue-light);line-height:1.1;font-family:inherit;z-index:1}
+.stat-label{color:var(--muted);font-size:.9rem;line-height:1.4;margin-top:.6rem;display:block}
+.case-chart{margin:2rem 0;border-radius:10px;border:1px solid var(--border);background:#ffffff;padding:1rem;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.case-chart:hover{transform:scale(1.015);box-shadow:0 16px 30px rgba(0,0,0,.3)}
 .case-chart img{width:100%;height:auto;display:block;border-radius:6px}
 .case-chart-caption{text-align:center;margin-top:.75rem;font-size:.85rem;color:var(--muted)}
 
@@ -494,8 +542,10 @@ article.prose h2{font-size:1.4rem;margin:2rem 0 .7rem;scroll-margin-top:104px}
   .review-quote{font-size:1.1rem}
   .review-mark{font-size:3.5rem}
 }
-.case-card{display:block;border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color .15s ease}
-.case-card:hover{border-color:var(--blue-light)}
+.case-card{display:block;border:1px solid var(--border);border-radius:10px;padding:1.5rem;
+  transition:border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.case-card:hover{border-color:var(--blue-light);transform:translateY(-8px) scale(1.02);
+  box-shadow:0 20px 34px rgba(0,0,0,.35)}
 .case-card .case-tag{margin-bottom:1rem}
 .case-card .stat-row{display:flex;flex-wrap:wrap;gap:1.25rem 1.75rem;margin:1.25rem 0}
 .case-card .stat-row div{min-width:120px}

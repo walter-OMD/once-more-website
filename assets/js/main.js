@@ -85,3 +85,22 @@
   viewport.addEventListener('mouseleave', endDrag);
 })();
 
+// Scroll-reveal: pop cards, stat cards and roadmap steps in as they enter view
+(function () {
+  var items = document.querySelectorAll('.card, .case-card, .stat-card, .roadmap-step');
+  if (!items.length) return;
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+
