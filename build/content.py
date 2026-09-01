@@ -118,8 +118,14 @@ SERVICE_CONTENT = {
         "meta_description": "AIO/GEO services for Malaysian businesses: get cited in ChatGPT, Gemini, Perplexity and Google AI Overviews, with the AI optimisation work that makes it possible. From OnceMore Digital.",
         "sections": [
             ("Traditional SEO vs AIO/GEO: what's different",
-             '<div class="illustration-frame spot" style="max-width:200px;margin:0 auto 1.75rem">'
-             '<img src="/assets/img/illustrations/spot/seo-target.svg" alt="Isometric illustration of a target with an arrow at the centre, representing a traditional SEO ranking goal" loading="lazy" decoding="async"></div>'
+             '<div style="display:flex;align-items:center;justify-content:center;gap:1.25rem;margin:0 auto 1.75rem;flex-wrap:wrap">'
+             '<span style="font-size:1.4rem;font-weight:700;color:var(--off-white);letter-spacing:.02em">SEO</span>'
+             '<span style="display:flex;flex-direction:column;align-items:center;gap:.35rem">'
+             '<span style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-light)">vs</span>'
+             '<img src="/assets/img/illustrations/spot/seo-target.svg" alt="Isometric illustration of a target, symbolising the shift from SEO to AIO/GEO" loading="lazy" decoding="async" style="width:64px;height:auto;display:block">'
+             '</span>'
+             '<span style="font-size:1.4rem;font-weight:700;color:var(--off-white);letter-spacing:.02em">AIO / GEO</span>'
+             '</div>'
              '<p>Same underlying discipline, different finish line. Here is where they overlap and where they pull apart.</p>'
              '<div class="data-table"><table><thead><tr><th></th><th>Traditional SEO</th><th>AIO / GEO</th></tr></thead><tbody>'
              '<tr><td>Goal</td><td>Rank on the results page</td><td>Get cited inside the AI-generated answer</td></tr>'
@@ -131,15 +137,21 @@ SERVICE_CONTENT = {
              '<tr><td>Timeline</td><td>Compounds over months</td><td>Compounds over months, and shifts faster as models retrain</td></tr>'
              '</tbody></table></div>'),
             ("What is AIO/GEO, and how did it evolve from SEO?",
-             '<p>SEO grew up around a results list: rank high enough and people click through. As AI Overviews, ChatGPT, Gemini and Perplexity started summarising the web instead of just linking to it, a layer of work grew on top of SEO. '
+             '<div class="split">'
+             '<div><p>SEO grew up around a results list: rank high enough and people click through. As AI Overviews, ChatGPT, Gemini and Perplexity started summarising the web instead of just linking to it, a layer of work grew on top of SEO. '
              'GEO, Generative Engine Optimisation, is the goal: being one of the sources an AI tool actually cites. AIO, AI Optimisation, is the practical layer underneath it, the structural work of clean headings, direct answers, '
              'schema markup and consistent facts that makes a page easy for a model to read and trust.</p>'
-             '<p style="margin-top:1rem">They are two names for the same discipline, described from two angles, which is why we treat it as one service rather than two separate line items.</p>'),
+             '<p style="margin-top:1rem">They are two names for the same discipline, described from two angles, which is why we treat it as one service rather than two separate line items.</p></div>'
+             '<div class="illustration-frame spot"><img src="/assets/img/illustrations/spot/aio-what-is.png" alt="Illustration of a person holding a computer chip labelled AI, representing the technology behind AIO/GEO" loading="lazy" decoding="async"></div>'
+             '</div>'),
             ("Why it matters now",
-             '<p>People are skipping the results page. Someone comparing options increasingly asks an assistant directly and takes its answer at face value, often without clicking through to any website at all. '
+             '<div class="split">'
+             '<div class="illustration-frame spot"><img src="/assets/img/illustrations/spot/aio-why-now.png" alt="Illustration of a person reaching for the centre of a target, representing the goal of getting cited in AI answers" loading="lazy" decoding="async"></div>'
+             '<div><p>People are skipping the results page. Someone comparing options increasingly asks an assistant directly and takes its answer at face value, often without clicking through to any website at all. '
              'If a competitor is the one quoted and you are not, you lose that customer before they ever see your site, no matter how well you would have ranked.</p>'
              '<p style="margin-top:1rem">This shift is happening in Malaysia too, across the same bilingual, mixed English-Malay searches that already shape local SEO. The businesses treating this as a real discipline now '
-             'are the ones AI tools will already trust to quote later.</p>'),
+             'are the ones AI tools will already trust to quote later.</p></div>'
+             '</div>'),
             ("Signs you need this",
              '<p>AIO/GEO is worth prioritising if any of this sounds familiar:</p>'
              '<div class="grid">'
@@ -208,7 +220,7 @@ SERVICE_CONTENT = {
                 "Google used to be the whole game. Now a growing share of your customers ask ChatGPT, Gemini or an AI Overview instead of typing a query and scrolling through blue links. Traditional SEO gets your page ranked. AIO/GEO gets your business quoted, cited and recommended inside the answer itself.",
                 "The two are not competing budgets. They share the same foundation, and this page is about the second one: making sure the AI tools your customers are already using actually mention you.",
             ],
-            "image": "/assets/img/illustrations/spot/aio-geo-banner.jpg",
+            "image": "/assets/img/illustrations/spot/aio-geo-banner.webp",
             "image_alt": "Isometric illustration of an AI robot assistant next to a stacked AI processor chip and a data report, representing AI-powered search",
         },
         "layout": [
