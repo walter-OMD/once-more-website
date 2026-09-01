@@ -262,7 +262,7 @@ SERVICES = [
       ("Do you guarantee a number one ranking?",
        "No honest provider can guarantee a specific position, because Google decides rankings. We focus on the work that reliably improves visibility and the traffic that follows.")]),
     ("geo", "AIO/GEO", "AI Optimisation & GEO",
-     "If your business isn't showing up when people ask ChatGPT, Gemini or Google's AI Overviews, you're already losing customers to competitors who are. We get you appearing in those answers, and turn that visibility into real growth.",
+     "Get your business cited, quoted and recommended by the AI tools your customers already use.",
      "AIO/GEO is the combined discipline of getting your business cited, quoted and recommended by AI tools. GEO (Generative Engine Optimisation) is the goal: being one of the sources an AI tool names. AIO (AI Optimisation) is the practical layer underneath it: the structural work of clean headings, direct answers, schema markup and consistent facts that makes that possible.",
      ["Content structured for AI extraction",
       "Entity and topical authority signals",
@@ -501,8 +501,8 @@ home_body = """
 
 <section class="section"><div class="container">
   <span class="eyebrow">What we do</span>
-  <h2>Five ways we <em>help you grow</em></h2>
-  <p>Each service stands on its own or works together as one organic growth plan. SEO is where most engagements start.</p>
+  <h2>How we help you <em>get found</em></h2>
+  <p>Three services built to work together: SEO to rank on the results page, AIO/GEO to get you cited by AI tools, and content that ties both together, so your customers find you wherever they are searching.</p>
   <div class="grid" style="margin-top:2rem">
     BENTO_CARDS
   </div>
@@ -534,7 +534,7 @@ home_body = """
     </div>
     <div class="statement-note">
       <span class="eyebrow">Our approach</span>
-      <p>We treat SEO, GEO and AI optimisation as one system, not three separate line items on an invoice.</p>
+      <p>We treat SEO and AIO/GEO as one connected system, not separate line items pulling in different directions.</p>
     </div>
   </div>
 </div></section>
