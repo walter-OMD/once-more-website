@@ -117,14 +117,14 @@ SERVICE_CONTENT = {
         "title": "AI Optimisation & GEO Services (AIO/GEO) | OnceMore Digital",
         "meta_description": "AIO/GEO services for Malaysian businesses: get cited in ChatGPT, Gemini, Perplexity and Google AI Overviews, with the AI optimisation work that makes it possible. From OnceMore Digital.",
         "sections": [
+            ("SEO gets you ranked. AIO/GEO gets you cited.",
+             '<p>Google used to be the whole game. Now a growing share of your customers ask ChatGPT, Gemini or an AI Overview instead of typing a query and scrolling through blue links. Traditional SEO gets your page ranked. AIO/GEO gets your business quoted, cited and recommended inside the answer itself.</p>'
+             '<p style="margin-top:1rem">The two are not competing budgets. They share the same foundation, and this page is about the second one: making sure the AI tools your customers are already using actually mention you.</p>'),
             ("Traditional SEO vs AIO/GEO: what's different",
-             '<div style="display:flex;align-items:center;justify-content:center;gap:1.25rem;margin:0 auto 1.75rem;flex-wrap:wrap">'
-             '<span style="font-size:1.4rem;font-weight:700;color:var(--off-white);letter-spacing:.02em">SEO</span>'
-             '<span style="display:flex;flex-direction:column;align-items:center;gap:.35rem">'
-             '<span style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-light)">vs</span>'
-             '<img src="/assets/img/illustrations/spot/seo-target.svg" alt="Isometric illustration of a target, symbolising the shift from SEO to AIO/GEO" loading="lazy" decoding="async" style="width:64px;height:auto;display:block">'
-             '</span>'
-             '<span style="font-size:1.4rem;font-weight:700;color:var(--off-white);letter-spacing:.02em">AIO / GEO</span>'
+             '<div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin:0 auto 1.75rem;flex-wrap:wrap">'
+             '<span style="font-size:2.1rem;font-weight:700;color:var(--off-white);letter-spacing:.02em">SEO</span>'
+             '<span style="font-size:.95rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-light);font-style:italic">vs</span>'
+             '<span style="font-size:2.1rem;font-weight:700;color:var(--blue-light);letter-spacing:.02em">AIO / GEO</span>'
              '</div>'
              '<p>Same underlying discipline, different finish line. Here is where they overlap and where they pull apart.</p>'
              '<div class="data-table"><table><thead><tr><th></th><th>Traditional SEO</th><th>AIO / GEO</th></tr></thead><tbody>'
@@ -193,8 +193,6 @@ SERVICE_CONTENT = {
              '<h3>People Also Ask visibility</h3><p>The expandable question boxes Google threads through the results page itself.</p></div>'
              '</div>'),
             ("How we measure it",
-             '<div class="illustration-frame spot" style="max-width:190px;margin:0 auto 1.5rem">'
-             '<img src="/assets/img/illustrations/spot/aio-measure.png" alt="Illustration of a person holding a checklist next to a performance gauge, representing tracking AI citation performance" loading="lazy" decoding="async"></div>'
              '<p>AIO/GEO does not have the same simple scoreboard as a search rank. This is directional, not a guaranteed position, which is worth saying plainly rather than promising a number nobody can control.</p>'
              '<div class="data-table"><table><thead><tr><th>Metric</th><th>What it tells you</th></tr></thead><tbody>'
              '<tr><td>Citation frequency</td><td>How often you are quoted across sampled AI answers for your key topics</td></tr>'
@@ -214,17 +212,8 @@ SERVICE_CONTENT = {
              '<a class="btn btn-primary" href="/services/seo/">Explore our SEO services</a>'
              '<a class="btn btn-ghost" href="/contact/">Talk to us about AIO/GEO</a></div>'),
         ],
-        "feature_split": {
-            "heading": "SEO gets you ranked. AIO/GEO gets you cited.",
-            "paragraphs": [
-                "Google used to be the whole game. Now a growing share of your customers ask ChatGPT, Gemini or an AI Overview instead of typing a query and scrolling through blue links. Traditional SEO gets your page ranked. AIO/GEO gets your business quoted, cited and recommended inside the answer itself.",
-                "The two are not competing budgets. They share the same foundation, and this page is about the second one: making sure the AI tools your customers are already using actually mention you.",
-            ],
-            "image": "/assets/img/illustrations/spot/aio-geo-banner.webp",
-            "image_alt": "Isometric illustration of an AI robot assistant next to a stacked AI processor chip and a data report, representing AI-powered search",
-        },
         "layout": [
-            {"type": "feature_split", "alt": False},
+            {"type": "prose", "headings": ["SEO gets you ranked. AIO/GEO gets you cited."], "alt": False},
             {"type": "prose", "headings": ["Traditional SEO vs AIO/GEO: what's different"], "alt": True},
             {"type": "prose", "headings": ["What is AIO/GEO, and how did it evolve from SEO?"], "alt": False},
             {"type": "prose", "headings": ["Why it matters now"], "alt": True},
