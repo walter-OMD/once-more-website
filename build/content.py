@@ -114,70 +114,148 @@ SERVICE_CONTENT = {
         },
     },
     "geo": {
+        "title": "AI Optimisation & GEO Services (AIO/GEO) | OnceMore Digital",
+        "meta_description": "AIO/GEO services for Malaysian businesses: get cited in ChatGPT, Gemini, Perplexity and Google AI Overviews, with the AI optimisation work that makes it possible. From OnceMore Digital.",
         "sections": [
-            ("What is generative engine optimisation?",
-             "<p>Generative engines are the AI systems that now sit on top of search: Google AI Overviews, ChatGPT, Gemini, Perplexity and others. Instead of a list of links, they read the web, summarise it, and cite a small number of sources. GEO is the work of making your business one of those cited sources, so when someone asks an AI tool a question in your space, your name comes up. It builds on the same foundations as <a href=\"/services/seo/\">SEO</a> rather than replacing them; for the full picture on how AI answer engines actually pull and cite information, see our guide on <a href=\"/resources/what-is-geo/\">what GEO is and why it matters</a>.</p>"),
+            ("Traditional SEO vs AIO/GEO: what's different",
+             '<div class="illustration-frame spot" style="max-width:200px;margin:0 auto 1.75rem">'
+             '<img src="/assets/img/illustrations/spot/seo-target.svg" alt="Isometric illustration of a target with an arrow at the centre, representing a traditional SEO ranking goal" loading="lazy" decoding="async"></div>'
+             '<p>Same underlying discipline, different finish line. Here is where they overlap and where they pull apart.</p>'
+             '<div class="data-table"><table><thead><tr><th></th><th>Traditional SEO</th><th>AIO / GEO</th></tr></thead><tbody>'
+             '<tr><td>Goal</td><td>Rank on the results page</td><td>Get cited inside the AI-generated answer</td></tr>'
+             '<tr><td>Unit of success</td><td>Position #1 to #10</td><td>Being one of a handful of sources quoted</td></tr>'
+             '<tr><td>Content shape</td><td>Long-form, keyword-mapped pages</td><td>Direct answers, clean structure, scannable facts</td></tr>'
+             '<tr><td>Trust signals</td><td>Backlinks and domain authority</td><td>Backlinks plus schema, third-party mentions and consistency across the web</td></tr>'
+             '<tr><td>Where you show up</td><td>Google and Bing search results</td><td>AI Overviews, ChatGPT, Gemini, Perplexity, Copilot, voice assistants</td></tr>'
+             '<tr><td>Measured by</td><td>Rankings and organic traffic</td><td>Citation frequency, AI-referral traffic and share of voice in answers</td></tr>'
+             '<tr><td>Timeline</td><td>Compounds over months</td><td>Compounds over months, and shifts faster as models retrain</td></tr>'
+             '</tbody></table></div>'),
+            ("What is AIO/GEO, and how did it evolve from SEO?",
+             '<p>SEO grew up around a results list: rank high enough and people click through. As AI Overviews, ChatGPT, Gemini and Perplexity started summarising the web instead of just linking to it, a layer of work grew on top of SEO. '
+             'GEO, Generative Engine Optimisation, is the goal: being one of the sources an AI tool actually cites. AIO, AI Optimisation, is the practical layer underneath it, the structural work of clean headings, direct answers, '
+             'schema markup and consistent facts that makes a page easy for a model to read and trust.</p>'
+             '<p style="margin-top:1rem">They are two names for the same discipline, described from two angles, which is why we treat it as one service rather than two separate line items.</p>'),
+            ("Why it matters now",
+             '<p>People are skipping the results page. Someone comparing options increasingly asks an assistant directly and takes its answer at face value, often without clicking through to any website at all. '
+             'If a competitor is the one quoted and you are not, you lose that customer before they ever see your site, no matter how well you would have ranked.</p>'
+             '<p style="margin-top:1rem">This shift is happening in Malaysia too, across the same bilingual, mixed English-Malay searches that already shape local SEO. The businesses treating this as a real discipline now '
+             'are the ones AI tools will already trust to quote later.</p>'),
+            ("Signs you need this",
+             '<p>AIO/GEO is worth prioritising if any of this sounds familiar:</p>'
+             '<div class="grid">'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16c3-5 8-8 12-8s9 3 12 8c-3 5-8 8-12 8s-9-3-12-8z"/><circle cx="16" cy="16" r="3"/><line x1="6" y1="26" x2="26" y2="6"/></svg></span>'
+             '<h3>Invisible in AI answers</h3><p>Competitors show up when someone asks an AI tool about your industry. You do not.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 13a4 4 0 1 1 5 3.9c-.8.3-1.3 1-1.3 1.9"/><circle cx="16" cy="21" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="16" r="11"/></svg></span>'
+             '<h3>No idea where you stand</h3><p>You genuinely do not know whether ChatGPT or Gemini has ever mentioned your business.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 6l12 20H4z"/><line x1="16" y1="14" x2="16" y2="20"/><circle cx="16" cy="23" r="1" fill="currentColor" stroke="none"/></svg></span>'
+             '<h3>Inconsistent facts everywhere</h3><p>Your pricing, offerings or address read differently across your site, Google Business Profile and directories.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7"/><line x1="12" y1="16" x2="27" y2="16"/><path d="M21 10l6 6-6 6"/></svg></span>'
+             '<h3>Losing research-stage traffic</h3><p>People are deciding before they ever click through, and the assistant they asked did not mention you.</p></div>'
+             '</div>'),
+            ("What platforms would you appear on?",
+             '<p>Different tools pull from different sources and answer in different ways. Here is where AIO/GEO work puts you in front of customers.</p>'
+             '<div class="grid">'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H14l-6 5v-5H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z"/></svg></span>'
+             '<h3>ChatGPT</h3><p>Answers questions directly and increasingly browses the web to back up its answer with sources.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l2.4 8.6L27 15l-8.6 2.4L16 26l-2.4-8.6L5 15l8.6-2.4z"/></svg></span>'
+             '<h3>Google Gemini</h3><p>Built into Search, Workspace and Android, drawing on Google\'s own index when it answers.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M20 12l-3 6-6 3 3-6z"/></svg></span>'
+             '<h3>Perplexity</h3><p>Built specifically as an answer engine, citing sources inline with every response by default.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 6L4 15l9 3 3 9 3-6 9-15z"/><path d="M13 18l6-9"/></svg></span>'
+             '<h3>Microsoft Copilot</h3><p>Sits inside Bing, Windows and Office, pulling heavily from Bing\'s index of the web.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="13" r="8"/><line x1="19" y1="19" x2="27" y2="27"/><path d="M13 8l1 3 3 1-3 1-1 3-1-3-3-1 3-1z"/></svg></span>'
+             '<h3>Google AI Overviews</h3><p>The AI-written summary sitting above the classic results list on ordinary Google searches.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20a5 5 0 1 1 0-8c3 0 5 8 8 8a5 5 0 1 0 0-8c-3 0-5 8-8 8z"/></svg></span>'
+             '<h3>Meta AI</h3><p>Built into WhatsApp, Instagram and Facebook, where a huge share of Malaysian searches already happen.</p></div>'
+             '</div>'),
+            ("Where you'll appear",
+             '<p>Getting AIO/GEO right shows up in a few different places, not just one:</p>'
+             '<div class="grid">'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="6" width="22" height="8" rx="2"/><line x1="8" y1="19" x2="24" y2="19"/><line x1="8" y1="24" x2="20" y2="24"/></svg></span>'
+             '<h3>AI Overviews</h3><p>The generated summary box Google shows above the normal results for a growing share of searches.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 10c-3 1-5 4-5 8 0 3 2 5 5 5 2 0 4-2 4-4 0-3-2-4-4-4 0-2 1-4 3-5z"/><path d="M22 10c-3 1-5 4-5 8 0 3 2 5 5 5 2 0 4-2 4-4 0-3-2-4-4-4 0-2 1-4 3-5z"/></svg></span>'
+             '<h3>Cited inside an LLM answer</h3><p>Named and linked directly inside a ChatGPT, Gemini or Perplexity response, not just ranked underneath it.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="4" width="8" height="14" rx="4"/><path d="M8 15a8 8 0 0 0 16 0"/><line x1="16" y1="23" x2="16" y2="28"/><line x1="11" y1="28" x2="21" y2="28"/></svg></span>'
+             '<h3>Voice answer capture</h3><p>The single answer read aloud by Siri, Google Assistant or a smart speaker, with no results list to fall back on.</p></div>'
+             '<div class="card"><span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="24" height="6" rx="1"/><rect x="4" y="19" width="24" height="6" rx="1"/><path d="M24 9.5l2 1.5-2 1.5"/></svg></span>'
+             '<h3>People Also Ask visibility</h3><p>The expandable question boxes Google threads through the results page itself.</p></div>'
+             '</div>'),
+            ("How we measure it",
+             '<div class="illustration-frame spot" style="max-width:190px;margin:0 auto 1.5rem">'
+             '<img src="/assets/img/illustrations/spot/aio-measure.png" alt="Illustration of a person holding a checklist next to a performance gauge, representing tracking AI citation performance" loading="lazy" decoding="async"></div>'
+             '<p>AIO/GEO does not have the same simple scoreboard as a search rank. This is directional, not a guaranteed position, which is worth saying plainly rather than promising a number nobody can control.</p>'
+             '<div class="data-table"><table><thead><tr><th>Metric</th><th>What it tells you</th></tr></thead><tbody>'
+             '<tr><td>Citation frequency</td><td>How often you are quoted across sampled AI answers for your key topics</td></tr>'
+             '<tr><td>AI-referral traffic (GA4)</td><td>Visits arriving via chatgpt.com, perplexity.ai, gemini.google.com and similar, tracked as a referral source</td></tr>'
+             '<tr><td>Share of voice</td><td>How you compare against named competitors in the same sampled answers</td></tr>'
+             '<tr><td>Consistency score</td><td>Whether your business facts match across your site, Google Business Profile and directories</td></tr>'
+             '</tbody></table></div>'),
+            ("Why you need it even if you already have SEO",
+             '<div class="split">'
+             '<div><p>SEO and AIO/GEO share the same foundation, they are not competing budgets. Good SEO content is the raw material AIO/GEO needs to work with, but ranking number one does not guarantee an AI tool will quote you.</p>'
+             '<p style="margin-top:1rem">Being clear, structured and verifiable elsewhere on the web is a separate, deliberate step on top of ranking well, not something that happens automatically because you rank. Businesses doing both end up ranked on Google and quoted by the AI tools sitting above it.</p></div>'
+             '<div class="illustration-frame spot"><img src="/assets/img/illustrations/spot/aio-visibility.png" alt="Illustration of a person looking through a large eye icon, representing visibility in AI search results" loading="lazy" decoding="async"></div>'
+             '</div>'),
+            ("SEO gets you ranked. AIO/GEO gets you cited. Do both.",
+             '<p>You do not have to choose. Strong SEO gives AIO/GEO the ranked, trustworthy content it needs to work from, and AIO/GEO makes sure that content actually gets quoted, not just found.</p>'
+             '<div class="btn-row" style="justify-content:flex-start;margin-top:1.25rem">'
+             '<a class="btn btn-primary" href="/services/seo/">Explore our SEO services</a>'
+             '<a class="btn btn-ghost" href="/contact/">Talk to us about AIO/GEO</a></div>'),
         ],
         "feature_split": {
-            "heading": "Why does this matter now?",
+            "heading": "SEO gets you ranked. AIO/GEO gets you cited.",
             "paragraphs": [
-                "A growing share of people skip the results page entirely and ask an assistant instead. If your competitors are quoted in those answers and you are not, you lose the customer before they ever reach a website. Getting cited depends on clear, well structured, trustworthy content, which is exactly what <a href=\"/services/ai-optimisation/\">AI optimisation</a> and good <a href=\"/services/content-writing/\">content</a> provide.",
+                "Google used to be the whole game. Now a growing share of your customers ask ChatGPT, Gemini or an AI Overview instead of typing a query and scrolling through blue links. Traditional SEO gets your page ranked. AIO/GEO gets your business quoted, cited and recommended inside the answer itself.",
+                "The two are not competing budgets. They share the same foundation, and this page is about the second one: making sure the AI tools your customers are already using actually mention you.",
             ],
-            "image": "/assets/img/illustrations/spot/icon-4.svg",
-            "image_alt": "Illustration of a person thinking, with question marks representing a search query",
-            "compact": True,
-            "image_side": "left",
+            "image": "/assets/img/illustrations/spot/aio-geo-banner.jpg",
+            "image_alt": "Isometric illustration of an AI robot assistant next to a stacked AI processor chip and a data report, representing AI-powered search",
         },
-        "faqs": [
-            ("Can you guarantee my business appears in AI answers?",
-             "No one can, because the AI provider decides what to cite. What we can do is give those systems the clearest, most trustworthy version of your content to work from, which is what improves the odds."),
-            ("Is GEO worth it for a small business?",
-             "If your customers are starting to ask AI tools for recommendations, yes. Smaller, focused businesses often get cited precisely because their content answers a specific question well."),
+        "layout": [
+            {"type": "feature_split", "alt": False},
+            {"type": "prose", "headings": ["Traditional SEO vs AIO/GEO: what's different"], "alt": True},
+            {"type": "prose", "headings": ["What is AIO/GEO, and how did it evolve from SEO?"], "alt": False},
+            {"type": "prose", "headings": ["Why it matters now"], "alt": True},
+            {"type": "prose", "headings": ["Signs you need this"], "alt": False},
+            {"type": "prose", "headings": ["What platforms would you appear on?"], "alt": True},
+            {"type": "process", "alt": False},
+            {"type": "prose", "headings": ["Where you'll appear"], "alt": True},
+            {"type": "prose", "headings": ["How we measure it"], "alt": False},
+            {"type": "prose", "headings": ["Why you need it even if you already have SEO"], "alt": True},
+            {"type": "prose", "headings": ["SEO gets you ranked. AIO/GEO gets you cited. Do both."], "alt": False},
+            {"type": "faq", "alt": True},
         ],
         "process": {
-            "heading": "What our GEO work actually looks like",
-            "intro": "GEO is not a single trick, it is a handful of concrete habits applied to every page. Here is what we actually do.",
+            "heading": "How we help you rank on AIO/GEO",
+            "intro": "AIO/GEO is not a single trick, it is a handful of concrete habits applied consistently. Here is what we actually do.",
             "steps": [
-                ("Writing for real search intent",
-                 "We write to the actual question and intent behind a search, not just the keyword sitting on top of it. An AI tool is trying to satisfy the person asking, so the page has to do that first."),
-                ("Structuring for query fan-out",
-                 "AI tools quietly break one question into several related sub-searches behind the scenes before they answer. We structure pages so each of those fanned-out variants has a clear answer somewhere on the page, not just the headline query."),
-                ("Conversational, question-style headers",
-                 "Headings are phrased the way people actually ask an assistant a question, not as generic keyword phrases. It matches how the model reads the page and how the person searching actually thinks."),
-                ("Direct answer boxes",
-                 "Every key page gets a plain, complete answer near the top, before the detail and nuance. That is what a model can lift cleanly without having to interpret a long paragraph first."),
-                ("FAQ and schema markup",
-                 "Question and answer content gets marked up properly, not just written well. Structured data tells a model exactly what a piece of content is, rather than leaving it to guess."),
-                ("Keeping content fresh",
-                 "Pages get revisited and updated on a schedule rather than published once and left. Freshness is a signal both classic search and AI answer systems weigh when deciding what to trust."),
+                ("Answer-ready content",
+                 "Direct, complete answers placed near the top of the page, written the way people actually phrase questions to an assistant, not just the keyword sitting on top of it."),
+                ("Clean, organised data",
+                 "Structured markup and consistent product, pricing and business facts, so machines can parse and trust what they are reading instead of guessing or skipping you."),
+                ("Trust & third-party signals",
+                 "Backlinks, mentions and consistency across the web, since AI tools cross-check a source against what else is being said about it before they quote it."),
+                ("Always-on monitoring & optimisation",
+                 "Tracking where you are being cited, and where you are not, then adjusting, since model behaviour shifts as these systems retrain."),
             ],
-            "example": {
-                "label": "Example of a direct answer box",
-                "text": "GEO is the work of structuring your content so AI tools such as Google AI Overviews, ChatGPT and Perplexity cite your business when they answer a question. This is the kind of plain, upfront answer we build into the top of a page.",
-            },
-        },
-    },
-    "ai-optimisation": {
-        "sections": [
-            ("What does AI optimisation mean in practice?",
-             "<p>AI optimisation is the hands-on layer beneath <a href=\"/services/geo/\">GEO</a>. It is the structural work that makes your pages easy for machines to read: clean headings, direct answers near the top of the page, FAQ and how-to formatting, and schema markup that tells tools exactly what each piece of content is. When a page is built this way, an assistant can lift a clear, correct answer from it instead of guessing or skipping you.</p>"),
-            ("Which AI tools does this help with?",
-             "<p>The fundamentals travel well across ChatGPT, Gemini, Perplexity, Copilot and Google AI Overviews. None of them reward keyword stuffing or thin pages. They reward content that is accurate, well organised and genuinely useful, which is also what readers and Google want. Done properly, AI optimisation strengthens your <a href=\"/services/seo/\">SEO</a> at the same time.</p>"),
-        ],
-        "feature_split": {
-            "heading": "Where do we start?",
-            "paragraphs": [
-                "We start with the pages that matter most to your business and audit how AI tools currently read them. From there we tighten structure, add the right markup, and make sure your key answers are stated plainly. Our <a href=\"/resources/what-is-geo/\">guide to GEO</a> gives useful background on why this work is becoming essential.",
-            ],
-            "image": "/assets/img/illustrations/spot/icon-10.svg",
-            "image_alt": "Illustration of a person auditing a laptop with a verified checkmark",
-            "compact": True,
         },
         "faqs": [
-            ("Is this just SEO with a new name?",
-             "There is real overlap, since clean structure helps both. The difference is the goal. AI optimisation is specifically about being readable and quotable by AI systems, not only ranking in the results list."),
-            ("Do I need new content or just changes to existing pages?",
-             "Often it begins with improving what you already have. Where there are gaps in the questions your audience asks, new content fills them."),
+            ("Is GEO the same thing as SEO?",
+             "No, though they share the same foundation. SEO targets the classic results list, ranking your page as high as possible. GEO targets the AI-generated answers increasingly sitting above that list, getting your business cited as a source rather than just linked to."),
+            ("What is AI optimisation, and how is it different from GEO?",
+             "AI optimisation is the practical, structural work: clean headings, direct answers, schema markup, consistent facts. GEO is the broader goal that work is aimed at, getting cited by AI tools. Think of AIO as the how and GEO as the what."),
+            ("Do I still need SEO if I'm already doing GEO?",
+             "Yes. GEO builds on SEO rather than replacing it. Good SEO content, technical health and authority are the raw material AI tools pull from when deciding what to cite. Without that foundation, there is nothing solid for GEO work to structure."),
+            ("How do I get my business mentioned by ChatGPT or Gemini?",
+             "By publishing clear, well-structured, accurate content that directly answers the questions your customers are asking, with facts that stay consistent across your site and elsewhere online. AI tools cite sources they can read quickly and trust, not the most keyword-stuffed page."),
+            ("Can you guarantee my business shows up in Google AI Overviews?",
+             "No, and no honest provider can. The platform decides what to cite, not the agency. What we control is giving it the clearest, most trustworthy version of your content to work from, which is what improves your odds."),
+            ("Is GEO worth it for a small business in Malaysia?",
+             "If your customers are starting to ask AI tools for recommendations instead of searching, yes. Smaller, focused businesses often get cited precisely because their content answers one specific question clearly, something a large generic competitor's page often does not do as well."),
+            ("How long does it take to get cited in AI search results?",
+             "There is no fixed timeline. It depends on how often your topics come up in AI answers and how established your business already is online. We track citation frequency and AI-referral traffic monthly so you see the trend rather than waiting on one milestone."),
+            ("Do I need entirely new content, or can you optimise what I already have?",
+             "Often it starts with what you already have: tightening structure, adding direct answers near the top, fixing facts that read differently across your site and directories. New content fills real gaps once those are addressed."),
         ],
     },
     "content-writing": {
@@ -233,7 +311,7 @@ RESOURCES = [
             ("What actually moves rankings?",
              "<p>Three things, working together. A technically sound site that loads well and can be crawled. Content that matches real search intent, which is why <a href=\"/services/content-writing/\">content writing</a> sits at the centre of SEO. And authority, earned through genuinely useful pages and relevant links over time. Beware anyone promising instant number one rankings; Google decides positions, and lasting results come from doing the fundamentals well. Google sets out the basics in its own <a href=\"https://developers.google.com/search/docs/fundamentals/seo-starter-guide\" target=\"_blank\" rel=\"noopener\">SEO starter guide</a>.</p>"),
             ("Where do AI answers fit in?",
-             "<p>Search is splitting. Alongside the classic results list, AI tools now summarise the web and cite a few sources directly. Being one of those cited sources is a separate discipline called <a href=\"/services/geo/\">GEO</a>, supported by <a href=\"/services/ai-optimisation/\">AI optimisation</a>. The good news is that the clarity which helps AI tools also helps Google, so the work compounds.</p>"),
+             "<p>Search is splitting. Alongside the classic results list, AI tools now summarise the web and cite a few sources directly. Being one of those cited sources is a separate discipline called <a href=\"/services/geo/\">AIO/GEO</a>. The good news is that the clarity which helps AI tools also helps Google, so the work compounds.</p>"),
             ("How long does it take, and what does it cost?",
              "<p>Expect early movement in three to six months and larger gains as authority builds. Cost depends on your market and starting point; we break down the ranges in our guide on <a href=\"/resources/seo-cost-malaysia/\">how much SEO costs in Malaysia</a>. If you would rather talk it through, <a href=\"/contact/\">get in touch</a>.</p>"),
         ],
@@ -283,7 +361,7 @@ RESOURCES = [
              "<p class=\"stat-bar-caption\">Share of ChatGPT citations matching each search engine's top organic results, from Seer Interactive's study of 500+ citations.</p>"
              "<p>The gap tells the story. ChatGPT's citations track Bing's rankings far more closely than Google's, because Bing's index is what it actually reads from. If your page is not ranking there, it is not in the pool ChatGPT is choosing from, regardless of how it performs on Google. Ranking is the entry ticket. Being clear, well structured and easy to extract is what gets you picked once you are in the room.</p>"),
             ("How do you get cited?",
-             "<p>By being clear, structured and trustworthy, on top of a page that already ranks reasonably well. That means direct answers near the top of a page, clean headings, FAQ and how-to formatting, and schema markup, all of which fall under <a href=\"/services/ai-optimisation/\">AI optimisation</a>. It also means publishing accurate, genuinely useful <a href=\"/services/content-writing/\">content</a> that an AI tool would be comfortable quoting. For a look at the concrete work this involves day to day, see our <a href=\"/services/geo/\">GEO service page</a>.</p>"
+             "<p>By being clear, structured and trustworthy, on top of a page that already ranks reasonably well. That means direct answers near the top of a page, clean headings, FAQ and how-to formatting, and schema markup, the AI optimisation work that sits underneath GEO. It also means publishing accurate, genuinely useful <a href=\"/services/content-writing/\">content</a> that an AI tool would be comfortable quoting. For a look at the concrete work this involves day to day, see our <a href=\"/services/geo/\">AIO/GEO service page</a>.</p>"
              "<div class=\"sources-block\"><span class=\"sources-label\">Sources</span><ul class=\"link-list\">"
              "<li><a href=\"https://developers.google.com/search/docs/appearance/ai-features\" target=\"_blank\" rel=\"noopener\">Google Search Central, AI features and your website</a></li>"
              "<li><a href=\"https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results\" target=\"_blank\" rel=\"noopener\">Seer Interactive, 87% of SearchGPT citations match Bing's top results</a></li>"
@@ -624,6 +702,61 @@ CASE_STUDIES = [
         ],
         "takeaway_heading": "What this means if you are marketing a school, or any high-consideration local service",
         "takeaway_body": "<p>Education, healthcare, legal and other high-consideration local services all share the same pattern: the customer researches extensively before they ever search your name, so if you only rank for your own brand, you are invisible for the entire window where the decision actually gets made. The fix is not just more content, it is content and local SEO structured around the actual research journey, built to be found by both classic search and the AI answers increasingly sitting on top of it.</p>",
+        "related_links": [
+            ("Our SEO services", "/services/seo/"),
+            ("Our GEO services", "/services/geo/"),
+            ("What is GEO, and why does it matter?", "/resources/what-is-geo/"),
+        ],
+    },
+    {
+        "slug": "wspace-coworking-seo-partnership",
+        "title": "SEO Case Study: How Bottom-Funnel Content Got WSPACE Cited by AI and Signed a Formal Partnership",
+        "desc": "How OnceMore Digital's bottom-funnel content strategy got WSPACE cited in AI-generated search answers, grew organic traffic 216.86%, and led to a formal SEO partnership signed in July 2026.",
+        "eyebrow": "Case Study",
+        "industry": "Coworking Space",
+        "published": "July 2026",
+        "date_published": "2026-07-01",
+        "date_modified": "2026-07-01",
+        "h1": "From informal help to a formal SEO partnership",
+        "intro": "WSPACE runs coworking spaces and private offices at Mid Valley and GTower in Kuala Lumpur, competing for a very specific kind of visitor: someone actively deciding where to base their business, not just browsing for inspiration. OnceMore Digital had already been shaping WSPACE's SEO content before either side signed anything. In July 2026 we made it official, and the results behind that decision are worth breaking down.",
+        "sections": [
+            ("Already working together, before the paperwork",
+             "<p>Some partnerships start with a pitch deck. This one started with the work itself. OnceMore Digital had already been handling SEO content for <a href=\"https://wspace.com/\" target=\"_blank\" rel=\"noopener\">WSPACE</a> for some time before July 2026, when the relationship became a formal, signed partnership. We will not go into what came before us on their SEO, since that is between WSPACE and whoever they worked with previously. What we can talk about is what changed once our content strategy took over.</p>"),
+            ("Why coworking searches are a bottom-funnel problem",
+             "<p>Nobody searches for a coworking space out of idle curiosity. By the time someone types \"private office Mid Valley\" or asks an AI assistant to compare a few coworking options in Kuala Lumpur, they are close to booking. That makes the content problem specific: generic posts about the future of work do not move someone from searching to signing up. Content built around the exact questions a decision-close visitor is asking does.</p>"),
+        ],
+        "approach_heading": "What we did",
+        "approach_intro": "We rebuilt WSPACE's content strategy around one idea: write for the person about to decide, not the person just browsing.",
+        "approach_items": [
+            ("Bottom-funnel content, not top-of-funnel filler",
+             "We mapped and wrote content around the specific, practical questions people ask right before booking a coworking space or private office: pricing, location, amenities, what a day there actually looks like. Not generic thought leadership, the kind of page that answers the question someone already has open in another tab while they decide."),
+            ("Structuring for AI citation, not just Google rankings",
+             "The same clarity that makes a page useful to someone comparing coworking spaces makes it useful to an AI tool summarising the options. We structured WSPACE's content so it could be read cleanly and cited directly by AI answer engines, the same discipline we cover in our guide to GEO."),
+            ("Staying aligned with what actually converts",
+             "Content that ranks but does not convert is not a win. We tracked which pages were bringing in enquiries, not just traffic, and kept refining toward the questions that were actually closing."),
+        ],
+        "results_heading": "The results",
+        "stats": [
+            ("+216.86%", "Organic traffic growth, tracked in Google Analytics"),
+            ("+284%", "Search clicks, tracked in Google Search Console"),
+            ("+241%", "Search impressions, tracked in Google Search Console"),
+        ],
+        "results_body": [
+            "Growth showed up across the board, not just in one metric. Traffic climbed, search visibility climbed with it, and crucially, so did the quality of who was showing up. That last part matters more than any single percentage, and it is best explained by WSPACE directly.",
+        ],
+        "review": {
+            "quote": "Lately we received quite a few quality leads, all with proper company domains, not just Gmail, and all enquiring for office space. Happy to see that and hope we will receive more in the future.",
+            "name": "WSPACE",
+            "role": "Shared directly with the OnceMore Digital team",
+        },
+        "client_org": {"name": "WSPACE", "url": "https://wspace.com/"},
+        "banner": {
+            "src": "/assets/img/case-studies/wspace-office-banner.jpg",
+            "alt": "Interior of a WSPACE coworking space in Kuala Lumpur, showing lounge seating, a marble bar table and the WSPACE logo on the reception wall",
+            "href": "https://wspace.com/membership/private-office/",
+        },
+        "takeaway_heading": "What this means if people research you before they buy",
+        "takeaway_body": "<p>Coworking is not unique here. Any business people compare and think over before committing, a school, a clinic, a professional service, benefits from content built around bottom-funnel questions instead of generic top-of-funnel posts. That is also the content AI answer engines reach for when summarising options for someone doing exactly that kind of research. Get both right, and the traffic that shows up is traffic that was already close to deciding.</p>",
         "related_links": [
             ("Our SEO services", "/services/seo/"),
             ("Our GEO services", "/services/geo/"),
