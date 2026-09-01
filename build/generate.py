@@ -1362,23 +1362,15 @@ for c in CASE_STUDIES:
                     (c["title"], "/case-studies/%s/" % c["slug"])]),
         jsonld(article_ld),
     ]
-    if review and c.get("client_org"):
-        cschema.append(jsonld({
-            "@context": "https://schema.org",
-            "@type": "Review",
-            "reviewBody": review["quote"],
-            "author": {
-                "@type": "Organization",
-                "name": c["client_org"]["name"],
-                "url": c["client_org"]["url"],
-            },
-            "itemReviewed": {
-                "@type": "Service",
-                "name": "SEO Services",
-                "provider": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
-            },
-            "publisher": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
-        }))
+    # Note: deliberately NOT emitting Review/AggregateRating structured data
+    # here. A testimonial about our own service, published on our own site,
+    # is a self-serving review under Google's structured data guidelines and
+    # is not eligible for review rich results regardless of itemReviewed
+    # type (Service is not even a supported type for that field, which is
+    # what previously surfaced as an "invalid item" error in Search Console).
+    # The testimonial itself still renders normally on the page via the
+    # review-panel HTML above; this only removes the (invalid, disallowed)
+    # schema wrapper around it.
     page("/case-studies/%s/" % c["slug"], "%s | OnceMore Digital" % c["title"], c["desc"],
          cbody, active="case-studies", schema_blocks=cschema)
 
