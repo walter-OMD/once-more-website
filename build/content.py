@@ -139,8 +139,10 @@ SERVICE_CONTENT = {
             ("What is AIO/GEO, and how did it evolve from SEO?",
              '<div class="split">'
              '<div><p>SEO grew up around a results list: rank high enough and people click through. As AI Overviews, ChatGPT, Gemini and Perplexity started summarising the web instead of just linking to it, a layer of work grew on top of SEO. '
-             'GEO, Generative Engine Optimisation, is the goal: being one of the sources an AI tool actually cites. AIO, AI Optimisation, is the practical layer underneath it, the structural work of clean headings, direct answers, '
+             'GEO (Generative Engine Optimisation) is the goal: being one of the sources an AI tool actually cites. AIO (AI Optimisation) is the practical layer underneath it, the structural work of clean headings, direct answers, '
              'schema markup and consistent facts that makes a page easy for a model to read and trust.</p>'
+             '<p style="margin-top:1rem">Here is the part that is easy to miss: most AI tools do not crawl the web on their own to find you. They still lean on a search engine\'s index to discover your page before they can read, trust or cite it. '
+             'That makes SEO the foundation AIO/GEO gets built on, not a separate track running alongside it. Without it, there is nothing for GEO to structure and nothing for an AI tool to find in the first place.</p>'
              '<p style="margin-top:1rem">They are two names for the same discipline, described from two angles, which is why we treat it as one service rather than two separate line items.</p></div>'
              '<div class="illustration-frame spot"><img src="/assets/img/illustrations/spot/aio-what-is.png" alt="Illustration of a person holding a computer chip labelled AI, representing the technology behind AIO/GEO" loading="lazy" decoding="async"></div>'
              '</div>'),
