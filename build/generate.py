@@ -555,10 +555,12 @@ home_faq_items = [
      "Email walter@oncemoredigital.com or use the contact page, and we will set up a short call to understand your goals."),
     ("How do I choose an SEO agency in Malaysia?",
      "Look for one that explains its work in plain terms, shows you real reporting, and treats SEO as an ongoing strategy rather than a one-off fix. A good SEO agency should be able to tell you what is not working, not just what is."),
-    ("What is the difference between an SEO agency and a digital marketing agency?",
-     "An SEO agency focuses specifically on organic search rankings. A digital marketing agency covers a wider range of channels, from SEO to content to AI optimisation. OnceMore started as an SEO agency and has grown into a full digital marketing agency, though SEO remains the foundation of most of our work."),
     ("Do you work with small businesses or only large companies?",
      "Both. Our client base has included large brands and independent local businesses, and the same fundamentals apply to each. What changes is the scope of work, not the standard we hold it to."),
+    ("Can one team handle SEO, GEO and AI optimisation for my business?",
+     "Yes, and there is an advantage to it being one team rather than several. SEO, GEO and AI optimisation share the same foundation, so keeping them under one roof means the strategy stays consistent instead of three vendors pulling a site in different directions."),
+    ("Is SEO still worth it now that people search using AI tools?",
+     "More than ever. Most AI tools still discover and trust pages through a search engine's index before they cite them, so SEO is the foundation AI visibility gets built on, not something it replaces."),
 ]
 home_faq_html, home_faq_schema = faq_block(home_faq_items)
 home_body += home_faq_html
