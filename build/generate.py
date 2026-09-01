@@ -603,7 +603,11 @@ home_schema = [
         "url": URL,
         "email": EMAIL,
         "image": OG_IMAGE,
+        "logo": URL + "/oncemoredigial-seo-marketing-logo.jpg",
         "areaServed": {"@type": "Country", "name": "Malaysia"},
+        "address": ADDRESS,
+        "identifier": "LLP0046284-LGN",
+        "sameAs": [url for _, url, _ in SOCIAL_LINKS],
         "knowsAbout": ["SEO", "Search Engine Optimisation", "GEO",
                        "Generative Engine Optimisation", "AI Optimisation",
                        "Content Writing", "Digital Marketing"],
@@ -1154,6 +1158,7 @@ for g in RESOURCES:
         "@context": "https://schema.org", "@type": "Article",
         "headline": g["title"], "description": g["desc"],
         "url": URL + "/resources/%s/" % g["slug"],
+        "image": OG_IMAGE,
         "inLanguage": "en-MY",
         "datePublished": "2026-06-10", "dateModified": "2026-07-23",
         "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
@@ -1351,6 +1356,8 @@ for c in CASE_STUDIES:
     }
     if banner:
         article_ld["image"] = URL + banner["src"]
+    else:
+        article_ld["image"] = OG_IMAGE
     if c.get("client_org"):
         article_ld["mentions"] = {
             "@type": "Organization",
