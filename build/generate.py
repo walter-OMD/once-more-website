@@ -403,7 +403,6 @@ GUIDE_ICONS = {
     "what-is-geo": ICONS["geo"],
     "seo-cost-malaysia": _TAG,
     "local-seo-malaysia": _PIN,
-    "geo-malaysia": ICONS["geo"],
 }
 
 # ---------------------------------------------------------------- service page illustrations
@@ -499,7 +498,7 @@ home_body = """
 <section class="section"><div class="container">
   <span class="eyebrow">What we do</span>
   <h2>How we help you <em>get found</em></h2>
-  <p>Three services built to work together: SEO to rank on the results page, AIO/GEO to get you cited by AI tools, and content that ties both together, so your customers find you wherever they are searching. New to the AI side? Read our guide to <a href="/resources/geo-malaysia/">Generative Engine Optimisation Malaysia</a>.</p>
+  <p>Three services built to work together: SEO to rank on the results page, AIO/GEO to get you cited by AI tools, and content that ties both together, so your customers find you wherever they are searching. New to the AI side? Read our guide to <a href="/resources/what-is-geo/">Generative Engine Optimisation Malaysia</a>.</p>
   <div class="grid" style="margin-top:2rem">
     BENTO_CARDS
   </div>
@@ -958,6 +957,31 @@ os.makedirs(os.path.dirname(_redirect_path), exist_ok=True)
 with open(_redirect_path, "w", encoding="utf-8") as f:
     f.write(_redirect_body)
 print("Redirect written: /services/ai-optimisation/ -> /services/geo/")
+
+# /resources/geo-malaysia/ was published briefly as a separate guide, then merged
+# into /resources/what-is-geo/. Same static-site redirect workaround as above.
+_geo_target = "/resources/what-is-geo/"
+_geo_body = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={_geo_target}">
+<link rel="canonical" href="{URL}{_geo_target}">
+<meta name="robots" content="noindex, follow">
+<title>GEO in Malaysia has moved | OnceMore Digital</title>
+{GTM_HEAD}
+</head>
+<body>
+{GTM_BODY}
+<p>This guide now lives at <a href="{_geo_target}">{URL}{_geo_target}</a>. Redirecting&hellip;</p>
+</body>
+</html>
+"""
+_geo_path = os.path.join(SITE, "resources", "geo-malaysia", "index.html")
+os.makedirs(os.path.dirname(_geo_path), exist_ok=True)
+with open(_geo_path, "w", encoding="utf-8") as f:
+    f.write(_geo_body)
+print("Redirect written: /resources/geo-malaysia/ -> /resources/what-is-geo/")
 
 # ---------------------------------------------------------------- about
 ABOUT_VALUES = [

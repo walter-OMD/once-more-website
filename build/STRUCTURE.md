@@ -4,7 +4,7 @@ Regenerated every time `python generate.py` runs. If this file and HANDOFF.md
 ever disagree on page counts, services, resources, or case studies, this file
 is correct and HANDOFF.md needs a refresh.
 
-**Total pages: 19** (3 services, 5 resources, 3 case studies, plus 8 fixed pages: Home, Services hub, Resources hub, Case studies hub, About, Contact, HTML sitemap, 404)
+**Total pages: 18** (3 services, 4 resources, 3 case studies, plus 8 fixed pages: Home, Services hub, Resources hub, Case studies hub, About, Contact, HTML sitemap, 404)
 
 ## Services
 - `/services/seo/` — SEO (has: process, tools, feature_split, layout)
@@ -13,8 +13,7 @@ is correct and HANDOFF.md needs a refresh.
 
 ## Resources
 - `/resources/seo-guide-malaysia/` — SEO for Malaysian Businesses: A Practical Guide
-- `/resources/what-is-geo/` — What Is GEO (Generative Engine Optimisation)? (has: sources)
-- `/resources/geo-malaysia/` — GEO in Malaysia: What It Is and How to Get Cited (has: sources)
+- `/resources/what-is-geo/` — What Is GEO? Generative Engine Optimisation in Malaysia (has: sources)
 - `/resources/seo-cost-malaysia/` — How Much Does SEO Cost in Malaysia?
 - `/resources/local-seo-malaysia/` — What Is Local SEO? How to Get Your Business Ranked in Malaysia (has: sources)
 
