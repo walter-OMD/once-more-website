@@ -403,6 +403,7 @@ GUIDE_ICONS = {
     "what-is-geo": ICONS["geo"],
     "seo-cost-malaysia": _TAG,
     "local-seo-malaysia": _PIN,
+    "geo-malaysia": ICONS["geo"],
 }
 
 # ---------------------------------------------------------------- service page illustrations
@@ -441,8 +442,10 @@ home_body = """
 <section class="hero"><div class="container">
   <div class="hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
-      <h1>Helping businesses<br>get found <em>online.</em></h1>
+      <div class="title-block">
+        <h1>The SEO digital marketing agency helping Malaysian businesses get found <em>online.</em></h1>
+        <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
+      </div>
       <p class="lead">OnceMore Digital is a Kuala Lumpur based digital marketing agency and SEO agency helping businesses across Malaysia rank on Google, show up in AI search results, and grow organically through smart SEO, content and strategy.</p>
       <div class="services-tags" role="list" aria-label="Our services">
         <span class="service-tag" role="listitem">SEO</span>
@@ -472,12 +475,6 @@ home_body = """
   </div>
 </div></section>
 
-<section class="section"><div class="container">
-  <span class="eyebrow">Digital Marketing Agency in Malaysia</span>
-  <h2>What a digital marketing agency should <em>actually do.</em></h2>
-  <p>A good digital marketing agency brings SEO, GEO, AI optimisation and content together under one strategy, so every channel works toward the same goal instead of being managed in isolation.</p>
-  <p style="margin-top:1rem">OnceMore Digital started as an SEO agency, and SEO is still the foundation of most engagements we run. As search itself has changed, we have grown into a full digital marketing agency covering SEO, GEO, AI optimisation and content, all handled by the same team.</p>
-</div></section>
 
 <section class="section panel-alt"><div class="container">
   <div class="split">
@@ -502,7 +499,7 @@ home_body = """
 <section class="section"><div class="container">
   <span class="eyebrow">What we do</span>
   <h2>How we help you <em>get found</em></h2>
-  <p>Three services built to work together: SEO to rank on the results page, AIO/GEO to get you cited by AI tools, and content that ties both together, so your customers find you wherever they are searching.</p>
+  <p>Three services built to work together: SEO to rank on the results page, AIO/GEO to get you cited by AI tools, and content that ties both together, so your customers find you wherever they are searching. New to the AI side? Read our guide to <a href="/resources/geo-malaysia/">Generative Engine Optimisation Malaysia</a>.</p>
   <div class="grid" style="margin-top:2rem">
     BENTO_CARDS
   </div>
@@ -624,8 +621,10 @@ hub_cards = "".join(card_html(s[0], s[1], s[3]) for s in SERVICES)
 hub_body = """
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Services</nav>
-  <span class="eyebrow" style="margin-top:1.5rem">Digital Marketing Services in Malaysia</span>
-  <h1>Everything you need to <em>get found.</em></h1>
+  <div class="title-block">
+    <h1>Everything you need to <em>get found.</em></h1>
+    <span class="eyebrow" style="margin-top:1.5rem">Digital Marketing Services in Malaysia</span>
+  </div>
   <p class="lead">From classic search rankings to AI answer engines, here is how our digital marketing services help improve your website traffic and grow your business online.</p>
   <div class="divider left" aria-hidden="true"></div>
   <p>Digital marketing covers a lot of ground: ads, social media, email, SEO, and not all of it moves the needle for every business. We focus on the channels that reliably improve website traffic and turn it into enquiries, not vanity numbers that look good in a report and do nothing for revenue.</p>
@@ -870,9 +869,10 @@ for slug, short, full_name, tagline, intro, features, faqs in SERVICES:
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {short}</nav>
   <div class="service-hero-grid">
     <div>
-      <div class="svc-icon">{ICONS[slug]}</div>
-      <span class="eyebrow" style="margin-top:0">{html.escape(full_name)}</span>
-      <h1>{h1_html}</h1>
+      <div class="title-block">
+        <h1>{h1_html}</h1>
+        <span class="eyebrow" style="margin-top:0">{html.escape(full_name)}</span>
+      </div>
       <p class="lead">{html.escape(tagline)}</p>
       <div class="btn-row" style="justify-content:flex-start;margin-top:.5rem">
         <a class="btn btn-primary" href="/contact/">Enquire about {html.escape(short)}</a>
@@ -978,8 +978,10 @@ about_values_cards = "".join(
 about_body = """
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / About</nav>
-  <span class="eyebrow" style="margin-top:1.5rem">About</span>
-  <h1>Who Are We Here at <em>OnceMore Digital</em></h1>
+  <div class="title-block">
+    <h1>Who Are We Here at <em>OnceMore Digital</em></h1>
+    <span class="eyebrow" style="margin-top:1.5rem">About</span>
+  </div>
   <p class="lead">OnceMore Digital is a small SEO and digital marketing team based in Kuala Lumpur. No rotating account managers, no quietly outsourced work. The people planning your strategy are the same people running it.</p>
   <div class="divider left" aria-hidden="true"></div>
   <p>The way people find businesses is changing. Some still type into Google. More are starting to ask AI tools for a recommendation. We work across both, combining solid SEO fundamentals with newer GEO and AI optimisation work, so your visibility holds up as habits shift.</p>
@@ -1054,8 +1056,10 @@ page("/about/", "About | OnceMore Digital",
 contact_body = """
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Contact</nav>
-  <span class="eyebrow" style="margin-top:1.5rem">Contact</span>
-  <h1>Let's get you <em>found.</em></h1>
+  <div class="title-block">
+    <h1>Let's get you <em>found.</em></h1>
+    <span class="eyebrow" style="margin-top:1.5rem">Contact</span>
+  </div>
   <p class="lead">Tell us what you are working on and we will get back to you.</p>
   <div class="divider left" aria-hidden="true"></div>
   <div class="contact-grid" style="margin-top:1rem">
@@ -1122,9 +1126,11 @@ for g in RESOURCES:
     gbody = f"""
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/resources/">Resources</a> / {html.escape(g["title"])}</nav>
-  <span class="eyebrow" style="margin-top:1.25rem">{html.escape(g["eyebrow"])}</span>
-  <h1>{html.escape(g["h1"])}</h1>
-  <p class="updated">Updated {UPDATED}</p>
+  <div class="title-block">
+    <h1>{html.escape(g["h1"])}</h1>
+    <span class="eyebrow" style="margin-top:1.25rem">{html.escape(g["eyebrow"])}</span>
+  </div>
+  <p class="updated">Updated {g.get("updated", UPDATED)}</p>
   <div class="answer-box">
     <span class="answer-label">Short answer</span>
     <p>{html.escape(g["answer"])}</p>
@@ -1144,7 +1150,7 @@ for g in RESOURCES:
     <p><strong>Written by the OnceMore Digital team.</strong> We work on SEO, GEO, AI optimisation and content for brands across Malaysia.</p>
   </div>
   <div class="btn-row" style="justify-content:flex-start;margin-top:1.75rem">
-    <a class="btn btn-primary" href="/contact/">Talk to us about this</a>
+    <a class="btn btn-primary" href="/contact/">{html.escape(g.get("cta_label", "Talk to us about this"))}</a>
   </div>
 </div></section>
 {g_faq_html}
@@ -1160,7 +1166,8 @@ for g in RESOURCES:
         "url": URL + "/resources/%s/" % g["slug"],
         "image": OG_IMAGE,
         "inLanguage": "en-MY",
-        "datePublished": "2026-06-10", "dateModified": "2026-07-23",
+        "datePublished": g.get("date_published", "2026-06-10"),
+        "dateModified": g.get("date_modified", "2026-07-23"),
         "author": {"@type": "Organization", "name": "OnceMore Digital", "url": URL},
         "publisher": {"@type": "Organization", "name": "OnceMore Digital",
                       "logo": {"@type": "ImageObject", "url": OG_IMAGE}},
@@ -1188,8 +1195,10 @@ res_cards = "".join(
 res_hub_body = """
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Resources</nav>
-  <span class="eyebrow" style="margin-top:1.5rem">Resources</span>
-  <h1>Guides on <em>search, AI and growth.</em></h1>
+  <div class="title-block">
+    <h1>Guides on <em>search, AI and growth.</em></h1>
+    <span class="eyebrow" style="margin-top:1.5rem">Resources</span>
+  </div>
   <p class="lead">Straight-talking guides on getting found in Malaysia, across both classic search and the AI answer engines that increasingly sit on top of it.</p>
   <div class="grid" style="margin-top:2.5rem">%s</div>
 </div></section>
@@ -1393,8 +1402,10 @@ case_cards = "".join(
 case_hub_body = """
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Case Studies</nav>
-  <span class="eyebrow" style="margin-top:1.5rem">Case Studies</span>
-  <h1>Real results for <em>real businesses.</em></h1>
+  <div class="title-block">
+    <h1>Real results for <em>real businesses.</em></h1>
+    <span class="eyebrow" style="margin-top:1.5rem">Case Studies</span>
+  </div>
   <p class="lead">No vanity metrics. Here is what actually changed for businesses we have worked with, and how we did it.</p>
   <div class="case-grid" style="margin-top:2.5rem">%s</div>
 </div></section>
@@ -1438,8 +1449,10 @@ sitemap_sections_html = "".join(
 sitemap_body = """
 <section class="section"><div class="container">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Sitemap</nav>
-  <span class="eyebrow" style="margin-top:1.5rem">Sitemap</span>
-  <h1>Every page on <em>this site.</em></h1>
+  <div class="title-block">
+    <h1>Every page on <em>this site.</em></h1>
+    <span class="eyebrow" style="margin-top:1.5rem">Sitemap</span>
+  </div>
   <p class="lead">A quick, human-readable map of the whole site. Looking for the XML version for search engines? It lives at <a href="/sitemap.xml">/sitemap.xml</a>.</p>
   <div class="divider left" aria-hidden="true"></div>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;margin-top:1rem">
@@ -1468,8 +1481,10 @@ page("/sitemap/", "Sitemap | OnceMore Digital",
 # ---------------------------------------------------------------- 404
 nf_body = """
 <section class="section"><div class="container" style="text-align:center">
-  <span class="eyebrow" style="justify-content:center">Error 404</span>
-  <h1>This page took a <em>wrong turn.</em></h1>
+  <div class="title-block" style="align-items:center">
+    <h1>This page took a <em>wrong turn.</em></h1>
+    <span class="eyebrow" style="justify-content:center">Error 404</span>
+  </div>
   <p class="lead" style="margin:0 auto 2rem">The page you are looking for does not exist or has moved.</p>
   <div class="btn-row"><a class="btn btn-primary" href="/">Back to home</a><a class="btn btn-ghost" href="/services/">See our services</a></div>
 </div></section>
